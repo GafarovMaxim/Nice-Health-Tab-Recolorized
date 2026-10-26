@@ -54,4 +54,26 @@
   <NHT_YAPEM_SlotTitle>插槽 {0}</NHT_YAPEM_SlotTitle>
   <NHT_YAPEM_SlotEmpty>空</NHT_YAPEM_SlotEmpty>
   <NHT_YAPEM_ClearSlot>清除此插槽</NHT_YAPEM_ClearSlot>
+  <NHT_YAPEM_ColorPickerSubtitle>植入物等级颜色选择</NHT_YAPEM_ColorPickerSubtitle>
+  <NHT_YAPEM_CustomSlotsHint>左键: 应用 • 右键: 菜单</NHT_YAPEM_CustomSlotsHint>
+  <NHT_YAPEM_ColorBefore>原色</NHT_YAPEM_ColorBefore>
+  <NHT_YAPEM_ColorAfter>新色</NHT_YAPEM_ColorAfter>
+  <NHT_YAPEM_CopyHex>复制十六进制代码</NHT_YAPEM_CopyHex>
+  <NHT_YAPEM_HexCopied>已复制十六进制代码: #{0}</NHT_YAPEM_HexCopied>
+  <NHT_YAPEM_Profile>配置文件</NHT_YAPEM_Profile>
+  <NHT_YAPEM_ProfileDefault>原版 NHT (默认)</NHT_YAPEM_ProfileDefault>
+  <NHT_YAPEM_ProfileCyberpunk>赛博朋克霓虹</NHT_YAPEM_ProfileCyberpunk>
+  <NHT_YAPEM_ProfilePastel>柔和粉彩</NHT_YAPEM_ProfilePastel>
+  <NHT_YAPEM_NewProfile>+ 新建</NHT_YAPEM_NewProfile>
+  <NHT_YAPEM_NewProfilePrompt>输入新配置文件名称:</NHT_YAPEM_NewProfilePrompt>
+  <NHT_YAPEM_NewProfileDefaultName>自定义配置 {0}</NHT_YAPEM_NewProfileDefaultName>
+  <NHT_YAPEM_DeleteProfile>✕ 删除</NHT_YAPEM_DeleteProfile>
+  <NHT_YAPEM_DeleteProfileConfirm>确定删除配置 "{0}" 吗？</NHT_YAPEM_DeleteProfileConfirm>
+  <NHT_YAPEM_CannotDeleteDefault>无法删除默认配置文件。</NHT_YAPEM_CannotDeleteDefault>
+  <NHT_YAPEM_ExportProfile>导出</NHT_YAPEM_ExportProfile>
+  <NHT_YAPEM_ImportProfile>导入</NHT_YAPEM_ImportProfile>
+  <NHT_YAPEM_ProfileExported>调色板配置已复制到剪贴板！</NHT_YAPEM_ProfileExported>
+  <NHT_YAPEM_ProfileImported>成功导入配置 "{0}"！</NHT_YAPEM_ProfileImported>
+  <NHT_YAPEM_InvalidProfileJson>剪贴板中未包含有效的调色板数据。</NHT_YAPEM_InvalidProfileJson>
+  <NHT_YAPEM_ApplyBtn>应用</NHT_YAPEM_ApplyBtn>
 </LanguageData>

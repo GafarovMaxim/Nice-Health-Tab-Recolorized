@@ -54,4 +54,26 @@
   <NHT_YAPEM_SlotTitle>Pozice {0}</NHT_YAPEM_SlotTitle>
   <NHT_YAPEM_SlotEmpty>Prázdné</NHT_YAPEM_SlotEmpty>
   <NHT_YAPEM_ClearSlot>Vymazat tuto pozici</NHT_YAPEM_ClearSlot>
+  <NHT_YAPEM_ColorPickerSubtitle>Color selection for tier category</NHT_YAPEM_ColorPickerSubtitle>
+  <NHT_YAPEM_CustomSlotsHint>LMB: Apply • RMB: Menu</NHT_YAPEM_CustomSlotsHint>
+  <NHT_YAPEM_ColorBefore>Before</NHT_YAPEM_ColorBefore>
+  <NHT_YAPEM_ColorAfter>After</NHT_YAPEM_ColorAfter>
+  <NHT_YAPEM_CopyHex>Copy HEX to clipboard</NHT_YAPEM_CopyHex>
+  <NHT_YAPEM_HexCopied>HEX code copied: #{0}</NHT_YAPEM_HexCopied>
+  <NHT_YAPEM_Profile>Profile</NHT_YAPEM_Profile>
+  <NHT_YAPEM_ProfileDefault>Original NHT (Default)</NHT_YAPEM_ProfileDefault>
+  <NHT_YAPEM_ProfileCyberpunk>Cyberpunk Neon</NHT_YAPEM_ProfileCyberpunk>
+  <NHT_YAPEM_ProfilePastel>Soft Pastel</NHT_YAPEM_ProfilePastel>
+  <NHT_YAPEM_NewProfile>+ New</NHT_YAPEM_NewProfile>
+  <NHT_YAPEM_NewProfilePrompt>Enter new profile name:</NHT_YAPEM_NewProfilePrompt>
+  <NHT_YAPEM_NewProfileDefaultName>Custom Profile {0}</NHT_YAPEM_NewProfileDefaultName>
+  <NHT_YAPEM_DeleteProfile>✕ Del</NHT_YAPEM_DeleteProfile>
+  <NHT_YAPEM_DeleteProfileConfirm>Delete profile "{0}"?</NHT_YAPEM_DeleteProfileConfirm>
+  <NHT_YAPEM_CannotDeleteDefault>Cannot delete the default profile.</NHT_YAPEM_CannotDeleteDefault>
+  <NHT_YAPEM_ExportProfile>Export</NHT_YAPEM_ExportProfile>
+  <NHT_YAPEM_ImportProfile>Import</NHT_YAPEM_ImportProfile>
+  <NHT_YAPEM_ProfileExported>Palette exported to clipboard!</NHT_YAPEM_ProfileExported>
+  <NHT_YAPEM_ProfileImported>Profile "{0}" successfully imported!</NHT_YAPEM_ProfileImported>
+  <NHT_YAPEM_InvalidProfileJson>Clipboard does not contain valid palette data.</NHT_YAPEM_InvalidProfileJson>
+  <NHT_YAPEM_ApplyBtn>Apply</NHT_YAPEM_ApplyBtn>
 </LanguageData>

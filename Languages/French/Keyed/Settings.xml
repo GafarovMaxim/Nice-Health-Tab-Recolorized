@@ -54,4 +54,26 @@
   <NHT_YAPEM_SlotTitle>Emplacement {0}</NHT_YAPEM_SlotTitle>
   <NHT_YAPEM_SlotEmpty>Vide</NHT_YAPEM_SlotEmpty>
   <NHT_YAPEM_ClearSlot>Effacer cet emplacement</NHT_YAPEM_ClearSlot>
+  <NHT_YAPEM_ColorPickerSubtitle>Sélection des couleurs par catégorie</NHT_YAPEM_ColorPickerSubtitle>
+  <NHT_YAPEM_CustomSlotsHint>Clic G: Appliquer • Clic D: Menu</NHT_YAPEM_CustomSlotsHint>
+  <NHT_YAPEM_ColorBefore>Avant</NHT_YAPEM_ColorBefore>
+  <NHT_YAPEM_ColorAfter>Après</NHT_YAPEM_ColorAfter>
+  <NHT_YAPEM_CopyHex>Copier HEX dans le presse-papiers</NHT_YAPEM_CopyHex>
+  <NHT_YAPEM_HexCopied>Code HEX copié: #{0}</NHT_YAPEM_HexCopied>
+  <NHT_YAPEM_Profile>Profil</NHT_YAPEM_Profile>
+  <NHT_YAPEM_ProfileDefault>Original NHT (Défaut)</NHT_YAPEM_ProfileDefault>
+  <NHT_YAPEM_ProfileCyberpunk>Cyberpunk Néon</NHT_YAPEM_ProfileCyberpunk>
+  <NHT_YAPEM_ProfilePastel>Pastel Doux</NHT_YAPEM_ProfilePastel>
+  <NHT_YAPEM_NewProfile>+ Nouv</NHT_YAPEM_NewProfile>
+  <NHT_YAPEM_NewProfilePrompt>Entrez le nom du nouveau profil:</NHT_YAPEM_NewProfilePrompt>
+  <NHT_YAPEM_NewProfileDefaultName>Profil personnalisé {0}</NHT_YAPEM_NewProfileDefaultName>
+  <NHT_YAPEM_DeleteProfile>✕ Suppr</NHT_YAPEM_DeleteProfile>
+  <NHT_YAPEM_DeleteProfileConfirm>Supprimer le profil "{0}"?</NHT_YAPEM_DeleteProfileConfirm>
+  <NHT_YAPEM_CannotDeleteDefault>Impossible de supprimer le profil par défaut.</NHT_YAPEM_CannotDeleteDefault>
+  <NHT_YAPEM_ExportProfile>Export</NHT_YAPEM_ExportProfile>
+  <NHT_YAPEM_ImportProfile>Import</NHT_YAPEM_ImportProfile>
+  <NHT_YAPEM_ProfileExported>Palette exportée dans le presse-papiers!</NHT_YAPEM_ProfileExported>
+  <NHT_YAPEM_ProfileImported>Profil "{0}" importé avec succès!</NHT_YAPEM_ProfileImported>
+  <NHT_YAPEM_InvalidProfileJson>Le presse-papiers ne contient pas de données de palette valides.</NHT_YAPEM_InvalidProfileJson>
+  <NHT_YAPEM_ApplyBtn>Appliquer</NHT_YAPEM_ApplyBtn>
 </LanguageData>

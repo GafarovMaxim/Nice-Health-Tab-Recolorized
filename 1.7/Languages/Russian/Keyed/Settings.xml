@@ -54,4 +54,26 @@
   <NHT_YAPEM_SlotTitle>Слот {0}</NHT_YAPEM_SlotTitle>
   <NHT_YAPEM_SlotEmpty>Пусто</NHT_YAPEM_SlotEmpty>
   <NHT_YAPEM_ClearSlot>Очистить этот слот</NHT_YAPEM_ClearSlot>
+  <NHT_YAPEM_ColorPickerSubtitle>Выбор цвета для категории тира</NHT_YAPEM_ColorPickerSubtitle>
+  <NHT_YAPEM_CustomSlotsHint>ЛКМ: применить • ПКМ: меню</NHT_YAPEM_CustomSlotsHint>
+  <NHT_YAPEM_ColorBefore>Было</NHT_YAPEM_ColorBefore>
+  <NHT_YAPEM_ColorAfter>Стало</NHT_YAPEM_ColorAfter>
+  <NHT_YAPEM_CopyHex>Скопировать HEX в буфер</NHT_YAPEM_CopyHex>
+  <NHT_YAPEM_HexCopied>HEX-код скопирован: #{0}</NHT_YAPEM_HexCopied>
+  <NHT_YAPEM_Profile>Профиль</NHT_YAPEM_Profile>
+  <NHT_YAPEM_ProfileDefault>Оригинал Nicer HT (Дефолт)</NHT_YAPEM_ProfileDefault>
+  <NHT_YAPEM_ProfileCyberpunk>Киберпанк Неон</NHT_YAPEM_ProfileCyberpunk>
+  <NHT_YAPEM_ProfilePastel>Мягкая Пастель</NHT_YAPEM_ProfilePastel>
+  <NHT_YAPEM_NewProfile>+ Нов.</NHT_YAPEM_NewProfile>
+  <NHT_YAPEM_NewProfilePrompt>Введите название нового профиля:</NHT_YAPEM_NewProfilePrompt>
+  <NHT_YAPEM_NewProfileDefaultName>Мой профиль {0}</NHT_YAPEM_NewProfileDefaultName>
+  <NHT_YAPEM_DeleteProfile>✕ Удал</NHT_YAPEM_DeleteProfile>
+  <NHT_YAPEM_DeleteProfileConfirm>Удалить профиль «{0}»?</NHT_YAPEM_DeleteProfileConfirm>
+  <NHT_YAPEM_CannotDeleteDefault>Нельзя удалить стандартный профиль по умолчанию.</NHT_YAPEM_CannotDeleteDefault>
+  <NHT_YAPEM_ExportProfile>Эксп.</NHT_YAPEM_ExportProfile>
+  <NHT_YAPEM_ImportProfile>Имп.</NHT_YAPEM_ImportProfile>
+  <NHT_YAPEM_ProfileExported>Палитра экспортирована в буфер обмена!</NHT_YAPEM_ProfileExported>
+  <NHT_YAPEM_ProfileImported>Профиль «{0}» успешно импортирован!</NHT_YAPEM_ProfileImported>
+  <NHT_YAPEM_InvalidProfileJson>В буфере обмена нет корректных данных палитры.</NHT_YAPEM_InvalidProfileJson>
+  <NHT_YAPEM_ApplyBtn>Принять</NHT_YAPEM_ApplyBtn>
 </LanguageData>

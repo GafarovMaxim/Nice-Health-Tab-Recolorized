@@ -1,3 +1,4 @@
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,6 +66,10 @@ namespace NiceHealthTab_YAPEM_Patch
         private static int selectedTabGroupIndex = 0;
         private static string searchFilter = "";
 
+        // Palette Profiles
+        public List<PaletteProfile> Profiles = new List<PaletteProfile>();
+        public string ActiveProfileName = "NHT_YAPEM_ProfileDefault";
+
         public override void ExposeData()
         {
             base.ExposeData();
@@ -92,10 +97,269 @@ namespace NiceHealthTab_YAPEM_Patch
                 CustomPresets = new List<Color>();
             }
 
+            Scribe_Values.Look(ref ActiveProfileName, "ActiveProfileName", "NHT_YAPEM_ProfileDefault");
+            Scribe_Collections.Look(ref Profiles, "Profiles", LookMode.Deep);
+            EnsureProfilesInitialized();
+
             Scribe_Collections.Look(ref CustomHediffTiers, "CustomHediffTiers", LookMode.Value, LookMode.Value);
             if (CustomHediffTiers == null)
             {
                 CustomHediffTiers = new Dictionary<string, string>();
+            }
+        }
+
+        public void EnsureProfilesInitialized()
+        {
+            if (Profiles == null)
+            {
+                Profiles = new List<PaletteProfile>();
+            }
+
+            if (!Profiles.Any(p => p.Name == "NHT_YAPEM_ProfileDefault"))
+            {
+                Profiles.Insert(0, PaletteProfile.CreateDefault());
+            }
+            if (!Profiles.Any(p => p.Name == "NHT_YAPEM_ProfileCyberpunk"))
+            {
+                Profiles.Add(PaletteProfile.CreateCyberpunk());
+            }
+            if (!Profiles.Any(p => p.Name == "NHT_YAPEM_ProfilePastel"))
+            {
+                Profiles.Add(PaletteProfile.CreatePastel());
+            }
+
+            if (string.IsNullOrEmpty(ActiveProfileName) || !Profiles.Any(p => p.Name == ActiveProfileName))
+            {
+                ActiveProfileName = "NHT_YAPEM_ProfileDefault";
+            }
+        }
+
+        public PaletteProfile GetActiveProfile()
+        {
+            EnsureProfilesInitialized();
+            var prof = Profiles.FirstOrDefault(p => p.Name == ActiveProfileName);
+            if (prof == null)
+            {
+                prof = Profiles.First();
+                ActiveProfileName = prof.Name;
+            }
+            return prof;
+        }
+
+        public void ApplyProfile(PaletteProfile prof, bool save = true)
+        {
+            if (prof == null) return;
+            EnsureProfilesInitialized();
+
+            ActiveProfileName = prof.Name;
+
+            ColorAdvancedBionic = prof.ColorAdvancedBionic;
+            ColorUltratech      = prof.ColorUltratech;
+            ColorArchotech      = prof.ColorArchotech;
+            ColorBionic         = prof.ColorBionic;
+            ColorProsthetic     = prof.ColorProsthetic;
+
+            ColorRoyalty            = prof.ColorRoyalty;
+            ColorBiotech            = prof.ColorBiotech;
+            ColorAnomaly            = prof.ColorAnomaly;
+            ColorOdyssey            = prof.ColorOdyssey;
+            ColorIntegratedImplants = prof.ColorIntegratedImplants;
+
+            if (prof.CustomPresets != null)
+            {
+                CustomPresets = new List<Color>();
+                for (int i = 0; i < prof.CustomPresets.Count; i++)
+                {
+                    CustomPresets.Add(prof.CustomPresets[i]);
+                }
+            }
+
+            if (save) Write();
+        }
+
+        public void SyncActiveColorsToProfile()
+        {
+            var prof = GetActiveProfile();
+            if (prof != null)
+            {
+                prof.ColorAdvancedBionic = ColorAdvancedBionic;
+                prof.ColorUltratech      = ColorUltratech;
+                prof.ColorArchotech      = ColorArchotech;
+                prof.ColorBionic         = ColorBionic;
+                prof.ColorProsthetic     = ColorProsthetic;
+
+                prof.ColorRoyalty            = ColorRoyalty;
+                prof.ColorBiotech            = ColorBiotech;
+                prof.ColorAnomaly            = ColorAnomaly;
+                prof.ColorOdyssey            = ColorOdyssey;
+                prof.ColorIntegratedImplants = ColorIntegratedImplants;
+
+                prof.CustomPresets = new List<Color>();
+                if (CustomPresets != null)
+                {
+                    for (int i = 0; i < CustomPresets.Count; i++)
+                    {
+                        prof.CustomPresets.Add(CustomPresets[i]);
+                    }
+                }
+                prof.EnsureSlotCount();
+            }
+        }
+
+        public void CreateProfile(string name)
+        {
+            EnsureProfilesInitialized();
+            if (string.IsNullOrEmpty(name)) return;
+
+            string uniqueName = name.Trim();
+            int counter = 2;
+            while (Profiles.Any(p => p.Name.Equals(uniqueName, StringComparison.OrdinalIgnoreCase)))
+            {
+                uniqueName = $"{name.Trim()} ({counter++})";
+            }
+
+            var prof = new PaletteProfile(uniqueName, false);
+            prof.ColorAdvancedBionic = ColorAdvancedBionic;
+            prof.ColorUltratech      = ColorUltratech;
+            prof.ColorArchotech      = ColorArchotech;
+            prof.ColorBionic         = ColorBionic;
+            prof.ColorProsthetic     = ColorProsthetic;
+
+            prof.ColorRoyalty            = ColorRoyalty;
+            prof.ColorBiotech            = ColorBiotech;
+            prof.ColorAnomaly            = ColorAnomaly;
+            prof.ColorOdyssey            = ColorOdyssey;
+            prof.ColorIntegratedImplants = ColorIntegratedImplants;
+
+            prof.CustomPresets = new List<Color>();
+            if (CustomPresets != null)
+            {
+                for (int i = 0; i < CustomPresets.Count; i++)
+                {
+                    prof.CustomPresets.Add(CustomPresets[i]);
+                }
+            }
+            prof.EnsureSlotCount();
+
+            Profiles.Add(prof);
+            ActiveProfileName = prof.Name;
+            Write();
+        }
+
+        public void DeleteProfile(PaletteProfile prof)
+        {
+            if (prof == null || prof.IsBuiltIn) return;
+            EnsureProfilesInitialized();
+
+            Profiles.Remove(prof);
+            var def = Profiles.FirstOrDefault(p => p.Name == "NHT_YAPEM_ProfileDefault") ?? Profiles.First();
+            ApplyProfile(def, true);
+        }
+
+        public void DrawProfileToolbar(Rect rect)
+        {
+            EnsureProfilesInitialized();
+            var activeProf = GetActiveProfile();
+
+            float x = rect.x;
+            float y = rect.y;
+
+            Text.Font = GameFont.Small;
+            string profLabel = "NHT_YAPEM_Profile".Translate() + ":";
+            Vector2 labelSize = Text.CalcSize(profLabel);
+            Widgets.Label(new Rect(x, y + 2f, labelSize.x + 8f, rect.height), profLabel);
+            x += labelSize.x + 12f;
+
+            float dropW = 160f;
+            Rect dropRect = new Rect(x, y, dropW, rect.height);
+            string dropTitle = (activeProf?.Label ?? "Profile") + " ▾";
+            if (Widgets.ButtonText(dropRect, dropTitle))
+            {
+                List<FloatMenuOption> options = new List<FloatMenuOption>();
+                foreach (var p in Profiles)
+                {
+                    var captured = p;
+                    options.Add(new FloatMenuOption(captured.Label + (captured.Name == ActiveProfileName ? " ✓" : ""), () =>
+                    {
+                        ApplyProfile(captured, true);
+                    }));
+                }
+                Find.WindowStack.Add(new FloatMenu(options));
+            }
+            x += dropW + 6f;
+
+            float btnW = 60f;
+            Rect newBtnRect = new Rect(x, y, btnW, rect.height);
+            TooltipHandler.TipRegion(newBtnRect, "NHT_YAPEM_NewProfilePrompt".Translate());
+            if (Widgets.ButtonText(newBtnRect, "NHT_YAPEM_NewProfile".Translate()))
+            {
+                string defName = string.Format("NHT_YAPEM_NewProfileDefaultName".Translate().RawText, Profiles.Count(p => !p.IsBuiltIn) + 1);
+                Find.WindowStack.Add(new Dialog_InputText("NHT_YAPEM_NewProfilePrompt".Translate(), defName, (enteredName) =>
+                {
+                    CreateProfile(enteredName);
+                }));
+            }
+            x += btnW + 6f;
+
+            bool canDelete = activeProf != null && !activeProf.IsBuiltIn;
+            Rect delBtnRect = new Rect(x, y, btnW, rect.height);
+            if (!canDelete)
+            {
+                GUI.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+                TooltipHandler.TipRegion(delBtnRect, "NHT_YAPEM_CannotDeleteDefault".Translate());
+            }
+            else
+            {
+                TooltipHandler.TipRegion(delBtnRect, string.Format("NHT_YAPEM_DeleteProfileConfirm".Translate().RawText, activeProf.Label));
+            }
+
+            if (Widgets.ButtonText(delBtnRect, "NHT_YAPEM_DeleteProfile".Translate()))
+            {
+                if (canDelete)
+                {
+                    string msg = string.Format("NHT_YAPEM_DeleteProfileConfirm".Translate().RawText, activeProf.Label);
+                    Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(msg, () =>
+                    {
+                        DeleteProfile(activeProf);
+                    }));
+                }
+                else
+                {
+                    Messages.Message("NHT_YAPEM_CannotDeleteDefault".Translate(), MessageTypeDefOf.RejectInput, false);
+                }
+            }
+            GUI.color = Color.white;
+            x += btnW + 6f;
+
+            float smallBtnW = 56f;
+            Rect expBtnRect = new Rect(x, y, smallBtnW, rect.height);
+            TooltipHandler.TipRegion(expBtnRect, "NHT_YAPEM_ProfileExported".Translate());
+            if (Widgets.ButtonText(expBtnRect, "NHT_YAPEM_ExportProfile".Translate()))
+            {
+                if (activeProf != null)
+                {
+                    GUIUtility.systemCopyBuffer = activeProf.ExportJson();
+                    Messages.Message("NHT_YAPEM_ProfileExported".Translate(), MessageTypeDefOf.PositiveEvent, false);
+                }
+            }
+            x += smallBtnW + 6f;
+
+            Rect impBtnRect = new Rect(x, y, smallBtnW, rect.height);
+            TooltipHandler.TipRegion(impBtnRect, "NHT_YAPEM_ImportProfile".Translate());
+            if (Widgets.ButtonText(impBtnRect, "NHT_YAPEM_ImportProfile".Translate()))
+            {
+                string json = GUIUtility.systemCopyBuffer;
+                var imported = PaletteProfile.ImportJson(json);
+                if (imported != null)
+                {
+                    Profiles.Add(imported);
+                    ApplyProfile(imported, true);
+                    Messages.Message(string.Format("NHT_YAPEM_ProfileImported".Translate().RawText, imported.Name), MessageTypeDefOf.PositiveEvent, false);
+                }
+                else
+                {
+                    Messages.Message("NHT_YAPEM_InvalidProfileJson".Translate(), MessageTypeDefOf.RejectInput, false);
+                }
             }
         }
 
@@ -191,6 +455,10 @@ namespace NiceHealthTab_YAPEM_Patch
             listing.Gap(2f);
             listing.Label("NHT_YAPEM_PaletteHint".Translate());
             listing.Gap(4f);
+
+            Rect profToolbarRect = listing.GetRect(28f);
+            DrawProfileToolbar(profToolbarRect);
+            listing.Gap(6f);
 
             DrawColorEntry(listing, "NHT_YAPEM_TierAdvBionic".Translate(), ref ColorAdvancedBionic, DefaultColorAdvancedBionic, c => ColorAdvancedBionic = c);
             DrawColorEntry(listing, "NHT_YAPEM_TierUltratech".Translate(), ref ColorUltratech, DefaultColorUltratech, c => ColorUltratech = c);
@@ -665,6 +933,13 @@ namespace NiceHealthTab_YAPEM_Patch
             Rect titleRect = new Rect(entryRect.x, entryRect.y + 4f, titleW, 24f);
             Widgets.Label(titleRect, title);
 
+            Action<Color> wrappedAction = c =>
+            {
+                saveAction?.Invoke(c);
+                SyncActiveColorsToProfile();
+                Write();
+            };
+
             // 2. Clickable Color Swatch Square
             Rect swatchRect = new Rect(titleRect.xMax + 10f, entryRect.y + 2f, 36f, 26f);
             Widgets.DrawBoxSolid(swatchRect, color);
@@ -674,7 +949,7 @@ namespace NiceHealthTab_YAPEM_Patch
             if (Widgets.ButtonInvisible(swatchRect))
             {
                 Color cur = color;
-                Find.WindowStack.Add(new Dialog_TierColorPicker(title, cur, defaultColor, saveAction));
+                Find.WindowStack.Add(new Dialog_TierColorPicker(title, cur, defaultColor, wrappedAction));
             }
 
             // 3. Hex code display
@@ -686,7 +961,7 @@ namespace NiceHealthTab_YAPEM_Patch
             if (Widgets.ButtonText(pickBtnRect, "NHT_YAPEM_PaletteBtn".Translate()))
             {
                 Color cur = color;
-                Find.WindowStack.Add(new Dialog_TierColorPicker(title, cur, defaultColor, saveAction));
+                Find.WindowStack.Add(new Dialog_TierColorPicker(title, cur, defaultColor, wrappedAction));
             }
 
             // 5. Reset button
@@ -694,7 +969,7 @@ namespace NiceHealthTab_YAPEM_Patch
             if (Widgets.ButtonText(resetBtnRect, "NHT_YAPEM_ResetBtn".Translate()))
             {
                 color = defaultColor;
-                saveAction?.Invoke(defaultColor);
+                wrappedAction(defaultColor);
             }
 
             listing.Gap(2f);
