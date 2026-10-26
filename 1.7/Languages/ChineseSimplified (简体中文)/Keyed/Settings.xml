@@ -29,4 +29,6 @@
   <NHT_YAPEM_TierBiotech>Biotech (机械师与排毒器官)</NHT_YAPEM_TierBiotech>
   <NHT_YAPEM_TierAnomaly>Anomaly (食尸鬼与生化铁器官)</NHT_YAPEM_TierAnomaly>
   <NHT_YAPEM_TierOdyssey>Odyssey (飞行员与太空植入物)</NHT_YAPEM_TierOdyssey>
+  <NHT_YAPEM_ColorPrevious>之前的颜色</NHT_YAPEM_ColorPrevious>
+  <NHT_YAPEM_ColorCurrent>当前颜色</NHT_YAPEM_ColorCurrent>
 </LanguageData>

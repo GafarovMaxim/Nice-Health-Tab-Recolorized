@@ -29,4 +29,6 @@
   <NHT_YAPEM_TierBiotech>Biotech (메카니터 및 해독)</NHT_YAPEM_TierBiotech>
   <NHT_YAPEM_TierAnomaly>Anomaly (구울 및 바이오페라이트)</NHT_YAPEM_TierAnomaly>
   <NHT_YAPEM_TierOdyssey>Odyssey (조종사 및 우주)</NHT_YAPEM_TierOdyssey>
+  <NHT_YAPEM_ColorPrevious>이전 색상</NHT_YAPEM_ColorPrevious>
+  <NHT_YAPEM_ColorCurrent>현재 색상</NHT_YAPEM_ColorCurrent>
 </LanguageData>

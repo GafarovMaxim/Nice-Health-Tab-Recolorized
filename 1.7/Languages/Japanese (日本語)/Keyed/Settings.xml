@@ -29,4 +29,6 @@
   <NHT_YAPEM_TierBiotech>Biotech (メカニター・解毒)</NHT_YAPEM_TierBiotech>
   <NHT_YAPEM_TierAnomaly>Anomaly (グール・バイオフェライト)</NHT_YAPEM_TierAnomaly>
   <NHT_YAPEM_TierOdyssey>Odyssey (パイロット・宇宙)</NHT_YAPEM_TierOdyssey>
+  <NHT_YAPEM_ColorPrevious>前の色</NHT_YAPEM_ColorPrevious>
+  <NHT_YAPEM_ColorCurrent>現在の色</NHT_YAPEM_ColorCurrent>
 </LanguageData>

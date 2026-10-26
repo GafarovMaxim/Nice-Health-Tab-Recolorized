@@ -29,4 +29,6 @@
   <NHT_YAPEM_TierBiotech>Biotech (Mechanitor &amp; Entgiftung)</NHT_YAPEM_TierBiotech>
   <NHT_YAPEM_TierAnomaly>Anomaly (Ghul &amp; Bioferrit)</NHT_YAPEM_TierAnomaly>
   <NHT_YAPEM_TierOdyssey>Odyssey (Pilot &amp; Kosmisch)</NHT_YAPEM_TierOdyssey>
+  <NHT_YAPEM_ColorPrevious>Vorherige Farbe</NHT_YAPEM_ColorPrevious>
+  <NHT_YAPEM_ColorCurrent>Aktuelle Farbe</NHT_YAPEM_ColorCurrent>
 </LanguageData>

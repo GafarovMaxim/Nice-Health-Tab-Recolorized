@@ -29,4 +29,6 @@
   <NHT_YAPEM_TierBiotech>Biotech (Mechanitor és méregtelenítés)</NHT_YAPEM_TierBiotech>
   <NHT_YAPEM_TierAnomaly>Anomaly (Ghul és bioferrit)</NHT_YAPEM_TierAnomaly>
   <NHT_YAPEM_TierOdyssey>Odyssey (Pilóta és kozmikus)</NHT_YAPEM_TierOdyssey>
+  <NHT_YAPEM_ColorPrevious>Előző szín</NHT_YAPEM_ColorPrevious>
+  <NHT_YAPEM_ColorCurrent>Jelenlegi szín</NHT_YAPEM_ColorCurrent>
 </LanguageData>

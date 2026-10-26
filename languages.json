@@ -28,7 +28,9 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (Empire & Royal Implants)",
     "NHT_YAPEM_TierBiotech": "Biotech (Mechanitor & Detox)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (Ghoul & Bioferrite)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (Pilot & Cosmic)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (Pilot & Cosmic)",
+    "NHT_YAPEM_ColorPrevious": "Previous color",
+    "NHT_YAPEM_ColorCurrent": "Current color"
   },
   "Russian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -59,7 +61,9 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (Имперские железы и импланты)",
     "NHT_YAPEM_TierBiotech": "Biotech (Механитор и детокс-органы)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (Гулевские и биоферритные органы)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (Пилотные и космические импланты)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (Пилотные и космические импланты)",
+    "NHT_YAPEM_ColorPrevious": "Предыдущий цвет",
+    "NHT_YAPEM_ColorCurrent": "Текущий цвет"
   },
   "French": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -90,7 +94,9 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (Implants impériaux & royaux)",
     "NHT_YAPEM_TierBiotech": "Biotech (Mécaniteur & détox)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (Goule & bioferrite)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (Pilote & cosmique)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (Pilote & cosmique)",
+    "NHT_YAPEM_ColorPrevious": "Couleur précédente",
+    "NHT_YAPEM_ColorCurrent": "Couleur actuelle"
   },
   "German": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -121,7 +127,9 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (Kaiserliche & königliche Implantate)",
     "NHT_YAPEM_TierBiotech": "Biotech (Mechanitor & Entgiftung)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (Ghul & Bioferrit)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (Pilot & Kosmisch)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (Pilot & Kosmisch)",
+    "NHT_YAPEM_ColorPrevious": "Vorherige Farbe",
+    "NHT_YAPEM_ColorCurrent": "Aktuelle Farbe"
   },
   "Italian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -152,7 +160,9 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (Impianti imperiali e reali)",
     "NHT_YAPEM_TierBiotech": "Biotech (Meccanitore e disintossicazione)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (Ghoul e bioferrite)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (Pilota e cosmico)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (Pilota e cosmico)",
+    "NHT_YAPEM_ColorPrevious": "Colore precedente",
+    "NHT_YAPEM_ColorCurrent": "Colore attuale"
   },
   "Spanish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -183,7 +193,9 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (Implantes imperiales y reales)",
     "NHT_YAPEM_TierBiotech": "Biotech (Mecanizador y desintoxicación)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (Necrófago y bioferrita)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (Piloto y cósmico)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (Piloto y cósmico)",
+    "NHT_YAPEM_ColorPrevious": "Color anterior",
+    "NHT_YAPEM_ColorCurrent": "Color actual"
   },
   "SpanishLatin": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -214,7 +226,9 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (Implantes imperiales y reales)",
     "NHT_YAPEM_TierBiotech": "Biotech (Mecanizador y desintoxicación)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (Necrófago y bioferrita)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (Piloto y cósmico)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (Piloto y cósmico)",
+    "NHT_YAPEM_ColorPrevious": "Color anterior",
+    "NHT_YAPEM_ColorCurrent": "Color actual"
   },
   "PortugueseBrazilian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -245,7 +259,9 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (Implantes imperiais e reais)",
     "NHT_YAPEM_TierBiotech": "Biotech (Mecanitor e desintoxicação)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (Carniçal e bioferrita)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (Piloto e cósmico)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (Piloto e cósmico)",
+    "NHT_YAPEM_ColorPrevious": "Cor anterior",
+    "NHT_YAPEM_ColorCurrent": "Cor atual"
   },
   "Japanese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -276,7 +292,9 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (帝国・王室インプラント)",
     "NHT_YAPEM_TierBiotech": "Biotech (メカニター・解毒)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (グール・バイオフェライト)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (パイロット・宇宙)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (パイロット・宇宙)",
+    "NHT_YAPEM_ColorPrevious": "前の色",
+    "NHT_YAPEM_ColorCurrent": "現在の色"
   },
   "Korean": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -307,7 +325,9 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (제국 및 왕실 임플란트)",
     "NHT_YAPEM_TierBiotech": "Biotech (메카니터 및 해독)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (구울 및 바이오페라이트)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (조종사 및 우주)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (조종사 및 우주)",
+    "NHT_YAPEM_ColorPrevious": "이전 색상",
+    "NHT_YAPEM_ColorCurrent": "현재 색상"
   },
   "ChineseSimplified": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -338,7 +358,9 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (帝国与皇家植入物)",
     "NHT_YAPEM_TierBiotech": "Biotech (机械师与排毒器官)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (食尸鬼与生化铁器官)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (飞行员与太空植入物)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (飞行员与太空植入物)",
+    "NHT_YAPEM_ColorPrevious": "之前的颜色",
+    "NHT_YAPEM_ColorCurrent": "当前颜色"
   },
   "ChineseTraditional": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -369,7 +391,9 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (帝國與皇家植入物)",
     "NHT_YAPEM_TierBiotech": "Biotech (機械師與排毒器官)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (食屍鬼與生化鐵器官)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (飛行員與太空植入物)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (飛行員與太空植入物)",
+    "NHT_YAPEM_ColorPrevious": "之前的顏色",
+    "NHT_YAPEM_ColorCurrent": "當前顏色"
   },
   "Turkish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -400,7 +424,9 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (İmparatorluk İmplantları)",
     "NHT_YAPEM_TierBiotech": "Biotech (Mekanitör ve Detoks)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (Gulyabani ve Biyoferrit)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (Pilot ve Kozmik)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (Pilot ve Kozmik)",
+    "NHT_YAPEM_ColorPrevious": "Önceki renk",
+    "NHT_YAPEM_ColorCurrent": "Mevcut renk"
   },
   "Ukrainian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -431,7 +457,9 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (Імперські залози та імпланти)",
     "NHT_YAPEM_TierBiotech": "Biotech (Механітор і детокс-органи)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (Гулівські та біоферитові органи)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (Пілотні та космічні імпланти)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (Пілотні та космічні імпланти)",
+    "NHT_YAPEM_ColorPrevious": "Попередній колір",
+    "NHT_YAPEM_ColorCurrent": "Поточний колір"
   },
   "Vietnamese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -462,7 +490,9 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (Cấy ghép hoàng gia & đế quốc)",
     "NHT_YAPEM_TierBiotech": "Biotech (Mechanitor & giải độc)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (Ghoul & bioferrite)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (Phi công & vũ trụ)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (Phi công & vũ trụ)",
+    "NHT_YAPEM_ColorPrevious": "Màu trước đó",
+    "NHT_YAPEM_ColorCurrent": "Màu hiện tại"
   },
   "Polish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -493,7 +523,9 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (Implanty imperialne)",
     "NHT_YAPEM_TierBiotech": "Biotech (Mechanitor i detoks)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (Ghul i bioferryt)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (Pilot i kosmiczne)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (Pilot i kosmiczne)",
+    "NHT_YAPEM_ColorPrevious": "Poprzedni kolor",
+    "NHT_YAPEM_ColorCurrent": "Bieżący kolor"
   },
   "Czech": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -524,7 +556,9 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (Císařské implantáty)",
     "NHT_YAPEM_TierBiotech": "Biotech (Mechanitor a detox)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (Ghúl a bioferrit)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (Pilotní a kosmické)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (Pilotní a kosmické)",
+    "NHT_YAPEM_ColorPrevious": "Předchozí barva",
+    "NHT_YAPEM_ColorCurrent": "Současná barva"
   },
   "Hungarian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -555,6 +589,8 @@
     "NHT_YAPEM_TierRoyalty": "Royalty (Birodalmi implantátumok)",
     "NHT_YAPEM_TierBiotech": "Biotech (Mechanitor és méregtelenítés)",
     "NHT_YAPEM_TierAnomaly": "Anomaly (Ghul és bioferrit)",
-    "NHT_YAPEM_TierOdyssey": "Odyssey (Pilóta és kozmikus)"
+    "NHT_YAPEM_TierOdyssey": "Odyssey (Pilóta és kozmikus)",
+    "NHT_YAPEM_ColorPrevious": "Előző szín",
+    "NHT_YAPEM_ColorCurrent": "Jelenlegi szín"
   }
 }

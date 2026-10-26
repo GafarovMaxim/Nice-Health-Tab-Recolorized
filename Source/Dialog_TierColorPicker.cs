@@ -6,11 +6,26 @@ namespace NiceHealthTab_YAPEM_Patch
 {
     public class Dialog_TierColorPicker : Window
     {
-        private const int TexSize = 220;
+        private const int TexSize = 210;
         private const float Center = TexSize / 2f;
-        private const float RadiusOuter = 100f;
-        private const float RadiusInner = 74f;
-        private const float RadiusDiamond = 64f;
+        private const float RadiusOuter = 98f;
+        private const float RadiusInner = 75f;
+        private const float RadiusDiamond = 62f;
+
+        // Curated tier and theme preset colors for instant selection
+        private static readonly Color[] PresetColors = new Color[]
+        {
+            new Color(203f / 255f, 208f / 255f, 171f / 255f), // #CBD0AB Archotech Sage
+            new Color(161f / 255f, 206f / 255f, 243f / 255f), // #A1CEF3 Adv Bionic Sky
+            new Color(113f / 255f, 203f / 255f, 194f / 255f), // #71CBC2 Ultratech Mint
+            new Color(230f / 255f, 230f / 255f, 230f / 255f), // #E6E6E6 Bionic White
+            new Color(176f / 255f, 176f / 255f, 176f / 255f), // #B0B0B0 Prosthetic Silver
+            new Color(222f / 255f, 184f / 255f, 65f / 255f),  // #DEB841 Royalty Gold
+            new Color(56f / 255f, 217f / 255f, 169f / 255f),  // #38D9A9 Biotech Mint
+            new Color(168f / 255f, 85f / 255f, 247f / 255f),  // #A855F7 Anomaly Violet
+            new Color(56f / 255f, 189f / 255f, 248f / 255f),  // #38BDF8 Odyssey Sky
+            new Color(1f, 1f, 1f)                              // #FFFFFF Pure White
+        };
 
         private readonly string title;
         private readonly Color originalColor;
@@ -28,7 +43,7 @@ namespace NiceHealthTab_YAPEM_Patch
         private bool isDraggingDiamond;
         private bool accepted;
 
-        public override Vector2 InitialSize => new Vector2(320f, 340f);
+        public override Vector2 InitialSize => new Vector2(360f, 490f);
 
         public Dialog_TierColorPicker(string title, Color initialColor, Color defaultColor, Action<Color> onColorSaved)
         {
@@ -64,9 +79,8 @@ namespace NiceHealthTab_YAPEM_Patch
             // 1. Draw Hue Ring
             for (int y = 0; y < TexSize; y++)
             {
-                // In Unity Texture2D, y=0 is bottom, y=TexSize-1 is top.
-                // GUI coordinates have y=0 at top.
-                // To align texture with GUI, dy_gui = Center - y.
+                // In Unity Texture2D, row y=0 is bottom, row y=TexSize-1 is top.
+                // GUI coordinates have y=0 at top. dy_gui = Center - y.
                 float dy_gui = Center - y;
                 for (int x = 0; x < TexSize; x++)
                 {
@@ -117,7 +131,7 @@ namespace NiceHealthTab_YAPEM_Patch
                     float dx_gui = x - Center;
                     float manhattan = Mathf.Abs(dx_gui) + Mathf.Abs(dy_gui);
 
-                    if (manhattan <= RadiusDiamond + 0.5f)
+                    if (manhattan <= RadiusDiamond + 0.75f)
                     {
                         // In GUI coords: Top (dy_gui = -RadiusDiamond) -> White (l = 1.0)
                         // Bottom (dy_gui = +RadiusDiamond) -> Black (l = 0.0)
@@ -127,7 +141,7 @@ namespace NiceHealthTab_YAPEM_Patch
 
                         Color col = HslToRgb(currentH, s, l);
 
-                        // Antialias boundary
+                        // Antialiased diamond boundary
                         float edgeDist = RadiusDiamond - manhattan;
                         if (edgeDist < 0f)
                             col.a = Mathf.Clamp01(1f + edgeDist);
@@ -153,7 +167,7 @@ namespace NiceHealthTab_YAPEM_Patch
 
         public override void DoWindowContents(Rect inRect)
         {
-            // Title & Close Button
+            // 1. Header: Category Title & Close 'X' Button
             Text.Font = GameFont.Medium;
             Rect titleRect = new Rect(0f, 0f, inRect.width - 28f, 28f);
             Widgets.Label(titleRect, title);
@@ -162,12 +176,15 @@ namespace NiceHealthTab_YAPEM_Patch
             Rect closeBtnRect = new Rect(inRect.width - 24f, 2f, 22f, 22f);
             if (Widgets.ButtonText(closeBtnRect, "✕"))
             {
-                accepted = true;
+                onColorSaved?.Invoke(originalColor);
                 Close();
             }
 
-            // Wheel Canvas
-            Rect wheelRect = new Rect((inRect.width - TexSize) / 2f, 34f, TexSize, TexSize);
+            // Divider 1
+            Widgets.DrawLineHorizontal(0f, 32f, inRect.width);
+
+            // 2. Central Wheel Canvas
+            Rect wheelRect = new Rect((inRect.width - TexSize) / 2f, 38f, TexSize, TexSize);
             if (wheelTexture != null)
             {
                 GUI.DrawTexture(wheelRect, wheelTexture);
@@ -218,24 +235,82 @@ namespace NiceHealthTab_YAPEM_Patch
             DrawHueCursor(wheelRect);
             DrawDiamondCursor(wheelRect);
 
-            // Bottom bar: [Preview Swatch] [#HEX] [Reset] [OK >]
-            Rect bottomRect = new Rect(wheelRect.x, wheelRect.yMax + 12f, wheelRect.width, 30f);
+            // 3. Quick-Pick Preset Swatches Row
+            float yPresets = wheelRect.yMax + 10f;
+            float chipSize = 24f;
+            float chipGap = 6f;
+            int numChips = PresetColors.Length;
+            float totalChipsW = numChips * chipSize + (numChips - 1) * chipGap;
+            float startChipX = (inRect.width - totalChipsW) / 2f;
 
-            // 1. Swatch
-            Rect swatchRect = new Rect(bottomRect.x, bottomRect.y, 32f, 28f);
-            Widgets.DrawBoxSolid(swatchRect, currentColor);
-            Widgets.DrawBox(swatchRect, 1);
+            for (int i = 0; i < numChips; i++)
+            {
+                Color pCol = PresetColors[i];
+                Rect chipRect = new Rect(startChipX + i * (chipSize + chipGap), yPresets, chipSize, chipSize);
 
-            // 2. Hex input
-            Rect hexHashRect = new Rect(swatchRect.xMax + 6f, bottomRect.y + 4f, 12f, 24f);
+                Widgets.DrawBoxSolid(chipRect, pCol);
+                Widgets.DrawBox(chipRect, 1);
+                Widgets.DrawHighlightIfMouseover(chipRect);
+
+                // Highlight active preset match
+                if (Mathf.Abs(currentColor.r - pCol.r) < 0.02f &&
+                    Mathf.Abs(currentColor.g - pCol.g) < 0.02f &&
+                    Mathf.Abs(currentColor.b - pCol.b) < 0.02f)
+                {
+                    Widgets.DrawBox(chipRect.ExpandedBy(2f), 2);
+                }
+
+                TooltipHandler.TipRegion(chipRect, $"#{ColorUtility.ToHtmlStringRGB(pCol)}");
+
+                if (Widgets.ButtonInvisible(chipRect))
+                {
+                    SelectColor(pCol);
+                }
+            }
+
+            // Divider 2
+            float yDiv2 = yPresets + chipSize + 10f;
+            Widgets.DrawLineHorizontal(0f, yDiv2, inRect.width);
+
+            // 4. Comparison & Hex Inspector Card
+            float yCard = yDiv2 + 8f;
+            Rect cardRect = new Rect(0f, yCard, inRect.width, 46f);
+            Widgets.DrawBoxSolid(cardRect, new Color(0.12f, 0.14f, 0.17f, 0.6f));
+            Widgets.DrawBox(cardRect, 1);
+
+            // Split Swatch: Left = Original, Right = Current
+            float swX = cardRect.x + 8f;
+            float swY = cardRect.y + 7f;
+            float swW = 56f;
+            float swH = 32f;
+            Rect splitRect = new Rect(swX, swY, swW, swH);
+            Rect leftHalf = new Rect(swX, swY, swW / 2f, swH);
+            Rect rightHalf = new Rect(swX + swW / 2f, swY, swW / 2f, swH);
+
+            Widgets.DrawBoxSolid(leftHalf, originalColor);
+            Widgets.DrawBoxSolid(rightHalf, currentColor);
+            Widgets.DrawBox(splitRect, 1);
+            Widgets.DrawLineVertical(swX + swW / 2f, swY, swH);
+            Widgets.DrawHighlightIfMouseover(splitRect);
+            TooltipHandler.TipRegion(leftHalf, $"#{ColorUtility.ToHtmlStringRGB(originalColor)} (" + "NHT_YAPEM_ColorPrevious".Translate() + ")");
+            TooltipHandler.TipRegion(rightHalf, $"#{ColorUtility.ToHtmlStringRGB(currentColor)} (" + "NHT_YAPEM_ColorCurrent".Translate() + ")");
+
+            if (Widgets.ButtonInvisible(leftHalf))
+            {
+                SelectColor(originalColor);
+            }
+
+            // Hex Input Field
+            float hexX = splitRect.xMax + 14f;
+            Rect hexHashRect = new Rect(hexX, cardRect.y + 11f, 14f, 24f);
             Widgets.Label(hexHashRect, "#");
 
-            Rect hexFieldRect = new Rect(hexHashRect.xMax + 2f, bottomRect.y + 2f, 70f, 26f);
+            Rect hexFieldRect = new Rect(hexHashRect.xMax + 2f, cardRect.y + 9f, 78f, 28f);
             string newHex = Widgets.TextField(hexFieldRect, hexBuffer);
             if (newHex != hexBuffer)
             {
                 hexBuffer = newHex.Trim().TrimStart('#').ToUpperInvariant();
-                if (ColorUtility.TryParseHtmlString("#" + hexBuffer, out Color parsed))
+                if (hexBuffer.Length == 6 && ColorUtility.TryParseHtmlString("#" + hexBuffer, out Color parsed))
                 {
                     currentColor = parsed;
                     RgbToHsl(currentColor, out currentH, out currentS, out currentL);
@@ -244,25 +319,57 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }
 
-            // 3. Reset Button
-            Rect resetRect = new Rect(hexFieldRect.xMax + 6f, bottomRect.y + 2f, 48f, 26f);
+            // RGB Numeric Readout
+            int r255 = Mathf.RoundToInt(currentColor.r * 255f);
+            int g255 = Mathf.RoundToInt(currentColor.g * 255f);
+            int b255 = Mathf.RoundToInt(currentColor.b * 255f);
+
+            Text.Font = GameFont.Tiny;
+            GUI.color = new Color(0.72f, 0.72f, 0.72f, 1f);
+            Rect rgbRect1 = new Rect(hexFieldRect.xMax + 12f, cardRect.y + 7f, 90f, 16f);
+            Rect rgbRect2 = new Rect(hexFieldRect.xMax + 12f, cardRect.y + 23f, 90f, 16f);
+            Widgets.Label(rgbRect1, $"R: {r255}");
+            Widgets.Label(rgbRect2, $"G: {g255}  B: {b255}");
+            GUI.color = Color.white;
+            Text.Font = GameFont.Small;
+
+            // 5. Action Buttons Bar
+            float yBtns = inRect.height - 32f;
+            float btnW = 95f;
+            float btnH = 30f;
+
+            // Reset Button
+            Rect resetRect = new Rect(0f, yBtns, btnW, btnH);
             if (Widgets.ButtonText(resetRect, "NHT_YAPEM_ResetBtn".Translate()))
             {
-                currentColor = defaultColor;
-                hexBuffer = ColorUtility.ToHtmlStringRGB(currentColor);
-                RgbToHsl(currentColor, out currentH, out currentS, out currentL);
-                RedrawDiamond();
-                onColorSaved?.Invoke(currentColor);
+                SelectColor(defaultColor);
             }
 
-            // 4. Accept button '>'
-            Rect okBtnRect = new Rect(bottomRect.xMax - 36f, bottomRect.y + 2f, 36f, 26f);
-            if (Widgets.ButtonText(okBtnRect, ">"))
+            // Cancel Button
+            Rect cancelRect = new Rect((inRect.width - btnW) / 2f, yBtns, btnW, btnH);
+            if (Widgets.ButtonText(cancelRect, "Cancel".Translate()))
+            {
+                onColorSaved?.Invoke(originalColor);
+                Close();
+            }
+
+            // Accept / OK Button
+            Rect okRect = new Rect(inRect.width - btnW, yBtns, btnW, btnH);
+            if (Widgets.ButtonText(okRect, "OK".Translate()))
             {
                 accepted = true;
                 onColorSaved?.Invoke(currentColor);
                 Close();
             }
+        }
+
+        private void SelectColor(Color color)
+        {
+            currentColor = color;
+            hexBuffer = ColorUtility.ToHtmlStringRGB(currentColor);
+            RgbToHsl(currentColor, out currentH, out currentS, out currentL);
+            RedrawDiamond();
+            onColorSaved?.Invoke(currentColor);
         }
 
         private void UpdateHue(float dx, float dy)
@@ -313,11 +420,12 @@ namespace NiceHealthTab_YAPEM_Patch
 
         private void DrawCursor(Vector2 center)
         {
-            Rect outer = new Rect(center.x - 6f, center.y - 6f, 12f, 12f);
-            Widgets.DrawBoxSolid(outer, new Color(0f, 0f, 0f, 0.9f));
-            Rect inner = outer.ContractedBy(1.5f);
-            Widgets.DrawBoxSolid(inner, Color.white);
-            Widgets.DrawBoxSolid(inner.ContractedBy(1.5f), currentColor);
+            Rect outer = new Rect(center.x - 7f, center.y - 7f, 14f, 14f);
+            Widgets.DrawBoxSolid(outer, new Color(0f, 0f, 0f, 0.95f));
+            Rect middle = outer.ContractedBy(1.5f);
+            Widgets.DrawBoxSolid(middle, Color.white);
+            Rect inner = middle.ContractedBy(1.5f);
+            Widgets.DrawBoxSolid(inner, currentColor);
         }
 
         public override void PreClose()
