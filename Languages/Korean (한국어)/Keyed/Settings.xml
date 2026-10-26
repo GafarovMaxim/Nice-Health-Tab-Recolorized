@@ -18,4 +18,8 @@
   <NHT_YAPEM_PaletteTip>클릭하여 색상 선택기를 엽니다</NHT_YAPEM_PaletteTip>
   <NHT_YAPEM_ResetBtn>초기화</NHT_YAPEM_ResetBtn>
   <NHT_YAPEM_ResetAllBtn>모든 설정을 기본값으로 재설정</NHT_YAPEM_ResetAllBtn>
+  <NHT_YAPEM_PreviewTitle>폰 미리보기</NHT_YAPEM_PreviewTitle>
+  <NHT_YAPEM_PreviewSubtitle>신체 부속 및 임플란트 실시간 미리보기</NHT_YAPEM_PreviewSubtitle>
+  <NHT_YAPEM_DominantActive>신체 착색: 활성화 ({0}개 부위)</NHT_YAPEM_DominantActive>
+  <NHT_YAPEM_DominantInactive>신체 착색: 비활성화</NHT_YAPEM_DominantInactive>
 </LanguageData>

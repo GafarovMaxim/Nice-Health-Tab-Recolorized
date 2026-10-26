@@ -18,4 +18,8 @@
   <NHT_YAPEM_PaletteTip>Click to open the color picker</NHT_YAPEM_PaletteTip>
   <NHT_YAPEM_ResetBtn>Reset</NHT_YAPEM_ResetBtn>
   <NHT_YAPEM_ResetAllBtn>Reset All Settings to Default</NHT_YAPEM_ResetAllBtn>
+  <NHT_YAPEM_PreviewTitle>Pawn Preview</NHT_YAPEM_PreviewTitle>
+  <NHT_YAPEM_PreviewSubtitle>Real-time preview of limbs & implants</NHT_YAPEM_PreviewSubtitle>
+  <NHT_YAPEM_DominantActive>Body Tinting: Active ({0} limbs)</NHT_YAPEM_DominantActive>
+  <NHT_YAPEM_DominantInactive>Body Tinting: Inactive</NHT_YAPEM_DominantInactive>
 </LanguageData>

@@ -18,4 +18,8 @@
   <NHT_YAPEM_PaletteTip>Kattints a színválasztó megnyitásához</NHT_YAPEM_PaletteTip>
   <NHT_YAPEM_ResetBtn>Visszaállítás</NHT_YAPEM_ResetBtn>
   <NHT_YAPEM_ResetAllBtn>Minden beállítás alaphelyzetbe állítása</NHT_YAPEM_ResetAllBtn>
+  <NHT_YAPEM_PreviewTitle>Telepes előnézet</NHT_YAPEM_PreviewTitle>
+  <NHT_YAPEM_PreviewSubtitle>Végtagok és implantátumok valós idejű előnézete</NHT_YAPEM_PreviewSubtitle>
+  <NHT_YAPEM_DominantActive>Testszínezés: Aktív ({0} végtag)</NHT_YAPEM_DominantActive>
+  <NHT_YAPEM_DominantInactive>Testszínezés: Inaktív</NHT_YAPEM_DominantInactive>
 </LanguageData>

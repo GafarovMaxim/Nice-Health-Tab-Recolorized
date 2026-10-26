@@ -18,4 +18,8 @@
   <NHT_YAPEM_PaletteTip>Haz clic para abrir el selector de colores</NHT_YAPEM_PaletteTip>
   <NHT_YAPEM_ResetBtn>Restablecer</NHT_YAPEM_ResetBtn>
   <NHT_YAPEM_ResetAllBtn>Restablecer todos los ajustes por defecto</NHT_YAPEM_ResetAllBtn>
+  <NHT_YAPEM_PreviewTitle>Vista previa del colono</NHT_YAPEM_PreviewTitle>
+  <NHT_YAPEM_PreviewSubtitle>Vista en tiempo real de prótesis e implantes</NHT_YAPEM_PreviewSubtitle>
+  <NHT_YAPEM_DominantActive>Tinte corporal: Activo ({0} miembros)</NHT_YAPEM_DominantActive>
+  <NHT_YAPEM_DominantInactive>Tinte corporal: Inactivo</NHT_YAPEM_DominantInactive>
 </LanguageData>

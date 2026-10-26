@@ -18,4 +18,8 @@
   <NHT_YAPEM_PaletteTip>クリックしてカラーピッカーを開く</NHT_YAPEM_PaletteTip>
   <NHT_YAPEM_ResetBtn>リセット</NHT_YAPEM_ResetBtn>
   <NHT_YAPEM_ResetAllBtn>すべての設定をデフォルトに戻す</NHT_YAPEM_ResetAllBtn>
+  <NHT_YAPEM_PreviewTitle>ポーンプレビュー</NHT_YAPEM_PreviewTitle>
+  <NHT_YAPEM_PreviewSubtitle>義肢とインプラントのリアルタイムプレビュー</NHT_YAPEM_PreviewSubtitle>
+  <NHT_YAPEM_DominantActive>身体の着色: 有効 ({0}部位)</NHT_YAPEM_DominantActive>
+  <NHT_YAPEM_DominantInactive>身体の着色: 無効</NHT_YAPEM_DominantInactive>
 </LanguageData>

@@ -18,4 +18,8 @@
   <NHT_YAPEM_PaletteTip>Klikněte pro otevření výběru barev</NHT_YAPEM_PaletteTip>
   <NHT_YAPEM_ResetBtn>Obnovit</NHT_YAPEM_ResetBtn>
   <NHT_YAPEM_ResetAllBtn>Obnovit výchozí nastavení</NHT_YAPEM_ResetAllBtn>
+  <NHT_YAPEM_PreviewTitle>Náhled kolonisty</NHT_YAPEM_PreviewTitle>
+  <NHT_YAPEM_PreviewSubtitle>Živý náhled končetin a implantátů</NHT_YAPEM_PreviewSubtitle>
+  <NHT_YAPEM_DominantActive>Zbarvení těla: Aktivní ({0} konč.)</NHT_YAPEM_DominantActive>
+  <NHT_YAPEM_DominantInactive>Zbarvení těla: Neaktivní</NHT_YAPEM_DominantInactive>
 </LanguageData>

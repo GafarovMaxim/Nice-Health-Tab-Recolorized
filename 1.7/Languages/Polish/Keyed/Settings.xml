@@ -18,4 +18,8 @@
   <NHT_YAPEM_PaletteTip>Kliknij, aby otworzyć próbnik kolorów</NHT_YAPEM_PaletteTip>
   <NHT_YAPEM_ResetBtn>Zresetuj</NHT_YAPEM_ResetBtn>
   <NHT_YAPEM_ResetAllBtn>Przywróć wszystkie ustawienia domyślne</NHT_YAPEM_ResetAllBtn>
+  <NHT_YAPEM_PreviewTitle>Podgląd kolonisty</NHT_YAPEM_PreviewTitle>
+  <NHT_YAPEM_PreviewSubtitle>Podgląd kończyn i implantów na żywo</NHT_YAPEM_PreviewSubtitle>
+  <NHT_YAPEM_DominantActive>Barwienie ciała: Aktywne ({0} kończyny)</NHT_YAPEM_DominantActive>
+  <NHT_YAPEM_DominantInactive>Barwienie ciała: Nieaktywne</NHT_YAPEM_DominantInactive>
 </LanguageData>

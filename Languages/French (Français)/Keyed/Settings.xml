@@ -18,4 +18,8 @@
   <NHT_YAPEM_PaletteTip>Cliquez pour ouvrir le sélecteur de couleurs</NHT_YAPEM_PaletteTip>
   <NHT_YAPEM_ResetBtn>Réinitialiser</NHT_YAPEM_ResetBtn>
   <NHT_YAPEM_ResetAllBtn>Restaurer tous les paramètres par défaut</NHT_YAPEM_ResetAllBtn>
+  <NHT_YAPEM_PreviewTitle>Aperçu du colon</NHT_YAPEM_PreviewTitle>
+  <NHT_YAPEM_PreviewSubtitle>Aperçu en direct des membres et implants</NHT_YAPEM_PreviewSubtitle>
+  <NHT_YAPEM_DominantActive>Teinte du corps : Active ({0} membres)</NHT_YAPEM_DominantActive>
+  <NHT_YAPEM_DominantInactive>Teinte du corps : Inactive</NHT_YAPEM_DominantInactive>
 </LanguageData>

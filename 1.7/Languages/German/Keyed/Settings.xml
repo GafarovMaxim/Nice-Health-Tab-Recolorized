@@ -18,4 +18,8 @@
   <NHT_YAPEM_PaletteTip>Klicken, um Farbauswahl zu öffnen</NHT_YAPEM_PaletteTip>
   <NHT_YAPEM_ResetBtn>Zurücksetzen</NHT_YAPEM_ResetBtn>
   <NHT_YAPEM_ResetAllBtn>Alle Einstellungen auf Standard zurücksetzen</NHT_YAPEM_ResetAllBtn>
+  <NHT_YAPEM_PreviewTitle>Kolonistenvorschau</NHT_YAPEM_PreviewTitle>
+  <NHT_YAPEM_PreviewSubtitle>Echtzeitvorschau von Prothesen & Implantaten</NHT_YAPEM_PreviewSubtitle>
+  <NHT_YAPEM_DominantActive>Körperfärbung: Aktiv ({0} Gliedm.)</NHT_YAPEM_DominantActive>
+  <NHT_YAPEM_DominantInactive>Körperfärbung: Inaktiv</NHT_YAPEM_DominantInactive>
 </LanguageData>

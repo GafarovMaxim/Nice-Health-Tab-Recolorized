@@ -18,4 +18,8 @@
   <NHT_YAPEM_PaletteTip>Clique para abrir o seletor de cores</NHT_YAPEM_PaletteTip>
   <NHT_YAPEM_ResetBtn>Redefinir</NHT_YAPEM_ResetBtn>
   <NHT_YAPEM_ResetAllBtn>Redefinir Todas as Configurações para o Padrão</NHT_YAPEM_ResetAllBtn>
+  <NHT_YAPEM_PreviewTitle>Prévia do colono</NHT_YAPEM_PreviewTitle>
+  <NHT_YAPEM_PreviewSubtitle>Prévia em tempo real de membros e implantes</NHT_YAPEM_PreviewSubtitle>
+  <NHT_YAPEM_DominantActive>Tingimento corporal: Ativo ({0} membros)</NHT_YAPEM_DominantActive>
+  <NHT_YAPEM_DominantInactive>Tingimento corporal: Inativo</NHT_YAPEM_DominantInactive>
 </LanguageData>

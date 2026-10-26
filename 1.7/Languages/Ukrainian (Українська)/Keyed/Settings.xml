@@ -18,4 +18,8 @@
   <NHT_YAPEM_PaletteTip>Натисніть, щоб відкрити палітру кольорів</NHT_YAPEM_PaletteTip>
   <NHT_YAPEM_ResetBtn>Скинути</NHT_YAPEM_ResetBtn>
   <NHT_YAPEM_ResetAllBtn>Відновити всі налаштування за замовчуванням</NHT_YAPEM_ResetAllBtn>
+  <NHT_YAPEM_PreviewTitle>Попередній перегляд</NHT_YAPEM_PreviewTitle>
+  <NHT_YAPEM_PreviewSubtitle>Протези та імпланти в реальному часі</NHT_YAPEM_PreviewSubtitle>
+  <NHT_YAPEM_DominantActive>Фарбування тіла: Активне ({0} кінц.)</NHT_YAPEM_DominantActive>
+  <NHT_YAPEM_DominantInactive>Фарбування тіла: Неактивне</NHT_YAPEM_DominantInactive>
 </LanguageData>

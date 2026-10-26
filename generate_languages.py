@@ -19,7 +19,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "Palette...",
         "NHT_YAPEM_PaletteTip": "Click to open the color picker",
         "NHT_YAPEM_ResetBtn": "Reset",
-        "NHT_YAPEM_ResetAllBtn": "Reset All Settings to Default"
+        "NHT_YAPEM_ResetAllBtn": "Reset All Settings to Default",
+        "NHT_YAPEM_PreviewTitle": "Pawn Preview",
+        "NHT_YAPEM_PreviewSubtitle": "Real-time preview of limbs & implants",
+        "NHT_YAPEM_DominantActive": "Body Tinting: Active ({0} limbs)",
+        "NHT_YAPEM_DominantInactive": "Body Tinting: Inactive"
     },
     "Russian": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -39,7 +43,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "Палитра...",
         "NHT_YAPEM_PaletteTip": "Нажмите, чтобы открыть палитру цветов",
         "NHT_YAPEM_ResetBtn": "Сброс",
-        "NHT_YAPEM_ResetAllBtn": "Восстановить все настройки по умолчанию"
+        "NHT_YAPEM_ResetAllBtn": "Восстановить все настройки по умолчанию",
+        "NHT_YAPEM_PreviewTitle": "Предпросмотр пешки",
+        "NHT_YAPEM_PreviewSubtitle": "Протезы и импланты в реальном времени",
+        "NHT_YAPEM_DominantActive": "Окраска тела: Активна ({0} кон.)",
+        "NHT_YAPEM_DominantInactive": "Окраска тела: Неактивна"
     },
     "French": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -59,7 +67,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "Palette...",
         "NHT_YAPEM_PaletteTip": "Cliquez pour ouvrir le sélecteur de couleurs",
         "NHT_YAPEM_ResetBtn": "Réinitialiser",
-        "NHT_YAPEM_ResetAllBtn": "Restaurer tous les paramètres par défaut"
+        "NHT_YAPEM_ResetAllBtn": "Restaurer tous les paramètres par défaut",
+        "NHT_YAPEM_PreviewTitle": "Aperçu du colon",
+        "NHT_YAPEM_PreviewSubtitle": "Aperçu en direct des membres et implants",
+        "NHT_YAPEM_DominantActive": "Teinte du corps : Active ({0} membres)",
+        "NHT_YAPEM_DominantInactive": "Teinte du corps : Inactive"
     },
     "German": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -79,7 +91,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "Palette...",
         "NHT_YAPEM_PaletteTip": "Klicken, um Farbauswahl zu öffnen",
         "NHT_YAPEM_ResetBtn": "Zurücksetzen",
-        "NHT_YAPEM_ResetAllBtn": "Alle Einstellungen auf Standard zurücksetzen"
+        "NHT_YAPEM_ResetAllBtn": "Alle Einstellungen auf Standard zurücksetzen",
+        "NHT_YAPEM_PreviewTitle": "Kolonistenvorschau",
+        "NHT_YAPEM_PreviewSubtitle": "Echtzeitvorschau von Prothesen & Implantaten",
+        "NHT_YAPEM_DominantActive": "Körperfärbung: Aktiv ({0} Gliedm.)",
+        "NHT_YAPEM_DominantInactive": "Körperfärbung: Inaktiv"
     },
     "Italian": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -99,7 +115,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "Tavolozza...",
         "NHT_YAPEM_PaletteTip": "Fai clic per aprire il selettore del colore",
         "NHT_YAPEM_ResetBtn": "Ripristina",
-        "NHT_YAPEM_ResetAllBtn": "Ripristina tutte le impostazioni predefinite"
+        "NHT_YAPEM_ResetAllBtn": "Ripristina tutte le impostazioni predefinite",
+        "NHT_YAPEM_PreviewTitle": "Anteprima del colono",
+        "NHT_YAPEM_PreviewSubtitle": "Anteprima in tempo reale di protesi e impianti",
+        "NHT_YAPEM_DominantActive": "Tinta corpo: Attiva ({0} arti)",
+        "NHT_YAPEM_DominantInactive": "Tinta corpo: Inattiva"
     },
     "Spanish": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -119,7 +139,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "Paleta...",
         "NHT_YAPEM_PaletteTip": "Haz clic para abrir el selector de colores",
         "NHT_YAPEM_ResetBtn": "Restablecer",
-        "NHT_YAPEM_ResetAllBtn": "Restablecer todos los ajustes por defecto"
+        "NHT_YAPEM_ResetAllBtn": "Restablecer todos los ajustes por defecto",
+        "NHT_YAPEM_PreviewTitle": "Vista previa del colono",
+        "NHT_YAPEM_PreviewSubtitle": "Vista en tiempo real de prótesis e implantes",
+        "NHT_YAPEM_DominantActive": "Tinte corporal: Activo ({0} miembros)",
+        "NHT_YAPEM_DominantInactive": "Tinte corporal: Inactivo"
     },
     "SpanishLatin": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -139,7 +163,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "Paleta...",
         "NHT_YAPEM_PaletteTip": "Haz clic para abrir el selector de colores",
         "NHT_YAPEM_ResetBtn": "Restablecer",
-        "NHT_YAPEM_ResetAllBtn": "Restablecer todos los ajustes por defecto"
+        "NHT_YAPEM_ResetAllBtn": "Restablecer todos los ajustes por defecto",
+        "NHT_YAPEM_PreviewTitle": "Vista previa del colono",
+        "NHT_YAPEM_PreviewSubtitle": "Vista en tiempo real de prótesis e implantes",
+        "NHT_YAPEM_DominantActive": "Tinte corporal: Activo ({0} miembros)",
+        "NHT_YAPEM_DominantInactive": "Tinte corporal: Inactivo"
     },
     "PortugueseBrazilian": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -159,7 +187,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "Paleta...",
         "NHT_YAPEM_PaletteTip": "Clique para abrir o seletor de cores",
         "NHT_YAPEM_ResetBtn": "Redefinir",
-        "NHT_YAPEM_ResetAllBtn": "Redefinir Todas as Configurações para o Padrão"
+        "NHT_YAPEM_ResetAllBtn": "Redefinir Todas as Configurações para o Padrão",
+        "NHT_YAPEM_PreviewTitle": "Prévia do colono",
+        "NHT_YAPEM_PreviewSubtitle": "Prévia em tempo real de membros e implantes",
+        "NHT_YAPEM_DominantActive": "Tingimento corporal: Ativo ({0} membros)",
+        "NHT_YAPEM_DominantInactive": "Tingimento corporal: Inativo"
     },
     "Japanese": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -179,7 +211,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "パレット...",
         "NHT_YAPEM_PaletteTip": "クリックしてカラーピッカーを開く",
         "NHT_YAPEM_ResetBtn": "リセット",
-        "NHT_YAPEM_ResetAllBtn": "すべての設定をデフォルトに戻す"
+        "NHT_YAPEM_ResetAllBtn": "すべての設定をデフォルトに戻す",
+        "NHT_YAPEM_PreviewTitle": "ポーンプレビュー",
+        "NHT_YAPEM_PreviewSubtitle": "義肢とインプラントのリアルタイムプレビュー",
+        "NHT_YAPEM_DominantActive": "身体の着色: 有効 ({0}部位)",
+        "NHT_YAPEM_DominantInactive": "身体の着色: 無効"
     },
     "Korean": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -199,7 +235,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "팔레트...",
         "NHT_YAPEM_PaletteTip": "클릭하여 색상 선택기를 엽니다",
         "NHT_YAPEM_ResetBtn": "초기화",
-        "NHT_YAPEM_ResetAllBtn": "모든 설정을 기본값으로 재설정"
+        "NHT_YAPEM_ResetAllBtn": "모든 설정을 기본값으로 재설정",
+        "NHT_YAPEM_PreviewTitle": "폰 미리보기",
+        "NHT_YAPEM_PreviewSubtitle": "신체 부속 및 임플란트 실시간 미리보기",
+        "NHT_YAPEM_DominantActive": "신체 착색: 활성화 ({0}개 부위)",
+        "NHT_YAPEM_DominantInactive": "신체 착색: 비활성화"
     },
     "ChineseSimplified": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -219,7 +259,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "调色板...",
         "NHT_YAPEM_PaletteTip": "点击打开选色窗口",
         "NHT_YAPEM_ResetBtn": "重置",
-        "NHT_YAPEM_ResetAllBtn": "恢复所有设置为默认"
+        "NHT_YAPEM_ResetAllBtn": "恢复所有设置为默认",
+        "NHT_YAPEM_PreviewTitle": "角色预览",
+        "NHT_YAPEM_PreviewSubtitle": "义肢与植入物实时预览",
+        "NHT_YAPEM_DominantActive": "身体着色：已激活（{0}个肢体）",
+        "NHT_YAPEM_DominantInactive": "身体着色：未激活"
     },
     "ChineseTraditional": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -239,7 +283,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "調色盤...",
         "NHT_YAPEM_PaletteTip": "點擊打開選色視窗",
         "NHT_YAPEM_ResetBtn": "重設",
-        "NHT_YAPEM_ResetAllBtn": "恢復所有設定為預設"
+        "NHT_YAPEM_ResetAllBtn": "恢復所有設定為預設",
+        "NHT_YAPEM_PreviewTitle": "角色預覽",
+        "NHT_YAPEM_PreviewSubtitle": "義肢與植入物實時預覽",
+        "NHT_YAPEM_DominantActive": "身體著色：已啟用（{0}個肢體）",
+        "NHT_YAPEM_DominantInactive": "身體著色：未啟用"
     },
     "Turkish": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -259,7 +307,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "Palet...",
         "NHT_YAPEM_PaletteTip": "Renk seçiciyi açmak için tıklayın",
         "NHT_YAPEM_ResetBtn": "Sıfırla",
-        "NHT_YAPEM_ResetAllBtn": "Tüm Ayarları Varsayılana Sıfırla"
+        "NHT_YAPEM_ResetAllBtn": "Tüm Ayarları Varsayılana Sıfırla",
+        "NHT_YAPEM_PreviewTitle": "Kolonist Önizlemesi",
+        "NHT_YAPEM_PreviewSubtitle": "Protez ve implantların canlı önizlemesi",
+        "NHT_YAPEM_DominantActive": "Gövde Boyama: Aktif ({0} uzuv)",
+        "NHT_YAPEM_DominantInactive": "Gövde Boyama: Devre Dışı"
     },
     "Ukrainian": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -279,7 +331,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "Палітра...",
         "NHT_YAPEM_PaletteTip": "Натисніть, щоб відкрити палітру кольорів",
         "NHT_YAPEM_ResetBtn": "Скинути",
-        "NHT_YAPEM_ResetAllBtn": "Відновити всі налаштування за замовчуванням"
+        "NHT_YAPEM_ResetAllBtn": "Відновити всі налаштування за замовчуванням",
+        "NHT_YAPEM_PreviewTitle": "Попередній перегляд",
+        "NHT_YAPEM_PreviewSubtitle": "Протези та імпланти в реальному часі",
+        "NHT_YAPEM_DominantActive": "Фарбування тіла: Активне ({0} кінц.)",
+        "NHT_YAPEM_DominantInactive": "Фарбування тіла: Неактивне"
     },
     "Vietnamese": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -299,7 +355,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "Bảng màu...",
         "NHT_YAPEM_PaletteTip": "Bấm để mở bảng chọn màu",
         "NHT_YAPEM_ResetBtn": "Đặt lại",
-        "NHT_YAPEM_ResetAllBtn": "Khôi phục tất cả cài đặt về mặc định"
+        "NHT_YAPEM_ResetAllBtn": "Khôi phục tất cả cài đặt về mặc định",
+        "NHT_YAPEM_PreviewTitle": "Xem trước nhân vật",
+        "NHT_YAPEM_PreviewSubtitle": "Xem trước chi và bộ phận cấy ghép theo thời gian thực",
+        "NHT_YAPEM_DominantActive": "Tô màu thân: Đang bật ({0} chi)",
+        "NHT_YAPEM_DominantInactive": "Tô màu thân: Tắt"
     },
     "Polish": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -319,7 +379,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "Paleta...",
         "NHT_YAPEM_PaletteTip": "Kliknij, aby otworzyć próbnik kolorów",
         "NHT_YAPEM_ResetBtn": "Zresetuj",
-        "NHT_YAPEM_ResetAllBtn": "Przywróć wszystkie ustawienia domyślne"
+        "NHT_YAPEM_ResetAllBtn": "Przywróć wszystkie ustawienia domyślne",
+        "NHT_YAPEM_PreviewTitle": "Podgląd kolonisty",
+        "NHT_YAPEM_PreviewSubtitle": "Podgląd kończyn i implantów na żywo",
+        "NHT_YAPEM_DominantActive": "Barwienie ciała: Aktywne ({0} kończyny)",
+        "NHT_YAPEM_DominantInactive": "Barwienie ciała: Nieaktywne"
     },
     "Czech": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -339,7 +403,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "Paleta...",
         "NHT_YAPEM_PaletteTip": "Klikněte pro otevření výběru barev",
         "NHT_YAPEM_ResetBtn": "Obnovit",
-        "NHT_YAPEM_ResetAllBtn": "Obnovit výchozí nastavení"
+        "NHT_YAPEM_ResetAllBtn": "Obnovit výchozí nastavení",
+        "NHT_YAPEM_PreviewTitle": "Náhled kolonisty",
+        "NHT_YAPEM_PreviewSubtitle": "Živý náhled končetin a implantátů",
+        "NHT_YAPEM_DominantActive": "Zbarvení těla: Aktivní ({0} konč.)",
+        "NHT_YAPEM_DominantInactive": "Zbarvení těla: Neaktivní"
     },
     "Hungarian": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -359,7 +427,11 @@ languages = {
         "NHT_YAPEM_PaletteBtn": "Paletta...",
         "NHT_YAPEM_PaletteTip": "Kattints a színválasztó megnyitásához",
         "NHT_YAPEM_ResetBtn": "Visszaállítás",
-        "NHT_YAPEM_ResetAllBtn": "Minden beállítás alaphelyzetbe állítása"
+        "NHT_YAPEM_ResetAllBtn": "Minden beállítás alaphelyzetbe állítása",
+        "NHT_YAPEM_PreviewTitle": "Telepes előnézet",
+        "NHT_YAPEM_PreviewSubtitle": "Végtagok és implantátumok valós idejű előnézete",
+        "NHT_YAPEM_DominantActive": "Testszínezés: Aktív ({0} végtag)",
+        "NHT_YAPEM_DominantInactive": "Testszínezés: Inaktív"
     }
 }
 

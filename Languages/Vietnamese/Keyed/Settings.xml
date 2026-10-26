@@ -18,4 +18,8 @@
   <NHT_YAPEM_PaletteTip>Bấm để mở bảng chọn màu</NHT_YAPEM_PaletteTip>
   <NHT_YAPEM_ResetBtn>Đặt lại</NHT_YAPEM_ResetBtn>
   <NHT_YAPEM_ResetAllBtn>Khôi phục tất cả cài đặt về mặc định</NHT_YAPEM_ResetAllBtn>
+  <NHT_YAPEM_PreviewTitle>Xem trước nhân vật</NHT_YAPEM_PreviewTitle>
+  <NHT_YAPEM_PreviewSubtitle>Xem trước chi và bộ phận cấy ghép theo thời gian thực</NHT_YAPEM_PreviewSubtitle>
+  <NHT_YAPEM_DominantActive>Tô màu thân: Đang bật ({0} chi)</NHT_YAPEM_DominantActive>
+  <NHT_YAPEM_DominantInactive>Tô màu thân: Tắt</NHT_YAPEM_DominantInactive>
 </LanguageData>

@@ -18,4 +18,8 @@
   <NHT_YAPEM_PaletteTip>Нажмите, чтобы открыть палитру цветов</NHT_YAPEM_PaletteTip>
   <NHT_YAPEM_ResetBtn>Сброс</NHT_YAPEM_ResetBtn>
   <NHT_YAPEM_ResetAllBtn>Восстановить все настройки по умолчанию</NHT_YAPEM_ResetAllBtn>
+  <NHT_YAPEM_PreviewTitle>Предпросмотр пешки</NHT_YAPEM_PreviewTitle>
+  <NHT_YAPEM_PreviewSubtitle>Протезы и импланты в реальном времени</NHT_YAPEM_PreviewSubtitle>
+  <NHT_YAPEM_DominantActive>Окраска тела: Активна ({0} кон.)</NHT_YAPEM_DominantActive>
+  <NHT_YAPEM_DominantInactive>Окраска тела: Неактивна</NHT_YAPEM_DominantInactive>
 </LanguageData>

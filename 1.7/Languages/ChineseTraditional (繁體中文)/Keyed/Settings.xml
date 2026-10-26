@@ -18,4 +18,8 @@
   <NHT_YAPEM_PaletteTip>點擊打開選色視窗</NHT_YAPEM_PaletteTip>
   <NHT_YAPEM_ResetBtn>重設</NHT_YAPEM_ResetBtn>
   <NHT_YAPEM_ResetAllBtn>恢復所有設定為預設</NHT_YAPEM_ResetAllBtn>
+  <NHT_YAPEM_PreviewTitle>角色預覽</NHT_YAPEM_PreviewTitle>
+  <NHT_YAPEM_PreviewSubtitle>義肢與植入物實時預覽</NHT_YAPEM_PreviewSubtitle>
+  <NHT_YAPEM_DominantActive>身體著色：已啟用（{0}個肢體）</NHT_YAPEM_DominantActive>
+  <NHT_YAPEM_DominantInactive>身體著色：未啟用</NHT_YAPEM_DominantInactive>
 </LanguageData>

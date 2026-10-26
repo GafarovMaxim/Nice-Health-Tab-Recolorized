@@ -58,8 +58,24 @@ namespace NiceHealthTab_YAPEM_Patch
 
         public void DoSettingsWindowContents(Rect inRect)
         {
+            float previewWidth = 275f;
+            float gap = 14f;
+
+            Rect settingsRect;
+            Rect previewRect = Rect.zero;
+
+            if (inRect.width >= 640f)
+            {
+                settingsRect = new Rect(inRect.x, inRect.y, inRect.width - previewWidth - gap, inRect.height);
+                previewRect = new Rect(settingsRect.xMax + gap, inRect.y, previewWidth, inRect.height);
+            }
+            else
+            {
+                settingsRect = inRect;
+            }
+
             Listing_Standard listing = new Listing_Standard();
-            listing.Begin(inRect);
+            listing.Begin(settingsRect);
 
             Text.Font = GameFont.Medium;
             listing.Label("NHT_YAPEM_SectionBody".Translate());
@@ -88,16 +104,16 @@ namespace NiceHealthTab_YAPEM_Patch
                 "NHT_YAPEM_ColorBottomIcons_Desc".Translate()
             );
 
-            listing.Gap(12f);
+            listing.Gap(10f);
             listing.GapLine();
-            listing.Gap(8f);
+            listing.Gap(6f);
 
             Text.Font = GameFont.Medium;
             listing.Label("NHT_YAPEM_SectionColors".Translate());
             Text.Font = GameFont.Small;
             listing.Gap(2f);
             listing.Label("NHT_YAPEM_PaletteHint".Translate());
-            listing.Gap(8f);
+            listing.Gap(6f);
 
             DrawColorEntry(listing, "NHT_YAPEM_TierAdvBionic".Translate(), ref ColorAdvancedBionic, DefaultColorAdvancedBionic, c => ColorAdvancedBionic = c);
             DrawColorEntry(listing, "NHT_YAPEM_TierUltratech".Translate(), ref ColorUltratech, DefaultColorUltratech, c => ColorUltratech = c);
@@ -105,30 +121,39 @@ namespace NiceHealthTab_YAPEM_Patch
             DrawColorEntry(listing, "NHT_YAPEM_TierBionic".Translate(), ref ColorBionic, DefaultColorBionic, c => ColorBionic = c);
             DrawColorEntry(listing, "NHT_YAPEM_TierProsthetic".Translate(), ref ColorProsthetic, DefaultColorProsthetic, c => ColorProsthetic = c);
 
-            listing.Gap(12f);
+            listing.Gap(10f);
             listing.GapLine();
-            listing.Gap(8f);
+            listing.Gap(6f);
 
-            Rect resetAllRect = listing.GetRect(32f);
-            resetAllRect.width = 380f;
+            Rect resetAllRect = listing.GetRect(30f);
+            resetAllRect.width = Mathf.Min(320f, settingsRect.width);
             if (Widgets.ButtonText(resetAllRect, "NHT_YAPEM_ResetAllBtn".Translate()))
             {
                 ResetAllToDefault();
             }
 
             listing.End();
+
+            // Draw Live Interactive Pawn Preview
+            if (previewRect != Rect.zero)
+            {
+                PawnSettingsPreviewDrawer.DrawPreview(previewRect, this);
+            }
         }
 
         private void DrawColorEntry(Listing_Standard listing, string title, ref Color color, Color defaultColor, Action<Color> saveAction)
         {
-            Rect entryRect = listing.GetRect(34f);
+            Rect entryRect = listing.GetRect(32f);
+
+            float totalControlsW = 280f;
+            float titleW = Mathf.Max(140f, entryRect.width - totalControlsW);
 
             // 1. Title
-            Rect titleRect = new Rect(entryRect.x, entryRect.y + 4f, 370f, 24f);
+            Rect titleRect = new Rect(entryRect.x, entryRect.y + 4f, titleW, 24f);
             Widgets.Label(titleRect, title);
 
             // 2. Clickable Color Swatch Square
-            Rect swatchRect = new Rect(titleRect.xMax + 10f, entryRect.y + 2f, 36f, 26f);
+            Rect swatchRect = new Rect(titleRect.xMax + 6f, entryRect.y + 2f, 32f, 26f);
             Widgets.DrawBoxSolid(swatchRect, color);
             Widgets.DrawBox(swatchRect, 1);
             Widgets.DrawHighlightIfMouseover(swatchRect);
@@ -140,11 +165,11 @@ namespace NiceHealthTab_YAPEM_Patch
             }
 
             // 3. Hex code display
-            Rect hexRect = new Rect(swatchRect.xMax + 12f, entryRect.y + 4f, 85f, 24f);
+            Rect hexRect = new Rect(swatchRect.xMax + 8f, entryRect.y + 4f, 74f, 24f);
             Widgets.Label(hexRect, $"#{ColorUtility.ToHtmlStringRGB(color)}");
 
             // 4. "Palette..." button
-            Rect pickBtnRect = new Rect(hexRect.xMax + 10f, entryRect.y + 2f, 120f, 26f);
+            Rect pickBtnRect = new Rect(hexRect.xMax + 6f, entryRect.y + 2f, 85f, 26f);
             if (Widgets.ButtonText(pickBtnRect, "NHT_YAPEM_PaletteBtn".Translate()))
             {
                 Color cur = color;
@@ -152,13 +177,13 @@ namespace NiceHealthTab_YAPEM_Patch
             }
 
             // 5. Reset button
-            Rect resetBtnRect = new Rect(pickBtnRect.xMax + 10f, entryRect.y + 2f, 90f, 26f);
+            Rect resetBtnRect = new Rect(pickBtnRect.xMax + 6f, entryRect.y + 2f, 65f, 26f);
             if (Widgets.ButtonText(resetBtnRect, "NHT_YAPEM_ResetBtn".Translate()))
             {
                 color = defaultColor;
             }
 
-            listing.Gap(4f);
+            listing.Gap(3f);
         }
     }
 }

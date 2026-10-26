@@ -18,4 +18,8 @@
   <NHT_YAPEM_PaletteTip>Renk seçiciyi açmak için tıklayın</NHT_YAPEM_PaletteTip>
   <NHT_YAPEM_ResetBtn>Sıfırla</NHT_YAPEM_ResetBtn>
   <NHT_YAPEM_ResetAllBtn>Tüm Ayarları Varsayılana Sıfırla</NHT_YAPEM_ResetAllBtn>
+  <NHT_YAPEM_PreviewTitle>Kolonist Önizlemesi</NHT_YAPEM_PreviewTitle>
+  <NHT_YAPEM_PreviewSubtitle>Protez ve implantların canlı önizlemesi</NHT_YAPEM_PreviewSubtitle>
+  <NHT_YAPEM_DominantActive>Gövde Boyama: Aktif ({0} uzuv)</NHT_YAPEM_DominantActive>
+  <NHT_YAPEM_DominantInactive>Gövde Boyama: Devre Dışı</NHT_YAPEM_DominantInactive>
 </LanguageData>
