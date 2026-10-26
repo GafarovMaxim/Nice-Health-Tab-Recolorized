@@ -343,7 +343,7 @@ namespace NiceHealthTab_YAPEM_Patch
                         Widgets.DrawBox(chipRect.ExpandedBy(2f), 2);
                     }
 
-                    string tip = "NHT_YAPEM_SlotTitle".Translate(slotNumber) + $" (#{ColorUtility.ToHtmlStringRGB(c)})\n" + "NHT_YAPEM_CustomSlotTip".Translate();
+                    string tip = string.Format("NHT_YAPEM_SlotTitle".Translate().RawText, slotNumber) + $" (#{ColorUtility.ToHtmlStringRGB(c)})\n" + "NHT_YAPEM_CustomSlotTip".Translate();
                     TooltipHandler.TipRegion(chipRect, tip);
 
                     // Check for Left Click (Select) or Right Click / ContextClick (Menu)
@@ -377,7 +377,7 @@ namespace NiceHealthTab_YAPEM_Patch
                     GUI.color = Color.white;
                     Text.Font = GameFont.Small;
 
-                    string tip = "NHT_YAPEM_SlotTitle".Translate(slotNumber) + ": " + "NHT_YAPEM_CustomSlotEmptyTip".Translate();
+                    string tip = string.Format("NHT_YAPEM_SlotTitle".Translate().RawText, slotNumber) + ": " + "NHT_YAPEM_CustomSlotEmptyTip".Translate();
                     TooltipHandler.TipRegion(chipRect, tip);
 
                     if (Widgets.ButtonInvisible(chipRect, true))
@@ -394,14 +394,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }
 
-            // Quick "+Save" button next to custom slots
-            float saveBtnX = startX1 + CustomSlotCount * (chipSize + chipGap) + 4f;
-            Rect saveBtnRect = new Rect(saveBtnX, yPresets2, 60f, chipSize);
-            TooltipHandler.TipRegion(saveBtnRect, "NHT_YAPEM_SaveCustomTip".Translate());
-            if (Widgets.ButtonText(saveBtnRect, "NHT_YAPEM_SaveBtn".Translate()))
-            {
-                SaveCurrentColorToPresets();
-            }
+// Quick save button removed: clicking empty slots saves color directly
 
             // Divider 2
             float yDiv2 = yPresets2 + chipSize + 8f;
@@ -503,16 +496,16 @@ namespace NiceHealthTab_YAPEM_Patch
             List<FloatMenuOption> options = new List<FloatMenuOption>();
             string slotHex = ColorUtility.ToHtmlStringRGB(slotColor);
             string curHex = ColorUtility.ToHtmlStringRGB(currentColor);
-            string prefix = "NHT_YAPEM_SlotTitle".Translate(slotNumber) + ": ";
+            string prefix = string.Format("NHT_YAPEM_SlotTitle".Translate().RawText, slotNumber) + ": ";
 
             // 1. Select / Apply this slot color
-            options.Add(new FloatMenuOption(prefix + "NHT_YAPEM_ApplySlot".Translate(slotHex), () =>
+            options.Add(new FloatMenuOption(prefix + string.Format("NHT_YAPEM_ApplySlot".Translate().RawText, slotHex), () =>
             {
                 SelectColor(slotColor);
             }));
 
             // 2. Overwrite this slot with current color
-            options.Add(new FloatMenuOption(prefix + "NHT_YAPEM_OverwriteSlot".Translate(curHex), () =>
+            options.Add(new FloatMenuOption(prefix + string.Format("NHT_YAPEM_OverwriteSlot".Translate().RawText, curHex), () =>
             {
                 var custom = YAPEMPatchMod.Settings?.CustomPresets;
                 if (custom != null && index >= 0 && index < custom.Count)
@@ -582,7 +575,7 @@ namespace NiceHealthTab_YAPEM_Patch
                     int slotIdx = s;
                     int slotNum = s + 1;
                     string hex = ColorUtility.ToHtmlStringRGB(customPresets[s]);
-                    options.Add(new FloatMenuOption("NHT_YAPEM_SlotTitle".Translate(slotNum) + $" (#{hex}) -> #{curHex}", () =>
+                    options.Add(new FloatMenuOption(string.Format("NHT_YAPEM_SlotTitle".Translate().RawText, slotNum) + $" (#{hex}) -> #{curHex}", () =>
                     {
                         customPresets[slotIdx] = currentColor;
                         YAPEMPatchMod.Settings?.Write();

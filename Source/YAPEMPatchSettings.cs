@@ -127,15 +127,23 @@ namespace NiceHealthTab_YAPEM_Patch
 
         public void DoSettingsWindowContents(Rect inRect)
         {
-            EnsureImplantGroupsCached();
+            try
+            {
+                EnsureImplantGroupsCached();
+            }
+            catch (Exception ex)
+            {
+                Log.ErrorOnce("[NiceHealthTab: Recolorized] Error caching implant groups: " + ex, 8192837);
+            }
 
-            Rect outRect = new Rect(inRect.x, inRect.y, inRect.width, inRect.height);
-            Rect viewRect = new Rect(0f, 0f, inRect.width - 24f, viewHeight);
+            Rect outRect = inRect;
+            Rect viewRect = new Rect(0f, 0f, inRect.width - 24f, Mathf.Max(viewHeight, inRect.height));
 
             Widgets.BeginScrollView(outRect, ref scrollPosition, viewRect);
 
             Listing_Standard listing = new Listing_Standard();
             listing.Begin(viewRect);
+            try {
 
             // 1. General, Body & Organ Display Options
             Text.Font = GameFont.Medium;
@@ -151,9 +159,12 @@ namespace NiceHealthTab_YAPEM_Patch
 
             if (EnableBodyTinting)
             {
-                string thresholdText = "NHT_YAPEM_RequiredLimbCount".Translate(RequiredLimbCount);
+                string rawThreshold = "NHT_YAPEM_RequiredLimbCount".Translate().RawText;
+                string thresholdText;
+                try { thresholdText = string.Format(rawThreshold, RequiredLimbCount); }
+                catch { thresholdText = rawThreshold; }
                 listing.Label(thresholdText);
-                float val = listing.Slider(RequiredLimbCount, 1f, 4f);
+                float val = listing.Slider((float)RequiredLimbCount, 1f, 4f);
                 RequiredLimbCount = Mathf.Clamp(Mathf.RoundToInt(val), 1, 4);
             }
 
@@ -230,9 +241,17 @@ namespace NiceHealthTab_YAPEM_Patch
                 ResetAllToDefault();
             }
 
-            viewHeight = listing.CurHeight + 30f;
-            listing.End();
-            Widgets.EndScrollView();
+            }
+            catch (Exception ex)
+            {
+                Log.ErrorOnce("[NiceHealthTab: Recolorized] Error rendering settings: " + ex, 8192838);
+            }
+            finally
+            {
+                viewHeight = Mathf.Max(listing.CurHeight + 30f, inRect.height);
+                listing.End();
+                Widgets.EndScrollView();
+            }
         }
 
         private void DrawImplantFineTuningSection(Listing_Standard listing, Rect viewRect)
@@ -356,7 +375,7 @@ namespace NiceHealthTab_YAPEM_Patch
                     HediffDef def = currentGroup.Defs[i];
                     if (def == null) continue;
 
-                    string label = def.LabelCap.Resolve();
+                    string label = (def.label != null) ? def.LabelCap.Resolve() : (def.defName ?? "");
                     string defName = def.defName ?? "";
 
                     if (!string.IsNullOrEmpty(searchFilter))
@@ -606,7 +625,11 @@ namespace NiceHealthTab_YAPEM_Patch
 
             foreach (var grp in cachedGroups)
             {
-                grp.Defs.Sort((a, b) => string.Compare(a.LabelCap.Resolve(), b.LabelCap.Resolve(), StringComparison.CurrentCultureIgnoreCase));
+                grp.Defs.Sort((a, b) => {
+                    string la = (a?.label != null) ? a.LabelCap.Resolve() : (a?.defName ?? "");
+                    string lb = (b?.label != null) ? b.LabelCap.Resolve() : (b?.defName ?? "");
+                    return string.Compare(la, lb, StringComparison.CurrentCultureIgnoreCase);
+                });
             }
         }
 
