@@ -39,6 +39,24 @@ namespace NiceHealthTab_YAPEM_Patch
                 return true;
             }
 
+            bool isOrgan = _part is DollOrgan;
+            bool isBone = _part is DollBone;
+            bool isEye = _part is DollEye;
+
+            // Strict Filter Conformance:
+            if (isOrgan && (YAPEMPatchMod.Settings?.OnlyShowOrgansInOrganMode == true || !DollDrawer.ShowOrgan || DollDrawer.ShowArmorCover))
+            {
+                return false;
+            }
+            if (isBone && (!DollDrawer.ShowBones || DollDrawer.ShowArmorCover))
+            {
+                return false;
+            }
+            if (isEye && !DollDrawer.ShowEyes)
+            {
+                return false;
+            }
+
             // 0. If _part is a prosthesis, ensure PartColor matches current settings and draw directly
             if (_part is DollPartProsthesis directProsthesis && val != null)
             {

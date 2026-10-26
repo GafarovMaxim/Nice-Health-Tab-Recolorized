@@ -31,4 +31,14 @@
   <NHT_YAPEM_TierOdyssey>Odyssey (Пилотные и космические импланты)</NHT_YAPEM_TierOdyssey>
   <NHT_YAPEM_ColorPrevious>Предыдущий цвет</NHT_YAPEM_ColorPrevious>
   <NHT_YAPEM_ColorCurrent>Текущий цвет</NHT_YAPEM_ColorCurrent>
+  <NHT_YAPEM_OnlyShowOrgansInOrganMode>Отображать органы только в режиме просмотра органов</NHT_YAPEM_OnlyShowOrgansInOrganMode>
+  <NHT_YAPEM_OnlyShowOrgansInOrganMode_Desc>Если включено, внутренние органы скрыты в общем режиме куклы и отображаются только при активном режиме просмотра органов.</NHT_YAPEM_OnlyShowOrgansInOrganMode_Desc>
+  <NHT_YAPEM_TierIntegrated>Integrated Implants (Киберимпланты)</NHT_YAPEM_TierIntegrated>
+  <NHT_YAPEM_PresetsDefault>Дефолт:</NHT_YAPEM_PresetsDefault>
+  <NHT_YAPEM_PresetsCustom>Свои:</NHT_YAPEM_PresetsCustom>
+  <NHT_YAPEM_SaveCustomTip>Сохранить текущий цвет в пользовательскую палитру</NHT_YAPEM_SaveCustomTip>
+  <NHT_YAPEM_CustomSlotTip>ЛКМ: выбрать | ПКМ: перезаписать текущим цветом</NHT_YAPEM_CustomSlotTip>
+  <NHT_YAPEM_CustomSlotEmptyTip>Пустой слот — кликните для сохранения текущего цвета</NHT_YAPEM_CustomSlotEmptyTip>
+  <NHT_YAPEM_SaveBtn>+Сохр</NHT_YAPEM_SaveBtn>
+  <NHT_YAPEM_PureWhite>Чистый белый</NHT_YAPEM_PureWhite>
 </LanguageData>

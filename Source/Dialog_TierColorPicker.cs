@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 
@@ -6,25 +7,53 @@ namespace NiceHealthTab_YAPEM_Patch
 {
     public class Dialog_TierColorPicker : Window
     {
-        private const int TexSize = 210;
+        private const int TexSize = 200;
         private const float Center = TexSize / 2f;
-        private const float RadiusOuter = 98f;
-        private const float RadiusInner = 75f;
-        private const float RadiusDiamond = 62f;
+        private const float RadiusOuter = 94f;
+        private const float RadiusInner = 72f;
+        private const float RadiusDiamond = 58f;
 
-        // Curated tier and theme preset colors for instant selection
-        private static readonly Color[] PresetColors = new Color[]
+        private struct PresetInfo
         {
-            new Color(203f / 255f, 208f / 255f, 171f / 255f), // #CBD0AB Archotech Sage
-            new Color(161f / 255f, 206f / 255f, 243f / 255f), // #A1CEF3 Adv Bionic Sky
-            new Color(113f / 255f, 203f / 255f, 194f / 255f), // #71CBC2 Ultratech Mint
-            new Color(230f / 255f, 230f / 255f, 230f / 255f), // #E6E6E6 Bionic White
-            new Color(176f / 255f, 176f / 255f, 176f / 255f), // #B0B0B0 Prosthetic Silver
-            new Color(222f / 255f, 184f / 255f, 65f / 255f),  // #DEB841 Royalty Gold
-            new Color(56f / 255f, 217f / 255f, 169f / 255f),  // #38D9A9 Biotech Mint
-            new Color(168f / 255f, 85f / 255f, 247f / 255f),  // #A855F7 Anomaly Violet
-            new Color(56f / 255f, 189f / 255f, 248f / 255f),  // #38BDF8 Odyssey Sky
-            new Color(1f, 1f, 1f)                              // #FFFFFF Pure White
+            public string NameKey;
+            public string Fallback;
+            public Color Color;
+
+            public PresetInfo(string nameKey, string fallback, Color color)
+            {
+                NameKey = nameKey;
+                Fallback = fallback;
+                Color = color;
+            }
+
+            public string Tooltip
+            {
+                get
+                {
+                    string label = NameKey.Translate();
+                    if (string.IsNullOrEmpty(label) || label == NameKey)
+                    {
+                        label = Fallback;
+                    }
+                    return $"{label} (#{ColorUtility.ToHtmlStringRGB(Color)})";
+                }
+            }
+        }
+
+        // Canonical default presets with category names for tooltips
+        private static readonly PresetInfo[] DefaultPresets = new PresetInfo[]
+        {
+            new PresetInfo("NHT_YAPEM_TierArchotech",  "Archotech",           new Color(203f / 255f, 208f / 255f, 171f / 255f)), // #CBD0AB
+            new PresetInfo("NHT_YAPEM_TierAdvBionic",  "Advanced Bionic",     new Color(161f / 255f, 206f / 255f, 243f / 255f)), // #A1CEF3
+            new PresetInfo("NHT_YAPEM_TierUltratech",  "Ultratech",           new Color(113f / 255f, 203f / 255f, 194f / 255f)), // #71CBC2
+            new PresetInfo("NHT_YAPEM_TierBionic",     "Standard Bionic",     new Color(230f / 255f, 230f / 255f, 230f / 255f)), // #E6E6E6
+            new PresetInfo("NHT_YAPEM_TierProsthetic", "Simple Prosthetic",   new Color(176f / 255f, 176f / 255f, 176f / 255f)), // #B0B0B0
+            new PresetInfo("NHT_YAPEM_TierRoyalty",    "Royalty",             new Color(222f / 255f, 184f / 255f, 65f / 255f)),  // #DEB841
+            new PresetInfo("NHT_YAPEM_TierBiotech",    "Biotech",             new Color(56f / 255f, 217f / 255f, 169f / 255f)),  // #38D9A9
+            new PresetInfo("NHT_YAPEM_TierAnomaly",    "Anomaly",             new Color(168f / 255f, 85f / 255f, 247f / 255f)),  // #A855F7
+            new PresetInfo("NHT_YAPEM_TierOdyssey",    "Odyssey",             new Color(56f / 255f, 189f / 255f, 248f / 255f)),  // #38BDF8
+            new PresetInfo("NHT_YAPEM_TierIntegrated", "Integrated Implants", new Color(153f / 255f, 153f / 255f, 255f / 255f)), // #9999FF
+            new PresetInfo("NHT_YAPEM_PureWhite",      "Pure White",          new Color(1f, 1f, 1f))                              // #FFFFFF
         };
 
         private readonly string title;
@@ -43,7 +72,7 @@ namespace NiceHealthTab_YAPEM_Patch
         private bool isDraggingDiamond;
         private bool accepted;
 
-        public override Vector2 InitialSize => new Vector2(360f, 490f);
+        public override Vector2 InitialSize => new Vector2(370f, 520f);
 
         public Dialog_TierColorPicker(string title, Color initialColor, Color defaultColor, Action<Color> onColorSaved)
         {
@@ -79,8 +108,6 @@ namespace NiceHealthTab_YAPEM_Patch
             // 1. Draw Hue Ring
             for (int y = 0; y < TexSize; y++)
             {
-                // In Unity Texture2D, row y=0 is bottom, row y=TexSize-1 is top.
-                // GUI coordinates have y=0 at top. dy_gui = Center - y.
                 float dy_gui = Center - y;
                 for (int x = 0; x < TexSize; x++)
                 {
@@ -93,7 +120,7 @@ namespace NiceHealthTab_YAPEM_Patch
                         float h = (angle / (2f * Mathf.PI) + 1f) % 1f;
                         Color hueColor = HslToRgb(h, 1f, 0.5f);
 
-                        // Antialiased edges
+                        // Antialiased ring boundaries
                         float alpha = 1f;
                         if (dist < RadiusInner)
                             alpha = Mathf.Clamp01(dist - (RadiusInner - 1f));
@@ -152,7 +179,6 @@ namespace NiceHealthTab_YAPEM_Patch
                     }
                     else
                     {
-                        // Clear gap between diamond and hue ring
                         float dist = Mathf.Sqrt(dx_gui * dx_gui + dy_gui * dy_gui);
                         if (dist < RadiusInner)
                         {
@@ -184,7 +210,7 @@ namespace NiceHealthTab_YAPEM_Patch
             Widgets.DrawLineHorizontal(0f, 32f, inRect.width);
 
             // 2. Central Wheel Canvas
-            Rect wheelRect = new Rect((inRect.width - TexSize) / 2f, 38f, TexSize, TexSize);
+            Rect wheelRect = new Rect((inRect.width - TexSize) / 2f, 36f, TexSize, TexSize);
             if (wheelTexture != null)
             {
                 GUI.DrawTexture(wheelRect, wheelTexture);
@@ -235,50 +261,145 @@ namespace NiceHealthTab_YAPEM_Patch
             DrawHueCursor(wheelRect);
             DrawDiamondCursor(wheelRect);
 
-            // 3. Quick-Pick Preset Swatches Row
-            float yPresets = wheelRect.yMax + 10f;
-            float chipSize = 24f;
-            float chipGap = 6f;
-            int numChips = PresetColors.Length;
-            float totalChipsW = numChips * chipSize + (numChips - 1) * chipGap;
-            float startChipX = (inRect.width - totalChipsW) / 2f;
+            // 3. Row 1: Default Presets with Category Tooltips
+            float yPresets1 = wheelRect.yMax + 8f;
+            float chipSize = 20f;
+            float chipGap = 5f;
 
-            for (int i = 0; i < numChips; i++)
+            Text.Font = GameFont.Tiny;
+            GUI.color = new Color(0.7f, 0.72f, 0.75f, 1f);
+            Widgets.Label(new Rect(0f, yPresets1 + 2f, 62f, 20f), "NHT_YAPEM_PresetsDefault".Translate());
+            GUI.color = Color.white;
+            Text.Font = GameFont.Small;
+
+            float startX1 = 66f;
+            for (int i = 0; i < DefaultPresets.Length; i++)
             {
-                Color pCol = PresetColors[i];
-                Rect chipRect = new Rect(startChipX + i * (chipSize + chipGap), yPresets, chipSize, chipSize);
+                var preset = DefaultPresets[i];
+                Rect chipRect = new Rect(startX1 + i * (chipSize + chipGap), yPresets1, chipSize, chipSize);
 
-                Widgets.DrawBoxSolid(chipRect, pCol);
+                Widgets.DrawBoxSolid(chipRect, preset.Color);
                 Widgets.DrawBox(chipRect, 1);
                 Widgets.DrawHighlightIfMouseover(chipRect);
 
-                // Highlight active preset match
-                if (Mathf.Abs(currentColor.r - pCol.r) < 0.02f &&
-                    Mathf.Abs(currentColor.g - pCol.g) < 0.02f &&
-                    Mathf.Abs(currentColor.b - pCol.b) < 0.02f)
+                if (IsColorClose(currentColor, preset.Color))
                 {
                     Widgets.DrawBox(chipRect.ExpandedBy(2f), 2);
                 }
 
-                TooltipHandler.TipRegion(chipRect, $"#{ColorUtility.ToHtmlStringRGB(pCol)}");
+                TooltipHandler.TipRegion(chipRect, preset.Tooltip);
 
                 if (Widgets.ButtonInvisible(chipRect))
                 {
-                    SelectColor(pCol);
+                    SelectColor(preset.Color);
                 }
             }
 
+            // 4. Row 2: User Custom Presets & Save Button
+            float yPresets2 = yPresets1 + chipSize + 6f;
+
+            Text.Font = GameFont.Tiny;
+            GUI.color = new Color(0.7f, 0.72f, 0.75f, 1f);
+            Widgets.Label(new Rect(0f, yPresets2 + 2f, 62f, 20f), "NHT_YAPEM_PresetsCustom".Translate());
+            GUI.color = Color.white;
+            Text.Font = GameFont.Small;
+
+            List<Color> customPresets = YAPEMPatchMod.Settings?.CustomPresets;
+            if (customPresets == null)
+            {
+                customPresets = new List<Color>();
+                if (YAPEMPatchMod.Settings != null)
+                {
+                    YAPEMPatchMod.Settings.CustomPresets = customPresets;
+                }
+            }
+
+            int customSlotCount = 9;
+            for (int i = 0; i < customSlotCount; i++)
+            {
+                Rect chipRect = new Rect(startX1 + i * (chipSize + chipGap), yPresets2, chipSize, chipSize);
+
+                if (i < customPresets.Count)
+                {
+                    Color c = customPresets[i];
+                    Widgets.DrawBoxSolid(chipRect, c);
+                    Widgets.DrawBox(chipRect, 1);
+                    Widgets.DrawHighlightIfMouseover(chipRect);
+
+                    if (IsColorClose(currentColor, c))
+                    {
+                        Widgets.DrawBox(chipRect.ExpandedBy(2f), 2);
+                    }
+
+                    string tip = $"#{ColorUtility.ToHtmlStringRGB(c)}\n" + "NHT_YAPEM_CustomSlotTip".Translate();
+                    TooltipHandler.TipRegion(chipRect, tip);
+
+                    if (Event.current.type == EventType.MouseDown && Mouse.IsOver(chipRect))
+                    {
+                        if (Event.current.button == 0) // LMB: select
+                        {
+                            SelectColor(c);
+                            Event.current.Use();
+                        }
+                        else if (Event.current.button == 1) // RMB: overwrite with currentColor
+                        {
+                            customPresets[i] = currentColor;
+                            YAPEMPatchMod.Settings?.Write();
+                            Event.current.Use();
+                        }
+                    }
+                }
+                else
+                {
+                    // Empty slot
+                    Widgets.DrawBoxSolid(chipRect, new Color(0.12f, 0.14f, 0.17f, 0.8f));
+                    Widgets.DrawBox(chipRect, 1);
+                    Widgets.DrawHighlightIfMouseover(chipRect);
+
+                    Text.Font = GameFont.Tiny;
+                    GUI.color = new Color(0.45f, 0.48f, 0.52f, 1f);
+                    Widgets.Label(new Rect(chipRect.x + 5f, chipRect.y + 1f, chipRect.width, chipRect.height), "+");
+                    GUI.color = Color.white;
+                    Text.Font = GameFont.Small;
+
+                    TooltipHandler.TipRegion(chipRect, "NHT_YAPEM_CustomSlotEmptyTip".Translate());
+
+                    if (Widgets.ButtonInvisible(chipRect))
+                    {
+                        customPresets.Add(currentColor);
+                        YAPEMPatchMod.Settings?.Write();
+                    }
+                }
+            }
+
+            // Quick "+Save" button next to custom slots
+            float saveBtnX = startX1 + customSlotCount * (chipSize + chipGap);
+            Rect saveBtnRect = new Rect(saveBtnX, yPresets2, 40f, chipSize);
+            TooltipHandler.TipRegion(saveBtnRect, "NHT_YAPEM_SaveCustomTip".Translate());
+            if (Widgets.ButtonText(saveBtnRect, "NHT_YAPEM_SaveBtn".Translate()))
+            {
+                if (customPresets.Count < customSlotCount)
+                {
+                    customPresets.Add(currentColor);
+                }
+                else
+                {
+                    customPresets[customPresets.Count - 1] = currentColor;
+                }
+                YAPEMPatchMod.Settings?.Write();
+            }
+
             // Divider 2
-            float yDiv2 = yPresets + chipSize + 10f;
+            float yDiv2 = yPresets2 + chipSize + 8f;
             Widgets.DrawLineHorizontal(0f, yDiv2, inRect.width);
 
-            // 4. Comparison & Hex Inspector Card
+            // 5. Comparison & Hex Inspector Card
             float yCard = yDiv2 + 8f;
             Rect cardRect = new Rect(0f, yCard, inRect.width, 46f);
             Widgets.DrawBoxSolid(cardRect, new Color(0.12f, 0.14f, 0.17f, 0.6f));
             Widgets.DrawBox(cardRect, 1);
 
-            // Split Swatch: Left = Original, Right = Current
+            // Split Swatch: Left = Previous, Right = Current
             float swX = cardRect.x + 8f;
             float swY = cardRect.y + 7f;
             float swW = 56f;
@@ -333,9 +454,9 @@ namespace NiceHealthTab_YAPEM_Patch
             GUI.color = Color.white;
             Text.Font = GameFont.Small;
 
-            // 5. Action Buttons Bar
+            // 6. Action Buttons Bar
             float yBtns = inRect.height - 32f;
-            float btnW = 95f;
+            float btnW = 96f;
             float btnH = 30f;
 
             // Reset Button
@@ -363,6 +484,13 @@ namespace NiceHealthTab_YAPEM_Patch
             }
         }
 
+        private static bool IsColorClose(Color a, Color b)
+        {
+            return Mathf.Abs(a.r - b.r) < 0.02f &&
+                   Mathf.Abs(a.g - b.g) < 0.02f &&
+                   Mathf.Abs(a.b - b.b) < 0.02f;
+        }
+
         private void SelectColor(Color color)
         {
             currentColor = color;
@@ -385,8 +513,6 @@ namespace NiceHealthTab_YAPEM_Patch
         private void UpdateDiamond(float dx, float dy)
         {
             dy = Mathf.Clamp(dy, -RadiusDiamond, RadiusDiamond);
-            // Top (dy = -RadiusDiamond) -> White (l = 1.0)
-            // Bottom (dy = +RadiusDiamond) -> Black (l = 0.0)
             currentL = Mathf.Clamp01(0.5f - dy / (2f * RadiusDiamond));
             float span = RadiusDiamond - Mathf.Abs(dy);
             currentS = span > 0.001f ? Mathf.Clamp01((dx + span) / (2f * span)) : 0f;

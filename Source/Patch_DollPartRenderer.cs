@@ -22,6 +22,22 @@ namespace NiceHealthTab_YAPEM_Patch
                 return true;
             }
 
+            // 1. Hands and Feet icons at bottom / overlay
+            // In Nice Health Tab, HandDoll and FeetDoll are distinct widgets at the bottom left.
+            // They do not undergo body filter modes (bones/organs).
+            if (doll is HandDoll || doll is FeetDoll)
+            {
+                int remapIndex = ctx.Remap.Get(_part.bodyPartId);
+                BodyDef pawnBody = ctx.Pawn.RaceProps?.body;
+                BodyPartRecord limbRecord = (pawnBody != null && remapIndex >= 0) ? pawnBody.GetPartAtIndex(remapIndex) : null;
+                if (limbRecord != null && LimbTierUtility.TryGetDollLimbColor(ctx.Pawn, doll, _part, out Color limbColor))
+                {
+                    DrawCustomPart(ctx, _part, doll, limbRecord, rectDoll, extraOffset, selectable, limbColor);
+                    return false;
+                }
+                return true;
+            }
+
             int num = ctx.Remap.Get(_part.bodyPartId);
             if (num < 0)
             {
@@ -35,7 +51,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 return true;
             }
 
-            // 0. Ensure implantInfo.Color is up-to-date with current settings
+            // 2. Identify implant / prosthesis alternative
             PartImplantInfo implantInfo = ctx.GetImplantInfo(_part, val);
             if (implantInfo != null)
             {
@@ -53,9 +69,51 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }
 
-            // 0b. Direct Prosthesis / Bionic Limb recoloring
-            // Nice Health Tab resets GUI.color to Color.white for DollPartProsthesis if overrideColor is true.
-            // By drawing the prosthesis directly with its tierColor here, we prevent the white reset!
+            // Determine effective part definition being rendered
+            DollBodyPartDef effectivePart = (implantInfo != null && implantInfo.HasAlternative && implantInfo.Part != null)
+                ? implantInfo.Part
+                : _part;
+
+            bool isOrgan = effectivePart is DollOrgan;
+            bool isBone = effectivePart is DollBone;
+            bool isEye = effectivePart is DollEye;
+
+            // 3. Strict Filter Mode conformance matching Nice Health Tab:
+            // In Bones view: ONLY bones are shown (no limbs, organs, or substrate)
+            if (ctx.FilterMode == DollFilterMode.Bones)
+            {
+                if (!isBone)
+                {
+                    return false;
+                }
+            }
+            // In Organs view: ONLY organs are shown (no limbs, bones, or substrate)
+            else if (ctx.FilterMode == DollFilterMode.Organs)
+            {
+                if (!isOrgan)
+                {
+                    return false;
+                }
+            }
+            // In Overview mode:
+            else
+            {
+                // User option: display organs ONLY in organ view mode
+                if (isOrgan && (YAPEMPatchMod.Settings?.OnlyShowOrgansInOrganMode == true || !NiceHediffTabSettings.ShowOrgan || ctx.ArmorMode))
+                {
+                    return false;
+                }
+                if (isBone && (!NiceHediffTabSettings.ShowBones || ctx.ArmorMode))
+                {
+                    return false;
+                }
+                if (isEye && !NiceHediffTabSettings.ShowEyes)
+                {
+                    return false;
+                }
+            }
+
+            // 4. Custom Prosthesis / Bionic Limb recoloring
             if (implantInfo != null && implantInfo.HasAlternative && implantInfo.Part != null)
             {
                 var partHediffs = ctx.Hediffs.GetHediffs(val);
@@ -106,32 +164,18 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }
 
-            // 1. Hands and Feet icons at bottom / overlay
-            if (doll is HandDoll || doll is FeetDoll)
-            {
-                if (LimbTierUtility.TryGetDollLimbColor(ctx.Pawn, doll, _part, out Color limbColor))
-                {
-                    DrawCustomPart(ctx, _part, doll, val, rectDoll, extraOffset, selectable, limbColor);
-                    return false;
-                }
-                return true;
-            }
-
-            // 2. Main Humanlike doll - Body Substrate recoloring (when >= threshold limbs share a tier)
+            // 5. Main Humanlike doll - Body Substrate recoloring (when >= threshold limbs share a tier)
             var humanlikeDoll = doll as HumanlikeDoll;
             if (humanlikeDoll != null)
             {
-                // Only recolor base body substrate (not organs, bones, eyes, or prostheses)
                 if (LimbTierUtility.IsBodySubstratePart(_part) && !ctx.ArmorMode)
                 {
-                    // Check if this part specifically has an implant / prosthesis
                     if (implantInfo == null)
                     {
                         PartFrameInfo partFrameInfo = ctx.GetPartFrameInfo(val);
                         var hediffs = ctx.Hediffs.GetHediffs(val);
                         PartVisual partVisual = ctx.GetPartVisual(val, hediffs, partFrameInfo.Health, partFrameInfo.MaxHealth);
 
-                        // Benign condition (wounds and missing parts are skipped)
                         if (partVisual.Status != DollPartStatus.Missing &&
                             partVisual.Status != DollPartStatus.Critical &&
                             partVisual.Status != DollPartStatus.Painful)
@@ -223,7 +267,6 @@ namespace NiceHealthTab_YAPEM_Patch
             }
             GUI.color = prev;
 
-            // If head part, draw hair/beard overlay with natural white part color
             bool isHead = (humanlikeDoll != null && (partDef == humanlikeDoll.headPart || partDef.defName.Contains("Head")));
             if (isHead && DrawHeadOverlayMethod != null)
             {

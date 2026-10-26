@@ -31,4 +31,14 @@
   <NHT_YAPEM_TierOdyssey>Odyssey (Piloto y cósmico)</NHT_YAPEM_TierOdyssey>
   <NHT_YAPEM_ColorPrevious>Color anterior</NHT_YAPEM_ColorPrevious>
   <NHT_YAPEM_ColorCurrent>Color actual</NHT_YAPEM_ColorCurrent>
+  <NHT_YAPEM_OnlyShowOrgansInOrganMode>Show organs only in organ view mode</NHT_YAPEM_OnlyShowOrgansInOrganMode>
+  <NHT_YAPEM_OnlyShowOrgansInOrganMode_Desc>If enabled, internal organs are hidden in overview mode and only displayed when the organ view tab is active.</NHT_YAPEM_OnlyShowOrgansInOrganMode_Desc>
+  <NHT_YAPEM_TierIntegrated>Integrated Implants (Cyberware)</NHT_YAPEM_TierIntegrated>
+  <NHT_YAPEM_PresetsDefault>Default:</NHT_YAPEM_PresetsDefault>
+  <NHT_YAPEM_PresetsCustom>Custom:</NHT_YAPEM_PresetsCustom>
+  <NHT_YAPEM_SaveCustomTip>Save current color as custom preset</NHT_YAPEM_SaveCustomTip>
+  <NHT_YAPEM_CustomSlotTip>LMB: Select | RMB: Overwrite with current color</NHT_YAPEM_CustomSlotTip>
+  <NHT_YAPEM_CustomSlotEmptyTip>Empty slot — click to save current color</NHT_YAPEM_CustomSlotEmptyTip>
+  <NHT_YAPEM_SaveBtn>+Save</NHT_YAPEM_SaveBtn>
+  <NHT_YAPEM_PureWhite>Pure White</NHT_YAPEM_PureWhite>
 </LanguageData>
