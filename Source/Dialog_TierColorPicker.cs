@@ -18,7 +18,6 @@ namespace NiceHealthTab_YAPEM_Patch
         private float currentL;
 
         private Texture2D wheelTexture;
-        private static Texture2D ringCursorTexture;
 
         private const int TexSize = 240;
         private const float Center = 120f;
@@ -297,40 +296,11 @@ namespace NiceHealthTab_YAPEM_Patch
 
         private void DrawCursor(Vector2 center)
         {
-            Texture2D tex = GetRingCursorTexture();
-            Rect r = new Rect(center.x - 7f, center.y - 7f, 14f, 14f);
-            GUI.DrawTexture(r, tex);
-        }
-
-        private static Texture2D GetRingCursorTexture()
-        {
-            if (ringCursorTexture != null) return ringCursorTexture;
-
-            const int s = 14;
-            ringCursorTexture = new Texture2D(s, s, TextureFormat.RGBA32, false);
-            float c = (s - 1) / 2f;
-
-            for (int y = 0; y < s; y++)
-            {
-                for (int x = 0; x < s; x++)
-                {
-                    float dist = Mathf.Sqrt((x - c) * (x - c) + (y - c) * (y - c));
-                    if (dist >= 2.5f && dist <= 6f)
-                    {
-                        if (dist < 3.5f || dist > 5f)
-                            ringCursorTexture.SetPixel(x, y, new Color(0f, 0f, 0f, 0.85f));
-                        else
-                            ringCursorTexture.SetPixel(x, y, Color.white);
-                    }
-                    else
-                    {
-                        ringCursorTexture.SetPixel(x, y, Color.clear);
-                    }
-                }
-            }
-
-            ringCursorTexture.Apply();
-            return ringCursorTexture;
+            Rect outer = new Rect(center.x - 6f, center.y - 6f, 12f, 12f);
+            Widgets.DrawBoxSolid(outer, new Color(0f, 0f, 0f, 0.85f));
+            Rect inner = outer.ContractedBy(1.5f);
+            Widgets.DrawBoxSolid(inner, Color.white);
+            Widgets.DrawBoxSolid(inner.ContractedBy(1.5f), new Color(0f, 0f, 0f, 0.85f));
         }
 
         public override void PreClose()

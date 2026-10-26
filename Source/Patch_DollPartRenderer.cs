@@ -14,9 +14,6 @@ namespace NiceHealthTab_YAPEM_Patch
         private static readonly MethodInfo DrawHeadOverlayMethod = 
             AccessTools.Method(typeof(DollPartRenderer), "DrawHeadOverlay");
 
-        private static readonly FieldInfo ScarsTexField =
-            AccessTools.Field(typeof(DollRenderer).Assembly.GetType("NiceHealthTab.Assets"), "ScarsTex");
-
         [HarmonyPrefix]
         public static bool Prefix(DollRenderContext ctx, DollBodyPartDef _part, Doll doll, Rect rectDoll, float dollScale, bool selectable, Vector2 extraOffset)
         {
@@ -225,18 +222,6 @@ namespace NiceHealthTab_YAPEM_Patch
                 GUI.DrawTextureWithTexCoords(r, (Texture)(object)tex, uv);
             }
             GUI.color = prev;
-
-            // Scars if any
-            if (ctx.Hediffs.HasScars(val) && ScarsTexField != null)
-            {
-                Texture2D scarsTex = ScarsTexField.GetValue(null) as Texture2D;
-                if (scarsTex != null && tex != null)
-                {
-                    GUI.color = new Color(1f, 1f, 1f, 0.5f);
-                    GUI.DrawTextureWithTexCoords(r, (Texture)(object)scarsTex, uv);
-                    GUI.color = Color.white;
-                }
-            }
 
             // If head part, draw hair/beard overlay with natural white part color
             bool isHead = (humanlikeDoll != null && (partDef == humanlikeDoll.headPart || partDef.defName.Contains("Head")));
