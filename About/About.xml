@@ -37,7 +37,9 @@
 [*] [b]Synchronized Hand &amp; Foot Icons:[/b] The separate hand and foot icons at the bottom dynamically reflect the exact color of installed arm/leg prosthetics.
 [*] [b]YAPEM Integration:[/b] Full graphical doll support for Advanced Bionic and Ultratech limbs from "Yet another prosthetic expansion mod".
 [*] [b]Authentic Archotech Color:[/b] Replaces the overly green archotech textures with authentic sage-green (#CBD0AB).
-[*] [b]Universal Mod Compatibility:[/b] Automatically detects and recolors archotech, bionic, and ultratech implants from third-party mods (e.g. Archotech Expanded, EPOE-Forked, etc.) via TechLevel and def tags.
+[*] [b]DLC Implants Recolor:[/b] Dedicated color categories and live preview for official DLCs (Royalty, Biotech, Anomaly, Odyssey).
+[*] [b]Interactive Pawn Preview:[/b] Live mannequin in mod options showing real-time tinting of limbs, silhouette, and internal organs.
+[*] [b]Universal Mod Compatibility:[/b] Automatically detects and recolors archotech, bionic, and ultratech implants from third-party mods (Integrated Implants, Archotech Expanded, EPOE-Forked, etc.) via TechLevel and def tags.
 [*] [b]Multi-Language Support:[/b] Fully localized into 18 languages.
 [/list]
 
