@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <NHT_YAPEM_ModCategory>Nice Health Tab: Recolorized</NHT_YAPEM_ModCategory>
+  <NHT_YAPEM_SectionBody>身体与图标着色选项</NHT_YAPEM_SectionBody>
+  <NHT_YAPEM_EnableBodyTinting>根据占主导地位的假肢给身体轮廓着色</NHT_YAPEM_EnableBodyTinting>
+  <NHT_YAPEM_EnableBodyTinting_Desc>启用后，身体人偶轮廓将根据安装的主导肢体假肢类型进行着色。</NHT_YAPEM_EnableBodyTinting_Desc>
+  <NHT_YAPEM_RequiredLimbCount>触发身体着色所需的同类型肢体数量: 4个中的{0}个</NHT_YAPEM_RequiredLimbCount>
+  <NHT_YAPEM_ColorBottomIcons>为下方的手部和脚部图标着色</NHT_YAPEM_ColorBottomIcons>
+  <NHT_YAPEM_ColorBottomIcons_Desc>启用后，底部的手部和脚部图标将染上相应肢体假肢的颜色。</NHT_YAPEM_ColorBottomIcons_Desc>
+  <NHT_YAPEM_SectionColors>仿生与假肢类别颜色设置</NHT_YAPEM_SectionColors>
+  <NHT_YAPEM_PaletteHint>点击颜色方块或“调色板...”按钮在色轮中选择颜色：</NHT_YAPEM_PaletteHint>
+  <NHT_YAPEM_TierAdvBionic>先进仿生 (YAPEM)</NHT_YAPEM_TierAdvBionic>
+  <NHT_YAPEM_TierUltratech>极科技假肢</NHT_YAPEM_TierUltratech>
+  <NHT_YAPEM_TierArchotech>超凡仿生</NHT_YAPEM_TierArchotech>
+  <NHT_YAPEM_TierBionic>标准仿生</NHT_YAPEM_TierBionic>
+  <NHT_YAPEM_TierProsthetic>简易假肢</NHT_YAPEM_TierProsthetic>
+  <NHT_YAPEM_PaletteBtn>调色板...</NHT_YAPEM_PaletteBtn>
+  <NHT_YAPEM_PaletteTip>点击打开选色窗口</NHT_YAPEM_PaletteTip>
+  <NHT_YAPEM_ResetBtn>重置</NHT_YAPEM_ResetBtn>
+  <NHT_YAPEM_ResetAllBtn>恢复所有设置为默认</NHT_YAPEM_ResetAllBtn>
+</LanguageData>

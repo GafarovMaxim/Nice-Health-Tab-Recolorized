@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ==================== Advanced Bionic Leg (Bluish) ==================== -->
+	<!-- Female -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FemaleRightAdvBionicLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Female/Legs/AdvBionicLeg</imagePath>
+		<dollPartName>FemaleLegRight</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<position>
+			<y>15.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FemaleLeftAdvBionicLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Female/Legs/AdvBionicLeg</imagePath>
+		<dollPartName>FemaleLegLeft</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>-1</width>
+		<position>
+			<y>15.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Male -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>MaleRightAdvBionicLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Male/Legs/AdvBionicLeg</imagePath>
+		<dollPartName>MaleLegRight</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<position>
+			<x>10.00</x>
+			<y>15.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>MaleLeftAdvBionicLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Male/Legs/AdvBionicLeg</imagePath>
+		<dollPartName>MaleLegLeft</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>-1</width>
+		<position>
+			<x>-10.00</x>
+			<y>15.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Hulk -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>HulkRightAdvBionicLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Hulk/Legs/AdvBionicLeg</imagePath>
+		<dollPartName>HulkLegRight</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<position>
+			<x>3.00</x>
+			<y>25.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>HulkLeftAdvBionicLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Hulk/Legs/AdvBionicLeg</imagePath>
+		<dollPartName>HulkLegLeft</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>-1</width>
+		<position>
+			<x>-5.00</x>
+			<y>25.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Fat -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FatRightAdvBionicLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Fat/Legs/AdvBionicLeg</imagePath>
+		<dollPartName>FatLegRight</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<position>
+			<x>5.00</x>
+			<y>30.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FatLeftAdvBionicLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Fat/Legs/AdvBionicLeg</imagePath>
+		<dollPartName>FatLegLeft</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>-1</width>
+		<position>
+			<x>-5.00</x>
+			<y>30.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+</Defs>

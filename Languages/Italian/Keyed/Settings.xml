@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <NHT_YAPEM_ModCategory>Nice Health Tab: Recolorized</NHT_YAPEM_ModCategory>
+  <NHT_YAPEM_SectionBody>Opzioni di colorazione del corpo e delle icone</NHT_YAPEM_SectionBody>
+  <NHT_YAPEM_EnableBodyTinting>Ricolora la sagoma del corpo in base agli arti dominanti</NHT_YAPEM_EnableBodyTinting>
+  <NHT_YAPEM_EnableBodyTinting_Desc>Se abilitato, la sagoma del corpo viene colorata con il colore delle protesi dominanti installate.</NHT_YAPEM_EnableBodyTinting_Desc>
+  <NHT_YAPEM_RequiredLimbCount>Arti corrispondenti richiesti per colorare il corpo: {0} su 4</NHT_YAPEM_RequiredLimbCount>
+  <NHT_YAPEM_ColorBottomIcons>Ricolora le icone inferiori di mani e piedi</NHT_YAPEM_ColorBottomIcons>
+  <NHT_YAPEM_ColorBottomIcons_Desc>Se abilitato, le icone inferiori di mani e piedi vengono colorate con il colore del relativo arto installato.</NHT_YAPEM_ColorBottomIcons_Desc>
+  <NHT_YAPEM_SectionColors>Colori delle categorie di protesi e impianti</NHT_YAPEM_SectionColors>
+  <NHT_YAPEM_PaletteHint>Fai clic su un riquadro o sul pulsante «Tavolozza...» per scegliere un colore:</NHT_YAPEM_PaletteHint>
+  <NHT_YAPEM_TierAdvBionic>Bionica avanzata (YAPEM)</NHT_YAPEM_TierAdvBionic>
+  <NHT_YAPEM_TierUltratech>Arti Ultratech</NHT_YAPEM_TierUltratech>
+  <NHT_YAPEM_TierArchotech>Arti Archotech</NHT_YAPEM_TierArchotech>
+  <NHT_YAPEM_TierBionic>Bionica standard</NHT_YAPEM_TierBionic>
+  <NHT_YAPEM_TierProsthetic>Protesi semplici</NHT_YAPEM_TierProsthetic>
+  <NHT_YAPEM_PaletteBtn>Tavolozza...</NHT_YAPEM_PaletteBtn>
+  <NHT_YAPEM_PaletteTip>Fai clic per aprire il selettore del colore</NHT_YAPEM_PaletteTip>
+  <NHT_YAPEM_ResetBtn>Ripristina</NHT_YAPEM_ResetBtn>
+  <NHT_YAPEM_ResetAllBtn>Ripristina tutte le impostazioni predefinite</NHT_YAPEM_ResetAllBtn>
+</LanguageData>

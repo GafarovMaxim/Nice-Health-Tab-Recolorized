@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ==================== Ultratech Limbs (Teal / Mint like YAPEM Ultratech Implants) ==================== -->
+	<!-- Legs -->
+	<!-- Female -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FemaleRightUltratechLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Female/Legs/UltratechLeg</imagePath>
+		<dollPartName>FemaleLegRight</dollPartName>
+		<prosthesisDefName>BIE_UltratechBionicLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<position>
+			<y>15.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FemaleLeftUltratechLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Female/Legs/UltratechLeg</imagePath>
+		<dollPartName>FemaleLegLeft</dollPartName>
+		<prosthesisDefName>BIE_UltratechBionicLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>-1</width>
+		<position>
+			<y>15.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Male -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>MaleRightUltratechLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Male/Legs/UltratechLeg</imagePath>
+		<dollPartName>MaleLegRight</dollPartName>
+		<prosthesisDefName>BIE_UltratechBionicLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<position>
+			<x>10.00</x>
+			<y>15.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>MaleLeftUltratechLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Male/Legs/UltratechLeg</imagePath>
+		<dollPartName>MaleLegLeft</dollPartName>
+		<prosthesisDefName>BIE_UltratechBionicLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>-1</width>
+		<position>
+			<x>-10.00</x>
+			<y>15.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Hulk -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>HulkRightUltratechLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Hulk/Legs/UltratechLeg</imagePath>
+		<dollPartName>HulkLegRight</dollPartName>
+		<prosthesisDefName>BIE_UltratechBionicLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<position>
+			<x>3.00</x>
+			<y>25.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>HulkLeftUltratechLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Hulk/Legs/UltratechLeg</imagePath>
+		<dollPartName>HulkLegLeft</dollPartName>
+		<prosthesisDefName>BIE_UltratechBionicLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>-1</width>
+		<position>
+			<x>-5.00</x>
+			<y>25.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Fat -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FatRightUltratechLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Fat/Legs/UltratechLeg</imagePath>
+		<dollPartName>FatLegRight</dollPartName>
+		<prosthesisDefName>BIE_UltratechBionicLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<position>
+			<x>5.00</x>
+			<y>30.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FatLeftUltratechLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Fat/Legs/UltratechLeg</imagePath>
+		<dollPartName>FatLegLeft</dollPartName>
+		<prosthesisDefName>BIE_UltratechBionicLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>-1</width>
+		<position>
+			<x>-5.00</x>
+			<y>30.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Arms -->
+	<!-- Female -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FemaleRightUltratechArm</defName>
+		<imagePath>HediffTab/Prosthesis/Female/Arms/UltratechArm</imagePath>
+		<dollPartName>FemaleShoulderRight</dollPartName>
+		<prosthesisDefName>BIE_UltratechBionicArm</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<position>
+			<x>10.00</x>
+			<y>90.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FemaleLeftUltratechArm</defName>
+		<imagePath>HediffTab/Prosthesis/Female/Arms/UltratechArm</imagePath>
+		<dollPartName>FemaleShoulderLeft</dollPartName>
+		<prosthesisDefName>BIE_UltratechBionicArm</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>-1</width>
+		<position>
+			<x>-10.00</x>
+			<y>90.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Male -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>MaleRightUltratechArm</defName>
+		<imagePath>HediffTab/Prosthesis/Male/Arms/UltratechArm</imagePath>
+		<dollPartName>MaleShoulderRight</dollPartName>
+		<prosthesisDefName>BIE_UltratechBionicArm</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<position>
+			<x>10.00</x>
+			<y>80.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>MaleLeftUltratechArm</defName>
+		<imagePath>HediffTab/Prosthesis/Male/Arms/UltratechArm</imagePath>
+		<dollPartName>MaleShoulderLeft</dollPartName>
+		<prosthesisDefName>BIE_UltratechBionicArm</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>-1</width>
+		<position>
+			<x>-10.00</x>
+			<y>80.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Hulk -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>HulkRightUltratechArm</defName>
+		<imagePath>HediffTab/Prosthesis/Hulk/Arms/UltratechArm</imagePath>
+		<dollPartName>HulkShoulderRight</dollPartName>
+		<prosthesisDefName>BIE_UltratechBionicArm</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<position>
+			<x>20.00</x>
+			<y>90.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>HulkLeftUltratechArm</defName>
+		<imagePath>HediffTab/Prosthesis/Hulk/Arms/UltratechArm</imagePath>
+		<dollPartName>HulkShoulderLeft</dollPartName>
+		<prosthesisDefName>BIE_UltratechBionicArm</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>-1</width>
+		<position>
+			<x>-20.00</x>
+			<y>90.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Fat -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FatRightUltratechArm</defName>
+		<imagePath>HediffTab/Prosthesis/Fat/Arms/UltratechArm</imagePath>
+		<dollPartName>FatShoulderRight</dollPartName>
+		<prosthesisDefName>BIE_UltratechBionicArm</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<position>
+			<x>20.00</x>
+			<y>105.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FatLeftUltratechArm</defName>
+		<imagePath>HediffTab/Prosthesis/Fat/Arms/UltratechArm</imagePath>
+		<dollPartName>FatShoulderLeft</dollPartName>
+		<prosthesisDefName>BIE_UltratechBionicArm</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>-1</width>
+		<position>
+			<x>-20.00</x>
+			<y>105.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+</Defs>

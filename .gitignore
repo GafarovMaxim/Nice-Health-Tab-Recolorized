@@ -1,0 +1,28 @@
+# .NET / C# build output
+[Bb]in/
+[Oo]bj/
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb.old
+*.dll.old
+
+# Visual Studio & IDE
+.vs/
+.idea/
+.vscode/
+*.DotSettings.user
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Python cache (preview & localization tools)
+__pycache__/
+*.py[cod]
+*$py.class

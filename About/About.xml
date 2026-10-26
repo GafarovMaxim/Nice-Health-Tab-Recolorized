@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <packageId>Gfrov.NiceHealthTab.Recolorized</packageId>
+  <name>Nice Health Tab: Recolorized</name>
+  <author>gfrov</author>
+  <supportedVersions>
+    <li>1.5</li>
+    <li>1.6</li>
+    <li>1.7</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>Andromeda.NiceHealthTab</packageId>
+      <displayName>Nice Health Tab</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3328729902</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>Andromeda.NiceHealthTab</li>
+    <li>That0nePerson.NHTProstheticsExtended</li>
+    <li>MrKociak.YetAnotherProstheticExpansionModCore</li>
+    <li>MrKociak.YetAnotherProstheticExpansionModAnimals</li>
+    <li>Oni.MrKociak.YetAnotherProstheticExpansionModCore</li>
+  </loadAfter>
+  <description>Adds an interactive in-game color palette, dynamic body substrate tinting, and graphical support for prosthetics and implants in Nice Health Tab.
+
+[h1]Features[/h1]
+[list]
+[*] [b]Interactive Color Palette:[/b] Choose custom colors for each tier (Advanced Bionics, Ultratech, Archotech, Standard Bionics, and Simple Prosthetics) using RimWorld's native HSV color wheel and saturation-value square with live preview.
+[*] [b]Dynamic Body Silhouette Tinting:[/b] When your colonist's limbs are replaced with a dominant prosthetic tier (configurable threshold from 1 to 4 limbs), the body doll silhouette is tinted in that tier's color.
+[*] [b]Synchronized Hand &amp; Foot Icons:[/b] The separate hand and foot icons at the bottom dynamically reflect the exact color of installed arm/leg prosthetics.
+[*] [b]YAPEM Integration:[/b] Full graphical doll support for Advanced Bionic and Ultratech limbs from "Yet another prosthetic expansion mod".
+[*] [b]Authentic Archotech Color:[/b] Replaces the overly green archotech textures with authentic sage-green (#CBD0AB).
+[*] [b]Universal Mod Compatibility:[/b] Automatically detects and recolors archotech, bionic, and ultratech implants from third-party mods (e.g. Archotech Expanded, EPOE-Forked, etc.) via TechLevel and def tags.
+[*] [b]Multi-Language Support:[/b] Fully localized into 18 languages.
+[/list]
+
+[h1]Dependencies[/h1]
+[list]
+[*] [b]Harmony[/b]
+[*] [b]Nice Health Tab[/b]
+[/list]
+
+[h1]Recommended Mods[/h1]
+[list]
+[*] [b]Nicer Health Tab[/b]
+[*] [b]Yet another prosthetic expansion mod (YAPEM)[/b]
+[/list]
+
+[h1]License[/h1]
+Released under the MIT License.
+  </description>
+</ModMetaData>

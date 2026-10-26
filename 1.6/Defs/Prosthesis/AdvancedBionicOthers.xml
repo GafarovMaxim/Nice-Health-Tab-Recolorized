@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ==================== Advanced Bionic Spine (Bluish) ==================== -->
+	<!-- Female -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FemaleAdvBionicSpine</defName>
+		<imagePath>HediffTab/Prosthesis/Bones/AdvBionicSpine</imagePath>
+		<dollPartName>FemaleSpine</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicSpine</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>0.70</width>
+		<height>0.70</height>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Male -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>MaleAdvBionicSpine</defName>
+		<imagePath>HediffTab/Prosthesis/Bones/AdvBionicSpine</imagePath>
+		<dollPartName>MaleSpine</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicSpine</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>0.70</width>
+		<height>0.70</height>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Hulk -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>HulkAdvBionicSpine</defName>
+		<imagePath>HediffTab/Prosthesis/Bones/AdvBionicSpine</imagePath>
+		<dollPartName>HulkSpine</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicSpine</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>0.70</width>
+		<height>0.70</height>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Fat -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FatAdvBionicSpine</defName>
+		<imagePath>HediffTab/Prosthesis/Bones/AdvBionicSpine</imagePath>
+		<dollPartName>FatSpine</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicSpine</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>0.70</width>
+		<height>0.70</height>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- ==================== Advanced Bionic Eye (Bluish) ==================== -->
+	<!-- Female -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FemaleRightAdvBionicEye</defName>
+		<imagePath>HediffTab/Prosthesis/Head/FemaleAdvBionicEye</imagePath>
+		<dollPartName>FemaleEyeRight</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicEye</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<height>0.6</height>
+		<width>-0.6</width>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FemaleLeftAdvBionicEye</defName>
+		<imagePath>HediffTab/Prosthesis/Head/FemaleAdvBionicEye</imagePath>
+		<dollPartName>FemaleEyeLeft</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicEye</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<height>0.6</height>
+		<width>0.6</width>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Male -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>MaleRightAdvBionicEye</defName>
+		<imagePath>HediffTab/Prosthesis/Head/MaleAdvBionicEye</imagePath>
+		<dollPartName>MaleEyeRight</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicEye</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<height>0.6</height>
+		<width>-0.6</width>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>MaleLeftAdvBionicEye</defName>
+		<imagePath>HediffTab/Prosthesis/Head/MaleAdvBionicEye</imagePath>
+		<dollPartName>MaleEyeLeft</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicEye</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<height>0.6</height>
+		<width>0.6</width>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Hulk -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>HulkRightAdvBionicEye</defName>
+		<imagePath>HediffTab/Prosthesis/Head/MaleAdvBionicEye</imagePath>
+		<dollPartName>HulkEyeRight</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicEye</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<height>0.6</height>
+		<width>-0.6</width>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>HulkLeftAdvBionicEye</defName>
+		<imagePath>HediffTab/Prosthesis/Head/MaleAdvBionicEye</imagePath>
+		<dollPartName>HulkEyeLeft</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicEye</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<height>0.6</height>
+		<width>0.6</width>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Fat -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FatRightAdvBionicEye</defName>
+		<imagePath>HediffTab/Prosthesis/Head/MaleAdvBionicEye</imagePath>
+		<dollPartName>FatEyeRight</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicEye</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<height>0.6</height>
+		<width>-0.6</width>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FatLeftAdvBionicEye</defName>
+		<imagePath>HediffTab/Prosthesis/Head/MaleAdvBionicEye</imagePath>
+		<dollPartName>FatEyeLeft</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicEye</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<height>0.6</height>
+		<width>0.6</width>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- ==================== Advanced Bionic Heart (Bluish) ==================== -->
+	<!-- Female -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FemaleAdvBionicHeart</defName>
+		<imagePath>HediffTab/Prosthesis/Organs/AdvBionicHeart</imagePath>
+		<dollPartName>FemaleHeart</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicHeart</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>0.85</width>
+		<height>0.85</height>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Male -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>MaleAdvBionicHeart</defName>
+		<imagePath>HediffTab/Prosthesis/Organs/AdvBionicHeart</imagePath>
+		<dollPartName>Heart</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicHeart</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>0.90</width>
+		<height>0.90</height>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Hulk -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>HulkAdvBionicHeart</defName>
+		<imagePath>HediffTab/Prosthesis/Organs/AdvBionicHeart</imagePath>
+		<dollPartName>HulkHeart</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicHeart</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>0.90</width>
+		<height>0.90</height>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Fat -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FatAdvBionicHeart</defName>
+		<imagePath>HediffTab/Prosthesis/Organs/AdvBionicHeart</imagePath>
+		<dollPartName>FatHeart</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicHeart</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>0.90</width>
+		<height>0.90</height>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- ==================== Advanced Bionic Stomach (Bluish) ==================== -->
+	<!-- Female -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FemaleAdvBionicStomach</defName>
+		<imagePath>HediffTab/Prosthesis/Organs/AdvBionicStomach</imagePath>
+		<dollPartName>FemaleStomach</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicStomach</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>0.85</width>
+		<height>0.85</height>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Male -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>MaleAdvBionicStomach</defName>
+		<imagePath>HediffTab/Prosthesis/Organs/AdvBionicStomach</imagePath>
+		<dollPartName>Stomach</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicStomach</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>0.90</width>
+		<height>0.90</height>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Hulk -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>HulkAdvBionicStomach</defName>
+		<imagePath>HediffTab/Prosthesis/Organs/AdvBionicStomach</imagePath>
+		<dollPartName>HulkStomach</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicStomach</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>0.90</width>
+		<height>0.90</height>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Fat -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FatAdvBionicStomach</defName>
+		<imagePath>HediffTab/Prosthesis/Organs/AdvBionicStomach</imagePath>
+		<dollPartName>FatStomach</dollPartName>
+		<prosthesisDefName>BIE_AdvancedBionicStomach</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>0.90</width>
+		<height>0.90</height>
+	</NiceHealthTab.DollPartProsthesis>
+</Defs>

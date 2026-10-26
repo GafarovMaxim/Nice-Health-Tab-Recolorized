@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- ==================== Authentic Archotech Limbs (Sage / Golden-Green) ==================== -->
+	<!-- Female -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FemaleRightArchotechLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Female/Legs/ArchotechLeg</imagePath>
+		<dollPartName>FemaleLegRight</dollPartName>
+		<prosthesisDefName>ArchotechLeg</prosthesisDefName>
+		<overrideColor>true</overrideColor>
+		<position>
+			<y>15.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FemaleLeftArchotechLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Female/Legs/ArchotechLeg</imagePath>
+		<dollPartName>FemaleLegLeft</dollPartName>
+		<prosthesisDefName>ArchotechLeg</prosthesisDefName>
+		<overrideColor>true</overrideColor>
+		<width>-1</width>
+		<position>
+			<y>15.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Male -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>MaleRightArchotechLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Male/Legs/ArchotechLeg</imagePath>
+		<dollPartName>MaleLegRight</dollPartName>
+		<prosthesisDefName>ArchotechLeg</prosthesisDefName>
+		<overrideColor>true</overrideColor>
+		<position>
+			<x>10.00</x>
+			<y>15.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>MaleLeftArchotechLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Male/Legs/ArchotechLeg</imagePath>
+		<dollPartName>MaleLegLeft</dollPartName>
+		<prosthesisDefName>ArchotechLeg</prosthesisDefName>
+		<overrideColor>true</overrideColor>
+		<width>-1</width>
+		<position>
+			<x>-10.00</x>
+			<y>15.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Hulk -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>HulkRightArchotechLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Hulk/Legs/ArchotechLeg</imagePath>
+		<dollPartName>HulkLegRight</dollPartName>
+		<prosthesisDefName>ArchotechLeg</prosthesisDefName>
+		<overrideColor>true</overrideColor>
+		<position>
+			<x>3.00</x>
+			<y>25.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>HulkLeftArchotechLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Hulk/Legs/ArchotechLeg</imagePath>
+		<dollPartName>HulkLegLeft</dollPartName>
+		<prosthesisDefName>ArchotechLeg</prosthesisDefName>
+		<overrideColor>true</overrideColor>
+		<width>-1</width>
+		<position>
+			<x>-5.00</x>
+			<y>25.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Fat -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FatRightArchotechLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Fat/Legs/ArchotechLeg</imagePath>
+		<dollPartName>FatLegRight</dollPartName>
+		<prosthesisDefName>ArchotechLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<position>
+			<x>5.00</x>
+			<y>30.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FatLeftArchotechLeg</defName>
+		<imagePath>HediffTab/Prosthesis/Fat/Legs/ArchotechLeg</imagePath>
+		<dollPartName>FatLegLeft</dollPartName>
+		<prosthesisDefName>ArchotechLeg</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>-1</width>
+		<position>
+			<x>-5.00</x>
+			<y>30.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Arms -->
+	<!-- Female -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FemaleRightArchotechArm</defName>
+		<imagePath>HediffTab/Prosthesis/Female/Arms/ArchotechArm</imagePath>
+		<dollPartName>FemaleShoulderRight</dollPartName>
+		<prosthesisDefName>ArchotechArm</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<position>
+			<x>10.00</x>
+			<y>90.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FemaleLeftArchotechArm</defName>
+		<imagePath>HediffTab/Prosthesis/Female/Arms/ArchotechArm</imagePath>
+		<dollPartName>FemaleShoulderLeft</dollPartName>
+		<prosthesisDefName>ArchotechArm</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>-1</width>
+		<position>
+			<x>-10.00</x>
+			<y>90.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Male -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>MaleRightArchotechArm</defName>
+		<imagePath>HediffTab/Prosthesis/Male/Arms/ArchotechArm</imagePath>
+		<dollPartName>MaleShoulderRight</dollPartName>
+		<prosthesisDefName>ArchotechArm</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<position>
+			<x>10.00</x>
+			<y>80.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>MaleLeftArchotechArm</defName>
+		<imagePath>HediffTab/Prosthesis/Male/Arms/ArchotechArm</imagePath>
+		<dollPartName>MaleShoulderLeft</dollPartName>
+		<prosthesisDefName>ArchotechArm</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>-1</width>
+		<position>
+			<x>-10.00</x>
+			<y>80.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Hulk -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>HulkRightArchotechArm</defName>
+		<imagePath>HediffTab/Prosthesis/Hulk/Arms/ArchotechArm</imagePath>
+		<dollPartName>HulkShoulderRight</dollPartName>
+		<prosthesisDefName>ArchotechArm</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<position>
+			<x>20.00</x>
+			<y>90.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>HulkLeftArchotechArm</defName>
+		<imagePath>HediffTab/Prosthesis/Hulk/Arms/ArchotechArm</imagePath>
+		<dollPartName>HulkShoulderLeft</dollPartName>
+		<prosthesisDefName>ArchotechArm</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>-1</width>
+		<position>
+			<x>-20.00</x>
+			<y>90.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<!-- Fat -->
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FatRightArchotechArm</defName>
+		<imagePath>HediffTab/Prosthesis/Fat/Arms/ArchotechArm</imagePath>
+		<dollPartName>FatShoulderRight</dollPartName>
+		<prosthesisDefName>ArchotechArm</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<position>
+			<x>20.00</x>
+			<y>105.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+
+	<NiceHealthTab.DollPartProsthesis>
+		<defName>FatLeftArchotechArm</defName>
+		<imagePath>HediffTab/Prosthesis/Fat/Arms/ArchotechArm</imagePath>
+		<dollPartName>FatShoulderLeft</dollPartName>
+		<prosthesisDefName>ArchotechArm</prosthesisDefName>
+		<overrideColor>True</overrideColor>
+		<width>-1</width>
+		<position>
+			<x>-20.00</x>
+			<y>105.00</y>
+		</position>
+	</NiceHealthTab.DollPartProsthesis>
+</Defs>
