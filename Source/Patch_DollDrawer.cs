@@ -261,9 +261,19 @@ namespace NiceHealthTab_YAPEM_Patch
             {
                 partDef.PartColor = Color.white;
                 Rect headOverlayRect = (humanlikeDoll != null) ? humanlikeDoll.GetHeadOverlayRect(rectDoll) : Rect.zero;
-                Type partStatusType = AccessTools.TypeByName("NiceHealthTab.PartStatus");
-                object okVal = partStatusType != null ? Enum.ToObject(partStatusType, 0) : null;
-                DrawHeadOverlayMethod.Invoke(null, new object[] { pawn, headOverlayRect, partDef, okVal });
+                if (headOverlayRect != Rect.zero)
+                {
+                    try
+                    {
+                        Type partStatusType = AccessTools.TypeByName("NiceHealthTab.PartStatus");
+                        object okVal = partStatusType != null ? Enum.ToObject(partStatusType, 0) : null;
+                        if (DrawHeadOverlayMethod.GetParameters().Length == 4)
+                        {
+                            DrawHeadOverlayMethod.Invoke(null, new object[] { pawn, headOverlayRect, partDef, okVal });
+                        }
+                    }
+                    catch { }
+                }
             }
 
             if (isHovered && !DollDrawer.ShowArmorCover)

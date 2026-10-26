@@ -813,7 +813,7 @@ namespace NiceHealthTab_YAPEM_Patch
         public override void PreClose()
         {
             base.PreClose();
-            if (!accepted && Event.current?.keyCode == KeyCode.Escape)
+            if (!accepted)
             {
                 onColorSaved?.Invoke(originalColor);
             }
