@@ -39,9 +39,10 @@ namespace NiceHealthTab_YAPEM_Patch
                 return true;
             }
 
-            // 0. If _part is a prosthesis, ensure PartColor matches current settings
-            if (_part is DollPartProsthesis && val != null)
+            // 0. If _part is a prosthesis, ensure PartColor matches current settings and draw directly
+            if (_part is DollPartProsthesis directProsthesis && val != null)
             {
+                directProsthesis.overrideColor = false;
                 var hediffs = DollDrawer.Hediffs.GetHediffs(val);
                 if (hediffs != null)
                 {
@@ -50,7 +51,8 @@ namespace NiceHealthTab_YAPEM_Patch
                         if (LimbTierUtility.CategorizeHediffTier(h, out _, out Color tierColor))
                         {
                             _part.PartColor = tierColor;
-                            break;
+                            DrawCustomPart(_part, doll, val, rectDoll, ExtraOffset, Selectable, tierColor, pawn);
+                            return false;
                         }
                     }
                 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <NHT_YAPEM_ModCategory>Nice Health Tab: Recolorized</NHT_YAPEM_ModCategory>
+  <NHT_YAPEM_SectionBody>Опції забарвлення тіла та піктограм</NHT_YAPEM_SectionBody>
+  <NHT_YAPEM_EnableBodyTinting>Перефарбовувати силует тіла у колір переважаючих кінцівок</NHT_YAPEM_EnableBodyTinting>
+  <NHT_YAPEM_EnableBodyTinting_Desc>Якщо увімкнено, підкладка тіла маскота забарвлюється у колір переважаючого типу встановлених протезів кінцівок.</NHT_YAPEM_EnableBodyTinting_Desc>
+  <NHT_YAPEM_RequiredLimbCount>Мінімальна кількість кінцівок одного типу для забарвлення тіла: {0} з 4</NHT_YAPEM_RequiredLimbCount>
+  <NHT_YAPEM_ColorBottomIcons>Забарвлювати нижні піктограми кистей і стоп</NHT_YAPEM_ColorBottomIcons>
+  <NHT_YAPEM_ColorBottomIcons_Desc>Якщо увімкнено, нижні піктограми кистей і стоп забарвлюються у колір відповідної встановленої кінцівки.</NHT_YAPEM_ColorBottomIcons_Desc>
+  <NHT_YAPEM_SectionColors>Кольори категорій протезів та імплантів</NHT_YAPEM_SectionColors>
+  <NHT_YAPEM_PaletteHint>Натисніть на кольоровий квадрат або кнопку «Палітра...», щоб обрати колір:</NHT_YAPEM_PaletteHint>
+  <NHT_YAPEM_TierAdvBionic>Advanced Bionics (Просунута біоніка YAPEM)</NHT_YAPEM_TierAdvBionic>
+  <NHT_YAPEM_TierUltratech>Ultratech (Ультратех-протези)</NHT_YAPEM_TierUltratech>
+  <NHT_YAPEM_TierArchotech>Archotech (Архотек-протези)</NHT_YAPEM_TierArchotech>
+  <NHT_YAPEM_TierBionic>Bionics (Стандартна біоніка)</NHT_YAPEM_TierBionic>
+  <NHT_YAPEM_TierProsthetic>Prosthetics (Прості протези)</NHT_YAPEM_TierProsthetic>
+  <NHT_YAPEM_PaletteBtn>Палітра...</NHT_YAPEM_PaletteBtn>
+  <NHT_YAPEM_PaletteTip>Натисніть, щоб відкрити палітру кольорів</NHT_YAPEM_PaletteTip>
+  <NHT_YAPEM_ResetBtn>Скинути</NHT_YAPEM_ResetBtn>
+  <NHT_YAPEM_ResetAllBtn>Відновити всі налаштування за замовчуванням</NHT_YAPEM_ResetAllBtn>
+</LanguageData>

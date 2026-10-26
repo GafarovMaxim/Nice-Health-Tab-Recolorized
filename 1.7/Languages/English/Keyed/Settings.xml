@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <NHT_YAPEM_ModCategory>Nice Health Tab: Recolorized</NHT_YAPEM_ModCategory>
+  <NHT_YAPEM_SectionBody>Body & Icon Tinting Options</NHT_YAPEM_SectionBody>
+  <NHT_YAPEM_EnableBodyTinting>Recolor body silhouette based on dominant limbs</NHT_YAPEM_EnableBodyTinting>
+  <NHT_YAPEM_EnableBodyTinting_Desc>If enabled, the body doll silhouette is tinted with the color of the dominant installed limb prosthetics.</NHT_YAPEM_EnableBodyTinting_Desc>
+  <NHT_YAPEM_RequiredLimbCount>Minimum matching limbs required to tint body: {0} of 4</NHT_YAPEM_RequiredLimbCount>
+  <NHT_YAPEM_ColorBottomIcons>Recolor bottom hand and foot icons</NHT_YAPEM_ColorBottomIcons>
+  <NHT_YAPEM_ColorBottomIcons_Desc>If enabled, the bottom hand and foot icons are tinted with the color of the corresponding installed limb.</NHT_YAPEM_ColorBottomIcons_Desc>
+  <NHT_YAPEM_SectionColors>Prosthetic & Implant Category Colors</NHT_YAPEM_SectionColors>
+  <NHT_YAPEM_PaletteHint>Click a color box or the 'Palette...' button to pick a color in the color wheel/square:</NHT_YAPEM_PaletteHint>
+  <NHT_YAPEM_TierAdvBionic>Advanced Bionics (YAPEM)</NHT_YAPEM_TierAdvBionic>
+  <NHT_YAPEM_TierUltratech>Ultratech Limbs</NHT_YAPEM_TierUltratech>
+  <NHT_YAPEM_TierArchotech>Archotech Limbs</NHT_YAPEM_TierArchotech>
+  <NHT_YAPEM_TierBionic>Standard Bionics</NHT_YAPEM_TierBionic>
+  <NHT_YAPEM_TierProsthetic>Simple Prosthetics</NHT_YAPEM_TierProsthetic>
+  <NHT_YAPEM_PaletteBtn>Palette...</NHT_YAPEM_PaletteBtn>
+  <NHT_YAPEM_PaletteTip>Click to open the color picker</NHT_YAPEM_PaletteTip>
+  <NHT_YAPEM_ResetBtn>Reset</NHT_YAPEM_ResetBtn>
+  <NHT_YAPEM_ResetAllBtn>Reset All Settings to Default</NHT_YAPEM_ResetAllBtn>
+</LanguageData>

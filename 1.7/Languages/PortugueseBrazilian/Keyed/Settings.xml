@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <NHT_YAPEM_ModCategory>Nice Health Tab: Recolorized</NHT_YAPEM_ModCategory>
+  <NHT_YAPEM_SectionBody>Opções de coloração do corpo e dos ícones</NHT_YAPEM_SectionBody>
+  <NHT_YAPEM_EnableBodyTinting>Recolore a silhueta do corpo com base nos membros dominantes</NHT_YAPEM_EnableBodyTinting>
+  <NHT_YAPEM_EnableBodyTinting_Desc>Se ativado, a silhueta do corpo é colorida com a cor das próteses de membros dominantes instaladas.</NHT_YAPEM_EnableBodyTinting_Desc>
+  <NHT_YAPEM_RequiredLimbCount>Membros correspondentes necessários para tingir o corpo: {0} de 4</NHT_YAPEM_RequiredLimbCount>
+  <NHT_YAPEM_ColorBottomIcons>Recolorir ícones inferiores de mãos e pés</NHT_YAPEM_ColorBottomIcons>
+  <NHT_YAPEM_ColorBottomIcons_Desc>Se ativado, os ícones inferiores de mãos e pés são tingidos com a cor do membro correspondente instalado.</NHT_YAPEM_ColorBottomIcons_Desc>
+  <NHT_YAPEM_SectionColors>Cores das categorias de próteses e implantes</NHT_YAPEM_SectionColors>
+  <NHT_YAPEM_PaletteHint>Clique em um quadrado de cor ou no botão «Paleta...» para escolher uma cor:</NHT_YAPEM_PaletteHint>
+  <NHT_YAPEM_TierAdvBionic>Biônica Avançada (YAPEM)</NHT_YAPEM_TierAdvBionic>
+  <NHT_YAPEM_TierUltratech>Membros Ultratech</NHT_YAPEM_TierUltratech>
+  <NHT_YAPEM_TierArchotech>Membros Arcotecnológicos</NHT_YAPEM_TierArchotech>
+  <NHT_YAPEM_TierBionic>Biônica Padrão</NHT_YAPEM_TierBionic>
+  <NHT_YAPEM_TierProsthetic>Próteses Simples</NHT_YAPEM_TierProsthetic>
+  <NHT_YAPEM_PaletteBtn>Paleta...</NHT_YAPEM_PaletteBtn>
+  <NHT_YAPEM_PaletteTip>Clique para abrir o seletor de cores</NHT_YAPEM_PaletteTip>
+  <NHT_YAPEM_ResetBtn>Redefinir</NHT_YAPEM_ResetBtn>
+  <NHT_YAPEM_ResetAllBtn>Redefinir Todas as Configurações para o Padrão</NHT_YAPEM_ResetAllBtn>
+</LanguageData>

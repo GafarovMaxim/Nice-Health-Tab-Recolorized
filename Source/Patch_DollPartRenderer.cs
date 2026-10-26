@@ -56,6 +56,59 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }
 
+            // 0b. Direct Prosthesis / Bionic Limb recoloring
+            // Nice Health Tab resets GUI.color to Color.white for DollPartProsthesis if overrideColor is true.
+            // By drawing the prosthesis directly with its tierColor here, we prevent the white reset!
+            if (implantInfo != null && implantInfo.HasAlternative && implantInfo.Part != null)
+            {
+                var partHediffs = ctx.Hediffs.GetHediffs(val);
+                if (partHediffs != null)
+                {
+                    foreach (var h in partHediffs)
+                    {
+                        if (LimbTierUtility.CategorizeHediffTier(h, out _, out Color tierColor))
+                        {
+                            implantInfo.Color = tierColor;
+                            if (implantInfo.Part is DollPartProsthesis p)
+                            {
+                                p.overrideColor = false;
+                            }
+                            PartFrameInfo partFrameInfo = ctx.GetPartFrameInfo(val);
+                            PartVisual partVisual = ctx.GetPartVisual(val, partHediffs, partFrameInfo.Health, partFrameInfo.MaxHealth);
+                            if (partVisual.Status == DollPartStatus.Missing)
+                            {
+                                return false;
+                            }
+                            DrawCustomPart(ctx, implantInfo.Part, doll, val, rectDoll, extraOffset, selectable, tierColor);
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            if (_part is DollPartProsthesis directProsthesis)
+            {
+                directProsthesis.overrideColor = false;
+                var partHediffs = ctx.Hediffs.GetHediffs(val);
+                if (partHediffs != null)
+                {
+                    foreach (var h in partHediffs)
+                    {
+                        if (LimbTierUtility.CategorizeHediffTier(h, out _, out Color tierColor))
+                        {
+                            PartFrameInfo partFrameInfo = ctx.GetPartFrameInfo(val);
+                            PartVisual partVisual = ctx.GetPartVisual(val, partHediffs, partFrameInfo.Health, partFrameInfo.MaxHealth);
+                            if (partVisual.Status == DollPartStatus.Missing)
+                            {
+                                return false;
+                            }
+                            DrawCustomPart(ctx, directProsthesis, doll, val, rectDoll, extraOffset, selectable, tierColor);
+                            return false;
+                        }
+                    }
+                }
+            }
+
             // 1. Hands and Feet icons at bottom / overlay
             if (doll is HandDoll || doll is FeetDoll)
             {

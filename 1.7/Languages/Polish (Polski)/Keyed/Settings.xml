@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <NHT_YAPEM_ModCategory>Nice Health Tab: Recolorized</NHT_YAPEM_ModCategory>
+  <NHT_YAPEM_SectionBody>Opcje kolorowania ciała i ikon</NHT_YAPEM_SectionBody>
+  <NHT_YAPEM_EnableBodyTinting>Przemaluj sylwetkę ciała według dominujących kończyn</NHT_YAPEM_EnableBodyTinting>
+  <NHT_YAPEM_EnableBodyTinting_Desc>Jeśli włączone, sylwetka ciała lalki jest zabarwiana na kolor dominującego typu zainstalowanych protez kończyn.</NHT_YAPEM_EnableBodyTinting_Desc>
+  <NHT_YAPEM_RequiredLimbCount>Wymagana liczba pasujących kończyn do zabarwienia ciała: {0} z 4</NHT_YAPEM_RequiredLimbCount>
+  <NHT_YAPEM_ColorBottomIcons>Pokoloruj dolne ikony dłoni i stóp</NHT_YAPEM_ColorBottomIcons>
+  <NHT_YAPEM_ColorBottomIcons_Desc>Jeśli włączone, dolne ikony dłoni i stóp są zabarwiane na kolor odpowiedniej zainstalowanej kończyny.</NHT_YAPEM_ColorBottomIcons_Desc>
+  <NHT_YAPEM_SectionColors>Kolory kategorii protez i implantów</NHT_YAPEM_SectionColors>
+  <NHT_YAPEM_PaletteHint>Kliknij pole koloru lub przycisk „Paleta...”, aby wybrać kolor na kole/kwadracie:</NHT_YAPEM_PaletteHint>
+  <NHT_YAPEM_TierAdvBionic>Zaawansowana bionika (YAPEM)</NHT_YAPEM_TierAdvBionic>
+  <NHT_YAPEM_TierUltratech>Kończyny Ultratech</NHT_YAPEM_TierUltratech>
+  <NHT_YAPEM_TierArchotech>Kończyny Archotech</NHT_YAPEM_TierArchotech>
+  <NHT_YAPEM_TierBionic>Standardowa bionika</NHT_YAPEM_TierBionic>
+  <NHT_YAPEM_TierProsthetic>Proste protezy</NHT_YAPEM_TierProsthetic>
+  <NHT_YAPEM_PaletteBtn>Paleta...</NHT_YAPEM_PaletteBtn>
+  <NHT_YAPEM_PaletteTip>Kliknij, aby otworzyć próbnik kolorów</NHT_YAPEM_PaletteTip>
+  <NHT_YAPEM_ResetBtn>Zresetuj</NHT_YAPEM_ResetBtn>
+  <NHT_YAPEM_ResetAllBtn>Przywróć wszystkie ustawienia domyślne</NHT_YAPEM_ResetAllBtn>
+</LanguageData>

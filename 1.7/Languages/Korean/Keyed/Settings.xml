@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <NHT_YAPEM_ModCategory>Nice Health Tab: Recolorized</NHT_YAPEM_ModCategory>
+  <NHT_YAPEM_SectionBody>신체 및 아이콘 색상 설정</NHT_YAPEM_SectionBody>
+  <NHT_YAPEM_EnableBodyTinting>지배적인 의체에 따라 신체 실루엣 색상 변경</NHT_YAPEM_EnableBodyTinting>
+  <NHT_YAPEM_EnableBodyTinting_Desc>활성화하면 가장 많이 장착된 의체 유형의 색상으로 신체 실루엣이 칠해집니다.</NHT_YAPEM_EnableBodyTinting_Desc>
+  <NHT_YAPEM_RequiredLimbCount>신체 색상을 변경하는 데 필요한 일치 의체 수: 4개 중 {0}개</NHT_YAPEM_RequiredLimbCount>
+  <NHT_YAPEM_ColorBottomIcons>하단 손/발 아이콘 색상 변경</NHT_YAPEM_ColorBottomIcons>
+  <NHT_YAPEM_ColorBottomIcons_Desc>활성화하면 하단의 손과 발 아이콘이 장착된 해당 사지 의체의 색상으로 표시됩니다.</NHT_YAPEM_ColorBottomIcons_Desc>
+  <NHT_YAPEM_SectionColors>의체 및 인공장기 범주별 색상</NHT_YAPEM_SectionColors>
+  <NHT_YAPEM_PaletteHint>색상 상자나 '팔레트...' 버튼을 클릭하여 색상을 선택하세요:</NHT_YAPEM_PaletteHint>
+  <NHT_YAPEM_TierAdvBionic>고급 생체공학 (YAPEM)</NHT_YAPEM_TierAdvBionic>
+  <NHT_YAPEM_TierUltratech>초고성능 신체부위</NHT_YAPEM_TierUltratech>
+  <NHT_YAPEM_TierArchotech>초월공학 신체부위</NHT_YAPEM_TierArchotech>
+  <NHT_YAPEM_TierBionic>표준 생체공학</NHT_YAPEM_TierBionic>
+  <NHT_YAPEM_TierProsthetic>단순 의체</NHT_YAPEM_TierProsthetic>
+  <NHT_YAPEM_PaletteBtn>팔레트...</NHT_YAPEM_PaletteBtn>
+  <NHT_YAPEM_PaletteTip>클릭하여 색상 선택기를 엽니다</NHT_YAPEM_PaletteTip>
+  <NHT_YAPEM_ResetBtn>초기화</NHT_YAPEM_ResetBtn>
+  <NHT_YAPEM_ResetAllBtn>모든 설정을 기본값으로 재설정</NHT_YAPEM_ResetAllBtn>
+</LanguageData>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <NHT_YAPEM_ModCategory>Nice Health Tab: Recolorized</NHT_YAPEM_ModCategory>
+  <NHT_YAPEM_SectionBody>Test- és ikonszínezési beállítások</NHT_YAPEM_SectionBody>
+  <NHT_YAPEM_EnableBodyTinting>A testsziluett átszínezése a domináns végtagok alapján</NHT_YAPEM_EnableBodyTinting>
+  <NHT_YAPEM_EnableBodyTinting_Desc>Ha be van kapcsolva, a test sziluettje a domináns beültetett végtagprotézisek színével lesz színezve.</NHT_YAPEM_EnableBodyTinting_Desc>
+  <NHT_YAPEM_RequiredLimbCount>Szükséges egyező végtagok száma a test színezéséhez: {0} a 4-ből</NHT_YAPEM_RequiredLimbCount>
+  <NHT_YAPEM_ColorBottomIcons>Alsó kéz- és lábikonnok színezése</NHT_YAPEM_ColorBottomIcons>
+  <NHT_YAPEM_ColorBottomIcons_Desc>Ha be van kapcsolva, az alsó kéz- és lábikonnok a megfelelő beültetett végtag színével lesznek színezve.</NHT_YAPEM_ColorBottomIcons_Desc>
+  <NHT_YAPEM_SectionColors>Protézis- és implantátumkategória színek</NHT_YAPEM_SectionColors>
+  <NHT_YAPEM_PaletteHint>Kattints egy színes négyzetre vagy a 'Paletta...' gombra a színválasztáshoz:</NHT_YAPEM_PaletteHint>
+  <NHT_YAPEM_TierAdvBionic>Fejlett bionika (YAPEM)</NHT_YAPEM_TierAdvBionic>
+  <NHT_YAPEM_TierUltratech>Ultratech végtagok</NHT_YAPEM_TierUltratech>
+  <NHT_YAPEM_TierArchotech>Archotech végtagok</NHT_YAPEM_TierArchotech>
+  <NHT_YAPEM_TierBionic>Standard bionika</NHT_YAPEM_TierBionic>
+  <NHT_YAPEM_TierProsthetic>Egyszerű protézisek</NHT_YAPEM_TierProsthetic>
+  <NHT_YAPEM_PaletteBtn>Paletta...</NHT_YAPEM_PaletteBtn>
+  <NHT_YAPEM_PaletteTip>Kattints a színválasztó megnyitásához</NHT_YAPEM_PaletteTip>
+  <NHT_YAPEM_ResetBtn>Visszaállítás</NHT_YAPEM_ResetBtn>
+  <NHT_YAPEM_ResetAllBtn>Minden beállítás alaphelyzetbe állítása</NHT_YAPEM_ResetAllBtn>
+</LanguageData>

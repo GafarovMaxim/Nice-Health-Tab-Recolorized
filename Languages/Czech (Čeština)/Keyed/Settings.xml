@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <NHT_YAPEM_ModCategory>Nice Health Tab: Recolorized</NHT_YAPEM_ModCategory>
+  <NHT_YAPEM_SectionBody>Možnosti zbarvení těla a ikon</NHT_YAPEM_SectionBody>
+  <NHT_YAPEM_EnableBodyTinting>Přebarvit siluetu těla podle převažujících končetin</NHT_YAPEM_EnableBodyTinting>
+  <NHT_YAPEM_EnableBodyTinting_Desc>Pokud je povoleno, silueta těla se obarví barvou převládajícího typu nainstalovaných protéz končetin.</NHT_YAPEM_EnableBodyTinting_Desc>
+  <NHT_YAPEM_RequiredLimbCount>Minimální počet shodných končetin pro obarvení těla: {0} ze 4</NHT_YAPEM_RequiredLimbCount>
+  <NHT_YAPEM_ColorBottomIcons>Obarvit spodní ikony rukou a nohou</NHT_YAPEM_ColorBottomIcons>
+  <NHT_YAPEM_ColorBottomIcons_Desc>Pokud je povoleno, spodní ikony rukou a nohou se obarví podle odpovídající nainstalované končetiny.</NHT_YAPEM_ColorBottomIcons_Desc>
+  <NHT_YAPEM_SectionColors>Barvy kategorií protéz a implantátů</NHT_YAPEM_SectionColors>
+  <NHT_YAPEM_PaletteHint>Klikněte na barevný čtverec nebo tlačítko „Paleta...“ pro výběr barvy:</NHT_YAPEM_PaletteHint>
+  <NHT_YAPEM_TierAdvBionic>Pokročilá bionika (YAPEM)</NHT_YAPEM_TierAdvBionic>
+  <NHT_YAPEM_TierUltratech>Ultratech končetiny</NHT_YAPEM_TierUltratech>
+  <NHT_YAPEM_TierArchotech>Archotech končetiny</NHT_YAPEM_TierArchotech>
+  <NHT_YAPEM_TierBionic>Standardní bionika</NHT_YAPEM_TierBionic>
+  <NHT_YAPEM_TierProsthetic>Jednoduché protézy</NHT_YAPEM_TierProsthetic>
+  <NHT_YAPEM_PaletteBtn>Paleta...</NHT_YAPEM_PaletteBtn>
+  <NHT_YAPEM_PaletteTip>Klikněte pro otevření výběru barev</NHT_YAPEM_PaletteTip>
+  <NHT_YAPEM_ResetBtn>Obnovit</NHT_YAPEM_ResetBtn>
+  <NHT_YAPEM_ResetAllBtn>Obnovit výchozí nastavení</NHT_YAPEM_ResetAllBtn>
+</LanguageData>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <NHT_YAPEM_ModCategory>Nice Health Tab: Recolorized</NHT_YAPEM_ModCategory>
+  <NHT_YAPEM_SectionBody>Tùy chọn nhuộm màu cơ thể và biểu tượng</NHT_YAPEM_SectionBody>
+  <NHT_YAPEM_EnableBodyTinting>Đổi màu hình bóng cơ thể theo chi giả chiếm ưu thế</NHT_YAPEM_EnableBodyTinting>
+  <NHT_YAPEM_EnableBodyTinting_Desc>Nếu bật, hình bóng cơ thể sẽ được nhuộm theo màu của loại chi giả chiếm ưu thế đang lắp đặt.</NHT_YAPEM_EnableBodyTinting_Desc>
+  <NHT_YAPEM_RequiredLimbCount>Số chi khớp tối thiểu để đổi màu cơ thể: {0}/4</NHT_YAPEM_RequiredLimbCount>
+  <NHT_YAPEM_ColorBottomIcons>Đổi màu biểu tượng bàn tay và bàn chân bên dưới</NHT_YAPEM_ColorBottomIcons>
+  <NHT_YAPEM_ColorBottomIcons_Desc>Nếu bật, các biểu tượng bàn tay và bàn chân bên dưới sẽ đổi theo màu của chi tương ứng.</NHT_YAPEM_ColorBottomIcons_Desc>
+  <NHT_YAPEM_SectionColors>Màu sắc cho các nhóm chi giả và cấy ghép</NHT_YAPEM_SectionColors>
+  <NHT_YAPEM_PaletteHint>Bấm vào ô màu hoặc nút 'Bảng màu...' để chọn màu trong khung màu:</NHT_YAPEM_PaletteHint>
+  <NHT_YAPEM_TierAdvBionic>Phỏng sinh học cao cấp (YAPEM)</NHT_YAPEM_TierAdvBionic>
+  <NHT_YAPEM_TierUltratech>Chi công nghệ siêu việt (Ultratech)</NHT_YAPEM_TierUltratech>
+  <NHT_YAPEM_TierArchotech>Chi Archotech</NHT_YAPEM_TierArchotech>
+  <NHT_YAPEM_TierBionic>Phỏng sinh học tiêu chuẩn</NHT_YAPEM_TierBionic>
+  <NHT_YAPEM_TierProsthetic>Chi giả thông thường</NHT_YAPEM_TierProsthetic>
+  <NHT_YAPEM_PaletteBtn>Bảng màu...</NHT_YAPEM_PaletteBtn>
+  <NHT_YAPEM_PaletteTip>Bấm để mở bảng chọn màu</NHT_YAPEM_PaletteTip>
+  <NHT_YAPEM_ResetBtn>Đặt lại</NHT_YAPEM_ResetBtn>
+  <NHT_YAPEM_ResetAllBtn>Khôi phục tất cả cài đặt về mặc định</NHT_YAPEM_ResetAllBtn>
+</LanguageData>

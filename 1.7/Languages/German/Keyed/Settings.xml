@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <NHT_YAPEM_ModCategory>Nice Health Tab: Recolorized</NHT_YAPEM_ModCategory>
+  <NHT_YAPEM_SectionBody>Körper- und Icon-Färbungsoptionen</NHT_YAPEM_SectionBody>
+  <NHT_YAPEM_EnableBodyTinting>Körpersilhouette nach vorherrschenden Gliedmaßen färben</NHT_YAPEM_EnableBodyTinting>
+  <NHT_YAPEM_EnableBodyTinting_Desc>Wenn aktiviert, wird die Körpersilhouette in der Farbe der vorherrschenden installierten Prothesen eingefärbt.</NHT_YAPEM_EnableBodyTinting_Desc>
+  <NHT_YAPEM_RequiredLimbCount>Erforderliche übereinstimmende Gliedmaßen zum Färben: {0} von 4</NHT_YAPEM_RequiredLimbCount>
+  <NHT_YAPEM_ColorBottomIcons>Untere Hand- und Fußsymbole einfärben</NHT_YAPEM_ColorBottomIcons>
+  <NHT_YAPEM_ColorBottomIcons_Desc>Wenn aktiviert, werden die unteren Hand- und Fußsymbole in der Farbe der jeweiligen installierten Gliedmaße eingefärbt.</NHT_YAPEM_ColorBottomIcons_Desc>
+  <NHT_YAPEM_SectionColors>Farben der Prothesen- und Implantat-Kategorien</NHT_YAPEM_SectionColors>
+  <NHT_YAPEM_PaletteHint>Klicke auf ein Farbfeld oder die Schaltfläche „Palette...“, um eine Farbe auszuwählen:</NHT_YAPEM_PaletteHint>
+  <NHT_YAPEM_TierAdvBionic>Fortschrittliche Bionik (YAPEM)</NHT_YAPEM_TierAdvBionic>
+  <NHT_YAPEM_TierUltratech>Ultratech-Gliedmaßen</NHT_YAPEM_TierUltratech>
+  <NHT_YAPEM_TierArchotech>Archotech-Gliedmaßen</NHT_YAPEM_TierArchotech>
+  <NHT_YAPEM_TierBionic>Standard-Bionik</NHT_YAPEM_TierBionic>
+  <NHT_YAPEM_TierProsthetic>Einfache Prothesen</NHT_YAPEM_TierProsthetic>
+  <NHT_YAPEM_PaletteBtn>Palette...</NHT_YAPEM_PaletteBtn>
+  <NHT_YAPEM_PaletteTip>Klicken, um Farbauswahl zu öffnen</NHT_YAPEM_PaletteTip>
+  <NHT_YAPEM_ResetBtn>Zurücksetzen</NHT_YAPEM_ResetBtn>
+  <NHT_YAPEM_ResetAllBtn>Alle Einstellungen auf Standard zurücksetzen</NHT_YAPEM_ResetAllBtn>
+</LanguageData>

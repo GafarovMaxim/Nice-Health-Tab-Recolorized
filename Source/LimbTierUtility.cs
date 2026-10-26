@@ -34,10 +34,42 @@ namespace NiceHealthTab_YAPEM_Patch
             string defLabel = hediff.def.label ?? "";
             string customLabel = hediff.Label ?? "";
             string fullLabel = defLabel + " " + customLabel;
-            TechLevel tech = hediff.def.spawnThingOnRemoved?.techLevel ?? TechLevel.Undefined;
+            ThingDef spawnThing = hediff.def.spawnThingOnRemoved;
+            TechLevel tech = spawnThing?.techLevel ?? TechLevel.Undefined;
 
-            // 1. Archotech (Любые архотек-импланты из любых модов: Archotech Expanded, EPOE, Vanilla и др.)
+            bool isIntegratedImplants = false;
+            if (hediff.def.modContentPack != null)
+            {
+                string pkg = hediff.def.modContentPack.PackageIdPlayerFacing ?? "";
+                string modName = hediff.def.modContentPack.Name ?? "";
+                if (pkg.Equals("lts.i", StringComparison.OrdinalIgnoreCase) ||
+                    modName.IndexOf("Integrated Implants", StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    isIntegratedImplants = true;
+                }
+            }
+
+            bool hasArchoCategory = false;
+            bool hasUltraCategory = false;
+            bool hasBionicCategory = false;
+            bool hasProstheticCategory = false;
+
+            if (spawnThing?.thingCategories != null)
+            {
+                foreach (var cat in spawnThing.thingCategories)
+                {
+                    if (cat == null) continue;
+                    string catName = cat.defName ?? "";
+                    if (catName.IndexOf("Archotech", StringComparison.OrdinalIgnoreCase) >= 0) hasArchoCategory = true;
+                    if (catName.IndexOf("Ultra", StringComparison.OrdinalIgnoreCase) >= 0) hasUltraCategory = true;
+                    if (catName.IndexOf("Bionic", StringComparison.OrdinalIgnoreCase) >= 0) hasBionicCategory = true;
+                    if (catName.IndexOf("Prosthetic", StringComparison.OrdinalIgnoreCase) >= 0) hasProstheticCategory = true;
+                }
+            }
+
+            // 1. Archotech (Любые архотек-импланты из любых модов: Archotech Expanded, EPOE, Integrated Implants, Vanilla и др.)
             if (tech == TechLevel.Archotech ||
+                hasArchoCategory ||
                 defName.IndexOf("Archo", StringComparison.OrdinalIgnoreCase) >= 0 ||
                 fullLabel.IndexOf("archotech", StringComparison.OrdinalIgnoreCase) >= 0 ||
                 fullLabel.IndexOf("архотек", StringComparison.OrdinalIgnoreCase) >= 0)
@@ -60,6 +92,7 @@ namespace NiceHealthTab_YAPEM_Patch
 
             // 3. Ultratech (Ультратехнологические протезы и импланты)
             if (defName.IndexOf("Ultra", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                hasUltraCategory ||
                 fullLabel.IndexOf("ultratech", StringComparison.OrdinalIgnoreCase) >= 0 ||
                 fullLabel.IndexOf("ультратек", StringComparison.OrdinalIgnoreCase) >= 0 ||
                 (tech == TechLevel.Ultra && defName.IndexOf("Bionic", StringComparison.OrdinalIgnoreCase) < 0 && fullLabel.IndexOf("bionic", StringComparison.OrdinalIgnoreCase) < 0))
@@ -69,10 +102,13 @@ namespace NiceHealthTab_YAPEM_Patch
                 return true;
             }
 
-            // 4. Standard Bionic (Стандартная бионика)
+            // 4. Standard Bionic (Стандартная бионика, включая Integrated Implants)
             if (defName.IndexOf("Bionic", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                hasBionicCategory ||
                 fullLabel.IndexOf("bionic", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                fullLabel.IndexOf("бионич", StringComparison.OrdinalIgnoreCase) >= 0)
+                fullLabel.IndexOf("бионич", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                (isIntegratedImplants && (hediff is Hediff_Implant || hediff is Hediff_AddedPart || spawnThing != null)) ||
+                (tech == TechLevel.Spacer && (hediff is Hediff_Implant || hediff is Hediff_AddedPart)))
             {
                 tier = "Bionic";
                 color = ColorBionic;
@@ -81,6 +117,7 @@ namespace NiceHealthTab_YAPEM_Patch
 
             // 5. Simple Prosthetic (Простые протезы)
             if (defName.IndexOf("Prosthetic", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                hasProstheticCategory ||
                 fullLabel.IndexOf("prosthetic", StringComparison.OrdinalIgnoreCase) >= 0 ||
                 fullLabel.IndexOf("протез", StringComparison.OrdinalIgnoreCase) >= 0)
             {

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <NHT_YAPEM_ModCategory>Nice Health Tab: Recolorized</NHT_YAPEM_ModCategory>
+  <NHT_YAPEM_SectionBody>身体とアイコンの着色設定</NHT_YAPEM_SectionBody>
+  <NHT_YAPEM_EnableBodyTinting>支配的な義肢に基づいて身体シルエットを着色する</NHT_YAPEM_EnableBodyTinting>
+  <NHT_YAPEM_EnableBodyTinting_Desc>有効にすると、装着されている主要な義肢カテゴリの色で身体シルエットが着色されます。</NHT_YAPEM_EnableBodyTinting_Desc>
+  <NHT_YAPEM_RequiredLimbCount>身体を着色するために必要な同種義肢の数: 4肢中{0}肢</NHT_YAPEM_RequiredLimbCount>
+  <NHT_YAPEM_ColorBottomIcons>下の手足アイコンを着色する</NHT_YAPEM_ColorBottomIcons>
+  <NHT_YAPEM_ColorBottomIcons_Desc>有効にすると、下部の手と足のアイコンが対応する義肢の色に着色されます。</NHT_YAPEM_ColorBottomIcons_Desc>
+  <NHT_YAPEM_SectionColors>義肢およびインプラントのカテゴリ色</NHT_YAPEM_SectionColors>
+  <NHT_YAPEM_PaletteHint>色四角形または「パレット...」ボタンをクリックして色を選択してください:</NHT_YAPEM_PaletteHint>
+  <NHT_YAPEM_TierAdvBionic>アドバンスドバイオニック (YAPEM)</NHT_YAPEM_TierAdvBionic>
+  <NHT_YAPEM_TierUltratech>ウルトラテック義肢</NHT_YAPEM_TierUltratech>
+  <NHT_YAPEM_TierArchotech>アルコテック義肢</NHT_YAPEM_TierArchotech>
+  <NHT_YAPEM_TierBionic>標準バイオニック</NHT_YAPEM_TierBionic>
+  <NHT_YAPEM_TierProsthetic>簡易義肢</NHT_YAPEM_TierProsthetic>
+  <NHT_YAPEM_PaletteBtn>パレット...</NHT_YAPEM_PaletteBtn>
+  <NHT_YAPEM_PaletteTip>クリックしてカラーピッカーを開く</NHT_YAPEM_PaletteTip>
+  <NHT_YAPEM_ResetBtn>リセット</NHT_YAPEM_ResetBtn>
+  <NHT_YAPEM_ResetAllBtn>すべての設定をデフォルトに戻す</NHT_YAPEM_ResetAllBtn>
+</LanguageData>

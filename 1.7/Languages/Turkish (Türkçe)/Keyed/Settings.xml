@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <NHT_YAPEM_ModCategory>Nice Health Tab: Recolorized</NHT_YAPEM_ModCategory>
+  <NHT_YAPEM_SectionBody>Vücut ve Simge Renklendirme Seçenekleri</NHT_YAPEM_SectionBody>
+  <NHT_YAPEM_EnableBodyTinting>Vücut silüetini baskın uzuvlara göre renklendir</NHT_YAPEM_EnableBodyTinting>
+  <NHT_YAPEM_EnableBodyTinting_Desc>Etkinleştirildiğinde, vücut mankeni silüeti takılı baskın protez uzuvların rengiyle renklendirilir.</NHT_YAPEM_EnableBodyTinting_Desc>
+  <NHT_YAPEM_RequiredLimbCount>Vücudu renklendirmek için gereken eşleşen uzuv sayısı: 4 üzerinden {0}</NHT_YAPEM_RequiredLimbCount>
+  <NHT_YAPEM_ColorBottomIcons>Alt el ve ayak simgelerini renklendir</NHT_YAPEM_ColorBottomIcons>
+  <NHT_YAPEM_ColorBottomIcons_Desc>Etkinleştirildiğinde, alttaki el ve ayak simgeleri takılı ilgili uzvun rengiyle renklendirilir.</NHT_YAPEM_ColorBottomIcons_Desc>
+  <NHT_YAPEM_SectionColors>Protez ve İmplant Kategori Renkleri</NHT_YAPEM_SectionColors>
+  <NHT_YAPEM_PaletteHint>Renk seçmek için bir renk kutusuna veya 'Palet...' düğmesine tıklayın:</NHT_YAPEM_PaletteHint>
+  <NHT_YAPEM_TierAdvBionic>Gelişmiş Biyonik (YAPEM)</NHT_YAPEM_TierAdvBionic>
+  <NHT_YAPEM_TierUltratech>Ultrateknoloji Uzuvlar</NHT_YAPEM_TierUltratech>
+  <NHT_YAPEM_TierArchotech>Arkotek Uzuvlar</NHT_YAPEM_TierArchotech>
+  <NHT_YAPEM_TierBionic>Standart Biyonik</NHT_YAPEM_TierBionic>
+  <NHT_YAPEM_TierProsthetic>Basit Protezler</NHT_YAPEM_TierProsthetic>
+  <NHT_YAPEM_PaletteBtn>Palet...</NHT_YAPEM_PaletteBtn>
+  <NHT_YAPEM_PaletteTip>Renk seçiciyi açmak için tıklayın</NHT_YAPEM_PaletteTip>
+  <NHT_YAPEM_ResetBtn>Sıfırla</NHT_YAPEM_ResetBtn>
+  <NHT_YAPEM_ResetAllBtn>Tüm Ayarları Varsayılana Sıfırla</NHT_YAPEM_ResetAllBtn>
+</LanguageData>
