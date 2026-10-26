@@ -74,12 +74,77 @@ namespace NiceHealthTab_YAPEM_Patch
                 ? implantInfo.Part
                 : _part;
 
-            bool isOrgan = effectivePart is DollOrgan;
-            bool isBone = effectivePart is DollBone;
-            bool isEye = effectivePart is DollEye;
+            bool isSpine = (val.def != null && val.def.tags != null && val.def.tags.Contains(BodyPartTagDefOf.Spine))
+                || (val.def != null && val.def.defName.IndexOf("Spine", StringComparison.OrdinalIgnoreCase) >= 0)
+                || (_part != null && _part.defName.IndexOf("Spine", StringComparison.OrdinalIgnoreCase) >= 0)
+                || (effectivePart != null && effectivePart.defName.IndexOf("Spine", StringComparison.OrdinalIgnoreCase) >= 0);
 
-            // 3. Strict Filter Mode conformance matching Nice Health Tab:
-            // In Bones view: ONLY bones are shown (no limbs, organs, or substrate)
+            bool isBone = (_part is DollBone)
+                || (effectivePart is DollBone)
+                || isSpine
+                || (val.def != null && val.def.tags != null && val.def.tags.Contains(BodyPartTagDefOf.Pelvis))
+                || (val.def != null && (
+                    val.def.defName.IndexOf("Bone", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Clavicle", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Ribcage", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Pelvis", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Sternum", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Skull", StringComparison.OrdinalIgnoreCase) >= 0
+                ))
+                || (_part != null && (
+                    _part.defName.IndexOf("Bone", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Ribcage", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Pelvis", StringComparison.OrdinalIgnoreCase) >= 0
+                ));
+
+            bool isOrgan = !isBone && (
+                (_part is DollOrgan)
+                || (effectivePart is DollOrgan)
+                || (val.def == BodyPartDefOf.Heart)
+                || (val.def == BodyPartDefOf.Lung)
+                || (val.def != null && (
+                    (val.def.tags != null && (
+                        val.def.tags.Contains(BodyPartTagDefOf.BloodFiltrationSource) ||
+                        val.def.tags.Contains(BodyPartTagDefOf.BloodFiltrationLiver) ||
+                        val.def.tags.Contains(BodyPartTagDefOf.BloodFiltrationKidney) ||
+                        val.def.tags.Contains(BodyPartTagDefOf.BloodPumpingSource) ||
+                        val.def.tags.Contains(BodyPartTagDefOf.BreathingSource) ||
+                        val.def.tags.Contains(BodyPartTagDefOf.BreathingPathway) ||
+                        val.def.tags.Contains(BodyPartTagDefOf.ConsciousnessSource) ||
+                        val.def.tags.Contains(BodyPartTagDefOf.MetabolismSource)
+                    )) ||
+                    val.def.defName.IndexOf("Stomach", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Heart", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Liver", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Kidney", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Lung", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Brain", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Nose", StringComparison.OrdinalIgnoreCase) >= 0
+                ))
+                || (_part != null && (
+                    _part.defName.IndexOf("Organ", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Stomach", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Heart", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Liver", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Kidney", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Lung", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Brain", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Nose", StringComparison.OrdinalIgnoreCase) >= 0
+                ))
+            );
+
+            bool isEye = effectivePart is DollEye || _part is DollEye;
+
+            // 3. Strict Filter Mode conformance:
+
+            // User Rule: Spines must strictly ONLY show in Bone view mode!
+            // In Overview and Organ modes, spines are always hidden.
+            if (isSpine && ctx.FilterMode != DollFilterMode.Bones)
+            {
+                return false;
+            }
+
+            // In Bones view: ONLY bones (and spine) are shown
             if (ctx.FilterMode == DollFilterMode.Bones)
             {
                 if (!isBone)
@@ -87,7 +152,7 @@ namespace NiceHealthTab_YAPEM_Patch
                     return false;
                 }
             }
-            // In Organs view: ONLY organs are shown (no limbs, bones, or substrate)
+            // In Organs view: ONLY organs are shown (natural and bionic/implanted)
             else if (ctx.FilterMode == DollFilterMode.Organs)
             {
                 if (!isOrgan)
@@ -99,6 +164,7 @@ namespace NiceHealthTab_YAPEM_Patch
             else
             {
                 // User option: display organs ONLY in organ view mode
+                // When enabled, hides ALL organs (natural AND bionic/implanted) in overview!
                 if (isOrgan && (YAPEMPatchMod.Settings?.OnlyShowOrgansInOrganMode == true || !NiceHediffTabSettings.ShowOrgan || ctx.ArmorMode))
                 {
                     return false;
@@ -113,7 +179,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }
 
-            // 4. Custom Prosthesis / Bionic Limb recoloring
+            // 4. Custom Prosthesis / Bionic Limb & Organ recoloring
             if (implantInfo != null && implantInfo.HasAlternative && implantInfo.Part != null)
             {
                 var partHediffs = ctx.Hediffs.GetHediffs(val);
@@ -138,6 +204,21 @@ namespace NiceHealthTab_YAPEM_Patch
                             return false;
                         }
                     }
+                }
+
+                // If this is an organ or bone with a prosthesis alternative that didn't match a custom tier:
+                // Draw it here directly so original DrawPart's faulty def-type check doesn't cull it!
+                if (isOrgan || isBone)
+                {
+                    PartFrameInfo partFrameInfo = ctx.GetPartFrameInfo(val);
+                    PartVisual partVisual = ctx.GetPartVisual(val, partHediffs, partFrameInfo.Health, partFrameInfo.MaxHealth);
+                    if (partVisual.Status == DollPartStatus.Missing)
+                    {
+                        return false;
+                    }
+                    Color drawColor = implantInfo.Color != Color.clear ? implantInfo.Color : Color.white;
+                    DrawCustomPart(ctx, implantInfo.Part, doll, val, rectDoll, extraOffset, selectable, drawColor);
+                    return false;
                 }
             }
 

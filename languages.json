@@ -37,10 +37,14 @@
     "NHT_YAPEM_PresetsDefault": "Default:",
     "NHT_YAPEM_PresetsCustom": "Custom:",
     "NHT_YAPEM_SaveCustomTip": "Save current color as custom preset",
-    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Overwrite with current color",
+    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Slot menu (overwrite / delete)",
     "NHT_YAPEM_CustomSlotEmptyTip": "Empty slot — click to save current color",
     "NHT_YAPEM_SaveBtn": "+Save",
-    "NHT_YAPEM_PureWhite": "Pure White"
+    "NHT_YAPEM_PureWhite": "Pure White",
+    "NHT_YAPEM_ApplySlot": "Select color #{0}",
+    "NHT_YAPEM_OverwriteSlot": "Overwrite with current color (#{0})",
+    "NHT_YAPEM_DeleteSlot": "Delete this preset",
+    "NHT_YAPEM_ClearAllSlots": "Clear all custom presets"
   },
   "Russian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -80,10 +84,14 @@
     "NHT_YAPEM_PresetsDefault": "Дефолт:",
     "NHT_YAPEM_PresetsCustom": "Свои:",
     "NHT_YAPEM_SaveCustomTip": "Сохранить текущий цвет в пользовательскую палитру",
-    "NHT_YAPEM_CustomSlotTip": "ЛКМ: выбрать | ПКМ: перезаписать текущим цветом",
+    "NHT_YAPEM_CustomSlotTip": "ЛКМ: выбрать | ПКМ: меню (перезаписать / удалить)",
     "NHT_YAPEM_CustomSlotEmptyTip": "Пустой слот — кликните для сохранения текущего цвета",
     "NHT_YAPEM_SaveBtn": "+Сохр",
-    "NHT_YAPEM_PureWhite": "Чистый белый"
+    "NHT_YAPEM_PureWhite": "Чистый белый",
+    "NHT_YAPEM_ApplySlot": "Выбрать цвет #{0}",
+    "NHT_YAPEM_OverwriteSlot": "Перезаписать текущим цветом (#{0})",
+    "NHT_YAPEM_DeleteSlot": "Удалить этот пресет",
+    "NHT_YAPEM_ClearAllSlots": "Очистить все кастомные пресеты"
   },
   "French": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -123,10 +131,14 @@
     "NHT_YAPEM_PresetsDefault": "Default:",
     "NHT_YAPEM_PresetsCustom": "Custom:",
     "NHT_YAPEM_SaveCustomTip": "Save current color as custom preset",
-    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Overwrite with current color",
+    "NHT_YAPEM_CustomSlotTip": "Clic G: Sélectionner | Clic D: Menu (écraser / supprimer)",
     "NHT_YAPEM_CustomSlotEmptyTip": "Empty slot — click to save current color",
     "NHT_YAPEM_SaveBtn": "+Save",
-    "NHT_YAPEM_PureWhite": "Pure White"
+    "NHT_YAPEM_PureWhite": "Pure White",
+    "NHT_YAPEM_ApplySlot": "Sélectionner la couleur #{0}",
+    "NHT_YAPEM_OverwriteSlot": "Écraser avec la couleur actuelle (#{0})",
+    "NHT_YAPEM_DeleteSlot": "Supprimer ce préréglage",
+    "NHT_YAPEM_ClearAllSlots": "Effacer tous les préréglages personnalisés"
   },
   "German": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -166,10 +178,14 @@
     "NHT_YAPEM_PresetsDefault": "Default:",
     "NHT_YAPEM_PresetsCustom": "Custom:",
     "NHT_YAPEM_SaveCustomTip": "Save current color as custom preset",
-    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Overwrite with current color",
+    "NHT_YAPEM_CustomSlotTip": "LMB: Wählen | RMB: Menü (überschreiben / löschen)",
     "NHT_YAPEM_CustomSlotEmptyTip": "Empty slot — click to save current color",
     "NHT_YAPEM_SaveBtn": "+Save",
-    "NHT_YAPEM_PureWhite": "Pure White"
+    "NHT_YAPEM_PureWhite": "Pure White",
+    "NHT_YAPEM_ApplySlot": "Farbe #{0} wählen",
+    "NHT_YAPEM_OverwriteSlot": "Mit aktueller Farbe (#{0}) überschreiben",
+    "NHT_YAPEM_DeleteSlot": "Dieses Preset löschen",
+    "NHT_YAPEM_ClearAllSlots": "Alle benutzerdefinierten Presets löschen"
   },
   "Italian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -209,10 +225,14 @@
     "NHT_YAPEM_PresetsDefault": "Default:",
     "NHT_YAPEM_PresetsCustom": "Custom:",
     "NHT_YAPEM_SaveCustomTip": "Save current color as custom preset",
-    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Overwrite with current color",
+    "NHT_YAPEM_CustomSlotTip": "Clic SX: Seleziona | Clic DX: Menu (sovrascrivi / elimina)",
     "NHT_YAPEM_CustomSlotEmptyTip": "Empty slot — click to save current color",
     "NHT_YAPEM_SaveBtn": "+Save",
-    "NHT_YAPEM_PureWhite": "Pure White"
+    "NHT_YAPEM_PureWhite": "Pure White",
+    "NHT_YAPEM_ApplySlot": "Seleziona colore #{0}",
+    "NHT_YAPEM_OverwriteSlot": "Sovrascrivi con colore corrente (#{0})",
+    "NHT_YAPEM_DeleteSlot": "Elimina questo preset",
+    "NHT_YAPEM_ClearAllSlots": "Cancella tutti i preset personalizzati"
   },
   "Spanish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -252,10 +272,14 @@
     "NHT_YAPEM_PresetsDefault": "Default:",
     "NHT_YAPEM_PresetsCustom": "Custom:",
     "NHT_YAPEM_SaveCustomTip": "Save current color as custom preset",
-    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Overwrite with current color",
+    "NHT_YAPEM_CustomSlotTip": "Clic izq: Seleccionar | Clic der: Menú (sobrescribir / eliminar)",
     "NHT_YAPEM_CustomSlotEmptyTip": "Empty slot — click to save current color",
     "NHT_YAPEM_SaveBtn": "+Save",
-    "NHT_YAPEM_PureWhite": "Pure White"
+    "NHT_YAPEM_PureWhite": "Pure White",
+    "NHT_YAPEM_ApplySlot": "Seleccionar color #{0}",
+    "NHT_YAPEM_OverwriteSlot": "Sobrescribir con el color actual (#{0})",
+    "NHT_YAPEM_DeleteSlot": "Eliminar este ajuste",
+    "NHT_YAPEM_ClearAllSlots": "Borrar todos los ajustes personalizados"
   },
   "SpanishLatin": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -295,10 +319,14 @@
     "NHT_YAPEM_PresetsDefault": "Default:",
     "NHT_YAPEM_PresetsCustom": "Custom:",
     "NHT_YAPEM_SaveCustomTip": "Save current color as custom preset",
-    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Overwrite with current color",
+    "NHT_YAPEM_CustomSlotTip": "Clic izq: Seleccionar | Clic der: Menú (sobrescribir / eliminar)",
     "NHT_YAPEM_CustomSlotEmptyTip": "Empty slot — click to save current color",
     "NHT_YAPEM_SaveBtn": "+Save",
-    "NHT_YAPEM_PureWhite": "Pure White"
+    "NHT_YAPEM_PureWhite": "Pure White",
+    "NHT_YAPEM_ApplySlot": "Seleccionar color #{0}",
+    "NHT_YAPEM_OverwriteSlot": "Sobrescribir con el color actual (#{0})",
+    "NHT_YAPEM_DeleteSlot": "Eliminar este ajuste",
+    "NHT_YAPEM_ClearAllSlots": "Borrar todos los ajustes personalizados"
   },
   "PortugueseBrazilian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -338,10 +366,14 @@
     "NHT_YAPEM_PresetsDefault": "Default:",
     "NHT_YAPEM_PresetsCustom": "Custom:",
     "NHT_YAPEM_SaveCustomTip": "Save current color as custom preset",
-    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Overwrite with current color",
+    "NHT_YAPEM_CustomSlotTip": "Botão esq: Selecionar | Botão dir: Menu (sobrescrever / excluir)",
     "NHT_YAPEM_CustomSlotEmptyTip": "Empty slot — click to save current color",
     "NHT_YAPEM_SaveBtn": "+Save",
-    "NHT_YAPEM_PureWhite": "Pure White"
+    "NHT_YAPEM_PureWhite": "Pure White",
+    "NHT_YAPEM_ApplySlot": "Selecionar cor #{0}",
+    "NHT_YAPEM_OverwriteSlot": "Sobrescrever com a cor atual (#{0})",
+    "NHT_YAPEM_DeleteSlot": "Excluir esta predefinição",
+    "NHT_YAPEM_ClearAllSlots": "Limpar todas as predefinições personalizadas"
   },
   "Japanese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -381,10 +413,14 @@
     "NHT_YAPEM_PresetsDefault": "Default:",
     "NHT_YAPEM_PresetsCustom": "Custom:",
     "NHT_YAPEM_SaveCustomTip": "Save current color as custom preset",
-    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Overwrite with current color",
+    "NHT_YAPEM_CustomSlotTip": "左クリック: 選択 | 右クリック: メニュー (上書き / 削除)",
     "NHT_YAPEM_CustomSlotEmptyTip": "Empty slot — click to save current color",
     "NHT_YAPEM_SaveBtn": "+Save",
-    "NHT_YAPEM_PureWhite": "Pure White"
+    "NHT_YAPEM_PureWhite": "Pure White",
+    "NHT_YAPEM_ApplySlot": "色 #{0} を選択",
+    "NHT_YAPEM_OverwriteSlot": "現在の色 (#{0}) で上書き",
+    "NHT_YAPEM_DeleteSlot": "このプリセットを削除",
+    "NHT_YAPEM_ClearAllSlots": "すべてのカスタムプリセットをクリア"
   },
   "Korean": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -424,10 +460,14 @@
     "NHT_YAPEM_PresetsDefault": "Default:",
     "NHT_YAPEM_PresetsCustom": "Custom:",
     "NHT_YAPEM_SaveCustomTip": "Save current color as custom preset",
-    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Overwrite with current color",
+    "NHT_YAPEM_CustomSlotTip": "좌클릭: 선택 | 우클릭: 메뉴 (덮어쓰기 / 삭제)",
     "NHT_YAPEM_CustomSlotEmptyTip": "Empty slot — click to save current color",
     "NHT_YAPEM_SaveBtn": "+Save",
-    "NHT_YAPEM_PureWhite": "Pure White"
+    "NHT_YAPEM_PureWhite": "Pure White",
+    "NHT_YAPEM_ApplySlot": "색상 #{0} 선택",
+    "NHT_YAPEM_OverwriteSlot": "현재 색상(#{0})으로 덮어쓰기",
+    "NHT_YAPEM_DeleteSlot": "이 프리셋 삭제",
+    "NHT_YAPEM_ClearAllSlots": "모든 사용자 지정 프리셋 지우기"
   },
   "ChineseSimplified": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -467,10 +507,14 @@
     "NHT_YAPEM_PresetsDefault": "Default:",
     "NHT_YAPEM_PresetsCustom": "Custom:",
     "NHT_YAPEM_SaveCustomTip": "Save current color as custom preset",
-    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Overwrite with current color",
+    "NHT_YAPEM_CustomSlotTip": "左键：选择 | 右键：插槽菜单（覆盖/删除）",
     "NHT_YAPEM_CustomSlotEmptyTip": "Empty slot — click to save current color",
     "NHT_YAPEM_SaveBtn": "+Save",
-    "NHT_YAPEM_PureWhite": "Pure White"
+    "NHT_YAPEM_PureWhite": "Pure White",
+    "NHT_YAPEM_ApplySlot": "选择颜色 #{0}",
+    "NHT_YAPEM_OverwriteSlot": "用当前颜色 (#{0}) 覆盖",
+    "NHT_YAPEM_DeleteSlot": "删除此预设",
+    "NHT_YAPEM_ClearAllSlots": "清除所有自定义预设"
   },
   "ChineseTraditional": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -510,10 +554,14 @@
     "NHT_YAPEM_PresetsDefault": "Default:",
     "NHT_YAPEM_PresetsCustom": "Custom:",
     "NHT_YAPEM_SaveCustomTip": "Save current color as custom preset",
-    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Overwrite with current color",
+    "NHT_YAPEM_CustomSlotTip": "左鍵：選擇 | 右鍵：插槽選單（覆蓋/刪除）",
     "NHT_YAPEM_CustomSlotEmptyTip": "Empty slot — click to save current color",
     "NHT_YAPEM_SaveBtn": "+Save",
-    "NHT_YAPEM_PureWhite": "Pure White"
+    "NHT_YAPEM_PureWhite": "Pure White",
+    "NHT_YAPEM_ApplySlot": "選擇顏色 #{0}",
+    "NHT_YAPEM_OverwriteSlot": "用目前顏色 (#{0}) 覆蓋",
+    "NHT_YAPEM_DeleteSlot": "刪除此預設",
+    "NHT_YAPEM_ClearAllSlots": "清除所有自訂預設"
   },
   "Turkish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -553,10 +601,14 @@
     "NHT_YAPEM_PresetsDefault": "Default:",
     "NHT_YAPEM_PresetsCustom": "Custom:",
     "NHT_YAPEM_SaveCustomTip": "Save current color as custom preset",
-    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Overwrite with current color",
+    "NHT_YAPEM_CustomSlotTip": "Sol Tık: Seç | Sağ Tık: Menü (üzerine yaz / sil)",
     "NHT_YAPEM_CustomSlotEmptyTip": "Empty slot — click to save current color",
     "NHT_YAPEM_SaveBtn": "+Save",
-    "NHT_YAPEM_PureWhite": "Pure White"
+    "NHT_YAPEM_PureWhite": "Pure White",
+    "NHT_YAPEM_ApplySlot": "#{0} Rengini seç",
+    "NHT_YAPEM_OverwriteSlot": "Geçerli renkle (#{0}) üzerine yaz",
+    "NHT_YAPEM_DeleteSlot": "Bu önayarı sil",
+    "NHT_YAPEM_ClearAllSlots": "Tüm özel önayarları temizle"
   },
   "Ukrainian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -596,10 +648,14 @@
     "NHT_YAPEM_PresetsDefault": "Default:",
     "NHT_YAPEM_PresetsCustom": "Custom:",
     "NHT_YAPEM_SaveCustomTip": "Save current color as custom preset",
-    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Overwrite with current color",
+    "NHT_YAPEM_CustomSlotTip": "ЛКМ: вибрати | ПКМ: меню (перезаписати / видалити)",
     "NHT_YAPEM_CustomSlotEmptyTip": "Empty slot — click to save current color",
     "NHT_YAPEM_SaveBtn": "+Save",
-    "NHT_YAPEM_PureWhite": "Pure White"
+    "NHT_YAPEM_PureWhite": "Pure White",
+    "NHT_YAPEM_ApplySlot": "Вибрати колір #{0}",
+    "NHT_YAPEM_OverwriteSlot": "Перезаписати поточним кольором (#{0})",
+    "NHT_YAPEM_DeleteSlot": "Видалити цей пресет",
+    "NHT_YAPEM_ClearAllSlots": "Очистити всі власні пресети"
   },
   "Vietnamese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -639,10 +695,14 @@
     "NHT_YAPEM_PresetsDefault": "Default:",
     "NHT_YAPEM_PresetsCustom": "Custom:",
     "NHT_YAPEM_SaveCustomTip": "Save current color as custom preset",
-    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Overwrite with current color",
+    "NHT_YAPEM_CustomSlotTip": "Chuột trái: Chọn | Chuột phải: Menu (ghi đè / xóa)",
     "NHT_YAPEM_CustomSlotEmptyTip": "Empty slot — click to save current color",
     "NHT_YAPEM_SaveBtn": "+Save",
-    "NHT_YAPEM_PureWhite": "Pure White"
+    "NHT_YAPEM_PureWhite": "Pure White",
+    "NHT_YAPEM_ApplySlot": "Chọn màu #{0}",
+    "NHT_YAPEM_OverwriteSlot": "Ghi đè bằng màu hiện tại (#{0})",
+    "NHT_YAPEM_DeleteSlot": "Xóa cài đặt trước này",
+    "NHT_YAPEM_ClearAllSlots": "Xóa tất cả cài đặt trước tùy chỉnh"
   },
   "Polish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -682,10 +742,14 @@
     "NHT_YAPEM_PresetsDefault": "Default:",
     "NHT_YAPEM_PresetsCustom": "Custom:",
     "NHT_YAPEM_SaveCustomTip": "Save current color as custom preset",
-    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Overwrite with current color",
+    "NHT_YAPEM_CustomSlotTip": "LPM: Wybierz | PPM: Menu (nadpisz / usuń)",
     "NHT_YAPEM_CustomSlotEmptyTip": "Empty slot — click to save current color",
     "NHT_YAPEM_SaveBtn": "+Save",
-    "NHT_YAPEM_PureWhite": "Pure White"
+    "NHT_YAPEM_PureWhite": "Pure White",
+    "NHT_YAPEM_ApplySlot": "Wybierz kolor #{0}",
+    "NHT_YAPEM_OverwriteSlot": "Nadpisz bieżącym kolorem (#{0})",
+    "NHT_YAPEM_DeleteSlot": "Usuń ten szablon",
+    "NHT_YAPEM_ClearAllSlots": "Wyczyść wszystkie własne szablony"
   },
   "Czech": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -725,10 +789,14 @@
     "NHT_YAPEM_PresetsDefault": "Default:",
     "NHT_YAPEM_PresetsCustom": "Custom:",
     "NHT_YAPEM_SaveCustomTip": "Save current color as custom preset",
-    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Overwrite with current color",
+    "NHT_YAPEM_CustomSlotTip": "LTM: Vybrat | PTM: Nabídka (přepsat / smazat)",
     "NHT_YAPEM_CustomSlotEmptyTip": "Empty slot — click to save current color",
     "NHT_YAPEM_SaveBtn": "+Save",
-    "NHT_YAPEM_PureWhite": "Pure White"
+    "NHT_YAPEM_PureWhite": "Pure White",
+    "NHT_YAPEM_ApplySlot": "Vybrat barvu #{0}",
+    "NHT_YAPEM_OverwriteSlot": "Přepsat aktuální barvou (#{0})",
+    "NHT_YAPEM_DeleteSlot": "Smazat tuto předvolbu",
+    "NHT_YAPEM_ClearAllSlots": "Vymazat všechny vlastní předvolby"
   },
   "Hungarian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -768,9 +836,13 @@
     "NHT_YAPEM_PresetsDefault": "Default:",
     "NHT_YAPEM_PresetsCustom": "Custom:",
     "NHT_YAPEM_SaveCustomTip": "Save current color as custom preset",
-    "NHT_YAPEM_CustomSlotTip": "LMB: Select | RMB: Overwrite with current color",
+    "NHT_YAPEM_CustomSlotTip": "Bal klikk: Kiválasztás | Jobb klikk: Menü (felülírás / törlés)",
     "NHT_YAPEM_CustomSlotEmptyTip": "Empty slot — click to save current color",
     "NHT_YAPEM_SaveBtn": "+Save",
-    "NHT_YAPEM_PureWhite": "Pure White"
+    "NHT_YAPEM_PureWhite": "Pure White",
+    "NHT_YAPEM_ApplySlot": "#{0} szín kiválasztása",
+    "NHT_YAPEM_OverwriteSlot": "Felülírás a jelenlegi színnel (#{0})",
+    "NHT_YAPEM_DeleteSlot": "Előbeállítás törlése",
+    "NHT_YAPEM_ClearAllSlots": "Összes egyéni előbeállítás törlése"
   }
 }

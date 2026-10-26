@@ -37,8 +37,12 @@
   <NHT_YAPEM_PresetsDefault>Default:</NHT_YAPEM_PresetsDefault>
   <NHT_YAPEM_PresetsCustom>Custom:</NHT_YAPEM_PresetsCustom>
   <NHT_YAPEM_SaveCustomTip>Save current color as custom preset</NHT_YAPEM_SaveCustomTip>
-  <NHT_YAPEM_CustomSlotTip>LMB: Select | RMB: Overwrite with current color</NHT_YAPEM_CustomSlotTip>
+  <NHT_YAPEM_CustomSlotTip>Chuột trái: Chọn | Chuột phải: Menu (ghi đè / xóa)</NHT_YAPEM_CustomSlotTip>
   <NHT_YAPEM_CustomSlotEmptyTip>Empty slot — click to save current color</NHT_YAPEM_CustomSlotEmptyTip>
   <NHT_YAPEM_SaveBtn>+Save</NHT_YAPEM_SaveBtn>
   <NHT_YAPEM_PureWhite>Pure White</NHT_YAPEM_PureWhite>
+  <NHT_YAPEM_ApplySlot>Chọn màu #{0}</NHT_YAPEM_ApplySlot>
+  <NHT_YAPEM_OverwriteSlot>Ghi đè bằng màu hiện tại (#{0})</NHT_YAPEM_OverwriteSlot>
+  <NHT_YAPEM_DeleteSlot>Xóa cài đặt trước này</NHT_YAPEM_DeleteSlot>
+  <NHT_YAPEM_ClearAllSlots>Xóa tất cả cài đặt trước tùy chỉnh</NHT_YAPEM_ClearAllSlots>
 </LanguageData>

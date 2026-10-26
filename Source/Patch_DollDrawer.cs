@@ -39,11 +39,70 @@ namespace NiceHealthTab_YAPEM_Patch
                 return true;
             }
 
-            bool isOrgan = _part is DollOrgan;
-            bool isBone = _part is DollBone;
+            bool isSpine = (val.def != null && val.def.tags != null && val.def.tags.Contains(BodyPartTagDefOf.Spine))
+                || (val.def != null && val.def.defName.IndexOf("Spine", StringComparison.OrdinalIgnoreCase) >= 0)
+                || (_part != null && _part.defName.IndexOf("Spine", StringComparison.OrdinalIgnoreCase) >= 0);
+
+            bool isBone = (_part is DollBone)
+                || isSpine
+                || (val.def != null && val.def.tags != null && val.def.tags.Contains(BodyPartTagDefOf.Pelvis))
+                || (val.def != null && (
+                    val.def.defName.IndexOf("Bone", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Clavicle", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Ribcage", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Pelvis", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Sternum", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Skull", StringComparison.OrdinalIgnoreCase) >= 0
+                ))
+                || (_part != null && (
+                    _part.defName.IndexOf("Bone", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Ribcage", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Pelvis", StringComparison.OrdinalIgnoreCase) >= 0
+                ));
+
+            bool isOrgan = !isBone && (
+                (_part is DollOrgan)
+                || (val.def == BodyPartDefOf.Heart)
+                || (val.def == BodyPartDefOf.Lung)
+                || (val.def != null && (
+                    (val.def.tags != null && (
+                        val.def.tags.Contains(BodyPartTagDefOf.BloodFiltrationSource) ||
+                        val.def.tags.Contains(BodyPartTagDefOf.BloodFiltrationLiver) ||
+                        val.def.tags.Contains(BodyPartTagDefOf.BloodFiltrationKidney) ||
+                        val.def.tags.Contains(BodyPartTagDefOf.BloodPumpingSource) ||
+                        val.def.tags.Contains(BodyPartTagDefOf.BreathingSource) ||
+                        val.def.tags.Contains(BodyPartTagDefOf.BreathingPathway) ||
+                        val.def.tags.Contains(BodyPartTagDefOf.ConsciousnessSource) ||
+                        val.def.tags.Contains(BodyPartTagDefOf.MetabolismSource)
+                    )) ||
+                    val.def.defName.IndexOf("Stomach", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Heart", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Liver", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Kidney", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Lung", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Brain", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    val.def.defName.IndexOf("Nose", StringComparison.OrdinalIgnoreCase) >= 0
+                ))
+                || (_part != null && (
+                    _part.defName.IndexOf("Organ", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Stomach", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Heart", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Liver", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Kidney", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Lung", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Brain", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    _part.defName.IndexOf("Nose", StringComparison.OrdinalIgnoreCase) >= 0
+                ))
+            );
+
             bool isEye = _part is DollEye;
 
             // Strict Filter Conformance:
+            // Spines only show when bones are viewed!
+            if (isSpine && (!DollDrawer.ShowBones || DollDrawer.ShowArmorCover))
+            {
+                return false;
+            }
             if (isOrgan && (YAPEMPatchMod.Settings?.OnlyShowOrgansInOrganMode == true || !DollDrawer.ShowOrgan || DollDrawer.ShowArmorCover))
             {
                 return false;

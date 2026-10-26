@@ -37,8 +37,12 @@
   <NHT_YAPEM_PresetsDefault>Default:</NHT_YAPEM_PresetsDefault>
   <NHT_YAPEM_PresetsCustom>Custom:</NHT_YAPEM_PresetsCustom>
   <NHT_YAPEM_SaveCustomTip>Save current color as custom preset</NHT_YAPEM_SaveCustomTip>
-  <NHT_YAPEM_CustomSlotTip>LMB: Select | RMB: Overwrite with current color</NHT_YAPEM_CustomSlotTip>
+  <NHT_YAPEM_CustomSlotTip>Botão esq: Selecionar | Botão dir: Menu (sobrescrever / excluir)</NHT_YAPEM_CustomSlotTip>
   <NHT_YAPEM_CustomSlotEmptyTip>Empty slot — click to save current color</NHT_YAPEM_CustomSlotEmptyTip>
   <NHT_YAPEM_SaveBtn>+Save</NHT_YAPEM_SaveBtn>
   <NHT_YAPEM_PureWhite>Pure White</NHT_YAPEM_PureWhite>
+  <NHT_YAPEM_ApplySlot>Selecionar cor #{0}</NHT_YAPEM_ApplySlot>
+  <NHT_YAPEM_OverwriteSlot>Sobrescrever com a cor atual (#{0})</NHT_YAPEM_OverwriteSlot>
+  <NHT_YAPEM_DeleteSlot>Excluir esta predefinição</NHT_YAPEM_DeleteSlot>
+  <NHT_YAPEM_ClearAllSlots>Limpar todas as predefinições personalizadas</NHT_YAPEM_ClearAllSlots>
 </LanguageData>

@@ -12,6 +12,7 @@ namespace NiceHealthTab_YAPEM_Patch
         private const float RadiusOuter = 94f;
         private const float RadiusInner = 72f;
         private const float RadiusDiamond = 58f;
+        private const int CustomSlotCount = 8;
 
         private struct PresetInfo
         {
@@ -72,7 +73,7 @@ namespace NiceHealthTab_YAPEM_Patch
         private bool isDraggingDiamond;
         private bool accepted;
 
-        public override Vector2 InitialSize => new Vector2(370f, 520f);
+        public override Vector2 InitialSize => new Vector2(390f, 530f);
 
         public Dialog_TierColorPicker(string title, Color initialColor, Color defaultColor, Action<Color> onColorSaved)
         {
@@ -295,7 +296,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }
 
-            // 4. Row 2: User Custom Presets & Save Button
+            // 4. Row 2: User Custom Presets with RMB FloatMenu & +Save Button
             float yPresets2 = yPresets1 + chipSize + 6f;
 
             Text.Font = GameFont.Tiny;
@@ -314,14 +315,14 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }
 
-            int customSlotCount = 9;
-            for (int i = 0; i < customSlotCount; i++)
+            for (int i = 0; i < CustomSlotCount; i++)
             {
+                int slotIndex = i;
                 Rect chipRect = new Rect(startX1 + i * (chipSize + chipGap), yPresets2, chipSize, chipSize);
 
-                if (i < customPresets.Count)
+                if (slotIndex < customPresets.Count)
                 {
-                    Color c = customPresets[i];
+                    Color c = customPresets[slotIndex];
                     Widgets.DrawBoxSolid(chipRect, c);
                     Widgets.DrawBox(chipRect, 1);
                     Widgets.DrawHighlightIfMouseover(chipRect);
@@ -334,59 +335,60 @@ namespace NiceHealthTab_YAPEM_Patch
                     string tip = $"#{ColorUtility.ToHtmlStringRGB(c)}\n" + "NHT_YAPEM_CustomSlotTip".Translate();
                     TooltipHandler.TipRegion(chipRect, tip);
 
-                    if (Event.current.type == EventType.MouseDown && Mouse.IsOver(chipRect))
+                    // Check for Left Click (Select) or Right Click / ContextClick (Menu)
+                    if (Widgets.ButtonInvisible(chipRect, true))
                     {
-                        if (Event.current.button == 0) // LMB: select
+                        if (Event.current.button == 1) // RMB
+                        {
+                            OpenCustomSlotMenu(slotIndex, c);
+                        }
+                        else // LMB
                         {
                             SelectColor(c);
-                            Event.current.Use();
                         }
-                        else if (Event.current.button == 1) // RMB: overwrite with currentColor
-                        {
-                            customPresets[i] = currentColor;
-                            YAPEMPatchMod.Settings?.Write();
-                            Event.current.Use();
-                        }
+                    }
+                    else if (Event.current.type == EventType.ContextClick && Mouse.IsOver(chipRect))
+                    {
+                        OpenCustomSlotMenu(slotIndex, c);
+                        Event.current.Use();
                     }
                 }
                 else
                 {
-                    // Empty slot
+                    // Empty slot: clickable to save currentColor
                     Widgets.DrawBoxSolid(chipRect, new Color(0.12f, 0.14f, 0.17f, 0.8f));
                     Widgets.DrawBox(chipRect, 1);
                     Widgets.DrawHighlightIfMouseover(chipRect);
 
                     Text.Font = GameFont.Tiny;
-                    GUI.color = new Color(0.45f, 0.48f, 0.52f, 1f);
+                    GUI.color = new Color(0.55f, 0.58f, 0.62f, 1f);
                     Widgets.Label(new Rect(chipRect.x + 5f, chipRect.y + 1f, chipRect.width, chipRect.height), "+");
                     GUI.color = Color.white;
                     Text.Font = GameFont.Small;
 
                     TooltipHandler.TipRegion(chipRect, "NHT_YAPEM_CustomSlotEmptyTip".Translate());
 
-                    if (Widgets.ButtonInvisible(chipRect))
+                    if (Widgets.ButtonInvisible(chipRect, true))
                     {
                         customPresets.Add(currentColor);
                         YAPEMPatchMod.Settings?.Write();
+                    }
+                    else if (Event.current.type == EventType.ContextClick && Mouse.IsOver(chipRect))
+                    {
+                        customPresets.Add(currentColor);
+                        YAPEMPatchMod.Settings?.Write();
+                        Event.current.Use();
                     }
                 }
             }
 
             // Quick "+Save" button next to custom slots
-            float saveBtnX = startX1 + customSlotCount * (chipSize + chipGap);
-            Rect saveBtnRect = new Rect(saveBtnX, yPresets2, 40f, chipSize);
+            float saveBtnX = startX1 + CustomSlotCount * (chipSize + chipGap) + 4f;
+            Rect saveBtnRect = new Rect(saveBtnX, yPresets2, 60f, chipSize);
             TooltipHandler.TipRegion(saveBtnRect, "NHT_YAPEM_SaveCustomTip".Translate());
             if (Widgets.ButtonText(saveBtnRect, "NHT_YAPEM_SaveBtn".Translate()))
             {
-                if (customPresets.Count < customSlotCount)
-                {
-                    customPresets.Add(currentColor);
-                }
-                else
-                {
-                    customPresets[customPresets.Count - 1] = currentColor;
-                }
-                YAPEMPatchMod.Settings?.Write();
+                SaveCurrentColorToPresets();
             }
 
             // Divider 2
@@ -426,7 +428,7 @@ namespace NiceHealthTab_YAPEM_Patch
             Rect hexHashRect = new Rect(hexX, cardRect.y + 11f, 14f, 24f);
             Widgets.Label(hexHashRect, "#");
 
-            Rect hexFieldRect = new Rect(hexHashRect.xMax + 2f, cardRect.y + 9f, 78f, 28f);
+            Rect hexFieldRect = new Rect(hexHashRect.xMax + 2f, cardRect.y + 9f, 84f, 28f);
             string newHex = Widgets.TextField(hexFieldRect, hexBuffer);
             if (newHex != hexBuffer)
             {
@@ -447,8 +449,8 @@ namespace NiceHealthTab_YAPEM_Patch
 
             Text.Font = GameFont.Tiny;
             GUI.color = new Color(0.72f, 0.72f, 0.72f, 1f);
-            Rect rgbRect1 = new Rect(hexFieldRect.xMax + 12f, cardRect.y + 7f, 90f, 16f);
-            Rect rgbRect2 = new Rect(hexFieldRect.xMax + 12f, cardRect.y + 23f, 90f, 16f);
+            Rect rgbRect1 = new Rect(hexFieldRect.xMax + 12f, cardRect.y + 7f, 96f, 16f);
+            Rect rgbRect2 = new Rect(hexFieldRect.xMax + 12f, cardRect.y + 23f, 96f, 16f);
             Widgets.Label(rgbRect1, $"R: {r255}");
             Widgets.Label(rgbRect2, $"G: {g255}  B: {b255}");
             GUI.color = Color.white;
@@ -456,7 +458,7 @@ namespace NiceHealthTab_YAPEM_Patch
 
             // 6. Action Buttons Bar
             float yBtns = inRect.height - 32f;
-            float btnW = 96f;
+            float btnW = 104f;
             float btnH = 30f;
 
             // Reset Button
@@ -481,6 +483,83 @@ namespace NiceHealthTab_YAPEM_Patch
                 accepted = true;
                 onColorSaved?.Invoke(currentColor);
                 Close();
+            }
+        }
+
+        private void OpenCustomSlotMenu(int index, Color slotColor)
+        {
+            List<FloatMenuOption> options = new List<FloatMenuOption>();
+            string slotHex = ColorUtility.ToHtmlStringRGB(slotColor);
+            string curHex = ColorUtility.ToHtmlStringRGB(currentColor);
+
+            // 1. Select / Apply this slot color
+            options.Add(new FloatMenuOption("NHT_YAPEM_ApplySlot".Translate(slotHex), () =>
+            {
+                SelectColor(slotColor);
+            }));
+
+            // 2. Overwrite this slot with current color
+            options.Add(new FloatMenuOption("NHT_YAPEM_OverwriteSlot".Translate(curHex), () =>
+            {
+                var custom = YAPEMPatchMod.Settings?.CustomPresets;
+                if (custom != null && index >= 0 && index < custom.Count)
+                {
+                    custom[index] = currentColor;
+                    YAPEMPatchMod.Settings?.Write();
+                }
+            }));
+
+            // 3. Delete this slot
+            options.Add(new FloatMenuOption("NHT_YAPEM_DeleteSlot".Translate(), () =>
+            {
+                var custom = YAPEMPatchMod.Settings?.CustomPresets;
+                if (custom != null && index >= 0 && index < custom.Count)
+                {
+                    custom.RemoveAt(index);
+                    YAPEMPatchMod.Settings?.Write();
+                }
+            }));
+
+            // 4. Clear all custom presets
+            options.Add(new FloatMenuOption("NHT_YAPEM_ClearAllSlots".Translate(), () =>
+            {
+                var custom = YAPEMPatchMod.Settings?.CustomPresets;
+                if (custom != null)
+                {
+                    custom.Clear();
+                    YAPEMPatchMod.Settings?.Write();
+                }
+            }));
+
+            Find.WindowStack.Add(new FloatMenu(options));
+        }
+
+        private void SaveCurrentColorToPresets()
+        {
+            var customPresets = YAPEMPatchMod.Settings?.CustomPresets;
+            if (customPresets == null) return;
+
+            if (customPresets.Count < CustomSlotCount)
+            {
+                customPresets.Add(currentColor);
+                YAPEMPatchMod.Settings?.Write();
+            }
+            else
+            {
+                // If all slots are filled, open a choice menu to let user pick which slot to overwrite
+                List<FloatMenuOption> options = new List<FloatMenuOption>();
+                string curHex = ColorUtility.ToHtmlStringRGB(currentColor);
+                for (int s = 0; s < customPresets.Count; s++)
+                {
+                    int slotIdx = s;
+                    string hex = ColorUtility.ToHtmlStringRGB(customPresets[s]);
+                    options.Add(new FloatMenuOption($"Слот {s + 1} (#{hex}) -> #{curHex}", () =>
+                    {
+                        customPresets[slotIdx] = currentColor;
+                        YAPEMPatchMod.Settings?.Write();
+                    }));
+                }
+                Find.WindowStack.Add(new FloatMenu(options));
             }
         }
 

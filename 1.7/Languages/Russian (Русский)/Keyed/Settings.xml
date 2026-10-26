@@ -37,8 +37,12 @@
   <NHT_YAPEM_PresetsDefault>Дефолт:</NHT_YAPEM_PresetsDefault>
   <NHT_YAPEM_PresetsCustom>Свои:</NHT_YAPEM_PresetsCustom>
   <NHT_YAPEM_SaveCustomTip>Сохранить текущий цвет в пользовательскую палитру</NHT_YAPEM_SaveCustomTip>
-  <NHT_YAPEM_CustomSlotTip>ЛКМ: выбрать | ПКМ: перезаписать текущим цветом</NHT_YAPEM_CustomSlotTip>
+  <NHT_YAPEM_CustomSlotTip>ЛКМ: выбрать | ПКМ: меню (перезаписать / удалить)</NHT_YAPEM_CustomSlotTip>
   <NHT_YAPEM_CustomSlotEmptyTip>Пустой слот — кликните для сохранения текущего цвета</NHT_YAPEM_CustomSlotEmptyTip>
   <NHT_YAPEM_SaveBtn>+Сохр</NHT_YAPEM_SaveBtn>
   <NHT_YAPEM_PureWhite>Чистый белый</NHT_YAPEM_PureWhite>
+  <NHT_YAPEM_ApplySlot>Выбрать цвет #{0}</NHT_YAPEM_ApplySlot>
+  <NHT_YAPEM_OverwriteSlot>Перезаписать текущим цветом (#{0})</NHT_YAPEM_OverwriteSlot>
+  <NHT_YAPEM_DeleteSlot>Удалить этот пресет</NHT_YAPEM_DeleteSlot>
+  <NHT_YAPEM_ClearAllSlots>Очистить все кастомные пресеты</NHT_YAPEM_ClearAllSlots>
 </LanguageData>
