@@ -22,4 +22,11 @@
   <NHT_YAPEM_PreviewSubtitle>義肢とインプラントのリアルタイムプレビュー</NHT_YAPEM_PreviewSubtitle>
   <NHT_YAPEM_DominantActive>身体の着色: 有効 ({0}部位)</NHT_YAPEM_DominantActive>
   <NHT_YAPEM_DominantInactive>身体の着色: 無効</NHT_YAPEM_DominantInactive>
+  <NHT_YAPEM_SectionDLCColors>DLCカテゴリカラー</NHT_YAPEM_SectionDLCColors>
+  <NHT_YAPEM_UseDLCColors>DLCインプラント専用の色を使用する</NHT_YAPEM_UseDLCColors>
+  <NHT_YAPEM_UseDLCColors_Desc>有効にすると、Royalty、Biotech、Anomaly、Odysseyのインプラントに固有のDLCカラーが適用されます。</NHT_YAPEM_UseDLCColors_Desc>
+  <NHT_YAPEM_TierRoyalty>Royalty (帝国・王室インプラント)</NHT_YAPEM_TierRoyalty>
+  <NHT_YAPEM_TierBiotech>Biotech (メカニター・解毒)</NHT_YAPEM_TierBiotech>
+  <NHT_YAPEM_TierAnomaly>Anomaly (グール・バイオフェライト)</NHT_YAPEM_TierAnomaly>
+  <NHT_YAPEM_TierOdyssey>Odyssey (パイロット・宇宙)</NHT_YAPEM_TierOdyssey>
 </LanguageData>

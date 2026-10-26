@@ -22,4 +22,11 @@
   <NHT_YAPEM_PreviewSubtitle>Real-time preview of limbs & implants</NHT_YAPEM_PreviewSubtitle>
   <NHT_YAPEM_DominantActive>Body Tinting: Active ({0} limbs)</NHT_YAPEM_DominantActive>
   <NHT_YAPEM_DominantInactive>Body Tinting: Inactive</NHT_YAPEM_DominantInactive>
+  <NHT_YAPEM_SectionDLCColors>DLC Category Colors</NHT_YAPEM_SectionDLCColors>
+  <NHT_YAPEM_UseDLCColors>Use dedicated colors for DLC implants</NHT_YAPEM_UseDLCColors>
+  <NHT_YAPEM_UseDLCColors_Desc>If enabled, implants from Royalty, Biotech, Anomaly, and Odyssey will use their own distinctive DLC colors instead of generic bionics.</NHT_YAPEM_UseDLCColors_Desc>
+  <NHT_YAPEM_TierRoyalty>Royalty (Empire & Royal Implants)</NHT_YAPEM_TierRoyalty>
+  <NHT_YAPEM_TierBiotech>Biotech (Mechanitor & Detox)</NHT_YAPEM_TierBiotech>
+  <NHT_YAPEM_TierAnomaly>Anomaly (Ghoul & Bioferrite)</NHT_YAPEM_TierAnomaly>
+  <NHT_YAPEM_TierOdyssey>Odyssey (Pilot & Cosmic)</NHT_YAPEM_TierOdyssey>
 </LanguageData>

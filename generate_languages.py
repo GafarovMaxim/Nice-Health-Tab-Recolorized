@@ -23,7 +23,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "Pawn Preview",
         "NHT_YAPEM_PreviewSubtitle": "Real-time preview of limbs & implants",
         "NHT_YAPEM_DominantActive": "Body Tinting: Active ({0} limbs)",
-        "NHT_YAPEM_DominantInactive": "Body Tinting: Inactive"
+        "NHT_YAPEM_DominantInactive": "Body Tinting: Inactive",
+        "NHT_YAPEM_SectionDLCColors": "DLC Category Colors",
+        "NHT_YAPEM_UseDLCColors": "Use dedicated colors for DLC implants",
+        "NHT_YAPEM_UseDLCColors_Desc": "If enabled, implants from Royalty, Biotech, Anomaly, and Odyssey will use their own distinctive DLC colors instead of generic bionics.",
+        "NHT_YAPEM_TierRoyalty": "Royalty (Empire & Royal Implants)",
+        "NHT_YAPEM_TierBiotech": "Biotech (Mechanitor & Detox)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (Ghoul & Bioferrite)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (Pilot & Cosmic)"
     },
     "Russian": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -47,7 +54,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "Предпросмотр пешки",
         "NHT_YAPEM_PreviewSubtitle": "Протезы и импланты в реальном времени",
         "NHT_YAPEM_DominantActive": "Окраска тела: Активна ({0} кон.)",
-        "NHT_YAPEM_DominantInactive": "Окраска тела: Неактивна"
+        "NHT_YAPEM_DominantInactive": "Окраска тела: Неактивна",
+        "NHT_YAPEM_SectionDLCColors": "Цвета категорий дополнений (DLC)",
+        "NHT_YAPEM_UseDLCColors": "Использовать отдельные цвета для имплантов из DLC",
+        "NHT_YAPEM_UseDLCColors_Desc": "Если включено, импланты из Royalty, Biotech, Anomaly и Odyssey окрашиваются в свои фирменные цвета дополнений вместо стандартной бионики.",
+        "NHT_YAPEM_TierRoyalty": "Royalty (Имперские железы и импланты)",
+        "NHT_YAPEM_TierBiotech": "Biotech (Механитор и детокс-органы)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (Гулевские и биоферритные органы)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (Пилотные и космические импланты)"
     },
     "French": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -71,7 +85,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "Aperçu du colon",
         "NHT_YAPEM_PreviewSubtitle": "Aperçu en direct des membres et implants",
         "NHT_YAPEM_DominantActive": "Teinte du corps : Active ({0} membres)",
-        "NHT_YAPEM_DominantInactive": "Teinte du corps : Inactive"
+        "NHT_YAPEM_DominantInactive": "Teinte du corps : Inactive",
+        "NHT_YAPEM_SectionDLCColors": "Couleurs des catégories DLC",
+        "NHT_YAPEM_UseDLCColors": "Utiliser des couleurs dédiées pour les implants DLC",
+        "NHT_YAPEM_UseDLCColors_Desc": "Si activé, les implants de Royalty, Biotech, Anomaly et Odyssey utiliseront leurs propres couleurs distinctives.",
+        "NHT_YAPEM_TierRoyalty": "Royalty (Implants impériaux & royaux)",
+        "NHT_YAPEM_TierBiotech": "Biotech (Mécaniteur & détox)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (Goule & bioferrite)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (Pilote & cosmique)"
     },
     "German": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -95,7 +116,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "Kolonistenvorschau",
         "NHT_YAPEM_PreviewSubtitle": "Echtzeitvorschau von Prothesen & Implantaten",
         "NHT_YAPEM_DominantActive": "Körperfärbung: Aktiv ({0} Gliedm.)",
-        "NHT_YAPEM_DominantInactive": "Körperfärbung: Inaktiv"
+        "NHT_YAPEM_DominantInactive": "Körperfärbung: Inaktiv",
+        "NHT_YAPEM_SectionDLCColors": "DLC-Kategoriefarben",
+        "NHT_YAPEM_UseDLCColors": "Eigene Farben für DLC-Implantate verwenden",
+        "NHT_YAPEM_UseDLCColors_Desc": "Wenn aktiviert, verwenden Implantate aus Royalty, Biotech, Anomaly und Odyssey ihre eigenen unverwechselbaren DLC-Farben.",
+        "NHT_YAPEM_TierRoyalty": "Royalty (Kaiserliche & königliche Implantate)",
+        "NHT_YAPEM_TierBiotech": "Biotech (Mechanitor & Entgiftung)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (Ghul & Bioferrit)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (Pilot & Kosmisch)"
     },
     "Italian": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -119,7 +147,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "Anteprima del colono",
         "NHT_YAPEM_PreviewSubtitle": "Anteprima in tempo reale di protesi e impianti",
         "NHT_YAPEM_DominantActive": "Tinta corpo: Attiva ({0} arti)",
-        "NHT_YAPEM_DominantInactive": "Tinta corpo: Inattiva"
+        "NHT_YAPEM_DominantInactive": "Tinta corpo: Inattiva",
+        "NHT_YAPEM_SectionDLCColors": "Colori delle categorie DLC",
+        "NHT_YAPEM_UseDLCColors": "Usa colori dedicati per gli impianti dei DLC",
+        "NHT_YAPEM_UseDLCColors_Desc": "Se abilitato, gli impianti di Royalty, Biotech, Anomaly e Odyssey useranno i propri colori distintivi.",
+        "NHT_YAPEM_TierRoyalty": "Royalty (Impianti imperiali e reali)",
+        "NHT_YAPEM_TierBiotech": "Biotech (Meccanitore e disintossicazione)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (Ghoul e bioferrite)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (Pilota e cosmico)"
     },
     "Spanish": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -143,7 +178,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "Vista previa del colono",
         "NHT_YAPEM_PreviewSubtitle": "Vista en tiempo real de prótesis e implantes",
         "NHT_YAPEM_DominantActive": "Tinte corporal: Activo ({0} miembros)",
-        "NHT_YAPEM_DominantInactive": "Tinte corporal: Inactivo"
+        "NHT_YAPEM_DominantInactive": "Tinte corporal: Inactivo",
+        "NHT_YAPEM_SectionDLCColors": "Colores de categorías DLC",
+        "NHT_YAPEM_UseDLCColors": "Usar colores dedicados para implantes de DLC",
+        "NHT_YAPEM_UseDLCColors_Desc": "Si está activado, los implantes de Royalty, Biotech, Anomaly y Odyssey usarán sus propios colores distintivos.",
+        "NHT_YAPEM_TierRoyalty": "Royalty (Implantes imperiales y reales)",
+        "NHT_YAPEM_TierBiotech": "Biotech (Mecanizador y desintoxicación)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (Necrófago y bioferrita)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (Piloto y cósmico)"
     },
     "SpanishLatin": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -167,7 +209,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "Vista previa del colono",
         "NHT_YAPEM_PreviewSubtitle": "Vista en tiempo real de prótesis e implantes",
         "NHT_YAPEM_DominantActive": "Tinte corporal: Activo ({0} miembros)",
-        "NHT_YAPEM_DominantInactive": "Tinte corporal: Inactivo"
+        "NHT_YAPEM_DominantInactive": "Tinte corporal: Inactivo",
+        "NHT_YAPEM_SectionDLCColors": "Colores de categorías DLC",
+        "NHT_YAPEM_UseDLCColors": "Usar colores dedicados para implantes de DLC",
+        "NHT_YAPEM_UseDLCColors_Desc": "Si está activado, los implantes de Royalty, Biotech, Anomaly y Odyssey usarán sus propios colores distintivos.",
+        "NHT_YAPEM_TierRoyalty": "Royalty (Implantes imperiales y reales)",
+        "NHT_YAPEM_TierBiotech": "Biotech (Mecanizador y desintoxicación)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (Necrófago y bioferrita)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (Piloto y cósmico)"
     },
     "PortugueseBrazilian": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -191,7 +240,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "Prévia do colono",
         "NHT_YAPEM_PreviewSubtitle": "Prévia em tempo real de membros e implantes",
         "NHT_YAPEM_DominantActive": "Tingimento corporal: Ativo ({0} membros)",
-        "NHT_YAPEM_DominantInactive": "Tingimento corporal: Inativo"
+        "NHT_YAPEM_DominantInactive": "Tingimento corporal: Inativo",
+        "NHT_YAPEM_SectionDLCColors": "Cores das categorias DLC",
+        "NHT_YAPEM_UseDLCColors": "Usar cores dedicadas para implantes de DLC",
+        "NHT_YAPEM_UseDLCColors_Desc": "Se ativado, implantes de Royalty, Biotech, Anomaly e Odyssey usarão suas próprias cores distintas.",
+        "NHT_YAPEM_TierRoyalty": "Royalty (Implantes imperiais e reais)",
+        "NHT_YAPEM_TierBiotech": "Biotech (Mecanitor e desintoxicação)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (Carniçal e bioferrita)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (Piloto e cósmico)"
     },
     "Japanese": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -215,7 +271,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "ポーンプレビュー",
         "NHT_YAPEM_PreviewSubtitle": "義肢とインプラントのリアルタイムプレビュー",
         "NHT_YAPEM_DominantActive": "身体の着色: 有効 ({0}部位)",
-        "NHT_YAPEM_DominantInactive": "身体の着色: 無効"
+        "NHT_YAPEM_DominantInactive": "身体の着色: 無効",
+        "NHT_YAPEM_SectionDLCColors": "DLCカテゴリカラー",
+        "NHT_YAPEM_UseDLCColors": "DLCインプラント専用の色を使用する",
+        "NHT_YAPEM_UseDLCColors_Desc": "有効にすると、Royalty、Biotech、Anomaly、Odysseyのインプラントに固有のDLCカラーが適用されます。",
+        "NHT_YAPEM_TierRoyalty": "Royalty (帝国・王室インプラント)",
+        "NHT_YAPEM_TierBiotech": "Biotech (メカニター・解毒)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (グール・バイオフェライト)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (パイロット・宇宙)"
     },
     "Korean": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -239,7 +302,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "폰 미리보기",
         "NHT_YAPEM_PreviewSubtitle": "신체 부속 및 임플란트 실시간 미리보기",
         "NHT_YAPEM_DominantActive": "신체 착색: 활성화 ({0}개 부위)",
-        "NHT_YAPEM_DominantInactive": "신체 착색: 비활성화"
+        "NHT_YAPEM_DominantInactive": "신체 착색: 비활성화",
+        "NHT_YAPEM_SectionDLCColors": "DLC 범주 색상",
+        "NHT_YAPEM_UseDLCColors": "DLC 임플란트 전용 색상 사용",
+        "NHT_YAPEM_UseDLCColors_Desc": "활성화 시 Royalty, Biotech, Anomaly, Odyssey의 임플란트에 고유한 DLC 색상이 적용됩니다.",
+        "NHT_YAPEM_TierRoyalty": "Royalty (제국 및 왕실 임플란트)",
+        "NHT_YAPEM_TierBiotech": "Biotech (메카니터 및 해독)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (구울 및 바이오페라이트)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (조종사 및 우주)"
     },
     "ChineseSimplified": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -263,7 +333,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "角色预览",
         "NHT_YAPEM_PreviewSubtitle": "义肢与植入物实时预览",
         "NHT_YAPEM_DominantActive": "身体着色：已激活（{0}个肢体）",
-        "NHT_YAPEM_DominantInactive": "身体着色：未激活"
+        "NHT_YAPEM_DominantInactive": "身体着色：未激活",
+        "NHT_YAPEM_SectionDLCColors": "DLC分类颜色",
+        "NHT_YAPEM_UseDLCColors": "为DLC植入物使用专用颜色",
+        "NHT_YAPEM_UseDLCColors_Desc": "启用后，来自Royalty、Biotech、Anomaly和Odyssey的植入物将使用专属DLC颜色。",
+        "NHT_YAPEM_TierRoyalty": "Royalty (帝国与皇家植入物)",
+        "NHT_YAPEM_TierBiotech": "Biotech (机械师与排毒器官)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (食尸鬼与生化铁器官)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (飞行员与太空植入物)"
     },
     "ChineseTraditional": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -287,7 +364,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "角色預覽",
         "NHT_YAPEM_PreviewSubtitle": "義肢與植入物實時預覽",
         "NHT_YAPEM_DominantActive": "身體著色：已啟用（{0}個肢體）",
-        "NHT_YAPEM_DominantInactive": "身體著色：未啟用"
+        "NHT_YAPEM_DominantInactive": "身體著色：未啟用",
+        "NHT_YAPEM_SectionDLCColors": "DLC分類顏色",
+        "NHT_YAPEM_UseDLCColors": "為DLC植入物使用專用顏色",
+        "NHT_YAPEM_UseDLCColors_Desc": "啟用後，來自Royalty、Biotech、Anomaly和Odyssey的植入物將使用專屬DLC顏色。",
+        "NHT_YAPEM_TierRoyalty": "Royalty (帝國與皇家植入物)",
+        "NHT_YAPEM_TierBiotech": "Biotech (機械師與排毒器官)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (食屍鬼與生化鐵器官)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (飛行員與太空植入物)"
     },
     "Turkish": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -311,7 +395,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "Kolonist Önizlemesi",
         "NHT_YAPEM_PreviewSubtitle": "Protez ve implantların canlı önizlemesi",
         "NHT_YAPEM_DominantActive": "Gövde Boyama: Aktif ({0} uzuv)",
-        "NHT_YAPEM_DominantInactive": "Gövde Boyama: Devre Dışı"
+        "NHT_YAPEM_DominantInactive": "Gövde Boyama: Devre Dışı",
+        "NHT_YAPEM_SectionDLCColors": "DLC Kategori Renkleri",
+        "NHT_YAPEM_UseDLCColors": "DLC implantları için özel renkler kullan",
+        "NHT_YAPEM_UseDLCColors_Desc": "Etkinleştirilirse Royalty, Biotech, Anomaly ve Odyssey implantları kendi özel renklerini kullanır.",
+        "NHT_YAPEM_TierRoyalty": "Royalty (İmparatorluk İmplantları)",
+        "NHT_YAPEM_TierBiotech": "Biotech (Mekanitör ve Detoks)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (Gulyabani ve Biyoferrit)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (Pilot ve Kozmik)"
     },
     "Ukrainian": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -335,7 +426,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "Попередній перегляд",
         "NHT_YAPEM_PreviewSubtitle": "Протези та імпланти в реальному часі",
         "NHT_YAPEM_DominantActive": "Фарбування тіла: Активне ({0} кінц.)",
-        "NHT_YAPEM_DominantInactive": "Фарбування тіла: Неактивне"
+        "NHT_YAPEM_DominantInactive": "Фарбування тіла: Неактивне",
+        "NHT_YAPEM_SectionDLCColors": "Кольори категорій доповнень (DLC)",
+        "NHT_YAPEM_UseDLCColors": "Окремі кольори для імплантів з DLC",
+        "NHT_YAPEM_UseDLCColors_Desc": "Якщо увімкнено, імпланти з Royalty, Biotech, Anomaly та Odyssey фарбуються у свої фірмові кольори.",
+        "NHT_YAPEM_TierRoyalty": "Royalty (Імперські залози та імпланти)",
+        "NHT_YAPEM_TierBiotech": "Biotech (Механітор і детокс-органи)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (Гулівські та біоферитові органи)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (Пілотні та космічні імпланти)"
     },
     "Vietnamese": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -359,7 +457,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "Xem trước nhân vật",
         "NHT_YAPEM_PreviewSubtitle": "Xem trước chi và bộ phận cấy ghép theo thời gian thực",
         "NHT_YAPEM_DominantActive": "Tô màu thân: Đang bật ({0} chi)",
-        "NHT_YAPEM_DominantInactive": "Tô màu thân: Tắt"
+        "NHT_YAPEM_DominantInactive": "Tô màu thân: Tắt",
+        "NHT_YAPEM_SectionDLCColors": "Màu danh mục DLC",
+        "NHT_YAPEM_UseDLCColors": "Dùng màu riêng cho cấy ghép DLC",
+        "NHT_YAPEM_UseDLCColors_Desc": "Nếu bật, cấy ghép từ Royalty, Biotech, Anomaly và Odyssey sẽ dùng màu DLC đặc trưng.",
+        "NHT_YAPEM_TierRoyalty": "Royalty (Cấy ghép hoàng gia & đế quốc)",
+        "NHT_YAPEM_TierBiotech": "Biotech (Mechanitor & giải độc)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (Ghoul & bioferrite)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (Phi công & vũ trụ)"
     },
     "Polish": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -383,7 +488,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "Podgląd kolonisty",
         "NHT_YAPEM_PreviewSubtitle": "Podgląd kończyn i implantów na żywo",
         "NHT_YAPEM_DominantActive": "Barwienie ciała: Aktywne ({0} kończyny)",
-        "NHT_YAPEM_DominantInactive": "Barwienie ciała: Nieaktywne"
+        "NHT_YAPEM_DominantInactive": "Barwienie ciała: Nieaktywne",
+        "NHT_YAPEM_SectionDLCColors": "Kolory kategorii DLC",
+        "NHT_YAPEM_UseDLCColors": "Używaj dedykowanych kolorów dla implantów DLC",
+        "NHT_YAPEM_UseDLCColors_Desc": "Jeśli włączone, implanty z Royalty, Biotech, Anomaly i Odyssey używają własnych kolorów.",
+        "NHT_YAPEM_TierRoyalty": "Royalty (Implanty imperialne)",
+        "NHT_YAPEM_TierBiotech": "Biotech (Mechanitor i detoks)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (Ghul i bioferryt)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (Pilot i kosmiczne)"
     },
     "Czech": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -407,7 +519,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "Náhled kolonisty",
         "NHT_YAPEM_PreviewSubtitle": "Živý náhled končetin a implantátů",
         "NHT_YAPEM_DominantActive": "Zbarvení těla: Aktivní ({0} konč.)",
-        "NHT_YAPEM_DominantInactive": "Zbarvení těla: Neaktivní"
+        "NHT_YAPEM_DominantInactive": "Zbarvení těla: Neaktivní",
+        "NHT_YAPEM_SectionDLCColors": "Barvy kategorií DLC",
+        "NHT_YAPEM_UseDLCColors": "Používat vyhrazené barvy pro implantáty DLC",
+        "NHT_YAPEM_UseDLCColors_Desc": "Pokud je povoleno, implantáty z Royalty, Biotech, Anomaly a Odyssey budou mít vlastní barvy.",
+        "NHT_YAPEM_TierRoyalty": "Royalty (Císařské implantáty)",
+        "NHT_YAPEM_TierBiotech": "Biotech (Mechanitor a detox)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (Ghúl a bioferrit)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (Pilotní a kosmické)"
     },
     "Hungarian": {
         "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -431,7 +550,14 @@ languages = {
         "NHT_YAPEM_PreviewTitle": "Telepes előnézet",
         "NHT_YAPEM_PreviewSubtitle": "Végtagok és implantátumok valós idejű előnézete",
         "NHT_YAPEM_DominantActive": "Testszínezés: Aktív ({0} végtag)",
-        "NHT_YAPEM_DominantInactive": "Testszínezés: Inaktív"
+        "NHT_YAPEM_DominantInactive": "Testszínezés: Inaktív",
+        "NHT_YAPEM_SectionDLCColors": "DLC kategóriaszínek",
+        "NHT_YAPEM_UseDLCColors": "Egyedi színek használata a DLC implantátumokhoz",
+        "NHT_YAPEM_UseDLCColors_Desc": "Ha be van kapcsolva, a Royalty, Biotech, Anomaly és Odyssey implantátumok saját DLC színeket használnak.",
+        "NHT_YAPEM_TierRoyalty": "Royalty (Birodalmi implantátumok)",
+        "NHT_YAPEM_TierBiotech": "Biotech (Mechanitor és méregtelenítés)",
+        "NHT_YAPEM_TierAnomaly": "Anomaly (Ghul és bioferrit)",
+        "NHT_YAPEM_TierOdyssey": "Odyssey (Pilóta és kozmikus)"
     }
 }
 

@@ -24,6 +24,13 @@ namespace NiceHealthTab_YAPEM_Patch
         public static Color ColorBionic         => YAPEMPatchMod.Settings?.ColorBionic ?? YAPEMPatchSettings.DefaultColorBionic;
         public static Color ColorProsthetic     => YAPEMPatchMod.Settings?.ColorProsthetic ?? YAPEMPatchSettings.DefaultColorProsthetic;
 
+        // DLC Category colors:
+        public static Color ColorRoyalty        => YAPEMPatchMod.Settings?.ColorRoyalty ?? YAPEMPatchSettings.DefaultColorRoyalty;
+        public static Color ColorBiotech        => YAPEMPatchMod.Settings?.ColorBiotech ?? YAPEMPatchSettings.DefaultColorBiotech;
+        public static Color ColorAnomaly        => YAPEMPatchMod.Settings?.ColorAnomaly ?? YAPEMPatchSettings.DefaultColorAnomaly;
+        public static Color ColorOdyssey        => YAPEMPatchMod.Settings?.ColorOdyssey ?? YAPEMPatchSettings.DefaultColorOdyssey;
+        public static bool UseDLCColors         => YAPEMPatchMod.Settings?.UseDLCColors ?? true;
+
         public static bool CategorizeHediffTier(Hediff hediff, out string tier, out Color color)
         {
             tier = null;
@@ -73,6 +80,84 @@ namespace NiceHealthTab_YAPEM_Patch
                                     hediff.def.hediffClass == typeof(Hediff_AddedPart) ||
                                     hediff.def.hediffClass == typeof(Hediff_Implant) ||
                                     spawnThing != null;
+
+            string dlcPkg = hediff.def.modContentPack?.PackageIdPlayerFacing?.ToLowerInvariant() ?? "";
+
+            // Dedicated DLC Categories (Royalty, Biotech, Anomaly, Odyssey)
+            if (UseDLCColors && isAddedOrImplant)
+            {
+                // Royalty DLC
+                if (dlcPkg == "ludeon.rimworld.royalty" ||
+                    defName.Equals("StoneskinGland", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("ArmorskinGland", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("ToughskinGland", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("DrillArm", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("FieldHand", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("ElbowBlade", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("KneeSpike", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("HandTalon", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("VenomFangs", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("VenomTalon", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("AestheticShaper", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("AestheticNose", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("LoveEnhancer", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("GastroAnalyzer", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("Immunoenhancer", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("Coagulator", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("HealingEnhancer", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("CircadianRhythm", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("CircadianHalfCycler", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("LearningAssistant", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("Neurocalculator", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("NuclearStomach", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("ReprocessorStomach", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("SterilizingStomach", StringComparison.OrdinalIgnoreCase))
+                {
+                    tier = "Royalty";
+                    color = ColorRoyalty;
+                    return true;
+                }
+
+                // Biotech DLC
+                if (dlcPkg == "ludeon.rimworld.biotech" ||
+                    defName.Equals("DetoxifierLung", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("DetoxifierKidney", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("MechlinkImplant", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("Mechlink", StringComparison.OrdinalIgnoreCase) ||
+                    defName.StartsWith("ControlSublink", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("RemoteRepairer", StringComparison.OrdinalIgnoreCase))
+                {
+                    tier = "Biotech";
+                    color = ColorBiotech;
+                    return true;
+                }
+
+                // Anomaly DLC
+                if (dlcPkg == "ludeon.rimworld.anomaly" ||
+                    defName.Equals("AdrenalHeart", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("CorrosiveHeart", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("MetalbloodHeart", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("GhoulBarbs", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("GhoulPlating", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("Tentacle", StringComparison.OrdinalIgnoreCase) ||
+                    defName.StartsWith("Fleshmass", StringComparison.OrdinalIgnoreCase))
+                {
+                    tier = "Anomaly";
+                    color = ColorAnomaly;
+                    return true;
+                }
+
+                // Odyssey DLC
+                if (dlcPkg == "ludeon.rimworld.odyssey" ||
+                    defName.Equals("PilotAssistant", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("VacskinGland", StringComparison.OrdinalIgnoreCase) ||
+                    defName.Equals("BloodWarmer", StringComparison.OrdinalIgnoreCase))
+                {
+                    tier = "Odyssey";
+                    color = ColorOdyssey;
+                    return true;
+                }
+            }
 
             // 1. Archotech (Archotech Expanded, Vanilla, Royalty Royal implants, Biotech Mechlink, etc.)
             if (tech == TechLevel.Archotech ||

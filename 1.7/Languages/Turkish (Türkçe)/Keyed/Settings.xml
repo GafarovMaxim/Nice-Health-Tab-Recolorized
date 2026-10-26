@@ -22,4 +22,11 @@
   <NHT_YAPEM_PreviewSubtitle>Protez ve implantların canlı önizlemesi</NHT_YAPEM_PreviewSubtitle>
   <NHT_YAPEM_DominantActive>Gövde Boyama: Aktif ({0} uzuv)</NHT_YAPEM_DominantActive>
   <NHT_YAPEM_DominantInactive>Gövde Boyama: Devre Dışı</NHT_YAPEM_DominantInactive>
+  <NHT_YAPEM_SectionDLCColors>DLC Kategori Renkleri</NHT_YAPEM_SectionDLCColors>
+  <NHT_YAPEM_UseDLCColors>DLC implantları için özel renkler kullan</NHT_YAPEM_UseDLCColors>
+  <NHT_YAPEM_UseDLCColors_Desc>Etkinleştirilirse Royalty, Biotech, Anomaly ve Odyssey implantları kendi özel renklerini kullanır.</NHT_YAPEM_UseDLCColors_Desc>
+  <NHT_YAPEM_TierRoyalty>Royalty (İmparatorluk İmplantları)</NHT_YAPEM_TierRoyalty>
+  <NHT_YAPEM_TierBiotech>Biotech (Mekanitör ve Detoks)</NHT_YAPEM_TierBiotech>
+  <NHT_YAPEM_TierAnomaly>Anomaly (Gulyabani ve Biyoferrit)</NHT_YAPEM_TierAnomaly>
+  <NHT_YAPEM_TierOdyssey>Odyssey (Pilot ve Kozmik)</NHT_YAPEM_TierOdyssey>
 </LanguageData>

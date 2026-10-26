@@ -22,4 +22,11 @@
   <NHT_YAPEM_PreviewSubtitle>Xem trước chi và bộ phận cấy ghép theo thời gian thực</NHT_YAPEM_PreviewSubtitle>
   <NHT_YAPEM_DominantActive>Tô màu thân: Đang bật ({0} chi)</NHT_YAPEM_DominantActive>
   <NHT_YAPEM_DominantInactive>Tô màu thân: Tắt</NHT_YAPEM_DominantInactive>
+  <NHT_YAPEM_SectionDLCColors>Màu danh mục DLC</NHT_YAPEM_SectionDLCColors>
+  <NHT_YAPEM_UseDLCColors>Dùng màu riêng cho cấy ghép DLC</NHT_YAPEM_UseDLCColors>
+  <NHT_YAPEM_UseDLCColors_Desc>Nếu bật, cấy ghép từ Royalty, Biotech, Anomaly và Odyssey sẽ dùng màu DLC đặc trưng.</NHT_YAPEM_UseDLCColors_Desc>
+  <NHT_YAPEM_TierRoyalty>Royalty (Cấy ghép hoàng gia & đế quốc)</NHT_YAPEM_TierRoyalty>
+  <NHT_YAPEM_TierBiotech>Biotech (Mechanitor & giải độc)</NHT_YAPEM_TierBiotech>
+  <NHT_YAPEM_TierAnomaly>Anomaly (Ghoul & bioferrite)</NHT_YAPEM_TierAnomaly>
+  <NHT_YAPEM_TierOdyssey>Odyssey (Phi công & vũ trụ)</NHT_YAPEM_TierOdyssey>
 </LanguageData>

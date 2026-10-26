@@ -22,4 +22,11 @@
   <NHT_YAPEM_PreviewSubtitle>Végtagok és implantátumok valós idejű előnézete</NHT_YAPEM_PreviewSubtitle>
   <NHT_YAPEM_DominantActive>Testszínezés: Aktív ({0} végtag)</NHT_YAPEM_DominantActive>
   <NHT_YAPEM_DominantInactive>Testszínezés: Inaktív</NHT_YAPEM_DominantInactive>
+  <NHT_YAPEM_SectionDLCColors>DLC kategóriaszínek</NHT_YAPEM_SectionDLCColors>
+  <NHT_YAPEM_UseDLCColors>Egyedi színek használata a DLC implantátumokhoz</NHT_YAPEM_UseDLCColors>
+  <NHT_YAPEM_UseDLCColors_Desc>Ha be van kapcsolva, a Royalty, Biotech, Anomaly és Odyssey implantátumok saját DLC színeket használnak.</NHT_YAPEM_UseDLCColors_Desc>
+  <NHT_YAPEM_TierRoyalty>Royalty (Birodalmi implantátumok)</NHT_YAPEM_TierRoyalty>
+  <NHT_YAPEM_TierBiotech>Biotech (Mechanitor és méregtelenítés)</NHT_YAPEM_TierBiotech>
+  <NHT_YAPEM_TierAnomaly>Anomaly (Ghul és bioferrit)</NHT_YAPEM_TierAnomaly>
+  <NHT_YAPEM_TierOdyssey>Odyssey (Pilóta és kozmikus)</NHT_YAPEM_TierOdyssey>
 </LanguageData>

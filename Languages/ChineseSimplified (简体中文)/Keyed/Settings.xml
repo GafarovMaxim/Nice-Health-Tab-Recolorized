@@ -22,4 +22,11 @@
   <NHT_YAPEM_PreviewSubtitle>义肢与植入物实时预览</NHT_YAPEM_PreviewSubtitle>
   <NHT_YAPEM_DominantActive>身体着色：已激活（{0}个肢体）</NHT_YAPEM_DominantActive>
   <NHT_YAPEM_DominantInactive>身体着色：未激活</NHT_YAPEM_DominantInactive>
+  <NHT_YAPEM_SectionDLCColors>DLC分类颜色</NHT_YAPEM_SectionDLCColors>
+  <NHT_YAPEM_UseDLCColors>为DLC植入物使用专用颜色</NHT_YAPEM_UseDLCColors>
+  <NHT_YAPEM_UseDLCColors_Desc>启用后，来自Royalty、Biotech、Anomaly和Odyssey的植入物将使用专属DLC颜色。</NHT_YAPEM_UseDLCColors_Desc>
+  <NHT_YAPEM_TierRoyalty>Royalty (帝国与皇家植入物)</NHT_YAPEM_TierRoyalty>
+  <NHT_YAPEM_TierBiotech>Biotech (机械师与排毒器官)</NHT_YAPEM_TierBiotech>
+  <NHT_YAPEM_TierAnomaly>Anomaly (食尸鬼与生化铁器官)</NHT_YAPEM_TierAnomaly>
+  <NHT_YAPEM_TierOdyssey>Odyssey (飞行员与太空植入物)</NHT_YAPEM_TierOdyssey>
 </LanguageData>

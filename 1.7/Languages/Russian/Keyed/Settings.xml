@@ -22,4 +22,11 @@
   <NHT_YAPEM_PreviewSubtitle>Протезы и импланты в реальном времени</NHT_YAPEM_PreviewSubtitle>
   <NHT_YAPEM_DominantActive>Окраска тела: Активна ({0} кон.)</NHT_YAPEM_DominantActive>
   <NHT_YAPEM_DominantInactive>Окраска тела: Неактивна</NHT_YAPEM_DominantInactive>
+  <NHT_YAPEM_SectionDLCColors>Цвета категорий дополнений (DLC)</NHT_YAPEM_SectionDLCColors>
+  <NHT_YAPEM_UseDLCColors>Использовать отдельные цвета для имплантов из DLC</NHT_YAPEM_UseDLCColors>
+  <NHT_YAPEM_UseDLCColors_Desc>Если включено, импланты из Royalty, Biotech, Anomaly и Odyssey окрашиваются в свои фирменные цвета дополнений вместо стандартной бионики.</NHT_YAPEM_UseDLCColors_Desc>
+  <NHT_YAPEM_TierRoyalty>Royalty (Имперские железы и импланты)</NHT_YAPEM_TierRoyalty>
+  <NHT_YAPEM_TierBiotech>Biotech (Механитор и детокс-органы)</NHT_YAPEM_TierBiotech>
+  <NHT_YAPEM_TierAnomaly>Anomaly (Гулевские и биоферритные органы)</NHT_YAPEM_TierAnomaly>
+  <NHT_YAPEM_TierOdyssey>Odyssey (Пилотные и космические импланты)</NHT_YAPEM_TierOdyssey>
 </LanguageData>

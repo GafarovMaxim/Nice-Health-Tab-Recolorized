@@ -22,4 +22,11 @@
   <NHT_YAPEM_PreviewSubtitle>Živý náhled končetin a implantátů</NHT_YAPEM_PreviewSubtitle>
   <NHT_YAPEM_DominantActive>Zbarvení těla: Aktivní ({0} konč.)</NHT_YAPEM_DominantActive>
   <NHT_YAPEM_DominantInactive>Zbarvení těla: Neaktivní</NHT_YAPEM_DominantInactive>
+  <NHT_YAPEM_SectionDLCColors>Barvy kategorií DLC</NHT_YAPEM_SectionDLCColors>
+  <NHT_YAPEM_UseDLCColors>Používat vyhrazené barvy pro implantáty DLC</NHT_YAPEM_UseDLCColors>
+  <NHT_YAPEM_UseDLCColors_Desc>Pokud je povoleno, implantáty z Royalty, Biotech, Anomaly a Odyssey budou mít vlastní barvy.</NHT_YAPEM_UseDLCColors_Desc>
+  <NHT_YAPEM_TierRoyalty>Royalty (Císařské implantáty)</NHT_YAPEM_TierRoyalty>
+  <NHT_YAPEM_TierBiotech>Biotech (Mechanitor a detox)</NHT_YAPEM_TierBiotech>
+  <NHT_YAPEM_TierAnomaly>Anomaly (Ghúl a bioferrit)</NHT_YAPEM_TierAnomaly>
+  <NHT_YAPEM_TierOdyssey>Odyssey (Pilotní a kosmické)</NHT_YAPEM_TierOdyssey>
 </LanguageData>

@@ -22,4 +22,11 @@
   <NHT_YAPEM_PreviewSubtitle>Протези та імпланти в реальному часі</NHT_YAPEM_PreviewSubtitle>
   <NHT_YAPEM_DominantActive>Фарбування тіла: Активне ({0} кінц.)</NHT_YAPEM_DominantActive>
   <NHT_YAPEM_DominantInactive>Фарбування тіла: Неактивне</NHT_YAPEM_DominantInactive>
+  <NHT_YAPEM_SectionDLCColors>Кольори категорій доповнень (DLC)</NHT_YAPEM_SectionDLCColors>
+  <NHT_YAPEM_UseDLCColors>Окремі кольори для імплантів з DLC</NHT_YAPEM_UseDLCColors>
+  <NHT_YAPEM_UseDLCColors_Desc>Якщо увімкнено, імпланти з Royalty, Biotech, Anomaly та Odyssey фарбуються у свої фірмові кольори.</NHT_YAPEM_UseDLCColors_Desc>
+  <NHT_YAPEM_TierRoyalty>Royalty (Імперські залози та імпланти)</NHT_YAPEM_TierRoyalty>
+  <NHT_YAPEM_TierBiotech>Biotech (Механітор і детокс-органи)</NHT_YAPEM_TierBiotech>
+  <NHT_YAPEM_TierAnomaly>Anomaly (Гулівські та біоферитові органи)</NHT_YAPEM_TierAnomaly>
+  <NHT_YAPEM_TierOdyssey>Odyssey (Пілотні та космічні імпланти)</NHT_YAPEM_TierOdyssey>
 </LanguageData>

@@ -22,4 +22,11 @@
   <NHT_YAPEM_PreviewSubtitle>Aperçu en direct des membres et implants</NHT_YAPEM_PreviewSubtitle>
   <NHT_YAPEM_DominantActive>Teinte du corps : Active ({0} membres)</NHT_YAPEM_DominantActive>
   <NHT_YAPEM_DominantInactive>Teinte du corps : Inactive</NHT_YAPEM_DominantInactive>
+  <NHT_YAPEM_SectionDLCColors>Couleurs des catégories DLC</NHT_YAPEM_SectionDLCColors>
+  <NHT_YAPEM_UseDLCColors>Utiliser des couleurs dédiées pour les implants DLC</NHT_YAPEM_UseDLCColors>
+  <NHT_YAPEM_UseDLCColors_Desc>Si activé, les implants de Royalty, Biotech, Anomaly et Odyssey utiliseront leurs propres couleurs distinctives.</NHT_YAPEM_UseDLCColors_Desc>
+  <NHT_YAPEM_TierRoyalty>Royalty (Implants impériaux & royaux)</NHT_YAPEM_TierRoyalty>
+  <NHT_YAPEM_TierBiotech>Biotech (Mécaniteur & détox)</NHT_YAPEM_TierBiotech>
+  <NHT_YAPEM_TierAnomaly>Anomaly (Goule & bioferrite)</NHT_YAPEM_TierAnomaly>
+  <NHT_YAPEM_TierOdyssey>Odyssey (Pilote & cosmique)</NHT_YAPEM_TierOdyssey>
 </LanguageData>

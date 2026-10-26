@@ -22,4 +22,11 @@
   <NHT_YAPEM_PreviewSubtitle>Podgląd kończyn i implantów na żywo</NHT_YAPEM_PreviewSubtitle>
   <NHT_YAPEM_DominantActive>Barwienie ciała: Aktywne ({0} kończyny)</NHT_YAPEM_DominantActive>
   <NHT_YAPEM_DominantInactive>Barwienie ciała: Nieaktywne</NHT_YAPEM_DominantInactive>
+  <NHT_YAPEM_SectionDLCColors>Kolory kategorii DLC</NHT_YAPEM_SectionDLCColors>
+  <NHT_YAPEM_UseDLCColors>Używaj dedykowanych kolorów dla implantów DLC</NHT_YAPEM_UseDLCColors>
+  <NHT_YAPEM_UseDLCColors_Desc>Jeśli włączone, implanty z Royalty, Biotech, Anomaly i Odyssey używają własnych kolorów.</NHT_YAPEM_UseDLCColors_Desc>
+  <NHT_YAPEM_TierRoyalty>Royalty (Implanty imperialne)</NHT_YAPEM_TierRoyalty>
+  <NHT_YAPEM_TierBiotech>Biotech (Mechanitor i detoks)</NHT_YAPEM_TierBiotech>
+  <NHT_YAPEM_TierAnomaly>Anomaly (Ghul i bioferryt)</NHT_YAPEM_TierAnomaly>
+  <NHT_YAPEM_TierOdyssey>Odyssey (Pilot i kosmiczne)</NHT_YAPEM_TierOdyssey>
 </LanguageData>

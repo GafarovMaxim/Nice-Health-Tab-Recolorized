@@ -22,4 +22,11 @@
   <NHT_YAPEM_PreviewSubtitle>신체 부속 및 임플란트 실시간 미리보기</NHT_YAPEM_PreviewSubtitle>
   <NHT_YAPEM_DominantActive>신체 착색: 활성화 ({0}개 부위)</NHT_YAPEM_DominantActive>
   <NHT_YAPEM_DominantInactive>신체 착색: 비활성화</NHT_YAPEM_DominantInactive>
+  <NHT_YAPEM_SectionDLCColors>DLC 범주 색상</NHT_YAPEM_SectionDLCColors>
+  <NHT_YAPEM_UseDLCColors>DLC 임플란트 전용 색상 사용</NHT_YAPEM_UseDLCColors>
+  <NHT_YAPEM_UseDLCColors_Desc>활성화 시 Royalty, Biotech, Anomaly, Odyssey의 임플란트에 고유한 DLC 색상이 적용됩니다.</NHT_YAPEM_UseDLCColors_Desc>
+  <NHT_YAPEM_TierRoyalty>Royalty (제국 및 왕실 임플란트)</NHT_YAPEM_TierRoyalty>
+  <NHT_YAPEM_TierBiotech>Biotech (메카니터 및 해독)</NHT_YAPEM_TierBiotech>
+  <NHT_YAPEM_TierAnomaly>Anomaly (구울 및 바이오페라이트)</NHT_YAPEM_TierAnomaly>
+  <NHT_YAPEM_TierOdyssey>Odyssey (조종사 및 우주)</NHT_YAPEM_TierOdyssey>
 </LanguageData>

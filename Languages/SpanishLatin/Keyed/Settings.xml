@@ -22,4 +22,11 @@
   <NHT_YAPEM_PreviewSubtitle>Vista en tiempo real de prótesis e implantes</NHT_YAPEM_PreviewSubtitle>
   <NHT_YAPEM_DominantActive>Tinte corporal: Activo ({0} miembros)</NHT_YAPEM_DominantActive>
   <NHT_YAPEM_DominantInactive>Tinte corporal: Inactivo</NHT_YAPEM_DominantInactive>
+  <NHT_YAPEM_SectionDLCColors>Colores de categorías DLC</NHT_YAPEM_SectionDLCColors>
+  <NHT_YAPEM_UseDLCColors>Usar colores dedicados para implantes de DLC</NHT_YAPEM_UseDLCColors>
+  <NHT_YAPEM_UseDLCColors_Desc>Si está activado, los implantes de Royalty, Biotech, Anomaly y Odyssey usarán sus propios colores distintivos.</NHT_YAPEM_UseDLCColors_Desc>
+  <NHT_YAPEM_TierRoyalty>Royalty (Implantes imperiales y reales)</NHT_YAPEM_TierRoyalty>
+  <NHT_YAPEM_TierBiotech>Biotech (Mecanizador y desintoxicación)</NHT_YAPEM_TierBiotech>
+  <NHT_YAPEM_TierAnomaly>Anomaly (Necrófago y bioferrita)</NHT_YAPEM_TierAnomaly>
+  <NHT_YAPEM_TierOdyssey>Odyssey (Piloto y cósmico)</NHT_YAPEM_TierOdyssey>
 </LanguageData>
