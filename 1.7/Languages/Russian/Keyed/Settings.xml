@@ -76,4 +76,5 @@
   <NHT_YAPEM_ProfileImported>Профиль «{0}» успешно импортирован!</NHT_YAPEM_ProfileImported>
   <NHT_YAPEM_InvalidProfileJson>В буфере обмена нет корректных данных палитры.</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>Принять</NHT_YAPEM_ApplyBtn>
+  <NHT_YAPEM_PresetsCount>пресетов</NHT_YAPEM_PresetsCount>
 </LanguageData>

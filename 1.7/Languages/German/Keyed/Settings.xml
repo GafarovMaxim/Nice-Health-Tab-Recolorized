@@ -76,4 +76,5 @@
   <NHT_YAPEM_ProfileImported>Profil "{0}" erfolgreich importiert!</NHT_YAPEM_ProfileImported>
   <NHT_YAPEM_InvalidProfileJson>Zwischenablage enthält keine gültigen Palettendaten.</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>Übernehmen</NHT_YAPEM_ApplyBtn>
+  <NHT_YAPEM_PresetsCount>Voreinstellungen</NHT_YAPEM_PresetsCount>
 </LanguageData>

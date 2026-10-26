@@ -76,4 +76,5 @@
   <NHT_YAPEM_ProfileImported>¡Perfil "{0}" importado con éxito!</NHT_YAPEM_ProfileImported>
   <NHT_YAPEM_InvalidProfileJson>El portapapeles no contiene datos de paleta válidos.</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>Aplicar</NHT_YAPEM_ApplyBtn>
+  <NHT_YAPEM_PresetsCount>preajustes</NHT_YAPEM_PresetsCount>
 </LanguageData>

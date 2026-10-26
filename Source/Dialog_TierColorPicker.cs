@@ -311,7 +311,7 @@ namespace NiceHealthTab_YAPEM_Patch
             GUI.color = new Color(0.75f, 0.78f, 0.82f, 1f);
             Widgets.Label(new Rect(0f, yPresets1, 150f, 16f), "NHT_YAPEM_PresetsDefault".Translate());
             GUI.color = new Color(0.52f, 0.58f, 0.65f, 1f);
-            Widgets.Label(new Rect(inRect.width - 70f, yPresets1, 70f, 16f), $"{DefaultPresets.Length} пресетов");
+            Widgets.Label(new Rect(inRect.width - 95f, yPresets1, 95f, 16f), $"{DefaultPresets.Length} {"NHT_YAPEM_PresetsCount".Translate()}");
             GUI.color = Color.white;
             Text.Font = GameFont.Small;
 
@@ -588,7 +588,7 @@ namespace NiceHealthTab_YAPEM_Patch
             x += labelSize.x + 8f;
 
             // Dropdown
-            float dropW = 140f;
+            float dropW = 125f;
             Rect dropRect = new Rect(x, y, dropW, rect.height);
             string dropTitle = (activeProf?.Label ?? "Profile") + " ▾";
             if (Widgets.ButtonText(dropRect, dropTitle))
@@ -606,10 +606,10 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
                 Find.WindowStack.Add(new FloatMenu(options));
             }
-            x += dropW + 6f;
+            x += dropW + 4f;
 
             // [+ Нов.]
-            float btnW = 54f;
+            float btnW = 48f;
             Rect newBtnRect = new Rect(x, y, btnW, rect.height);
             TooltipHandler.TipRegion(newBtnRect, "NHT_YAPEM_NewProfilePrompt".Translate());
             if (Widgets.ButtonText(newBtnRect, "NHT_YAPEM_NewProfile".Translate()))

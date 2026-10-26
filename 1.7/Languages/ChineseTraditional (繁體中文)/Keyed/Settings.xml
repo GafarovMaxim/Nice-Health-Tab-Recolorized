@@ -76,4 +76,5 @@
   <NHT_YAPEM_ProfileImported>成功导入配置 "{0}"！</NHT_YAPEM_ProfileImported>
   <NHT_YAPEM_InvalidProfileJson>剪贴板中未包含有效的调色板数据。</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>应用</NHT_YAPEM_ApplyBtn>
+  <NHT_YAPEM_PresetsCount>预设</NHT_YAPEM_PresetsCount>
 </LanguageData>

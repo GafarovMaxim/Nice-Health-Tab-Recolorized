@@ -75,7 +75,8 @@
     "NHT_YAPEM_ProfileExported": "Palette exported to clipboard!",
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
-    "NHT_YAPEM_ApplyBtn": "Apply"
+    "NHT_YAPEM_ApplyBtn": "Apply",
+    "NHT_YAPEM_PresetsCount": "presets"
   },
   "Russian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -153,7 +154,8 @@
     "NHT_YAPEM_ProfileExported": "Палитра экспортирована в буфер обмена!",
     "NHT_YAPEM_ProfileImported": "Профиль «{0}» успешно импортирован!",
     "NHT_YAPEM_InvalidProfileJson": "В буфере обмена нет корректных данных палитры.",
-    "NHT_YAPEM_ApplyBtn": "Принять"
+    "NHT_YAPEM_ApplyBtn": "Принять",
+    "NHT_YAPEM_PresetsCount": "пресетов"
   },
   "French": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -231,7 +233,8 @@
     "NHT_YAPEM_ProfileExported": "Palette exportée dans le presse-papiers!",
     "NHT_YAPEM_ProfileImported": "Profil \"{0}\" importé avec succès!",
     "NHT_YAPEM_InvalidProfileJson": "Le presse-papiers ne contient pas de données de palette valides.",
-    "NHT_YAPEM_ApplyBtn": "Appliquer"
+    "NHT_YAPEM_ApplyBtn": "Appliquer",
+    "NHT_YAPEM_PresetsCount": "préréglages"
   },
   "German": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -309,7 +312,8 @@
     "NHT_YAPEM_ProfileExported": "Palette in die Zwischenablage exportiert!",
     "NHT_YAPEM_ProfileImported": "Profil \"{0}\" erfolgreich importiert!",
     "NHT_YAPEM_InvalidProfileJson": "Zwischenablage enthält keine gültigen Palettendaten.",
-    "NHT_YAPEM_ApplyBtn": "Übernehmen"
+    "NHT_YAPEM_ApplyBtn": "Übernehmen",
+    "NHT_YAPEM_PresetsCount": "Voreinstellungen"
   },
   "Italian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -387,7 +391,8 @@
     "NHT_YAPEM_ProfileExported": "Palette exported to clipboard!",
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
-    "NHT_YAPEM_ApplyBtn": "Apply"
+    "NHT_YAPEM_ApplyBtn": "Apply",
+    "NHT_YAPEM_PresetsCount": "presets"
   },
   "Spanish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -465,7 +470,8 @@
     "NHT_YAPEM_ProfileExported": "¡Paleta exportada al portapapeles!",
     "NHT_YAPEM_ProfileImported": "¡Perfil \"{0}\" importado con éxito!",
     "NHT_YAPEM_InvalidProfileJson": "El portapapeles no contiene datos de paleta válidos.",
-    "NHT_YAPEM_ApplyBtn": "Aplicar"
+    "NHT_YAPEM_ApplyBtn": "Aplicar",
+    "NHT_YAPEM_PresetsCount": "preajustes"
   },
   "SpanishLatin": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -543,7 +549,8 @@
     "NHT_YAPEM_ProfileExported": "¡Paleta exportada al portapapeles!",
     "NHT_YAPEM_ProfileImported": "¡Perfil \"{0}\" importado con éxito!",
     "NHT_YAPEM_InvalidProfileJson": "El portapapeles no contiene datos de paleta válidos.",
-    "NHT_YAPEM_ApplyBtn": "Aplicar"
+    "NHT_YAPEM_ApplyBtn": "Aplicar",
+    "NHT_YAPEM_PresetsCount": "preajustes"
   },
   "PortugueseBrazilian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -621,7 +628,8 @@
     "NHT_YAPEM_ProfileExported": "Palette exported to clipboard!",
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
-    "NHT_YAPEM_ApplyBtn": "Apply"
+    "NHT_YAPEM_ApplyBtn": "Apply",
+    "NHT_YAPEM_PresetsCount": "presets"
   },
   "Japanese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -699,7 +707,8 @@
     "NHT_YAPEM_ProfileExported": "Palette exported to clipboard!",
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
-    "NHT_YAPEM_ApplyBtn": "Apply"
+    "NHT_YAPEM_ApplyBtn": "Apply",
+    "NHT_YAPEM_PresetsCount": "presets"
   },
   "Korean": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -777,7 +786,8 @@
     "NHT_YAPEM_ProfileExported": "Palette exported to clipboard!",
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
-    "NHT_YAPEM_ApplyBtn": "Apply"
+    "NHT_YAPEM_ApplyBtn": "Apply",
+    "NHT_YAPEM_PresetsCount": "presets"
   },
   "ChineseSimplified": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -855,7 +865,8 @@
     "NHT_YAPEM_ProfileExported": "调色板配置已复制到剪贴板！",
     "NHT_YAPEM_ProfileImported": "成功导入配置 \"{0}\"！",
     "NHT_YAPEM_InvalidProfileJson": "剪贴板中未包含有效的调色板数据。",
-    "NHT_YAPEM_ApplyBtn": "应用"
+    "NHT_YAPEM_ApplyBtn": "应用",
+    "NHT_YAPEM_PresetsCount": "预设"
   },
   "ChineseTraditional": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -933,7 +944,8 @@
     "NHT_YAPEM_ProfileExported": "调色板配置已复制到剪贴板！",
     "NHT_YAPEM_ProfileImported": "成功导入配置 \"{0}\"！",
     "NHT_YAPEM_InvalidProfileJson": "剪贴板中未包含有效的调色板数据。",
-    "NHT_YAPEM_ApplyBtn": "应用"
+    "NHT_YAPEM_ApplyBtn": "应用",
+    "NHT_YAPEM_PresetsCount": "预设"
   },
   "Turkish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1011,7 +1023,8 @@
     "NHT_YAPEM_ProfileExported": "Palette exported to clipboard!",
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
-    "NHT_YAPEM_ApplyBtn": "Apply"
+    "NHT_YAPEM_ApplyBtn": "Apply",
+    "NHT_YAPEM_PresetsCount": "presets"
   },
   "Ukrainian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1089,7 +1102,8 @@
     "NHT_YAPEM_ProfileExported": "Palette exported to clipboard!",
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
-    "NHT_YAPEM_ApplyBtn": "Apply"
+    "NHT_YAPEM_ApplyBtn": "Apply",
+    "NHT_YAPEM_PresetsCount": "presets"
   },
   "Vietnamese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1167,7 +1181,8 @@
     "NHT_YAPEM_ProfileExported": "Palette exported to clipboard!",
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
-    "NHT_YAPEM_ApplyBtn": "Apply"
+    "NHT_YAPEM_ApplyBtn": "Apply",
+    "NHT_YAPEM_PresetsCount": "presets"
   },
   "Polish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1245,7 +1260,8 @@
     "NHT_YAPEM_ProfileExported": "Palette exported to clipboard!",
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
-    "NHT_YAPEM_ApplyBtn": "Apply"
+    "NHT_YAPEM_ApplyBtn": "Apply",
+    "NHT_YAPEM_PresetsCount": "presets"
   },
   "Czech": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1323,7 +1339,8 @@
     "NHT_YAPEM_ProfileExported": "Palette exported to clipboard!",
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
-    "NHT_YAPEM_ApplyBtn": "Apply"
+    "NHT_YAPEM_ApplyBtn": "Apply",
+    "NHT_YAPEM_PresetsCount": "presets"
   },
   "Hungarian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1401,6 +1418,7 @@
     "NHT_YAPEM_ProfileExported": "Palette exported to clipboard!",
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
-    "NHT_YAPEM_ApplyBtn": "Apply"
+    "NHT_YAPEM_ApplyBtn": "Apply",
+    "NHT_YAPEM_PresetsCount": "presets"
   }
 }

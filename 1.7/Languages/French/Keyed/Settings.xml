@@ -76,4 +76,5 @@
   <NHT_YAPEM_ProfileImported>Profil "{0}" importé avec succès!</NHT_YAPEM_ProfileImported>
   <NHT_YAPEM_InvalidProfileJson>Le presse-papiers ne contient pas de données de palette valides.</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>Appliquer</NHT_YAPEM_ApplyBtn>
+  <NHT_YAPEM_PresetsCount>préréglages</NHT_YAPEM_PresetsCount>
 </LanguageData>

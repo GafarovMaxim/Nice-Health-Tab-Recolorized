@@ -59,7 +59,7 @@ namespace NiceHealthTab_YAPEM_Patch
 
         // Scroll view state
         private Vector2 scrollPosition = Vector2.zero;
-        private float viewHeight = 950f;
+        private float viewHeight = 1600f;
 
         // UI state for Implant Fine-Tuning section
         private static List<ImplantGroup> cachedGroups = null;
@@ -406,6 +406,7 @@ namespace NiceHealthTab_YAPEM_Patch
             Widgets.BeginScrollView(outRect, ref scrollPosition, viewRect);
 
             Listing_Standard listing = new Listing_Standard();
+            listing.maxOneColumn = true;
             listing.Begin(viewRect);
             try {
 
@@ -633,6 +634,7 @@ namespace NiceHealthTab_YAPEM_Patch
             listing.Gap(4f);
 
             // Draw Implants List for current group
+            selectedTabGroupIndex = Mathf.Clamp(selectedTabGroupIndex, 0, Mathf.Max(0, cachedGroups.Count - 1));
             if (selectedTabGroupIndex >= 0 && selectedTabGroupIndex < cachedGroups.Count)
             {
                 var currentGroup = cachedGroups[selectedTabGroupIndex];
@@ -674,11 +676,18 @@ namespace NiceHealthTab_YAPEM_Patch
                     // Icon
                     Rect iconRect = new Rect(rowRect.x + 4f, rowRect.y + 4f, 26f, 26f);
                     ThingDef spawnThing = def.spawnThingOnRemoved;
-                    if (spawnThing != null)
+                    try
                     {
-                        Widgets.DefIcon(iconRect, spawnThing);
+                        if (spawnThing != null)
+                        {
+                            Widgets.DefIcon(iconRect, spawnThing);
+                        }
+                        else
+                        {
+                            Widgets.DrawBoxSolid(iconRect, new Color(0.2f, 0.2f, 0.2f, 0.3f));
+                        }
                     }
-                    else
+                    catch
                     {
                         Widgets.DrawBoxSolid(iconRect, new Color(0.2f, 0.2f, 0.2f, 0.3f));
                     }

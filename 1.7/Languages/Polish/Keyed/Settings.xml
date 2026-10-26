@@ -76,4 +76,5 @@
   <NHT_YAPEM_ProfileImported>Profile "{0}" successfully imported!</NHT_YAPEM_ProfileImported>
   <NHT_YAPEM_InvalidProfileJson>Clipboard does not contain valid palette data.</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>Apply</NHT_YAPEM_ApplyBtn>
+  <NHT_YAPEM_PresetsCount>presets</NHT_YAPEM_PresetsCount>
 </LanguageData>
