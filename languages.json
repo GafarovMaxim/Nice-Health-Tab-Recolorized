@@ -44,7 +44,16 @@
     "NHT_YAPEM_ApplySlot": "Select color #{0}",
     "NHT_YAPEM_OverwriteSlot": "Overwrite with current color (#{0})",
     "NHT_YAPEM_DeleteSlot": "Delete this preset",
-    "NHT_YAPEM_ClearAllSlots": "Clear all custom presets"
+    "NHT_YAPEM_ClearAllSlots": "Clear all custom presets",
+    "NHT_YAPEM_SectionCustomTiers": "Fine-tune Implant Categories",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "Custom color category assignment for each implant and prosthesis. Visual recoloring only, does not affect gameplay.",
+    "NHT_YAPEM_TierAuto": "Auto (Default)",
+    "NHT_YAPEM_TierNone": "No Tint",
+    "NHT_YAPEM_ResetTabOverrides": "Reset Tab",
+    "NHT_YAPEM_SearchImplant": "Search:",
+    "NHT_YAPEM_SlotTitle": "Slot {0}",
+    "NHT_YAPEM_SlotEmpty": "Empty",
+    "NHT_YAPEM_ClearSlot": "Clear this slot"
   },
   "Russian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -91,7 +100,16 @@
     "NHT_YAPEM_ApplySlot": "Выбрать цвет #{0}",
     "NHT_YAPEM_OverwriteSlot": "Перезаписать текущим цветом (#{0})",
     "NHT_YAPEM_DeleteSlot": "Удалить этот пресет",
-    "NHT_YAPEM_ClearAllSlots": "Очистить все кастомные пресеты"
+    "NHT_YAPEM_ClearAllSlots": "Очистить все кастомные пресеты",
+    "NHT_YAPEM_SectionCustomTiers": "Тонкая настройка категорий имплантов",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "Индивидуальная настройка категории цвета для каждого импланта и протеза. Влияет только на покраску в моде и не меняет игровые свойства.",
+    "NHT_YAPEM_TierAuto": "Авто (по умолчанию)",
+    "NHT_YAPEM_TierNone": "Без покраски",
+    "NHT_YAPEM_ResetTabOverrides": "Сбросить вкладку",
+    "NHT_YAPEM_SearchImplant": "Поиск:",
+    "NHT_YAPEM_SlotTitle": "Слот {0}",
+    "NHT_YAPEM_SlotEmpty": "Пусто",
+    "NHT_YAPEM_ClearSlot": "Очистить этот слот"
   },
   "French": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -138,7 +156,16 @@
     "NHT_YAPEM_ApplySlot": "Sélectionner la couleur #{0}",
     "NHT_YAPEM_OverwriteSlot": "Écraser avec la couleur actuelle (#{0})",
     "NHT_YAPEM_DeleteSlot": "Supprimer ce préréglage",
-    "NHT_YAPEM_ClearAllSlots": "Effacer tous les préréglages personnalisés"
+    "NHT_YAPEM_ClearAllSlots": "Effacer tous les préréglages personnalisés",
+    "NHT_YAPEM_SectionCustomTiers": "Ajustement des catégories d implants",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "Attribution personnalisée de couleur pour chaque implant et prothèse.",
+    "NHT_YAPEM_TierAuto": "Auto (Défaut)",
+    "NHT_YAPEM_TierNone": "Sans teinte",
+    "NHT_YAPEM_ResetTabOverrides": "Réinitialiser l onglet",
+    "NHT_YAPEM_SearchImplant": "Recherche :",
+    "NHT_YAPEM_SlotTitle": "Emplacement {0}",
+    "NHT_YAPEM_SlotEmpty": "Vide",
+    "NHT_YAPEM_ClearSlot": "Effacer cet emplacement"
   },
   "German": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -185,7 +212,16 @@
     "NHT_YAPEM_ApplySlot": "Farbe #{0} wählen",
     "NHT_YAPEM_OverwriteSlot": "Mit aktueller Farbe (#{0}) überschreiben",
     "NHT_YAPEM_DeleteSlot": "Dieses Preset löschen",
-    "NHT_YAPEM_ClearAllSlots": "Alle benutzerdefinierten Presets löschen"
+    "NHT_YAPEM_ClearAllSlots": "Alle benutzerdefinierten Presets löschen",
+    "NHT_YAPEM_SectionCustomTiers": "Feinabstimmung der Implantat-Kategorien",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "Individuelle Farbkategorie für jedes Implantat und jede Prothese.",
+    "NHT_YAPEM_TierAuto": "Auto (Standard)",
+    "NHT_YAPEM_TierNone": "Keine Färbung",
+    "NHT_YAPEM_ResetTabOverrides": "Reiter zurücksetzen",
+    "NHT_YAPEM_SearchImplant": "Suche:",
+    "NHT_YAPEM_SlotTitle": "Slot {0}",
+    "NHT_YAPEM_SlotEmpty": "Leer",
+    "NHT_YAPEM_ClearSlot": "Diesen Slot leeren"
   },
   "Italian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -232,7 +268,16 @@
     "NHT_YAPEM_ApplySlot": "Seleziona colore #{0}",
     "NHT_YAPEM_OverwriteSlot": "Sovrascrivi con colore corrente (#{0})",
     "NHT_YAPEM_DeleteSlot": "Elimina questo preset",
-    "NHT_YAPEM_ClearAllSlots": "Cancella tutti i preset personalizzati"
+    "NHT_YAPEM_ClearAllSlots": "Cancella tutti i preset personalizzati",
+    "NHT_YAPEM_SectionCustomTiers": "Regolazione categorie impianti",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "Assegnazione colore personalizzata per ciascun impianto e protesi.",
+    "NHT_YAPEM_TierAuto": "Auto (Predefinito)",
+    "NHT_YAPEM_TierNone": "Nessuna tinta",
+    "NHT_YAPEM_ResetTabOverrides": "Ripristina scheda",
+    "NHT_YAPEM_SearchImplant": "Cerca:",
+    "NHT_YAPEM_SlotTitle": "Slot {0}",
+    "NHT_YAPEM_SlotEmpty": "Vuoto",
+    "NHT_YAPEM_ClearSlot": "Svuota questo slot"
   },
   "Spanish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -279,7 +324,16 @@
     "NHT_YAPEM_ApplySlot": "Seleccionar color #{0}",
     "NHT_YAPEM_OverwriteSlot": "Sobrescribir con el color actual (#{0})",
     "NHT_YAPEM_DeleteSlot": "Eliminar este ajuste",
-    "NHT_YAPEM_ClearAllSlots": "Borrar todos los ajustes personalizados"
+    "NHT_YAPEM_ClearAllSlots": "Borrar todos los ajustes personalizados",
+    "NHT_YAPEM_SectionCustomTiers": "Ajuste fino de categorías de implantes",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "Asignación de categoría de color personalizada para cada implante y prótesis.",
+    "NHT_YAPEM_TierAuto": "Auto (Por defecto)",
+    "NHT_YAPEM_TierNone": "Sin tinte",
+    "NHT_YAPEM_ResetTabOverrides": "Restablecer pestaña",
+    "NHT_YAPEM_SearchImplant": "Buscar:",
+    "NHT_YAPEM_SlotTitle": "Ranura {0}",
+    "NHT_YAPEM_SlotEmpty": "Vacío",
+    "NHT_YAPEM_ClearSlot": "Borrar esta ranura"
   },
   "SpanishLatin": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -326,7 +380,16 @@
     "NHT_YAPEM_ApplySlot": "Seleccionar color #{0}",
     "NHT_YAPEM_OverwriteSlot": "Sobrescribir con el color actual (#{0})",
     "NHT_YAPEM_DeleteSlot": "Eliminar este ajuste",
-    "NHT_YAPEM_ClearAllSlots": "Borrar todos los ajustes personalizados"
+    "NHT_YAPEM_ClearAllSlots": "Borrar todos los ajustes personalizados",
+    "NHT_YAPEM_SectionCustomTiers": "Ajuste fino de categorías de implantes",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "Asignación de categoría de color personalizada para cada implante y prótesis.",
+    "NHT_YAPEM_TierAuto": "Auto (Por defecto)",
+    "NHT_YAPEM_TierNone": "Sin tinte",
+    "NHT_YAPEM_ResetTabOverrides": "Restablecer pestaña",
+    "NHT_YAPEM_SearchImplant": "Buscar:",
+    "NHT_YAPEM_SlotTitle": "Ranura {0}",
+    "NHT_YAPEM_SlotEmpty": "Vacío",
+    "NHT_YAPEM_ClearSlot": "Borrar esta ranura"
   },
   "PortugueseBrazilian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -373,7 +436,16 @@
     "NHT_YAPEM_ApplySlot": "Selecionar cor #{0}",
     "NHT_YAPEM_OverwriteSlot": "Sobrescrever com a cor atual (#{0})",
     "NHT_YAPEM_DeleteSlot": "Excluir esta predefinição",
-    "NHT_YAPEM_ClearAllSlots": "Limpar todas as predefinições personalizadas"
+    "NHT_YAPEM_ClearAllSlots": "Limpar todas as predefinições personalizadas",
+    "NHT_YAPEM_SectionCustomTiers": "Ajuste fino de categorias de implantes",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "Atribuição personalizada de cor para cada implante e prótese.",
+    "NHT_YAPEM_TierAuto": "Automático (Padrão)",
+    "NHT_YAPEM_TierNone": "Sem coloração",
+    "NHT_YAPEM_ResetTabOverrides": "Redefinir aba",
+    "NHT_YAPEM_SearchImplant": "Pesquisar:",
+    "NHT_YAPEM_SlotTitle": "Slot {0}",
+    "NHT_YAPEM_SlotEmpty": "Vazio",
+    "NHT_YAPEM_ClearSlot": "Limpar este slot"
   },
   "Japanese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -420,7 +492,16 @@
     "NHT_YAPEM_ApplySlot": "色 #{0} を選択",
     "NHT_YAPEM_OverwriteSlot": "現在の色 (#{0}) で上書き",
     "NHT_YAPEM_DeleteSlot": "このプリセットを削除",
-    "NHT_YAPEM_ClearAllSlots": "すべてのカスタムプリセットをクリア"
+    "NHT_YAPEM_ClearAllSlots": "すべてのカスタムプリセットをクリア",
+    "NHT_YAPEM_SectionCustomTiers": "インプラントカテゴリの微調整",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "各インプラントや義肢のカラーカテゴリを個別に設定できます。",
+    "NHT_YAPEM_TierAuto": "自動 (デフォルト)",
+    "NHT_YAPEM_TierNone": "着色なし",
+    "NHT_YAPEM_ResetTabOverrides": "タブをリセット",
+    "NHT_YAPEM_SearchImplant": "検索:",
+    "NHT_YAPEM_SlotTitle": "スロット {0}",
+    "NHT_YAPEM_SlotEmpty": "空",
+    "NHT_YAPEM_ClearSlot": "このスロットを消去"
   },
   "Korean": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -467,7 +548,16 @@
     "NHT_YAPEM_ApplySlot": "색상 #{0} 선택",
     "NHT_YAPEM_OverwriteSlot": "현재 색상(#{0})으로 덮어쓰기",
     "NHT_YAPEM_DeleteSlot": "이 프리셋 삭제",
-    "NHT_YAPEM_ClearAllSlots": "모든 사용자 지정 프리셋 지우기"
+    "NHT_YAPEM_ClearAllSlots": "모든 사용자 지정 프리셋 지우기",
+    "NHT_YAPEM_SectionCustomTiers": "임플란트 범주 세부 조정",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "각 임플란트 및 인공신체의 색상 범주를 개별 지정합니다.",
+    "NHT_YAPEM_TierAuto": "자동 (기본값)",
+    "NHT_YAPEM_TierNone": "색상 없음",
+    "NHT_YAPEM_ResetTabOverrides": "탭 재설정",
+    "NHT_YAPEM_SearchImplant": "검색:",
+    "NHT_YAPEM_SlotTitle": "슬롯 {0}",
+    "NHT_YAPEM_SlotEmpty": "비어있음",
+    "NHT_YAPEM_ClearSlot": "이 슬롯 비우기"
   },
   "ChineseSimplified": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -514,7 +604,16 @@
     "NHT_YAPEM_ApplySlot": "选择颜色 #{0}",
     "NHT_YAPEM_OverwriteSlot": "用当前颜色 (#{0}) 覆盖",
     "NHT_YAPEM_DeleteSlot": "删除此预设",
-    "NHT_YAPEM_ClearAllSlots": "清除所有自定义预设"
+    "NHT_YAPEM_ClearAllSlots": "清除所有自定义预设",
+    "NHT_YAPEM_SectionCustomTiers": "植入物分类微调",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "为每个植入物和假肢自定义颜色分类。仅影响本模组着色，不改动游戏属性。",
+    "NHT_YAPEM_TierAuto": "自动（默认）",
+    "NHT_YAPEM_TierNone": "无着色",
+    "NHT_YAPEM_ResetTabOverrides": "重置该标签页",
+    "NHT_YAPEM_SearchImplant": "搜索：",
+    "NHT_YAPEM_SlotTitle": "插槽 {0}",
+    "NHT_YAPEM_SlotEmpty": "空",
+    "NHT_YAPEM_ClearSlot": "清除此插槽"
   },
   "ChineseTraditional": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -561,7 +660,16 @@
     "NHT_YAPEM_ApplySlot": "選擇顏色 #{0}",
     "NHT_YAPEM_OverwriteSlot": "用目前顏色 (#{0}) 覆蓋",
     "NHT_YAPEM_DeleteSlot": "刪除此預設",
-    "NHT_YAPEM_ClearAllSlots": "清除所有自訂預設"
+    "NHT_YAPEM_ClearAllSlots": "清除所有自訂預設",
+    "NHT_YAPEM_SectionCustomTiers": "植入物分類微調",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "為每個植入物和義肢自訂顏色分類。僅影響本模組著色，不改動遊戲屬性。",
+    "NHT_YAPEM_TierAuto": "自動（預設）",
+    "NHT_YAPEM_TierNone": "無著色",
+    "NHT_YAPEM_ResetTabOverrides": "重設該標籤頁",
+    "NHT_YAPEM_SearchImplant": "搜尋：",
+    "NHT_YAPEM_SlotTitle": "插槽 {0}",
+    "NHT_YAPEM_SlotEmpty": "空",
+    "NHT_YAPEM_ClearSlot": "清除此插槽"
   },
   "Turkish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -608,7 +716,16 @@
     "NHT_YAPEM_ApplySlot": "#{0} Rengini seç",
     "NHT_YAPEM_OverwriteSlot": "Geçerli renkle (#{0}) üzerine yaz",
     "NHT_YAPEM_DeleteSlot": "Bu önayarı sil",
-    "NHT_YAPEM_ClearAllSlots": "Tüm özel önayarları temizle"
+    "NHT_YAPEM_ClearAllSlots": "Tüm özel önayarları temizle",
+    "NHT_YAPEM_SectionCustomTiers": "İmplant Kategorilerini İnce Ayarla",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "Her implant ve protez için özel renk kategorisi atayın.",
+    "NHT_YAPEM_TierAuto": "Otomatik (Varsayılan)",
+    "NHT_YAPEM_TierNone": "Renklendirme Yok",
+    "NHT_YAPEM_ResetTabOverrides": "Sekmeyi Sıfırla",
+    "NHT_YAPEM_SearchImplant": "Ara:",
+    "NHT_YAPEM_SlotTitle": "Yuva {0}",
+    "NHT_YAPEM_SlotEmpty": "Boş",
+    "NHT_YAPEM_ClearSlot": "Bu yuvayı temizle"
   },
   "Ukrainian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -655,7 +772,16 @@
     "NHT_YAPEM_ApplySlot": "Вибрати колір #{0}",
     "NHT_YAPEM_OverwriteSlot": "Перезаписати поточним кольором (#{0})",
     "NHT_YAPEM_DeleteSlot": "Видалити цей пресет",
-    "NHT_YAPEM_ClearAllSlots": "Очистити всі власні пресети"
+    "NHT_YAPEM_ClearAllSlots": "Очистити всі власні пресети",
+    "NHT_YAPEM_SectionCustomTiers": "Тонке налаштування категорій імплантів",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "Індивідуальне налаштування категорії кольору для кожного імпланта та протеза.",
+    "NHT_YAPEM_TierAuto": "Авто (за замовчуванням)",
+    "NHT_YAPEM_TierNone": "Без фарбування",
+    "NHT_YAPEM_ResetTabOverrides": "Скинути вкладку",
+    "NHT_YAPEM_SearchImplant": "Пошук:",
+    "NHT_YAPEM_SlotTitle": "Слот {0}",
+    "NHT_YAPEM_SlotEmpty": "Порожньо",
+    "NHT_YAPEM_ClearSlot": "Очистити цей слот"
   },
   "Vietnamese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -702,7 +828,16 @@
     "NHT_YAPEM_ApplySlot": "Chọn màu #{0}",
     "NHT_YAPEM_OverwriteSlot": "Ghi đè bằng màu hiện tại (#{0})",
     "NHT_YAPEM_DeleteSlot": "Xóa cài đặt trước này",
-    "NHT_YAPEM_ClearAllSlots": "Xóa tất cả cài đặt trước tùy chỉnh"
+    "NHT_YAPEM_ClearAllSlots": "Xóa tất cả cài đặt trước tùy chỉnh",
+    "NHT_YAPEM_SectionCustomTiers": "Tinh chỉnh phân loại cấy ghép",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "Tùy chỉnh nhóm màu cho từng bộ phận cấy ghép và giả thể.",
+    "NHT_YAPEM_TierAuto": "Tự động (Mặc định)",
+    "NHT_YAPEM_TierNone": "Không màu",
+    "NHT_YAPEM_ResetTabOverrides": "Đặt lại thẻ",
+    "NHT_YAPEM_SearchImplant": "Tìm kiếm:",
+    "NHT_YAPEM_SlotTitle": "Ô {0}",
+    "NHT_YAPEM_SlotEmpty": "Trống",
+    "NHT_YAPEM_ClearSlot": "Xóa ô này"
   },
   "Polish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -749,7 +884,16 @@
     "NHT_YAPEM_ApplySlot": "Wybierz kolor #{0}",
     "NHT_YAPEM_OverwriteSlot": "Nadpisz bieżącym kolorem (#{0})",
     "NHT_YAPEM_DeleteSlot": "Usuń ten szablon",
-    "NHT_YAPEM_ClearAllSlots": "Wyczyść wszystkie własne szablony"
+    "NHT_YAPEM_ClearAllSlots": "Wyczyść wszystkie własne szablony",
+    "NHT_YAPEM_SectionCustomTiers": "Dostrajanie kategorii implantów",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "Indywidualne przypisanie kategorii kolorystycznej dla każdego implantu.",
+    "NHT_YAPEM_TierAuto": "Auto (Domyślnie)",
+    "NHT_YAPEM_TierNone": "Bez zabarwienia",
+    "NHT_YAPEM_ResetTabOverrides": "Zresetuj zakładkę",
+    "NHT_YAPEM_SearchImplant": "Szukaj:",
+    "NHT_YAPEM_SlotTitle": "Slot {0}",
+    "NHT_YAPEM_SlotEmpty": "Pusty",
+    "NHT_YAPEM_ClearSlot": "Wyczyść ten slot"
   },
   "Czech": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -796,7 +940,16 @@
     "NHT_YAPEM_ApplySlot": "Vybrat barvu #{0}",
     "NHT_YAPEM_OverwriteSlot": "Přepsat aktuální barvou (#{0})",
     "NHT_YAPEM_DeleteSlot": "Smazat tuto předvolbu",
-    "NHT_YAPEM_ClearAllSlots": "Vymazat všechny vlastní předvolby"
+    "NHT_YAPEM_ClearAllSlots": "Vymazat všechny vlastní předvolby",
+    "NHT_YAPEM_SectionCustomTiers": "Doladění kategorií implantátů",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "Přiřazení vlastní barevné kategorie pro každý implantát a protézu.",
+    "NHT_YAPEM_TierAuto": "Auto (Výchozí)",
+    "NHT_YAPEM_TierNone": "Bez zbarvení",
+    "NHT_YAPEM_ResetTabOverrides": "Resetovat záložku",
+    "NHT_YAPEM_SearchImplant": "Hledat:",
+    "NHT_YAPEM_SlotTitle": "Pozice {0}",
+    "NHT_YAPEM_SlotEmpty": "Prázdné",
+    "NHT_YAPEM_ClearSlot": "Vymazat tuto pozici"
   },
   "Hungarian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -843,6 +996,15 @@
     "NHT_YAPEM_ApplySlot": "#{0} szín kiválasztása",
     "NHT_YAPEM_OverwriteSlot": "Felülírás a jelenlegi színnel (#{0})",
     "NHT_YAPEM_DeleteSlot": "Előbeállítás törlése",
-    "NHT_YAPEM_ClearAllSlots": "Összes egyéni előbeállítás törlése"
+    "NHT_YAPEM_ClearAllSlots": "Összes egyéni előbeállítás törlése",
+    "NHT_YAPEM_SectionCustomTiers": "Implantátum-kategóriák finomhangolása",
+    "NHT_YAPEM_SectionCustomTiers_Desc": "Egyéni színkategória hozzárendelése minden implantátumhoz és protézishez.",
+    "NHT_YAPEM_TierAuto": "Automatikus (Alapértelmezett)",
+    "NHT_YAPEM_TierNone": "Nincs színezés",
+    "NHT_YAPEM_ResetTabOverrides": "Fül visszaállítása",
+    "NHT_YAPEM_SearchImplant": "Keresés:",
+    "NHT_YAPEM_SlotTitle": "{0}. hely",
+    "NHT_YAPEM_SlotEmpty": "Üres",
+    "NHT_YAPEM_ClearSlot": "Hely törlése"
   }
 }

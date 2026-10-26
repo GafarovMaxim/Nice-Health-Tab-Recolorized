@@ -45,4 +45,13 @@
   <NHT_YAPEM_OverwriteSlot>用目前顏色 (#{0}) 覆蓋</NHT_YAPEM_OverwriteSlot>
   <NHT_YAPEM_DeleteSlot>刪除此預設</NHT_YAPEM_DeleteSlot>
   <NHT_YAPEM_ClearAllSlots>清除所有自訂預設</NHT_YAPEM_ClearAllSlots>
+  <NHT_YAPEM_SectionCustomTiers>植入物分類微調</NHT_YAPEM_SectionCustomTiers>
+  <NHT_YAPEM_SectionCustomTiers_Desc>為每個植入物和義肢自訂顏色分類。僅影響本模組著色，不改動遊戲屬性。</NHT_YAPEM_SectionCustomTiers_Desc>
+  <NHT_YAPEM_TierAuto>自動（預設）</NHT_YAPEM_TierAuto>
+  <NHT_YAPEM_TierNone>無著色</NHT_YAPEM_TierNone>
+  <NHT_YAPEM_ResetTabOverrides>重設該標籤頁</NHT_YAPEM_ResetTabOverrides>
+  <NHT_YAPEM_SearchImplant>搜尋：</NHT_YAPEM_SearchImplant>
+  <NHT_YAPEM_SlotTitle>插槽 {0}</NHT_YAPEM_SlotTitle>
+  <NHT_YAPEM_SlotEmpty>空</NHT_YAPEM_SlotEmpty>
+  <NHT_YAPEM_ClearSlot>清除此插槽</NHT_YAPEM_ClearSlot>
 </LanguageData>

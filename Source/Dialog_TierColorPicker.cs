@@ -12,7 +12,7 @@ namespace NiceHealthTab_YAPEM_Patch
         private const float RadiusOuter = 94f;
         private const float RadiusInner = 72f;
         private const float RadiusDiamond = 58f;
-        private const int CustomSlotCount = 8;
+        public const int CustomSlotCount = 8;
 
         private struct PresetInfo
         {
@@ -92,7 +92,21 @@ namespace NiceHealthTab_YAPEM_Patch
             hexBuffer = ColorUtility.ToHtmlStringRGB(currentColor);
             RgbToHsl(currentColor, out currentH, out currentS, out currentL);
 
+            EnsureCustomPresetSlots();
             GenerateWheelTexture();
+        }
+
+        private static void EnsureCustomPresetSlots()
+        {
+            if (YAPEMPatchMod.Settings == null) return;
+            if (YAPEMPatchMod.Settings.CustomPresets == null)
+            {
+                YAPEMPatchMod.Settings.CustomPresets = new List<Color>();
+            }
+            while (YAPEMPatchMod.Settings.CustomPresets.Count < CustomSlotCount)
+            {
+                YAPEMPatchMod.Settings.CustomPresets.Add(Color.clear);
+            }
         }
 
         private void GenerateWheelTexture()
@@ -194,6 +208,8 @@ namespace NiceHealthTab_YAPEM_Patch
 
         public override void DoWindowContents(Rect inRect)
         {
+            EnsureCustomPresetSlots();
+
             // 1. Header: Category Title & Close 'X' Button
             Text.Font = GameFont.Medium;
             Rect titleRect = new Rect(0f, 0f, inRect.width - 28f, 28f);
@@ -296,7 +312,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }
 
-            // 4. Row 2: User Custom Presets with RMB FloatMenu & +Save Button
+            // 4. Row 2: User Custom Presets with Fixed Numbered Slots [1..8]
             float yPresets2 = yPresets1 + chipSize + 6f;
 
             Text.Font = GameFont.Tiny;
@@ -306,21 +322,16 @@ namespace NiceHealthTab_YAPEM_Patch
             Text.Font = GameFont.Small;
 
             List<Color> customPresets = YAPEMPatchMod.Settings?.CustomPresets;
-            if (customPresets == null)
-            {
-                customPresets = new List<Color>();
-                if (YAPEMPatchMod.Settings != null)
-                {
-                    YAPEMPatchMod.Settings.CustomPresets = customPresets;
-                }
-            }
 
             for (int i = 0; i < CustomSlotCount; i++)
             {
                 int slotIndex = i;
+                int slotNumber = i + 1; // 1-based display number (Слот 1..8)
                 Rect chipRect = new Rect(startX1 + i * (chipSize + chipGap), yPresets2, chipSize, chipSize);
 
-                if (slotIndex < customPresets.Count)
+                bool isFilled = (customPresets != null && slotIndex < customPresets.Count && customPresets[slotIndex].a > 0.01f);
+
+                if (isFilled)
                 {
                     Color c = customPresets[slotIndex];
                     Widgets.DrawBoxSolid(chipRect, c);
@@ -332,7 +343,7 @@ namespace NiceHealthTab_YAPEM_Patch
                         Widgets.DrawBox(chipRect.ExpandedBy(2f), 2);
                     }
 
-                    string tip = $"#{ColorUtility.ToHtmlStringRGB(c)}\n" + "NHT_YAPEM_CustomSlotTip".Translate();
+                    string tip = "NHT_YAPEM_SlotTitle".Translate(slotNumber) + $" (#{ColorUtility.ToHtmlStringRGB(c)})\n" + "NHT_YAPEM_CustomSlotTip".Translate();
                     TooltipHandler.TipRegion(chipRect, tip);
 
                     // Check for Left Click (Select) or Right Click / ContextClick (Menu)
@@ -340,7 +351,7 @@ namespace NiceHealthTab_YAPEM_Patch
                     {
                         if (Event.current.button == 1) // RMB
                         {
-                            OpenCustomSlotMenu(slotIndex, c);
+                            OpenCustomSlotMenu(slotIndex, slotNumber, c);
                         }
                         else // LMB
                         {
@@ -349,13 +360,13 @@ namespace NiceHealthTab_YAPEM_Patch
                     }
                     else if (Event.current.type == EventType.ContextClick && Mouse.IsOver(chipRect))
                     {
-                        OpenCustomSlotMenu(slotIndex, c);
+                        OpenCustomSlotMenu(slotIndex, slotNumber, c);
                         Event.current.Use();
                     }
                 }
                 else
                 {
-                    // Empty slot: clickable to save currentColor
+                    // Empty slot: distinctly numbered and clickable to save into THIS exact slot
                     Widgets.DrawBoxSolid(chipRect, new Color(0.12f, 0.14f, 0.17f, 0.8f));
                     Widgets.DrawBox(chipRect, 1);
                     Widgets.DrawHighlightIfMouseover(chipRect);
@@ -366,16 +377,17 @@ namespace NiceHealthTab_YAPEM_Patch
                     GUI.color = Color.white;
                     Text.Font = GameFont.Small;
 
-                    TooltipHandler.TipRegion(chipRect, "NHT_YAPEM_CustomSlotEmptyTip".Translate());
+                    string tip = "NHT_YAPEM_SlotTitle".Translate(slotNumber) + ": " + "NHT_YAPEM_CustomSlotEmptyTip".Translate();
+                    TooltipHandler.TipRegion(chipRect, tip);
 
                     if (Widgets.ButtonInvisible(chipRect, true))
                     {
-                        customPresets.Add(currentColor);
+                        customPresets[slotIndex] = currentColor;
                         YAPEMPatchMod.Settings?.Write();
                     }
                     else if (Event.current.type == EventType.ContextClick && Mouse.IsOver(chipRect))
                     {
-                        customPresets.Add(currentColor);
+                        customPresets[slotIndex] = currentColor;
                         YAPEMPatchMod.Settings?.Write();
                         Event.current.Use();
                     }
@@ -486,20 +498,21 @@ namespace NiceHealthTab_YAPEM_Patch
             }
         }
 
-        private void OpenCustomSlotMenu(int index, Color slotColor)
+        private void OpenCustomSlotMenu(int index, int slotNumber, Color slotColor)
         {
             List<FloatMenuOption> options = new List<FloatMenuOption>();
             string slotHex = ColorUtility.ToHtmlStringRGB(slotColor);
             string curHex = ColorUtility.ToHtmlStringRGB(currentColor);
+            string prefix = "NHT_YAPEM_SlotTitle".Translate(slotNumber) + ": ";
 
             // 1. Select / Apply this slot color
-            options.Add(new FloatMenuOption("NHT_YAPEM_ApplySlot".Translate(slotHex), () =>
+            options.Add(new FloatMenuOption(prefix + "NHT_YAPEM_ApplySlot".Translate(slotHex), () =>
             {
                 SelectColor(slotColor);
             }));
 
             // 2. Overwrite this slot with current color
-            options.Add(new FloatMenuOption("NHT_YAPEM_OverwriteSlot".Translate(curHex), () =>
+            options.Add(new FloatMenuOption(prefix + "NHT_YAPEM_OverwriteSlot".Translate(curHex), () =>
             {
                 var custom = YAPEMPatchMod.Settings?.CustomPresets;
                 if (custom != null && index >= 0 && index < custom.Count)
@@ -509,13 +522,13 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }));
 
-            // 3. Delete this slot
-            options.Add(new FloatMenuOption("NHT_YAPEM_DeleteSlot".Translate(), () =>
+            // 3. Clear this slot
+            options.Add(new FloatMenuOption(prefix + "NHT_YAPEM_ClearSlot".Translate(), () =>
             {
                 var custom = YAPEMPatchMod.Settings?.CustomPresets;
                 if (custom != null && index >= 0 && index < custom.Count)
                 {
-                    custom.RemoveAt(index);
+                    custom[index] = Color.clear;
                     YAPEMPatchMod.Settings?.Write();
                 }
             }));
@@ -526,7 +539,10 @@ namespace NiceHealthTab_YAPEM_Patch
                 var custom = YAPEMPatchMod.Settings?.CustomPresets;
                 if (custom != null)
                 {
-                    custom.Clear();
+                    for (int s = 0; s < custom.Count; s++)
+                    {
+                        custom[s] = Color.clear;
+                    }
                     YAPEMPatchMod.Settings?.Write();
                 }
             }));
@@ -538,22 +554,35 @@ namespace NiceHealthTab_YAPEM_Patch
         {
             var customPresets = YAPEMPatchMod.Settings?.CustomPresets;
             if (customPresets == null) return;
+            EnsureCustomPresetSlots();
 
-            if (customPresets.Count < CustomSlotCount)
+            // Find first empty slot (a <= 0.01f)
+            int firstEmpty = -1;
+            for (int i = 0; i < CustomSlotCount; i++)
             {
-                customPresets.Add(currentColor);
+                if (customPresets[i].a <= 0.01f)
+                {
+                    firstEmpty = i;
+                    break;
+                }
+            }
+
+            if (firstEmpty >= 0)
+            {
+                customPresets[firstEmpty] = currentColor;
                 YAPEMPatchMod.Settings?.Write();
             }
             else
             {
-                // If all slots are filled, open a choice menu to let user pick which slot to overwrite
+                // If all 8 slots are filled, open a choice menu to let user pick which slot to overwrite
                 List<FloatMenuOption> options = new List<FloatMenuOption>();
                 string curHex = ColorUtility.ToHtmlStringRGB(currentColor);
-                for (int s = 0; s < customPresets.Count; s++)
+                for (int s = 0; s < CustomSlotCount; s++)
                 {
                     int slotIdx = s;
+                    int slotNum = s + 1;
                     string hex = ColorUtility.ToHtmlStringRGB(customPresets[s]);
-                    options.Add(new FloatMenuOption($"Слот {s + 1} (#{hex}) -> #{curHex}", () =>
+                    options.Add(new FloatMenuOption("NHT_YAPEM_SlotTitle".Translate(slotNum) + $" (#{hex}) -> #{curHex}", () =>
                     {
                         customPresets[slotIdx] = currentColor;
                         YAPEMPatchMod.Settings?.Write();
@@ -565,6 +594,7 @@ namespace NiceHealthTab_YAPEM_Patch
 
         private static bool IsColorClose(Color a, Color b)
         {
+            if (a.a <= 0.01f || b.a <= 0.01f) return false;
             return Mathf.Abs(a.r - b.r) < 0.02f &&
                    Mathf.Abs(a.g - b.g) < 0.02f &&
                    Mathf.Abs(a.b - b.b) < 0.02f;

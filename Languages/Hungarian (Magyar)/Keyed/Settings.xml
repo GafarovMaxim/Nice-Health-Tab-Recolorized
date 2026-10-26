@@ -45,4 +45,13 @@
   <NHT_YAPEM_OverwriteSlot>Felülírás a jelenlegi színnel (#{0})</NHT_YAPEM_OverwriteSlot>
   <NHT_YAPEM_DeleteSlot>Előbeállítás törlése</NHT_YAPEM_DeleteSlot>
   <NHT_YAPEM_ClearAllSlots>Összes egyéni előbeállítás törlése</NHT_YAPEM_ClearAllSlots>
+  <NHT_YAPEM_SectionCustomTiers>Implantátum-kategóriák finomhangolása</NHT_YAPEM_SectionCustomTiers>
+  <NHT_YAPEM_SectionCustomTiers_Desc>Egyéni színkategória hozzárendelése minden implantátumhoz és protézishez.</NHT_YAPEM_SectionCustomTiers_Desc>
+  <NHT_YAPEM_TierAuto>Automatikus (Alapértelmezett)</NHT_YAPEM_TierAuto>
+  <NHT_YAPEM_TierNone>Nincs színezés</NHT_YAPEM_TierNone>
+  <NHT_YAPEM_ResetTabOverrides>Fül visszaállítása</NHT_YAPEM_ResetTabOverrides>
+  <NHT_YAPEM_SearchImplant>Keresés:</NHT_YAPEM_SearchImplant>
+  <NHT_YAPEM_SlotTitle>{0}. hely</NHT_YAPEM_SlotTitle>
+  <NHT_YAPEM_SlotEmpty>Üres</NHT_YAPEM_SlotEmpty>
+  <NHT_YAPEM_ClearSlot>Hely törlése</NHT_YAPEM_ClearSlot>
 </LanguageData>

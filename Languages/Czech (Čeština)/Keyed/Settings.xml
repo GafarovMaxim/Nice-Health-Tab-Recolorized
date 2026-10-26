@@ -45,4 +45,13 @@
   <NHT_YAPEM_OverwriteSlot>Přepsat aktuální barvou (#{0})</NHT_YAPEM_OverwriteSlot>
   <NHT_YAPEM_DeleteSlot>Smazat tuto předvolbu</NHT_YAPEM_DeleteSlot>
   <NHT_YAPEM_ClearAllSlots>Vymazat všechny vlastní předvolby</NHT_YAPEM_ClearAllSlots>
+  <NHT_YAPEM_SectionCustomTiers>Doladění kategorií implantátů</NHT_YAPEM_SectionCustomTiers>
+  <NHT_YAPEM_SectionCustomTiers_Desc>Přiřazení vlastní barevné kategorie pro každý implantát a protézu.</NHT_YAPEM_SectionCustomTiers_Desc>
+  <NHT_YAPEM_TierAuto>Auto (Výchozí)</NHT_YAPEM_TierAuto>
+  <NHT_YAPEM_TierNone>Bez zbarvení</NHT_YAPEM_TierNone>
+  <NHT_YAPEM_ResetTabOverrides>Resetovat záložku</NHT_YAPEM_ResetTabOverrides>
+  <NHT_YAPEM_SearchImplant>Hledat:</NHT_YAPEM_SearchImplant>
+  <NHT_YAPEM_SlotTitle>Pozice {0}</NHT_YAPEM_SlotTitle>
+  <NHT_YAPEM_SlotEmpty>Prázdné</NHT_YAPEM_SlotEmpty>
+  <NHT_YAPEM_ClearSlot>Vymazat tuto pozici</NHT_YAPEM_ClearSlot>
 </LanguageData>

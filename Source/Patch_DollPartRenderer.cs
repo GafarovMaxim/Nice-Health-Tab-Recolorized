@@ -79,6 +79,11 @@ namespace NiceHealthTab_YAPEM_Patch
                 || (_part != null && _part.defName.IndexOf("Spine", StringComparison.OrdinalIgnoreCase) >= 0)
                 || (effectivePart != null && effectivePart.defName.IndexOf("Spine", StringComparison.OrdinalIgnoreCase) >= 0);
 
+            // Neck is part of the body silhouette (like Torso or Head). It is NOT an organ or bone.
+            bool isNeck = (val.def == BodyPartDefOf.Neck)
+                || (val.def != null && val.def.defName.IndexOf("Neck", StringComparison.OrdinalIgnoreCase) >= 0)
+                || (_part != null && _part.defName.IndexOf("Neck", StringComparison.OrdinalIgnoreCase) >= 0);
+
             bool isBone = (_part is DollBone)
                 || (effectivePart is DollBone)
                 || isSpine
@@ -97,7 +102,8 @@ namespace NiceHealthTab_YAPEM_Patch
                     _part.defName.IndexOf("Pelvis", StringComparison.OrdinalIgnoreCase) >= 0
                 ));
 
-            bool isOrgan = !isBone && (
+            // Organs strictly exclude bones and the neck
+            bool isOrgan = !isBone && !isNeck && (
                 (_part is DollOrgan)
                 || (effectivePart is DollOrgan)
                 || (val.def == BodyPartDefOf.Heart)
@@ -109,7 +115,6 @@ namespace NiceHealthTab_YAPEM_Patch
                         val.def.tags.Contains(BodyPartTagDefOf.BloodFiltrationKidney) ||
                         val.def.tags.Contains(BodyPartTagDefOf.BloodPumpingSource) ||
                         val.def.tags.Contains(BodyPartTagDefOf.BreathingSource) ||
-                        val.def.tags.Contains(BodyPartTagDefOf.BreathingPathway) ||
                         val.def.tags.Contains(BodyPartTagDefOf.ConsciousnessSource) ||
                         val.def.tags.Contains(BodyPartTagDefOf.MetabolismSource)
                     )) ||

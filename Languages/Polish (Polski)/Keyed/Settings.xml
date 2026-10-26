@@ -45,4 +45,13 @@
   <NHT_YAPEM_OverwriteSlot>Nadpisz bieżącym kolorem (#{0})</NHT_YAPEM_OverwriteSlot>
   <NHT_YAPEM_DeleteSlot>Usuń ten szablon</NHT_YAPEM_DeleteSlot>
   <NHT_YAPEM_ClearAllSlots>Wyczyść wszystkie własne szablony</NHT_YAPEM_ClearAllSlots>
+  <NHT_YAPEM_SectionCustomTiers>Dostrajanie kategorii implantów</NHT_YAPEM_SectionCustomTiers>
+  <NHT_YAPEM_SectionCustomTiers_Desc>Indywidualne przypisanie kategorii kolorystycznej dla każdego implantu.</NHT_YAPEM_SectionCustomTiers_Desc>
+  <NHT_YAPEM_TierAuto>Auto (Domyślnie)</NHT_YAPEM_TierAuto>
+  <NHT_YAPEM_TierNone>Bez zabarwienia</NHT_YAPEM_TierNone>
+  <NHT_YAPEM_ResetTabOverrides>Zresetuj zakładkę</NHT_YAPEM_ResetTabOverrides>
+  <NHT_YAPEM_SearchImplant>Szukaj:</NHT_YAPEM_SearchImplant>
+  <NHT_YAPEM_SlotTitle>Slot {0}</NHT_YAPEM_SlotTitle>
+  <NHT_YAPEM_SlotEmpty>Pusty</NHT_YAPEM_SlotEmpty>
+  <NHT_YAPEM_ClearSlot>Wyczyść ten slot</NHT_YAPEM_ClearSlot>
 </LanguageData>

@@ -43,6 +43,10 @@ namespace NiceHealthTab_YAPEM_Patch
                 || (val.def != null && val.def.defName.IndexOf("Spine", StringComparison.OrdinalIgnoreCase) >= 0)
                 || (_part != null && _part.defName.IndexOf("Spine", StringComparison.OrdinalIgnoreCase) >= 0);
 
+            bool isNeck = (val.def == BodyPartDefOf.Neck)
+                || (val.def != null && val.def.defName.IndexOf("Neck", StringComparison.OrdinalIgnoreCase) >= 0)
+                || (_part != null && _part.defName.IndexOf("Neck", StringComparison.OrdinalIgnoreCase) >= 0);
+
             bool isBone = (_part is DollBone)
                 || isSpine
                 || (val.def != null && val.def.tags != null && val.def.tags.Contains(BodyPartTagDefOf.Pelvis))
@@ -60,7 +64,7 @@ namespace NiceHealthTab_YAPEM_Patch
                     _part.defName.IndexOf("Pelvis", StringComparison.OrdinalIgnoreCase) >= 0
                 ));
 
-            bool isOrgan = !isBone && (
+            bool isOrgan = !isBone && !isNeck && (
                 (_part is DollOrgan)
                 || (val.def == BodyPartDefOf.Heart)
                 || (val.def == BodyPartDefOf.Lung)
@@ -71,7 +75,6 @@ namespace NiceHealthTab_YAPEM_Patch
                         val.def.tags.Contains(BodyPartTagDefOf.BloodFiltrationKidney) ||
                         val.def.tags.Contains(BodyPartTagDefOf.BloodPumpingSource) ||
                         val.def.tags.Contains(BodyPartTagDefOf.BreathingSource) ||
-                        val.def.tags.Contains(BodyPartTagDefOf.BreathingPathway) ||
                         val.def.tags.Contains(BodyPartTagDefOf.ConsciousnessSource) ||
                         val.def.tags.Contains(BodyPartTagDefOf.MetabolismSource)
                     )) ||

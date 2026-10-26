@@ -45,4 +45,13 @@
   <NHT_YAPEM_OverwriteSlot>Перезаписати поточним кольором (#{0})</NHT_YAPEM_OverwriteSlot>
   <NHT_YAPEM_DeleteSlot>Видалити цей пресет</NHT_YAPEM_DeleteSlot>
   <NHT_YAPEM_ClearAllSlots>Очистити всі власні пресети</NHT_YAPEM_ClearAllSlots>
+  <NHT_YAPEM_SectionCustomTiers>Тонке налаштування категорій імплантів</NHT_YAPEM_SectionCustomTiers>
+  <NHT_YAPEM_SectionCustomTiers_Desc>Індивідуальне налаштування категорії кольору для кожного імпланта та протеза.</NHT_YAPEM_SectionCustomTiers_Desc>
+  <NHT_YAPEM_TierAuto>Авто (за замовчуванням)</NHT_YAPEM_TierAuto>
+  <NHT_YAPEM_TierNone>Без фарбування</NHT_YAPEM_TierNone>
+  <NHT_YAPEM_ResetTabOverrides>Скинути вкладку</NHT_YAPEM_ResetTabOverrides>
+  <NHT_YAPEM_SearchImplant>Пошук:</NHT_YAPEM_SearchImplant>
+  <NHT_YAPEM_SlotTitle>Слот {0}</NHT_YAPEM_SlotTitle>
+  <NHT_YAPEM_SlotEmpty>Порожньо</NHT_YAPEM_SlotEmpty>
+  <NHT_YAPEM_ClearSlot>Очистити цей слот</NHT_YAPEM_ClearSlot>
 </LanguageData>

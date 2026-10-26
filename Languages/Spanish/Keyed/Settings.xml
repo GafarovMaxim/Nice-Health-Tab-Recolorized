@@ -45,4 +45,13 @@
   <NHT_YAPEM_OverwriteSlot>Sobrescribir con el color actual (#{0})</NHT_YAPEM_OverwriteSlot>
   <NHT_YAPEM_DeleteSlot>Eliminar este ajuste</NHT_YAPEM_DeleteSlot>
   <NHT_YAPEM_ClearAllSlots>Borrar todos los ajustes personalizados</NHT_YAPEM_ClearAllSlots>
+  <NHT_YAPEM_SectionCustomTiers>Ajuste fino de categorías de implantes</NHT_YAPEM_SectionCustomTiers>
+  <NHT_YAPEM_SectionCustomTiers_Desc>Asignación de categoría de color personalizada para cada implante y prótesis.</NHT_YAPEM_SectionCustomTiers_Desc>
+  <NHT_YAPEM_TierAuto>Auto (Por defecto)</NHT_YAPEM_TierAuto>
+  <NHT_YAPEM_TierNone>Sin tinte</NHT_YAPEM_TierNone>
+  <NHT_YAPEM_ResetTabOverrides>Restablecer pestaña</NHT_YAPEM_ResetTabOverrides>
+  <NHT_YAPEM_SearchImplant>Buscar:</NHT_YAPEM_SearchImplant>
+  <NHT_YAPEM_SlotTitle>Ranura {0}</NHT_YAPEM_SlotTitle>
+  <NHT_YAPEM_SlotEmpty>Vacío</NHT_YAPEM_SlotEmpty>
+  <NHT_YAPEM_ClearSlot>Borrar esta ranura</NHT_YAPEM_ClearSlot>
 </LanguageData>

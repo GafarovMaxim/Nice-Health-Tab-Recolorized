@@ -45,4 +45,13 @@
   <NHT_YAPEM_OverwriteSlot>Overwrite with current color (#{0})</NHT_YAPEM_OverwriteSlot>
   <NHT_YAPEM_DeleteSlot>Delete this preset</NHT_YAPEM_DeleteSlot>
   <NHT_YAPEM_ClearAllSlots>Clear all custom presets</NHT_YAPEM_ClearAllSlots>
+  <NHT_YAPEM_SectionCustomTiers>Fine-tune Implant Categories</NHT_YAPEM_SectionCustomTiers>
+  <NHT_YAPEM_SectionCustomTiers_Desc>Custom color category assignment for each implant and prosthesis. Visual recoloring only, does not affect gameplay.</NHT_YAPEM_SectionCustomTiers_Desc>
+  <NHT_YAPEM_TierAuto>Auto (Default)</NHT_YAPEM_TierAuto>
+  <NHT_YAPEM_TierNone>No Tint</NHT_YAPEM_TierNone>
+  <NHT_YAPEM_ResetTabOverrides>Reset Tab</NHT_YAPEM_ResetTabOverrides>
+  <NHT_YAPEM_SearchImplant>Search:</NHT_YAPEM_SearchImplant>
+  <NHT_YAPEM_SlotTitle>Slot {0}</NHT_YAPEM_SlotTitle>
+  <NHT_YAPEM_SlotEmpty>Empty</NHT_YAPEM_SlotEmpty>
+  <NHT_YAPEM_ClearSlot>Clear this slot</NHT_YAPEM_ClearSlot>
 </LanguageData>

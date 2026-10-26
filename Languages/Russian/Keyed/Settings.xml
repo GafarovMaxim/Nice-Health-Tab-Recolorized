@@ -45,4 +45,13 @@
   <NHT_YAPEM_OverwriteSlot>Перезаписать текущим цветом (#{0})</NHT_YAPEM_OverwriteSlot>
   <NHT_YAPEM_DeleteSlot>Удалить этот пресет</NHT_YAPEM_DeleteSlot>
   <NHT_YAPEM_ClearAllSlots>Очистить все кастомные пресеты</NHT_YAPEM_ClearAllSlots>
+  <NHT_YAPEM_SectionCustomTiers>Тонкая настройка категорий имплантов</NHT_YAPEM_SectionCustomTiers>
+  <NHT_YAPEM_SectionCustomTiers_Desc>Индивидуальная настройка категории цвета для каждого импланта и протеза. Влияет только на покраску в моде и не меняет игровые свойства.</NHT_YAPEM_SectionCustomTiers_Desc>
+  <NHT_YAPEM_TierAuto>Авто (по умолчанию)</NHT_YAPEM_TierAuto>
+  <NHT_YAPEM_TierNone>Без покраски</NHT_YAPEM_TierNone>
+  <NHT_YAPEM_ResetTabOverrides>Сбросить вкладку</NHT_YAPEM_ResetTabOverrides>
+  <NHT_YAPEM_SearchImplant>Поиск:</NHT_YAPEM_SearchImplant>
+  <NHT_YAPEM_SlotTitle>Слот {0}</NHT_YAPEM_SlotTitle>
+  <NHT_YAPEM_SlotEmpty>Пусто</NHT_YAPEM_SlotEmpty>
+  <NHT_YAPEM_ClearSlot>Очистить этот слот</NHT_YAPEM_ClearSlot>
 </LanguageData>

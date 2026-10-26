@@ -45,4 +45,13 @@
   <NHT_YAPEM_OverwriteSlot>現在の色 (#{0}) で上書き</NHT_YAPEM_OverwriteSlot>
   <NHT_YAPEM_DeleteSlot>このプリセットを削除</NHT_YAPEM_DeleteSlot>
   <NHT_YAPEM_ClearAllSlots>すべてのカスタムプリセットをクリア</NHT_YAPEM_ClearAllSlots>
+  <NHT_YAPEM_SectionCustomTiers>インプラントカテゴリの微調整</NHT_YAPEM_SectionCustomTiers>
+  <NHT_YAPEM_SectionCustomTiers_Desc>各インプラントや義肢のカラーカテゴリを個別に設定できます。</NHT_YAPEM_SectionCustomTiers_Desc>
+  <NHT_YAPEM_TierAuto>自動 (デフォルト)</NHT_YAPEM_TierAuto>
+  <NHT_YAPEM_TierNone>着色なし</NHT_YAPEM_TierNone>
+  <NHT_YAPEM_ResetTabOverrides>タブをリセット</NHT_YAPEM_ResetTabOverrides>
+  <NHT_YAPEM_SearchImplant>検索:</NHT_YAPEM_SearchImplant>
+  <NHT_YAPEM_SlotTitle>スロット {0}</NHT_YAPEM_SlotTitle>
+  <NHT_YAPEM_SlotEmpty>空</NHT_YAPEM_SlotEmpty>
+  <NHT_YAPEM_ClearSlot>このスロットを消去</NHT_YAPEM_ClearSlot>
 </LanguageData>

@@ -45,4 +45,13 @@
   <NHT_YAPEM_OverwriteSlot>Geçerli renkle (#{0}) üzerine yaz</NHT_YAPEM_OverwriteSlot>
   <NHT_YAPEM_DeleteSlot>Bu önayarı sil</NHT_YAPEM_DeleteSlot>
   <NHT_YAPEM_ClearAllSlots>Tüm özel önayarları temizle</NHT_YAPEM_ClearAllSlots>
+  <NHT_YAPEM_SectionCustomTiers>İmplant Kategorilerini İnce Ayarla</NHT_YAPEM_SectionCustomTiers>
+  <NHT_YAPEM_SectionCustomTiers_Desc>Her implant ve protez için özel renk kategorisi atayın.</NHT_YAPEM_SectionCustomTiers_Desc>
+  <NHT_YAPEM_TierAuto>Otomatik (Varsayılan)</NHT_YAPEM_TierAuto>
+  <NHT_YAPEM_TierNone>Renklendirme Yok</NHT_YAPEM_TierNone>
+  <NHT_YAPEM_ResetTabOverrides>Sekmeyi Sıfırla</NHT_YAPEM_ResetTabOverrides>
+  <NHT_YAPEM_SearchImplant>Ara:</NHT_YAPEM_SearchImplant>
+  <NHT_YAPEM_SlotTitle>Yuva {0}</NHT_YAPEM_SlotTitle>
+  <NHT_YAPEM_SlotEmpty>Boş</NHT_YAPEM_SlotEmpty>
+  <NHT_YAPEM_ClearSlot>Bu yuvayı temizle</NHT_YAPEM_ClearSlot>
 </LanguageData>

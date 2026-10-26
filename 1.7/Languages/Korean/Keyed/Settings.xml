@@ -45,4 +45,13 @@
   <NHT_YAPEM_OverwriteSlot>현재 색상(#{0})으로 덮어쓰기</NHT_YAPEM_OverwriteSlot>
   <NHT_YAPEM_DeleteSlot>이 프리셋 삭제</NHT_YAPEM_DeleteSlot>
   <NHT_YAPEM_ClearAllSlots>모든 사용자 지정 프리셋 지우기</NHT_YAPEM_ClearAllSlots>
+  <NHT_YAPEM_SectionCustomTiers>임플란트 범주 세부 조정</NHT_YAPEM_SectionCustomTiers>
+  <NHT_YAPEM_SectionCustomTiers_Desc>각 임플란트 및 인공신체의 색상 범주를 개별 지정합니다.</NHT_YAPEM_SectionCustomTiers_Desc>
+  <NHT_YAPEM_TierAuto>자동 (기본값)</NHT_YAPEM_TierAuto>
+  <NHT_YAPEM_TierNone>색상 없음</NHT_YAPEM_TierNone>
+  <NHT_YAPEM_ResetTabOverrides>탭 재설정</NHT_YAPEM_ResetTabOverrides>
+  <NHT_YAPEM_SearchImplant>검색:</NHT_YAPEM_SearchImplant>
+  <NHT_YAPEM_SlotTitle>슬롯 {0}</NHT_YAPEM_SlotTitle>
+  <NHT_YAPEM_SlotEmpty>비어있음</NHT_YAPEM_SlotEmpty>
+  <NHT_YAPEM_ClearSlot>이 슬롯 비우기</NHT_YAPEM_ClearSlot>
 </LanguageData>

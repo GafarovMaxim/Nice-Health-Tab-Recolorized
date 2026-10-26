@@ -45,4 +45,13 @@
   <NHT_YAPEM_OverwriteSlot>Sovrascrivi con colore corrente (#{0})</NHT_YAPEM_OverwriteSlot>
   <NHT_YAPEM_DeleteSlot>Elimina questo preset</NHT_YAPEM_DeleteSlot>
   <NHT_YAPEM_ClearAllSlots>Cancella tutti i preset personalizzati</NHT_YAPEM_ClearAllSlots>
+  <NHT_YAPEM_SectionCustomTiers>Regolazione categorie impianti</NHT_YAPEM_SectionCustomTiers>
+  <NHT_YAPEM_SectionCustomTiers_Desc>Assegnazione colore personalizzata per ciascun impianto e protesi.</NHT_YAPEM_SectionCustomTiers_Desc>
+  <NHT_YAPEM_TierAuto>Auto (Predefinito)</NHT_YAPEM_TierAuto>
+  <NHT_YAPEM_TierNone>Nessuna tinta</NHT_YAPEM_TierNone>
+  <NHT_YAPEM_ResetTabOverrides>Ripristina scheda</NHT_YAPEM_ResetTabOverrides>
+  <NHT_YAPEM_SearchImplant>Cerca:</NHT_YAPEM_SearchImplant>
+  <NHT_YAPEM_SlotTitle>Slot {0}</NHT_YAPEM_SlotTitle>
+  <NHT_YAPEM_SlotEmpty>Vuoto</NHT_YAPEM_SlotEmpty>
+  <NHT_YAPEM_ClearSlot>Svuota questo slot</NHT_YAPEM_ClearSlot>
 </LanguageData>

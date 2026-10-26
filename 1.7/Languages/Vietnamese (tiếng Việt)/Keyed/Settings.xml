@@ -45,4 +45,13 @@
   <NHT_YAPEM_OverwriteSlot>Ghi đè bằng màu hiện tại (#{0})</NHT_YAPEM_OverwriteSlot>
   <NHT_YAPEM_DeleteSlot>Xóa cài đặt trước này</NHT_YAPEM_DeleteSlot>
   <NHT_YAPEM_ClearAllSlots>Xóa tất cả cài đặt trước tùy chỉnh</NHT_YAPEM_ClearAllSlots>
+  <NHT_YAPEM_SectionCustomTiers>Tinh chỉnh phân loại cấy ghép</NHT_YAPEM_SectionCustomTiers>
+  <NHT_YAPEM_SectionCustomTiers_Desc>Tùy chỉnh nhóm màu cho từng bộ phận cấy ghép và giả thể.</NHT_YAPEM_SectionCustomTiers_Desc>
+  <NHT_YAPEM_TierAuto>Tự động (Mặc định)</NHT_YAPEM_TierAuto>
+  <NHT_YAPEM_TierNone>Không màu</NHT_YAPEM_TierNone>
+  <NHT_YAPEM_ResetTabOverrides>Đặt lại thẻ</NHT_YAPEM_ResetTabOverrides>
+  <NHT_YAPEM_SearchImplant>Tìm kiếm:</NHT_YAPEM_SearchImplant>
+  <NHT_YAPEM_SlotTitle>Ô {0}</NHT_YAPEM_SlotTitle>
+  <NHT_YAPEM_SlotEmpty>Trống</NHT_YAPEM_SlotEmpty>
+  <NHT_YAPEM_ClearSlot>Xóa ô này</NHT_YAPEM_ClearSlot>
 </LanguageData>
