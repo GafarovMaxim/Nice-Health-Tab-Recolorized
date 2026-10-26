@@ -26,14 +26,14 @@ namespace NiceHealthTab_YAPEM_Patch
     public static class Patch_DollRenderContext_FindImplantDefName
     {
         [HarmonyPostfix]
-        public static void Postfix(List<Hediff> hediffs, ref string __result, ref Color color)
+        public static void Postfix(List<Hediff> hediffs, ref string __result, ref Color col)
         {
             if (string.IsNullOrEmpty(__result) || hediffs == null) return;
             string targetDef = __result;
             var h = hediffs.FirstOrDefault(x => x.def?.defName == targetDef);
             if (h != null && LimbTierUtility.CategorizeHediffTier(h, out _, out Color tierColor))
             {
-                color = tierColor;
+                col = tierColor;
             }
         }
     }
@@ -42,14 +42,14 @@ namespace NiceHealthTab_YAPEM_Patch
     public static class Patch_DollDrawer_FindAddedAndImplantedParts
     {
         [HarmonyPostfix]
-        public static void Postfix(List<Hediff> hediffs, ref string __result, ref Color color)
+        public static void Postfix(List<Hediff> hediffs, ref string __result, ref Color col)
         {
             if (string.IsNullOrEmpty(__result) || hediffs == null) return;
             string targetDef = __result;
             var h = hediffs.FirstOrDefault(x => x.def?.defName == targetDef);
             if (h != null && LimbTierUtility.CategorizeHediffTier(h, out _, out Color tierColor))
             {
-                color = tierColor;
+                col = tierColor;
             }
         }
     }

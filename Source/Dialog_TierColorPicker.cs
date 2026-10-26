@@ -1,5 +1,4 @@
 using System;
-using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -7,30 +6,29 @@ namespace NiceHealthTab_YAPEM_Patch
 {
     public class Dialog_TierColorPicker : Window
     {
-        private readonly string title;
-        private readonly Action<Color> onColorSaved;
-        private readonly Color defaultColor;
-        private readonly Color originalColor;
-        private Color currentColor;
+        private const int TexSize = 220;
+        private const float Center = TexSize / 2f;
+        private const float RadiusOuter = 100f;
+        private const float RadiusInner = 74f;
+        private const float RadiusDiamond = 64f;
 
+        private readonly string title;
+        private readonly Color originalColor;
+        private readonly Color defaultColor;
+        private readonly Action<Color> onColorSaved;
+
+        private Color currentColor;
         private float currentH;
         private float currentS;
         private float currentL;
 
         private Texture2D wheelTexture;
-
-        private const int TexSize = 240;
-        private const float Center = 120f;
-        private const float RadiusOuter = 106f;
-        private const float RadiusInner = 82f;
-        private const float RadiusDiamond = 72f;
-
         private string hexBuffer;
         private bool isDraggingHue;
         private bool isDraggingDiamond;
         private bool accepted;
 
-        public override Vector2 InitialSize => new Vector2(290f, 360f);
+        public override Vector2 InitialSize => new Vector2(320f, 340f);
 
         public Dialog_TierColorPicker(string title, Color initialColor, Color defaultColor, Action<Color> onColorSaved)
         {
@@ -40,53 +38,55 @@ namespace NiceHealthTab_YAPEM_Patch
             this.currentColor = initialColor;
             this.onColorSaved = onColorSaved;
 
-            this.closeOnClickedOutside = true;
-            this.absorbInputAroundWindow = true;
-            this.doCloseX = true;
+            closeOnClickedOutside = true;
+            closeOnAccept = true;
+            doCloseButton = false;
+            doCloseX = false;
+            absorbInputAroundWindow = true;
 
-            RgbToHsl(initialColor, out currentH, out currentS, out currentL);
-            hexBuffer = ColorUtility.ToHtmlStringRGB(initialColor);
+            hexBuffer = ColorUtility.ToHtmlStringRGB(currentColor);
+            RgbToHsl(currentColor, out currentH, out currentS, out currentL);
 
-            InitWheelTexture();
+            GenerateWheelTexture();
         }
 
-        private void InitWheelTexture()
+        private void GenerateWheelTexture()
         {
             if (wheelTexture != null)
             {
                 UnityEngine.Object.Destroy(wheelTexture);
             }
 
-            wheelTexture = new Texture2D(TexSize, TexSize, TextureFormat.RGBA32, false)
-            {
-                wrapMode = TextureWrapMode.Clamp,
-                filterMode = FilterMode.Bilinear
-            };
+            wheelTexture = new Texture2D(TexSize, TexSize, TextureFormat.RGBA32, false);
+            wheelTexture.wrapMode = TextureWrapMode.Clamp;
+            wheelTexture.filterMode = FilterMode.Bilinear;
 
-            // 1. Draw background and static Hue ring
+            // 1. Draw Hue Ring
             for (int y = 0; y < TexSize; y++)
             {
-                float dy = y - Center;
+                // In Unity Texture2D, y=0 is bottom, y=TexSize-1 is top.
+                // GUI coordinates have y=0 at top.
+                // To align texture with GUI, dy_gui = Center - y.
+                float dy_gui = Center - y;
                 for (int x = 0; x < TexSize; x++)
                 {
-                    float dx = x - Center;
-                    float dist = Mathf.Sqrt(dx * dx + dy * dy);
+                    float dx_gui = x - Center;
+                    float dist = Mathf.Sqrt(dx_gui * dx_gui + dy_gui * dy_gui);
 
-                    if (dist >= RadiusInner && dist <= RadiusOuter)
+                    if (dist >= RadiusInner - 1f && dist <= RadiusOuter + 1f)
                     {
-                        // Hue angle
-                        float angle = Mathf.Atan2(dy, dx);
+                        float angle = Mathf.Atan2(dy_gui, dx_gui);
                         float h = (angle / (2f * Mathf.PI) + 1f) % 1f;
                         Color hueColor = HslToRgb(h, 1f, 0.5f);
 
-                        // Antialiasing edges
+                        // Antialiased edges
                         float alpha = 1f;
-                        if (dist < RadiusInner + 1f)
-                            alpha = dist - RadiusInner;
-                        else if (dist > RadiusOuter - 1f)
-                            alpha = RadiusOuter - dist;
+                        if (dist < RadiusInner)
+                            alpha = Mathf.Clamp01(dist - (RadiusInner - 1f));
+                        else if (dist > RadiusOuter)
+                            alpha = Mathf.Clamp01((RadiusOuter + 1f) - dist);
 
-                        hueColor.a = Mathf.Clamp01(alpha);
+                        hueColor.a = alpha;
                         wheelTexture.SetPixel(x, y, hueColor);
                     }
                     else
@@ -96,7 +96,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }
 
-            // 2. Draw diamond
+            // 2. Draw Diamond
             RedrawDiamond();
         }
 
@@ -104,46 +104,42 @@ namespace NiceHealthTab_YAPEM_Patch
         {
             if (wheelTexture == null) return;
 
-            int minX = Mathf.FloorToInt(Center - RadiusDiamond);
-            int maxX = Mathf.CeilToInt(Center + RadiusDiamond);
-            int minY = Mathf.FloorToInt(Center - RadiusDiamond);
-            int maxY = Mathf.CeilToInt(Center + RadiusDiamond);
+            int minX = Mathf.FloorToInt(Center - RadiusDiamond - 1f);
+            int maxX = Mathf.CeilToInt(Center + RadiusDiamond + 1f);
+            int minY = Mathf.FloorToInt(Center - RadiusDiamond - 1f);
+            int maxY = Mathf.CeilToInt(Center + RadiusDiamond + 1f);
 
             for (int y = minY; y <= maxY; y++)
             {
-                float dy = y - Center;
+                float dy_gui = Center - y;
                 for (int x = minX; x <= maxX; x++)
                 {
-                    float dx = x - Center;
-                    float manhattan = Mathf.Abs(dx) + Mathf.Abs(dy);
+                    float dx_gui = x - Center;
+                    float manhattan = Mathf.Abs(dx_gui) + Mathf.Abs(dy_gui);
 
-                    if (manhattan <= RadiusDiamond)
+                    if (manhattan <= RadiusDiamond + 0.5f)
                     {
-                        // In screen coords, top is -dy, bottom is +dy
-                        // Lightness: Top = 1.0 (White), Bottom = 0.0 (Black)
-                        float l = Mathf.Clamp01(0.5f - dy / (2f * RadiusDiamond));
-                        float span = RadiusDiamond - Mathf.Abs(dy);
-                        float s = span > 0.001f ? Mathf.Clamp01((dx + span) / (2f * span)) : 0f;
+                        // In GUI coords: Top (dy_gui = -RadiusDiamond) -> White (l = 1.0)
+                        // Bottom (dy_gui = +RadiusDiamond) -> Black (l = 0.0)
+                        float l = Mathf.Clamp01(0.5f - dy_gui / (2f * RadiusDiamond));
+                        float span = RadiusDiamond - Mathf.Abs(dy_gui);
+                        float s = span > 0.001f ? Mathf.Clamp01((dx_gui + span) / (2f * span)) : 0f;
 
                         Color col = HslToRgb(currentH, s, l);
 
-                        // Antialias edge
+                        // Antialias boundary
                         float edgeDist = RadiusDiamond - manhattan;
-                        if (edgeDist < 1f)
-                        {
-                            col.a = Mathf.Clamp01(edgeDist);
-                        }
+                        if (edgeDist < 0f)
+                            col.a = Mathf.Clamp01(1f + edgeDist);
                         else
-                        {
                             col.a = 1f;
-                        }
 
                         wheelTexture.SetPixel(x, y, col);
                     }
                     else
                     {
                         // Clear gap between diamond and hue ring
-                        float dist = Mathf.Sqrt(dx * dx + dy * dy);
+                        float dist = Mathf.Sqrt(dx_gui * dx_gui + dy_gui * dy_gui);
                         if (dist < RadiusInner)
                         {
                             wheelTexture.SetPixel(x, y, Color.clear);
@@ -157,19 +153,27 @@ namespace NiceHealthTab_YAPEM_Patch
 
         public override void DoWindowContents(Rect inRect)
         {
-            // Title
+            // Title & Close Button
             Text.Font = GameFont.Medium;
-            Widgets.Label(new Rect(0f, 0f, inRect.width - 30f, 28f), title);
+            Rect titleRect = new Rect(0f, 0f, inRect.width - 28f, 28f);
+            Widgets.Label(titleRect, title);
             Text.Font = GameFont.Small;
 
-            // Wheel area
-            Rect wheelRect = new Rect((inRect.width - TexSize) / 2f, 32f, TexSize, TexSize);
+            Rect closeBtnRect = new Rect(inRect.width - 24f, 2f, 22f, 22f);
+            if (Widgets.ButtonText(closeBtnRect, "✕"))
+            {
+                accepted = true;
+                Close();
+            }
+
+            // Wheel Canvas
+            Rect wheelRect = new Rect((inRect.width - TexSize) / 2f, 34f, TexSize, TexSize);
             if (wheelTexture != null)
             {
                 GUI.DrawTexture(wheelRect, wheelTexture);
             }
 
-            // Mouse handling
+            // Mouse handling in GUI coordinates
             Vector2 mouse = Event.current.mousePosition;
             Vector2 local = mouse - new Vector2(wheelRect.x, wheelRect.y);
             float dx = local.x - Center;
@@ -210,11 +214,11 @@ namespace NiceHealthTab_YAPEM_Patch
                 isDraggingDiamond = false;
             }
 
-            // Draw Selector Rings
+            // Draw Selector Reticles
             DrawHueCursor(wheelRect);
             DrawDiamondCursor(wheelRect);
 
-            // Bottom bar: [Preview Swatch] [#HEX] [>]
+            // Bottom bar: [Preview Swatch] [#HEX] [Reset] [OK >]
             Rect bottomRect = new Rect(wheelRect.x, wheelRect.yMax + 12f, wheelRect.width, 30f);
 
             // 1. Swatch
@@ -223,10 +227,10 @@ namespace NiceHealthTab_YAPEM_Patch
             Widgets.DrawBox(swatchRect, 1);
 
             // 2. Hex input
-            Rect hexHashRect = new Rect(swatchRect.xMax + 10f, bottomRect.y + 4f, 14f, 24f);
+            Rect hexHashRect = new Rect(swatchRect.xMax + 6f, bottomRect.y + 4f, 12f, 24f);
             Widgets.Label(hexHashRect, "#");
 
-            Rect hexFieldRect = new Rect(hexHashRect.xMax + 2f, bottomRect.y + 2f, 96f, 26f);
+            Rect hexFieldRect = new Rect(hexHashRect.xMax + 2f, bottomRect.y + 2f, 70f, 26f);
             string newHex = Widgets.TextField(hexFieldRect, hexBuffer);
             if (newHex != hexBuffer)
             {
@@ -240,8 +244,19 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }
 
-            // 3. Accept button '>'
-            Rect okBtnRect = new Rect(bottomRect.xMax - 40f, bottomRect.y + 2f, 40f, 26f);
+            // 3. Reset Button
+            Rect resetRect = new Rect(hexFieldRect.xMax + 6f, bottomRect.y + 2f, 48f, 26f);
+            if (Widgets.ButtonText(resetRect, "NHT_YAPEM_ResetBtn".Translate()))
+            {
+                currentColor = defaultColor;
+                hexBuffer = ColorUtility.ToHtmlStringRGB(currentColor);
+                RgbToHsl(currentColor, out currentH, out currentS, out currentL);
+                RedrawDiamond();
+                onColorSaved?.Invoke(currentColor);
+            }
+
+            // 4. Accept button '>'
+            Rect okBtnRect = new Rect(bottomRect.xMax - 36f, bottomRect.y + 2f, 36f, 26f);
             if (Widgets.ButtonText(okBtnRect, ">"))
             {
                 accepted = true;
@@ -263,6 +278,8 @@ namespace NiceHealthTab_YAPEM_Patch
         private void UpdateDiamond(float dx, float dy)
         {
             dy = Mathf.Clamp(dy, -RadiusDiamond, RadiusDiamond);
+            // Top (dy = -RadiusDiamond) -> White (l = 1.0)
+            // Bottom (dy = +RadiusDiamond) -> Black (l = 0.0)
             currentL = Mathf.Clamp01(0.5f - dy / (2f * RadiusDiamond));
             float span = RadiusDiamond - Mathf.Abs(dy);
             currentS = span > 0.001f ? Mathf.Clamp01((dx + span) / (2f * span)) : 0f;
@@ -297,10 +314,10 @@ namespace NiceHealthTab_YAPEM_Patch
         private void DrawCursor(Vector2 center)
         {
             Rect outer = new Rect(center.x - 6f, center.y - 6f, 12f, 12f);
-            Widgets.DrawBoxSolid(outer, new Color(0f, 0f, 0f, 0.85f));
+            Widgets.DrawBoxSolid(outer, new Color(0f, 0f, 0f, 0.9f));
             Rect inner = outer.ContractedBy(1.5f);
             Widgets.DrawBoxSolid(inner, Color.white);
-            Widgets.DrawBoxSolid(inner.ContractedBy(1.5f), new Color(0f, 0f, 0f, 0.85f));
+            Widgets.DrawBoxSolid(inner.ContractedBy(1.5f), currentColor);
         }
 
         public override void PreClose()
@@ -324,19 +341,15 @@ namespace NiceHealthTab_YAPEM_Patch
 
         public static Color HslToRgb(float h, float s, float l)
         {
-            if (s <= 0.0001f) return new Color(l, l, l);
+            if (s <= 0.0001f) return new Color(l, l, l, 1f);
             float q = l < 0.5f ? l * (1f + s) : l + s - l * s;
             float p = 2f * l - q;
-            float r = HueToRgb(p, q, h + 1f / 3f);
-            float g = HueToRgb(p, q, h);
-            float b = HueToRgb(p, q, h - 1f / 3f);
-            return new Color(r, g, b, 1f);
+            return new Color(HueToRgb(p, q, h + 1f / 3f), HueToRgb(p, q, h), HueToRgb(p, q, h - 1f / 3f), 1f);
         }
 
         private static float HueToRgb(float p, float q, float t)
         {
-            if (t < 0f) t += 1f;
-            if (t > 1f) t -= 1f;
+            t = (t % 1f + 1f) % 1f;
             if (t < 1f / 6f) return p + (q - p) * 6f * t;
             if (t < 1f / 2f) return q;
             if (t < 2f / 3f) return p + (q - p) * (2f / 3f - t) * 6f;

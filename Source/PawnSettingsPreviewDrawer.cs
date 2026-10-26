@@ -21,19 +21,29 @@ namespace NiceHealthTab_YAPEM_Patch
         // Cached texture references
         private static Texture2D texTorso;
         private static Texture2D texHead;
-        private static Texture2D texUpperArm;
-        private static Texture2D texLowerArm;
+        private static Texture2D texNeck;
+        private static Texture2D texShoulder;
+        private static Texture2D texArm;
         private static Texture2D texLeg;
-        private static Texture2D texHand;
-        private static Texture2D texFeet;
-        private static Texture2D texOutline;
 
-        private static Texture2D iconBrain;
-        private static Texture2D iconHeart;
-        private static Texture2D iconLung;
-        private static Texture2D iconStomach;
-        private static Texture2D iconKidney;
-        private static Texture2D iconGland;
+        // Prosthetic overlays
+        private static Texture2D texAdvArm;
+        private static Texture2D texAdvLeg;
+        private static Texture2D texArchoArm;
+        private static Texture2D texArchoLeg;
+        private static Texture2D texUltraArm;
+        private static Texture2D texUltraLeg;
+
+        // Organs
+        private static Texture2D texBrain;
+        private static Texture2D texHeart;
+        private static Texture2D texLung;
+        private static Texture2D texStomach;
+        private static Texture2D texKidney;
+
+        // Bottom icons
+        private static Texture2D texIconHand;
+        private static Texture2D texIconFoot;
 
         private static bool texturesLoaded;
 
@@ -42,43 +52,74 @@ namespace NiceHealthTab_YAPEM_Patch
             if (texturesLoaded) return;
             texturesLoaded = true;
 
-            texTorso    = ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Male/Torso", false);
-            texHead     = ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Male/Head", false);
-            texUpperArm = ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Male/UpperArm", false);
-            texLowerArm = ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Male/LowerArm", false);
-            texLeg      = ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Male/Leg", false);
-            texHand     = ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Male/Hand", false);
-            texFeet     = ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Male/Feet", false);
-            texOutline  = ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Male/Outline", false);
+            // Baseliner Female/Male base body parts
+            texTorso    = ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Female/Torso", false) 
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Male/Torso", false);
+            texHead     = ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Female/NiceHead", false) 
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Female/Head", false)
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Male/Head", false);
+            texNeck     = ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Female/Neck", false);
+            texShoulder = ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Female/Shoulder", false);
+            texArm      = ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Female/Arm", false)
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Male/Arm", false);
+            texLeg      = ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Female/Leg", false)
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Male/Leg", false);
 
-            iconBrain   = ContentFinder<Texture2D>.Get("HediffTab/Icons/Brain", false);
-            iconHeart   = ContentFinder<Texture2D>.Get("HediffTab/Icons/Blood", false);
-            iconLung    = ContentFinder<Texture2D>.Get("HediffTab/Icons/Lung", false);
-            iconStomach = ContentFinder<Texture2D>.Get("HediffTab/Icons/Stomach", false);
-            iconKidney  = ContentFinder<Texture2D>.Get("HediffTab/Icons/BloodFilter", false);
-            iconGland   = ContentFinder<Texture2D>.Get("HediffTab/Icons/Apple", false);
+            // Prosthesis sprites
+            texAdvArm   = ContentFinder<Texture2D>.Get("HediffTab/Prosthesis/Female/Arms/AdvBionicArm", false)
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Prosthesis/Male/Arms/AdvBionicArm", false);
+            texAdvLeg   = ContentFinder<Texture2D>.Get("HediffTab/Prosthesis/Female/Legs/AdvBionicLeg", false)
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Prosthesis/Male/Legs/AdvBionicLeg", false);
+
+            texArchoArm = ContentFinder<Texture2D>.Get("HediffTab/Prosthesis/Female/Arms/ArchotechArm", false)
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Prosthesis/Male/Arms/ArchotechArm", false);
+            texArchoLeg = ContentFinder<Texture2D>.Get("HediffTab/Prosthesis/Female/Legs/ArchotechLeg", false)
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Prosthesis/Male/Legs/ArchotechLeg", false);
+
+            texUltraArm = ContentFinder<Texture2D>.Get("HediffTab/Prosthesis/Female/Arms/UltratechArm", false)
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Prosthesis/Male/Arms/UltratechArm", false);
+            texUltraLeg = ContentFinder<Texture2D>.Get("HediffTab/Prosthesis/Female/Legs/UltratechLeg", false)
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Prosthesis/Male/Legs/UltratechLeg", false);
+
+            // Organs
+            texBrain    = ContentFinder<Texture2D>.Get("HediffTab/Organs/Brain", false)
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Icons/Brain", false);
+            texHeart    = ContentFinder<Texture2D>.Get("HediffTab/Organs/Heart", false)
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Icons/Blood", false);
+            texLung     = ContentFinder<Texture2D>.Get("HediffTab/Organs/Lung", false)
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Icons/Lung", false);
+            texStomach  = ContentFinder<Texture2D>.Get("HediffTab/Organs/Stomach", false)
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Icons/Stomach", false);
+            texKidney   = ContentFinder<Texture2D>.Get("HediffTab/Organs/Kidney", false)
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Icons/BloodFilter", false);
+
+            // Bottom indicator icons
+            texIconHand = ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Female/Hand", false)
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Hand/HandBase", false);
+            texIconFoot = ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Feet/Feet", false)
+                       ?? ContentFinder<Texture2D>.Get("HediffTab/Baseliner/Female/Feet", false);
         }
 
         public static void DrawPreview(Rect rect, YAPEMPatchSettings settings)
         {
             EnsureTextures();
 
-            // Background card
-            Widgets.DrawBoxSolid(rect, new Color(0.08f, 0.09f, 0.11f, 0.95f));
+            // Nice Health Tab styled card container
+            Widgets.DrawBoxSolid(rect, new Color(0.10f, 0.11f, 0.13f, 0.96f));
             Widgets.DrawBox(rect, 1);
 
-            // Title & Subtitle
+            // Header: Title & Subtitle
             Rect headerRect = new Rect(rect.x + 10f, rect.y + 8f, rect.width - 20f, 26f);
             Text.Font = GameFont.Medium;
             Widgets.Label(headerRect, "NHT_YAPEM_PreviewTitle".Translate());
             Text.Font = GameFont.Tiny;
-            GUI.color = new Color(0.7f, 0.75f, 0.8f);
+            GUI.color = new Color(0.72f, 0.77f, 0.82f);
             Widgets.Label(new Rect(rect.x + 10f, headerRect.yMax - 2f, rect.width - 20f, 18f), "NHT_YAPEM_PreviewSubtitle".Translate());
             GUI.color = Color.white;
             Text.Font = GameFont.Small;
 
-            // Preset Buttons
-            Rect presetBar = new Rect(rect.x + 8f, headerRect.yMax + 18f, rect.width - 16f, 24f);
+            // Preset Tabs
+            Rect presetBar = new Rect(rect.x + 8f, headerRect.yMax + 16f, rect.width - 16f, 24f);
             float btnW = (presetBar.width - 9f) / 4f;
 
             DrawPresetButton(new Rect(presetBar.x, presetBar.y, btnW, 24f), "Showcase", PreviewPreset.Showcase);
@@ -87,14 +128,15 @@ namespace NiceHealthTab_YAPEM_Patch
             DrawPresetButton(new Rect(presetBar.x + (btnW + 3f) * 3f, presetBar.y, btnW, 24f), "DLC", PreviewPreset.DLCImplants);
 
             // Main Doll Canvas Area
-            Rect dollCanvas = new Rect(rect.x + (rect.width - 220f) / 2f, presetBar.yMax + 12f, 220f, 280f);
-            Widgets.DrawBoxSolid(dollCanvas, new Color(0.04f, 0.05f, 0.06f, 0.8f));
+            float canvasH = Mathf.Min(310f, rect.height - 120f);
+            Rect dollCanvas = new Rect(rect.x + (rect.width - 240f) / 2f, presetBar.yMax + 10f, 240f, canvasH);
+            Widgets.DrawBoxSolid(dollCanvas, new Color(0.06f, 0.07f, 0.08f, 0.88f));
             Widgets.DrawBox(dollCanvas, 1);
 
             DrawDoll(dollCanvas, settings);
 
-            // Status message at bottom of preview box
-            Rect statusRect = new Rect(rect.x + 10f, dollCanvas.yMax + 10f, rect.width - 20f, 40f);
+            // Status indicator message at bottom
+            Rect statusRect = new Rect(rect.x + 10f, dollCanvas.yMax + 8f, rect.width - 20f, 32f);
             DrawDominantStatus(statusRect, settings);
         }
 
@@ -103,7 +145,7 @@ namespace NiceHealthTab_YAPEM_Patch
             bool active = CurrentPreset == preset;
             if (active)
             {
-                Widgets.DrawBoxSolid(r, new Color(0.2f, 0.45f, 0.7f, 0.9f));
+                Widgets.DrawBoxSolid(r, new Color(0.24f, 0.44f, 0.68f, 0.95f));
                 Widgets.DrawBox(r, 1);
             }
             if (Widgets.ButtonText(r, label, drawBackground: !active))
@@ -114,7 +156,7 @@ namespace NiceHealthTab_YAPEM_Patch
 
         private static void DrawDoll(Rect canvas, YAPEMPatchSettings settings)
         {
-            // Determine active limbs and implants based on preset:
+            // Tier Colors
             Color colAdv = settings.ColorAdvancedBionic;
             Color colUltra = settings.ColorUltratech;
             Color colArcho = settings.ColorArchotech;
@@ -123,6 +165,7 @@ namespace NiceHealthTab_YAPEM_Patch
 
             Color rightArmCol, leftArmCol, rightLegCol, leftLegCol;
             string rightArmName, leftArmName, rightLegName, leftLegName;
+            Texture2D rightArmTex, leftArmTex, rightLegTex, leftLegTex;
 
             List<Color> limbColors = new List<Color>();
 
@@ -132,6 +175,8 @@ namespace NiceHealthTab_YAPEM_Patch
                     rightArmCol = leftArmCol = rightLegCol = leftLegCol = colArcho;
                     rightArmName = leftArmName = "Archotech Arm";
                     rightLegName = leftLegName = "Archotech Leg";
+                    rightArmTex = leftArmTex = texArchoArm ?? texArm;
+                    rightLegTex = leftLegTex = texArchoLeg ?? texLeg;
                     limbColors.AddRange(new[] { colArcho, colArcho, colArcho, colArcho });
                     break;
 
@@ -139,6 +184,8 @@ namespace NiceHealthTab_YAPEM_Patch
                     rightArmCol = leftArmCol = rightLegCol = leftLegCol = colBio;
                     rightArmName = leftArmName = "Bionic Arm";
                     rightLegName = leftLegName = "Bionic Leg";
+                    rightArmTex = leftArmTex = texArm;
+                    rightLegTex = leftLegTex = texLeg;
                     limbColors.AddRange(new[] { colBio, colBio, colBio, colBio });
                     break;
 
@@ -149,6 +196,8 @@ namespace NiceHealthTab_YAPEM_Patch
                     leftArmCol = colRoyaltyLimb;  leftArmName = "Field Hand (Royalty)";
                     rightLegCol = colBio;         rightLegName = "Bionic Leg";
                     leftLegCol = colOdysseyLimb;  leftLegName = "Vacskin Limb (Odyssey)";
+                    rightArmTex = leftArmTex = texArm;
+                    rightLegTex = leftLegTex = texLeg;
                     limbColors.AddRange(new[] { colRoyaltyLimb, colRoyaltyLimb, colBio, colOdysseyLimb });
                     break;
 
@@ -158,15 +207,18 @@ namespace NiceHealthTab_YAPEM_Patch
                     leftArmCol = colAdv;   leftArmName = "Advanced Bionic Arm (YAPEM)";
                     rightLegCol = colBio;  rightLegName = "Bionic Leg";
                     leftLegCol = colUltra; leftLegName = "Ultratech Leg";
+                    rightArmTex = texArchoArm ?? texArm;
+                    leftArmTex = texAdvArm ?? texArm;
+                    rightLegTex = texLeg;
+                    leftLegTex = texUltraLeg ?? texLeg;
                     limbColors.AddRange(new[] { colArcho, colAdv, colBio, colUltra });
                     break;
             }
 
             // Check dominant tinting:
-            Color bodySubstrateCol = new Color(0.24f, 0.27f, 0.31f); // default neutral doll color
+            Color bodySubstrateCol = new Color(0.92f, 0.94f, 0.96f); // Default clean mannequin white
             if (settings.EnableBodyTinting)
             {
-                // Count dominant limbs
                 Dictionary<Color, int> counts = new Dictionary<Color, int>();
                 foreach (var c in limbColors)
                 {
@@ -176,74 +228,95 @@ namespace NiceHealthTab_YAPEM_Patch
                 {
                     if (kvp.Value >= settings.RequiredLimbCount)
                     {
-                        bodySubstrateCol = Color.Lerp(kvp.Key, Color.white, 0.15f);
+                        bodySubstrateCol = Color.Lerp(kvp.Key, Color.white, 0.25f);
                         break;
                     }
                 }
             }
 
             Vector2 center = canvas.center;
+            float topY = canvas.y + 10f;
 
-            // 1. Base Silhouette / Body Substrate
-            DrawPartSprite(texHead, new Rect(center.x - 18f, canvas.y + 16f, 36f, 42f), bodySubstrateCol);
-            DrawPartSprite(texTorso, new Rect(center.x - 26f, canvas.y + 54f, 52f, 85f), bodySubstrateCol);
+            // 1. Base Silhouette: Head, Neck, Torso (Nice Health Tab authentic proportions)
+            // Head
+            Rect headRect = new Rect(center.x - 22f, topY, 44f, 44f);
+            DrawPartSprite(texHead, headRect, bodySubstrateCol);
 
-            // 2. Limbs
+            // Neck
+            Rect neckRect = new Rect(center.x - 10f, topY + 38f, 20f, 18f);
+            DrawPartSprite(texNeck, neckRect, bodySubstrateCol);
+
+            // Torso & Shoulders
+            Rect torsoRect = new Rect(center.x - 30f, topY + 48f, 60f, 85f);
+            DrawPartSprite(texTorso, torsoRect, bodySubstrateCol);
+
+            // Shoulders
+            Rect rShoulderRect = new Rect(center.x - 48f, topY + 48f, 24f, 32f);
+            DrawPartSprite(texShoulder, rShoulderRect, bodySubstrateCol);
+
+            Rect lShoulderRect = new Rect(center.x + 24f, topY + 48f, 24f, 32f);
+            DrawPartSpriteFlipped(texShoulder, lShoulderRect, bodySubstrateCol);
+
+            // 2. Limbs (Left & Right Arms, Left & Right Legs)
             // Right Arm
-            Rect rArmRect = new Rect(center.x - 52f, canvas.y + 58f, 26f, 75f);
-            DrawPartSprite(texUpperArm, rArmRect, rightArmCol);
+            Rect rArmRect = new Rect(center.x - 56f, topY + 54f, 28f, 76f);
+            DrawPartSprite(rightArmTex, rArmRect, rightArmCol);
             TooltipHandler.TipRegion(rArmRect, $"{rightArmName}\n#{ColorUtility.ToHtmlStringRGB(rightArmCol)}");
 
             // Left Arm
-            Rect lArmRect = new Rect(center.x + 26f, canvas.y + 58f, 26f, 75f);
-            DrawPartSpriteFlipped(texUpperArm, lArmRect, leftArmCol);
+            Rect lArmRect = new Rect(center.x + 28f, topY + 54f, 28f, 76f);
+            DrawPartSpriteFlipped(leftArmTex, lArmRect, leftArmCol);
             TooltipHandler.TipRegion(lArmRect, $"{leftArmName}\n#{ColorUtility.ToHtmlStringRGB(leftArmCol)}");
 
             // Right Leg
-            Rect rLegRect = new Rect(center.x - 26f, canvas.y + 135f, 24f, 88f);
-            DrawPartSprite(texLeg, rLegRect, rightLegCol);
+            Rect rLegRect = new Rect(center.x - 30f, topY + 128f, 28f, 95f);
+            DrawPartSprite(rightLegTex, rLegRect, rightLegCol);
             TooltipHandler.TipRegion(rLegRect, $"{rightLegName}\n#{ColorUtility.ToHtmlStringRGB(rightLegCol)}");
 
             // Left Leg
-            Rect lLegRect = new Rect(center.x + 2f, canvas.y + 135f, 24f, 88f);
-            DrawPartSpriteFlipped(texLeg, lLegRect, leftLegCol);
+            Rect lLegRect = new Rect(center.x + 2f, topY + 128f, 28f, 95f);
+            DrawPartSpriteFlipped(leftLegTex, lLegRect, leftLegCol);
             TooltipHandler.TipRegion(lLegRect, $"{leftLegName}\n#{ColorUtility.ToHtmlStringRGB(leftLegCol)}");
 
-            // 3. Hands & Feet Icons at bottom
-            float iconY = canvas.yMax - 40f;
+            // 3. Organs inside Torso and Head
+            DrawInternalImplants(canvas, center, topY, settings);
+
+            // 4. Nice Health Tab bottom 4 indicator icons: [Hand L] [Hand R] [Foot L] [Foot R]
+            float iconY = canvas.yMax - 36f;
             Color rHandCol = settings.ColorBottomIcons ? rightArmCol : Color.white;
             Color lHandCol = settings.ColorBottomIcons ? leftArmCol : Color.white;
             Color rFootCol = settings.ColorBottomIcons ? rightLegCol : Color.white;
             Color lFootCol = settings.ColorBottomIcons ? leftLegCol : Color.white;
 
-            Rect rHandBox = new Rect(center.x - 88f, iconY, 28f, 28f);
-            Rect rFootBox = new Rect(center.x - 44f, iconY, 28f, 28f);
-            Rect lFootBox = new Rect(center.x + 16f, iconY, 28f, 28f);
-            Rect lHandBox = new Rect(center.x + 60f, iconY, 28f, 28f);
+            float slotW = 28f;
+            float gap = 16f;
+            float totalIconsW = slotW * 4f + gap * 3f;
+            float startX = center.x - totalIconsW / 2f;
 
-            DrawIndicatorIcon(texHand, rHandBox, rHandCol, "Right Hand Indicator");
-            DrawIndicatorIcon(texFeet, rFootBox, rFootCol, "Right Foot Indicator");
-            DrawIndicatorIcon(texFeet, lFootBox, lFootCol, "Left Foot Indicator");
-            DrawIndicatorIcon(texHand, lHandBox, lHandCol, "Left Hand Indicator");
+            Rect rHandBox = new Rect(startX, iconY, slotW, 28f);
+            Rect lHandBox = new Rect(rHandBox.xMax + gap, iconY, slotW, 28f);
+            Rect rFootBox = new Rect(lHandBox.xMax + gap, iconY, slotW, 28f);
+            Rect lFootBox = new Rect(rFootBox.xMax + gap, iconY, slotW, 28f);
 
-            // 4. Internal Implants & Organs Overlays (Torso & Head)
-            DrawInternalImplants(canvas, center, settings);
+            DrawIndicatorIcon(texIconHand, rHandBox, rHandCol, false, "Right Hand Indicator");
+            DrawIndicatorIcon(texIconHand, lHandBox, lHandCol, true, "Left Hand Indicator");
+            DrawIndicatorIcon(texIconFoot, rFootBox, rFootCol, false, "Right Foot Indicator");
+            DrawIndicatorIcon(texIconFoot, lFootBox, lFootCol, true, "Left Foot Indicator");
         }
 
-        private static void DrawInternalImplants(Rect canvas, Vector2 center, YAPEMPatchSettings settings)
+        private static void DrawInternalImplants(Rect canvas, Vector2 center, float topY, YAPEMPatchSettings settings)
         {
             Color colBio = settings.ColorBionic;
             Color colArcho = settings.ColorArchotech;
             Color colUltra = settings.ColorUltratech;
             Color colAdv = settings.ColorAdvancedBionic;
 
-            // Colors for DLC categories:
             Color colRoyalty = settings.UseDLCColors ? settings.ColorRoyalty : colBio;
             Color colBiotech = settings.UseDLCColors ? settings.ColorBiotech : colBio;
             Color colAnomaly = settings.UseDLCColors ? settings.ColorAnomaly : colBio;
             Color colOdyssey = settings.UseDLCColors ? settings.ColorOdyssey : colBio;
 
-            // Brain / Head Implant
+            // Brain (inside Head)
             string brainName;
             Color brainCol;
             switch (CurrentPreset)
@@ -261,10 +334,10 @@ namespace NiceHealthTab_YAPEM_Patch
                     brainCol = colRoyalty;
                     break;
             }
-            Rect brainRect = new Rect(center.x - 9f, canvas.y + 26f, 18f, 18f);
-            DrawOrganIcon(iconBrain, brainRect, brainCol, brainName);
+            Rect brainRect = new Rect(center.x - 11f, topY + 14f, 22f, 22f);
+            DrawOrganIcon(texBrain, brainRect, brainCol, brainName);
 
-            // Heart (Chest Left)
+            // Heart (Chest Right)
             string heartName;
             Color heartCol;
             switch (CurrentPreset)
@@ -276,14 +349,14 @@ namespace NiceHealthTab_YAPEM_Patch
                 default:
                     heartName = "Adv. Bionic Heart (YAPEM)"; heartCol = colAdv; break;
             }
-            Rect heartRect = new Rect(center.x - 18f, canvas.y + 68f, 16f, 16f);
-            DrawOrganIcon(iconHeart, heartRect, heartCol, heartName);
+            Rect heartRect = new Rect(center.x - 20f, topY + 62f, 18f, 18f);
+            DrawOrganIcon(texHeart, heartRect, heartCol, heartName);
 
-            // Lung (Chest Right)
+            // Lung (Chest Left)
             string lungName = (CurrentPreset == PreviewPreset.DLCImplants) ? "Detoxifier Lung (Biotech)" : "Bionic Lung";
             Color lungCol = (CurrentPreset == PreviewPreset.DLCImplants) ? colBiotech : colBio;
-            Rect lungRect = new Rect(center.x + 2f, canvas.y + 68f, 16f, 16f);
-            DrawOrganIcon(iconLung, lungRect, lungCol, lungName);
+            Rect lungRect = new Rect(center.x + 3f, topY + 62f, 18f, 18f);
+            DrawOrganIcon(texLung, lungRect, lungCol, lungName);
 
             // Stomach (Abdomen Center)
             string stomachName;
@@ -297,29 +370,14 @@ namespace NiceHealthTab_YAPEM_Patch
                 default:
                     stomachName = "Ultratech Stomach"; stomachCol = colUltra; break;
             }
-            Rect stomachRect = new Rect(center.x - 8f, canvas.y + 92f, 16f, 16f);
-            DrawOrganIcon(iconStomach, stomachRect, stomachCol, stomachName);
+            Rect stomachRect = new Rect(center.x - 9f, topY + 84f, 18f, 18f);
+            DrawOrganIcon(texStomach, stomachRect, stomachCol, stomachName);
 
-            // Glands / Dermal Armor (Upper Torso Center)
-            string glandName;
-            Color glandCol;
-            switch (CurrentPreset)
-            {
-                case PreviewPreset.FullArchotech:
-                    glandName = "Archotech Shield Core"; glandCol = colArcho; break;
-                case PreviewPreset.DLCImplants:
-                    glandName = "Stoneskin Gland (Royalty) / Vacskin (Odyssey)"; glandCol = colRoyalty; break;
-                default:
-                    glandName = "Stoneskin Gland (Royalty)"; glandCol = colRoyalty; break;
-            }
-            Rect glandRect = new Rect(center.x - 7f, canvas.y + 56f, 14f, 14f);
-            DrawOrganIcon(iconGland, glandRect, glandCol, glandName);
-
-            // Kidney / Blood Filter (Lower Left Torso)
-            string kidneyName = (CurrentPreset == PreviewPreset.DLCImplants) ? "Blood Warmer (Odyssey/Anomaly)" : "Detoxifier Kidney (Biotech)";
-            Color kidneyCol = (CurrentPreset == PreviewPreset.DLCImplants) ? colAnomaly : colBiotech;
-            Rect kidneyRect = new Rect(center.x - 17f, canvas.y + 110f, 14f, 14f);
-            DrawOrganIcon(iconKidney, kidneyRect, kidneyCol, kidneyName);
+            // Kidney (Abdomen Side)
+            string kidneyName = (CurrentPreset == PreviewPreset.DLCImplants) ? "Detoxifier Kidney (Biotech)" : "Bionic Kidney";
+            Color kidneyCol = (CurrentPreset == PreviewPreset.DLCImplants) ? colBiotech : colBio;
+            Rect kidneyRect = new Rect(center.x + 9f, topY + 98f, 16f, 16f);
+            DrawOrganIcon(texKidney, kidneyRect, kidneyCol, kidneyName);
         }
 
         private static void DrawPartSprite(Texture2D tex, Rect r, Color col)
@@ -343,8 +401,7 @@ namespace NiceHealthTab_YAPEM_Patch
             GUI.color = col;
             if (tex != null)
             {
-                Rect uv = new Rect(1f, 0f, -1f, 1f);
-                GUI.DrawTextureWithTexCoords(r, tex, uv);
+                GUI.DrawTextureWithTexCoords(r, tex, new Rect(1f, 0f, -1f, 1f));
             }
             else
             {
@@ -353,18 +410,35 @@ namespace NiceHealthTab_YAPEM_Patch
             GUI.color = prev;
         }
 
-        private static void DrawIndicatorIcon(Texture2D tex, Rect r, Color col, string tip)
+        private static void DrawIndicatorIcon(Texture2D tex, Rect r, Color col, bool flipped, string tip)
         {
-            Widgets.DrawBoxSolid(r, new Color(0.12f, 0.14f, 0.17f, 0.9f));
+            // Indicator slot background
+            Widgets.DrawBoxSolid(r, new Color(0.12f, 0.14f, 0.17f, 0.95f));
             Widgets.DrawBox(r, 1);
-            DrawPartSprite(tex, GenUI.ContractedBy(r, 3f), col);
+
+            Rect iconInner = GenUI.ContractedBy(r, 2f);
+            Color prev = GUI.color;
+            GUI.color = col;
+            if (tex != null)
+            {
+                if (flipped)
+                    GUI.DrawTextureWithTexCoords(iconInner, tex, new Rect(1f, 0f, -1f, 1f));
+                else
+                    GUI.DrawTexture(iconInner, tex);
+            }
+            else
+            {
+                Widgets.DrawBoxSolid(iconInner, col);
+            }
+            GUI.color = prev;
+
             TooltipHandler.TipRegion(r, $"{tip}\n#{ColorUtility.ToHtmlStringRGB(col)}");
         }
 
         private static void DrawOrganIcon(Texture2D tex, Rect r, Color col, string tip)
         {
             // Glow backdrop
-            Widgets.DrawBoxSolid(GenUI.ExpandedBy(r, 2f), new Color(col.r, col.g, col.b, 0.25f));
+            Widgets.DrawBoxSolid(GenUI.ExpandedBy(r, 2f), new Color(col.r, col.g, col.b, 0.35f));
             Color prev = GUI.color;
             GUI.color = col;
             if (tex != null)
@@ -390,12 +464,12 @@ namespace NiceHealthTab_YAPEM_Patch
                 if (CurrentPreset == PreviewPreset.FullArchotech || CurrentPreset == PreviewPreset.FullBionic)
                 {
                     status = "NHT_YAPEM_DominantActive".Translate(4);
-                    statusCol = new Color(0.4f, 0.95f, 0.5f);
+                    statusCol = new Color(0.35f, 0.90f, 0.45f);
                 }
                 else if (CurrentPreset == PreviewPreset.DLCImplants && settings.RequiredLimbCount <= 3)
                 {
                     status = "NHT_YAPEM_DominantActive".Translate(3);
-                    statusCol = new Color(0.4f, 0.95f, 0.5f);
+                    statusCol = new Color(0.35f, 0.90f, 0.45f);
                 }
                 else
                 {

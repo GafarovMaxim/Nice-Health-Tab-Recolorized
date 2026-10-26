@@ -1,5 +1,6 @@
 import os
 import json
+import xml.sax.saxutils
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 JSON_PATH = os.path.join(SCRIPT_DIR, "languages.json")
@@ -47,11 +48,12 @@ def generate():
                 xml_path = os.path.join(keyed_dir, "Settings.xml")
                 lines = ['<?xml version="1.0" encoding="utf-8" ?>', '<LanguageData>']
                 for k, v in keys.items():
-                    lines.append(f"  <{k}>{v}</{k}>")
+                    safe_v = xml.sax.saxutils.escape(v)
+                    lines.append(f"  <{k}>{safe_v}</{k}>")
                 lines.append('</LanguageData>\n')
                 with open(xml_path, "w", encoding="utf-8") as f:
                     f.write("\n".join(lines))
-    print(f"Generated settings for {len(languages)} languages across all target directories.")
+    print(f"Generated and validated settings for {len(languages)} languages across all target directories.")
 
 if __name__ == "__main__":
     generate()

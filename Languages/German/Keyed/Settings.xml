@@ -19,14 +19,14 @@
   <NHT_YAPEM_ResetBtn>Zurücksetzen</NHT_YAPEM_ResetBtn>
   <NHT_YAPEM_ResetAllBtn>Alle Einstellungen auf Standard zurücksetzen</NHT_YAPEM_ResetAllBtn>
   <NHT_YAPEM_PreviewTitle>Kolonistenvorschau</NHT_YAPEM_PreviewTitle>
-  <NHT_YAPEM_PreviewSubtitle>Echtzeitvorschau von Prothesen & Implantaten</NHT_YAPEM_PreviewSubtitle>
+  <NHT_YAPEM_PreviewSubtitle>Echtzeitvorschau von Prothesen &amp; Implantaten</NHT_YAPEM_PreviewSubtitle>
   <NHT_YAPEM_DominantActive>Körperfärbung: Aktiv ({0} Gliedm.)</NHT_YAPEM_DominantActive>
   <NHT_YAPEM_DominantInactive>Körperfärbung: Inaktiv</NHT_YAPEM_DominantInactive>
   <NHT_YAPEM_SectionDLCColors>DLC-Kategoriefarben</NHT_YAPEM_SectionDLCColors>
   <NHT_YAPEM_UseDLCColors>Eigene Farben für DLC-Implantate verwenden</NHT_YAPEM_UseDLCColors>
   <NHT_YAPEM_UseDLCColors_Desc>Wenn aktiviert, verwenden Implantate aus Royalty, Biotech, Anomaly und Odyssey ihre eigenen unverwechselbaren DLC-Farben.</NHT_YAPEM_UseDLCColors_Desc>
-  <NHT_YAPEM_TierRoyalty>Royalty (Kaiserliche & königliche Implantate)</NHT_YAPEM_TierRoyalty>
-  <NHT_YAPEM_TierBiotech>Biotech (Mechanitor & Entgiftung)</NHT_YAPEM_TierBiotech>
-  <NHT_YAPEM_TierAnomaly>Anomaly (Ghul & Bioferrit)</NHT_YAPEM_TierAnomaly>
-  <NHT_YAPEM_TierOdyssey>Odyssey (Pilot & Kosmisch)</NHT_YAPEM_TierOdyssey>
+  <NHT_YAPEM_TierRoyalty>Royalty (Kaiserliche &amp; königliche Implantate)</NHT_YAPEM_TierRoyalty>
+  <NHT_YAPEM_TierBiotech>Biotech (Mechanitor &amp; Entgiftung)</NHT_YAPEM_TierBiotech>
+  <NHT_YAPEM_TierAnomaly>Anomaly (Ghul &amp; Bioferrit)</NHT_YAPEM_TierAnomaly>
+  <NHT_YAPEM_TierOdyssey>Odyssey (Pilot &amp; Kosmisch)</NHT_YAPEM_TierOdyssey>
 </LanguageData>

@@ -9,9 +9,9 @@ namespace NiceHealthTab_YAPEM_Patch
         // Canonical defaults - Base Tiers
         public static readonly Color DefaultColorAdvancedBionic = new Color(161f / 255f, 206f / 255f, 243f / 255f, 1f); // #A1CEF3 Sky Blue
         public static readonly Color DefaultColorUltratech      = new Color(113f / 255f, 203f / 255f, 194f / 255f, 1f); // #71CBC2 Mint Turquoise
-        public static readonly Color DefaultColorArchotech      = new Color(203f / 255f, 208f / 255f, 171f / 255f, 1f); // #CBD0AB Sage Green
+        public static readonly Color DefaultColorArchotech      = new Color(242f / 255f, 204f / 255f, 51f / 255f, 1f);  // #F2CC33 Golden Yellow
         public static readonly Color DefaultColorBionic         = new Color(242f / 255f, 89f / 255f, 166f / 255f, 1f);  // #F259A6 Neon Pink
-        public static readonly Color DefaultColorProsthetic     = new Color(176f / 255f, 176f / 255f, 176f / 255f, 1f); // #B0B0B0 Silver Grey
+        public static readonly Color DefaultColorProsthetic     = new Color(153f / 255f, 153f / 255f, 255f / 255f, 1f); // #9999FF Lavender
 
         // Canonical defaults - DLC Categories
         public static readonly Color DefaultColorRoyalty        = new Color(222f / 255f, 184f / 255f, 65f / 255f, 1f);  // #DEB841 Imperial Gold
@@ -230,6 +230,7 @@ namespace NiceHealthTab_YAPEM_Patch
             if (Widgets.ButtonText(resetBtnRect, "NHT_YAPEM_ResetBtn".Translate()))
             {
                 color = defaultColor;
+                saveAction?.Invoke(defaultColor);
             }
 
             listing.Gap(2f);

@@ -25,8 +25,8 @@
   <NHT_YAPEM_SectionDLCColors>Couleurs des catégories DLC</NHT_YAPEM_SectionDLCColors>
   <NHT_YAPEM_UseDLCColors>Utiliser des couleurs dédiées pour les implants DLC</NHT_YAPEM_UseDLCColors>
   <NHT_YAPEM_UseDLCColors_Desc>Si activé, les implants de Royalty, Biotech, Anomaly et Odyssey utiliseront leurs propres couleurs distinctives.</NHT_YAPEM_UseDLCColors_Desc>
-  <NHT_YAPEM_TierRoyalty>Royalty (Implants impériaux & royaux)</NHT_YAPEM_TierRoyalty>
-  <NHT_YAPEM_TierBiotech>Biotech (Mécaniteur & détox)</NHT_YAPEM_TierBiotech>
-  <NHT_YAPEM_TierAnomaly>Anomaly (Goule & bioferrite)</NHT_YAPEM_TierAnomaly>
-  <NHT_YAPEM_TierOdyssey>Odyssey (Pilote & cosmique)</NHT_YAPEM_TierOdyssey>
+  <NHT_YAPEM_TierRoyalty>Royalty (Implants impériaux &amp; royaux)</NHT_YAPEM_TierRoyalty>
+  <NHT_YAPEM_TierBiotech>Biotech (Mécaniteur &amp; détox)</NHT_YAPEM_TierBiotech>
+  <NHT_YAPEM_TierAnomaly>Anomaly (Goule &amp; bioferrite)</NHT_YAPEM_TierAnomaly>
+  <NHT_YAPEM_TierOdyssey>Odyssey (Pilote &amp; cosmique)</NHT_YAPEM_TierOdyssey>
 </LanguageData>
