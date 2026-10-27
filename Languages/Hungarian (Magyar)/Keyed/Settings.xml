@@ -121,4 +121,11 @@
   <NHT_YAPEM_UseDamageColor_Desc>A sérült részek súlyos sérülésnél az Ön színét, könnyűnél világosabb árnyalatát kapják, mint a Nice Health Tabban. Ki = Nice Health Tab színei.</NHT_YAPEM_UseDamageColor_Desc>
   <NHT_YAPEM_DamageColor>Sérülés színe</NHT_YAPEM_DamageColor>
   <NHT_YAPEM_HueOnly>Csak árnyalat</NHT_YAPEM_HueOnly>
+  <NHT_YAPEM_InheritNone>Ne örököljön</NHT_YAPEM_InheritNone>
+  <NHT_YAPEM_InheritTier>Szint</NHT_YAPEM_InheritTier>
+  <NHT_YAPEM_InheritDlc>DLC</NHT_YAPEM_InheritDlc>
+  <NHT_YAPEM_InheritMod>Mod</NHT_YAPEM_InheritMod>
+  <NHT_YAPEM_InheritNothing>Nincs mit örökölni</NHT_YAPEM_InheritNothing>
+  <NHT_YAPEM_InheritTip>Szín öröklése szintről, DLC-ről vagy modról</NHT_YAPEM_InheritTip>
+  <NHT_YAPEM_InheritedFrom>Örökölt szín: {0}</NHT_YAPEM_InheritedFrom>
 </LanguageData>

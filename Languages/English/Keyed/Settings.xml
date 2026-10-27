@@ -121,4 +121,11 @@
   <NHT_YAPEM_UseDamageColor_Desc>Wounded parts (organs, limbs, implants) use your color for serious damage and a lighter shade for light damage, like Nice Health Tab. Off = Nice Health Tab colors.</NHT_YAPEM_UseDamageColor_Desc>
   <NHT_YAPEM_DamageColor>Damage color</NHT_YAPEM_DamageColor>
   <NHT_YAPEM_HueOnly>Hue only</NHT_YAPEM_HueOnly>
+  <NHT_YAPEM_InheritNone>Don't inherit</NHT_YAPEM_InheritNone>
+  <NHT_YAPEM_InheritTier>Tier</NHT_YAPEM_InheritTier>
+  <NHT_YAPEM_InheritDlc>DLC</NHT_YAPEM_InheritDlc>
+  <NHT_YAPEM_InheritMod>Mod</NHT_YAPEM_InheritMod>
+  <NHT_YAPEM_InheritNothing>Nothing to inherit from</NHT_YAPEM_InheritNothing>
+  <NHT_YAPEM_InheritTip>Inherit the color from a tier, DLC or mod</NHT_YAPEM_InheritTip>
+  <NHT_YAPEM_InheritedFrom>Inherits the color of: {0}</NHT_YAPEM_InheritedFrom>
 </LanguageData>

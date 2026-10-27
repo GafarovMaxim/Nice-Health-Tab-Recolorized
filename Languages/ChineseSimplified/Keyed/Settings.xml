@@ -121,4 +121,11 @@
   <NHT_YAPEM_UseDamageColor_Desc>受损部位在重伤时使用你的颜色,轻伤时使用更浅的色调,与 Nice Health Tab 一致。关闭 = 使用 Nice Health Tab 的颜色。</NHT_YAPEM_UseDamageColor_Desc>
   <NHT_YAPEM_DamageColor>损伤颜色</NHT_YAPEM_DamageColor>
   <NHT_YAPEM_HueOnly>仅色相</NHT_YAPEM_HueOnly>
+  <NHT_YAPEM_InheritNone>不继承</NHT_YAPEM_InheritNone>
+  <NHT_YAPEM_InheritTier>等级</NHT_YAPEM_InheritTier>
+  <NHT_YAPEM_InheritDlc>DLC</NHT_YAPEM_InheritDlc>
+  <NHT_YAPEM_InheritMod>Mod</NHT_YAPEM_InheritMod>
+  <NHT_YAPEM_InheritNothing>没有可继承的对象</NHT_YAPEM_InheritNothing>
+  <NHT_YAPEM_InheritTip>从等级、DLC 或 Mod 继承颜色</NHT_YAPEM_InheritTip>
+  <NHT_YAPEM_InheritedFrom>继承颜色自:{0}</NHT_YAPEM_InheritedFrom>
 </LanguageData>

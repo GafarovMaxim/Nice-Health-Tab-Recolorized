@@ -67,6 +67,8 @@ namespace NiceHealthTab_YAPEM_Patch
         // "#RRGGBB" per third-party mod (lowercase packageId) and per auto-detected tier (tier key). Absent = Auto.
         // Priority when coloring: CustomHediffTiers (single implant) > ModColors > tier color.
         public Dictionary<string, string> ModColors = new Dictionary<string, string>();
+        // Color inheritance (see ColorLinkUtil). Not part of palette profiles yet.
+        public Dictionary<string, string> ColorLinks = new Dictionary<string, string>();
         public Dictionary<string, string> DynamicTierColors = new Dictionary<string, string>();
 
         public static bool TryParseHex(string hex, out Color color)
@@ -135,6 +137,8 @@ namespace NiceHealthTab_YAPEM_Patch
                 CustomHediffTiers = new Dictionary<string, string>();
             }
 
+            Scribe_Collections.Look(ref ColorLinks, "ColorLinks", LookMode.Value, LookMode.Value);
+            if (ColorLinks == null) ColorLinks = new Dictionary<string, string>();
             Scribe_Collections.Look(ref ModColors, "ModColors", LookMode.Value, LookMode.Value);
             if (ModColors == null)
             {
@@ -493,6 +497,7 @@ namespace NiceHealthTab_YAPEM_Patch
             ColorAnomaly = DefaultColorAnomaly;
             ColorOdyssey = DefaultColorOdyssey;
             UseDLCColors = true;
+            foreach (string t in ColorLinkUtil.DlcTiers) ColorLinks.Remove(t);
             Write();
         }
 
@@ -525,6 +530,7 @@ namespace NiceHealthTab_YAPEM_Patch
             CustomHediffTiers?.Clear();
             ModColors?.Clear();
             DynamicTierColors?.Clear();
+            ColorLinks.Clear();
         }
 
         private const int TabGeneral = 0, TabTiers = 1, TabDLC = 2, TabMods = 3, TabFineTune = 4;
@@ -594,7 +600,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 {
                     if (c == defaultColor) DynamicTierColors.Remove(key);
                     else DynamicTierColors[key] = ToHex(c);
-                });
+                }, false, key);
             }
         }
 
@@ -642,7 +648,14 @@ namespace NiceHealthTab_YAPEM_Patch
             if (key == null) return;
             Color shown = new Color(0.25f, 0.25f, 0.25f);
             bool hasColor = false;
-            if (ModColors.TryGetValue(key, out string hex) && TryParseHex(hex, out Color parsed))
+            string linkKey = ColorLinkUtil.ModPrefix + key;
+            bool linked = ColorLinkUtil.HasLink(linkKey);
+            if (linked && ColorLinkUtil.TryResolve(linkKey, out Color viaLink))
+            {
+                shown = viaLink;
+                hasColor = true;
+            }
+            else if (ModColors.TryGetValue(key, out string hex) && TryParseHex(hex, out Color parsed))
             {
                 shown = parsed;
                 hasColor = true;
@@ -654,6 +667,7 @@ namespace NiceHealthTab_YAPEM_Patch
 
             Action<Color> save = c =>
             {
+                ColorLinks.Remove(linkKey);
                 ModColors[key] = ToHex(c);
                 Write();
             };
@@ -667,14 +681,17 @@ namespace NiceHealthTab_YAPEM_Patch
             if (Widgets.ButtonInvisible(swatchRect)) open();
 
             Rect hexRect = new Rect(swatchRect.xMax + 10f, entryRect.y + 4f, 80f, 24f);
-            Widgets.Label(hexRect, hasColor ? "#" + ColorUtility.ToHtmlStringRGB(shown) : (string)"NHT_YAPEM_ModAuto".Translate());
+            if (hasColor) DrawHexOrLink(hexRect, shown, linked ? linkKey : null);
+            else Widgets.Label(hexRect, (string)"NHT_YAPEM_ModAuto".Translate());
 
-            Rect pickBtnRect = new Rect(hexRect.xMax + 10f, entryRect.y + 2f, 105f, 26f);
+            Rect pickBtnRect = new Rect(hexRect.xMax + 10f, entryRect.y + 2f, 80f, 26f);
             if (Widgets.ButtonText(pickBtnRect, "NHT_YAPEM_PaletteBtn".Translate())) open();
 
-            Rect resetBtnRect = new Rect(pickBtnRect.xMax + 8f, entryRect.y + 2f, 75f, 26f);
-            if (hasColor && Widgets.ButtonText(resetBtnRect, "NHT_YAPEM_ResetBtn".Translate()))
+            Rect resetBtnRect = new Rect(pickBtnRect.xMax + 6f, entryRect.y + 2f, 62f, 26f);
+            DrawInheritButton(new Rect(resetBtnRect.xMax + 4f, entryRect.y + 2f, 30f, 26f), linkKey);
+            if ((hasColor || linked) && Widgets.ButtonText(resetBtnRect, "NHT_YAPEM_ResetBtn".Translate()))
             {
+                ColorLinks.Remove(linkKey);
                 ModColors.Remove(key);
                 Write();
             }
@@ -790,10 +807,10 @@ namespace NiceHealthTab_YAPEM_Patch
 
             if (UseDLCColors)
             {
-                DrawColorEntry(listing, "NHT_YAPEM_TierRoyalty".Translate(), ref ColorRoyalty, DefaultColorRoyalty, c => ColorRoyalty = c);
-                DrawColorEntry(listing, "NHT_YAPEM_TierBiotech".Translate(), ref ColorBiotech, DefaultColorBiotech, c => ColorBiotech = c);
-                DrawColorEntry(listing, "NHT_YAPEM_TierAnomaly".Translate(), ref ColorAnomaly, DefaultColorAnomaly, c => ColorAnomaly = c);
-                DrawColorEntry(listing, "NHT_YAPEM_TierOdyssey".Translate(), ref ColorOdyssey, DefaultColorOdyssey, c => ColorOdyssey = c);
+                DrawColorEntry(listing, "NHT_YAPEM_TierRoyalty".Translate(), ref ColorRoyalty, DefaultColorRoyalty, c => ColorRoyalty = c, false, "Royalty");
+                DrawColorEntry(listing, "NHT_YAPEM_TierBiotech".Translate(), ref ColorBiotech, DefaultColorBiotech, c => ColorBiotech = c, false, "Biotech");
+                DrawColorEntry(listing, "NHT_YAPEM_TierAnomaly".Translate(), ref ColorAnomaly, DefaultColorAnomaly, c => ColorAnomaly = c, false, "Anomaly");
+                DrawColorEntry(listing, "NHT_YAPEM_TierOdyssey".Translate(), ref ColorOdyssey, DefaultColorOdyssey, c => ColorOdyssey = c, false, "Odyssey");
             }
 
             }
@@ -825,7 +842,12 @@ namespace NiceHealthTab_YAPEM_Patch
                     if (selectedTab == TabGeneral) ResetAllToDefault();
                     else if (selectedTab == TabTiers) ResetTierColors();
                     else if (selectedTab == TabDLC) ResetDlcColors();
-                    else { ModColors.Clear(); Write(); }
+                    else
+                    {
+                        ModColors.Clear();
+                        foreach (string k in new List<string>(ColorLinks.Keys)) if (k.StartsWith(ColorLinkUtil.ModPrefix)) ColorLinks.Remove(k);
+                        Write();
+                    }
                 }
             }
 
@@ -1236,6 +1258,49 @@ namespace NiceHealthTab_YAPEM_Patch
             return false;
         }
 
+        // Hex code, or "-> source" when the color is inherited.
+        private static void DrawHexOrLink(Rect rect, Color shown, string linkKey)
+        {
+            if (linkKey == null)
+            {
+                Widgets.Label(rect, "#" + ColorUtility.ToHtmlStringRGB(shown));
+                return;
+            }
+            string label = ColorLinkUtil.Label(YAPEMPatchMod.Settings.ColorLinks[linkKey]);
+            Widgets.Label(rect, "→ " + label.Truncate(rect.width - 14f));
+            TooltipHandler.TipRegion(rect, "NHT_YAPEM_InheritedFrom".Translate(label));
+        }
+
+        private void DrawInheritButton(Rect rect, string selfKey)
+        {
+            TooltipHandler.TipRegion(rect, "NHT_YAPEM_InheritTip".Translate());
+            if (!Widgets.ButtonText(rect, "▾")) return;
+            ColorLinkUtil.OpenMenu(selfKey, target =>
+            {
+                if (target == null) ColorLinks.Remove(selfKey);
+                else
+                {
+                    ColorLinks[selfKey] = target;
+                    if (selfKey.StartsWith(ColorLinkUtil.ModPrefix)) ModColors.Remove(selfKey.Substring(ColorLinkUtil.ModPrefix.Length));
+                }
+                Write();
+            });
+        }
+
+        // (link key, title) of every third-party mod with a color; Auto mods have nothing to inherit.
+        public List<KeyValuePair<string, string>> GetModLinkTargets()
+        {
+            var list = new List<KeyValuePair<string, string>>();
+            if (cachedGroups == null) return list;
+            foreach (ImplantGroup g in cachedGroups)
+            {
+                if (!IsThirdPartyGroup(g) || g.Defs.Count == 0) continue;
+                string key = LimbTierUtility.GetModKey(g.Defs[0]);
+                if (key != null) list.Add(new KeyValuePair<string, string>(ColorLinkUtil.ModPrefix + key, g.GroupTitle));
+            }
+            return list;
+        }
+
         private void OpenPicker(string title, Color cur, Color defaultColor, Action<Color> action, bool hueOnlyOption)
         {
             var dialog = new Dialog_TierColorPicker(title, cur, defaultColor, action);
@@ -1246,8 +1311,10 @@ namespace NiceHealthTab_YAPEM_Patch
             Find.WindowStack.Add(dialog);
         }
 
-        private void DrawColorEntry(Listing_Standard listing, string title, ref Color color, Color defaultColor, Action<Color> saveAction, bool hueOnlyOption = false)
+        private void DrawColorEntry(Listing_Standard listing, string title, ref Color color, Color defaultColor, Action<Color> saveAction, bool hueOnlyOption = false, string linkKey = null)
         {
+            bool linked = linkKey != null && ColorLinkUtil.HasLink(linkKey);
+            Color shown = linked && ColorLinkUtil.TryResolve(linkKey, out Color resolved) ? resolved : color;
             Rect entryRect = listing.GetRect(32f);
 
             float titleW = Mathf.Clamp(entryRect.width - 340f, 200f, 440f);
@@ -1258,38 +1325,41 @@ namespace NiceHealthTab_YAPEM_Patch
 
             Action<Color> wrappedAction = c =>
             {
+                if (linkKey != null) ColorLinks.Remove(linkKey);
                 saveAction?.Invoke(c);
                 Write();
             };
 
             // 2. Clickable Color Swatch Square
             Rect swatchRect = new Rect(titleRect.xMax + 10f, entryRect.y + 2f, 36f, 26f);
-            Widgets.DrawBoxSolid(swatchRect, color);
+            Widgets.DrawBoxSolid(swatchRect, shown);
             Widgets.DrawBox(swatchRect, 1);
             Widgets.DrawHighlightIfMouseover(swatchRect);
             TooltipHandler.TipRegion(swatchRect, "NHT_YAPEM_PaletteTip".Translate());
             if (Widgets.ButtonInvisible(swatchRect))
             {
-                Color cur = color;
+                Color cur = shown;
                 OpenPicker(title, cur, defaultColor, wrappedAction, hueOnlyOption);
             }
 
             // 3. Hex code display
             Rect hexRect = new Rect(swatchRect.xMax + 10f, entryRect.y + 4f, 80f, 24f);
-            Widgets.Label(hexRect, $"#{ColorUtility.ToHtmlStringRGB(color)}");
+            DrawHexOrLink(hexRect, shown, linked ? linkKey : null);
 
             // 4. "Palette..." button
-            Rect pickBtnRect = new Rect(hexRect.xMax + 10f, entryRect.y + 2f, 105f, 26f);
+            Rect pickBtnRect = new Rect(hexRect.xMax + 10f, entryRect.y + 2f, 80f, 26f);
             if (Widgets.ButtonText(pickBtnRect, "NHT_YAPEM_PaletteBtn".Translate()))
             {
-                Color cur = color;
+                Color cur = shown;
                 OpenPicker(title, cur, defaultColor, wrappedAction, hueOnlyOption);
             }
 
             // 5. Reset button
-            Rect resetBtnRect = new Rect(pickBtnRect.xMax + 8f, entryRect.y + 2f, 75f, 26f);
+            Rect resetBtnRect = new Rect(pickBtnRect.xMax + 6f, entryRect.y + 2f, 62f, 26f);
+            if (linkKey != null) DrawInheritButton(new Rect(resetBtnRect.xMax + 4f, entryRect.y + 2f, 30f, 26f), linkKey);
             if (Widgets.ButtonText(resetBtnRect, "NHT_YAPEM_ResetBtn".Translate()))
             {
+                if (linkKey != null) ColorLinks.Remove(linkKey);
                 color = defaultColor;
                 wrappedAction(defaultColor);
             }

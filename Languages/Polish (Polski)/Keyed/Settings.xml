@@ -121,4 +121,11 @@
   <NHT_YAPEM_UseDamageColor_Desc>Uszkodzone części mają Twój kolor przy ciężkich obrażeniach i jaśniejszy odcień przy lekkich, jak w Nice Health Tab. Wyłączone = kolory Nice Health Tab.</NHT_YAPEM_UseDamageColor_Desc>
   <NHT_YAPEM_DamageColor>Kolor uszkodzeń</NHT_YAPEM_DamageColor>
   <NHT_YAPEM_HueOnly>Tylko odcień</NHT_YAPEM_HueOnly>
+  <NHT_YAPEM_InheritNone>Nie dziedzicz</NHT_YAPEM_InheritNone>
+  <NHT_YAPEM_InheritTier>Poziom</NHT_YAPEM_InheritTier>
+  <NHT_YAPEM_InheritDlc>DLC</NHT_YAPEM_InheritDlc>
+  <NHT_YAPEM_InheritMod>Mod</NHT_YAPEM_InheritMod>
+  <NHT_YAPEM_InheritNothing>Brak źródeł do dziedziczenia</NHT_YAPEM_InheritNothing>
+  <NHT_YAPEM_InheritTip>Dziedzicz kolor z poziomu, DLC lub moda</NHT_YAPEM_InheritTip>
+  <NHT_YAPEM_InheritedFrom>Dziedziczy kolor: {0}</NHT_YAPEM_InheritedFrom>
 </LanguageData>

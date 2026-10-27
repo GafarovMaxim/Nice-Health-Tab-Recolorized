@@ -121,4 +121,11 @@
   <NHT_YAPEM_UseDamageColor_Desc>Yaralı parçalar ağır hasarda sizin renginizi, hafif hasarda daha açık tonunu kullanır (Nice Health Tab gibi). Kapalı = Nice Health Tab renkleri.</NHT_YAPEM_UseDamageColor_Desc>
   <NHT_YAPEM_DamageColor>Hasar rengi</NHT_YAPEM_DamageColor>
   <NHT_YAPEM_HueOnly>Yalnızca ton</NHT_YAPEM_HueOnly>
+  <NHT_YAPEM_InheritNone>Miras alma</NHT_YAPEM_InheritNone>
+  <NHT_YAPEM_InheritTier>Kademe</NHT_YAPEM_InheritTier>
+  <NHT_YAPEM_InheritDlc>DLC</NHT_YAPEM_InheritDlc>
+  <NHT_YAPEM_InheritMod>Mod</NHT_YAPEM_InheritMod>
+  <NHT_YAPEM_InheritNothing>Miras alınacak bir şey yok</NHT_YAPEM_InheritNothing>
+  <NHT_YAPEM_InheritTip>Rengi bir kademeden, DLC'den veya moddan miras al</NHT_YAPEM_InheritTip>
+  <NHT_YAPEM_InheritedFrom>Rengi miras alır: {0}</NHT_YAPEM_InheritedFrom>
 </LanguageData>

@@ -121,4 +121,11 @@
   <NHT_YAPEM_UseDamageColor_Desc>Las partes heridas usan tu color con daño grave y un tono más claro con daño leve, como Nice Health Tab. Desactivado = colores de Nice Health Tab.</NHT_YAPEM_UseDamageColor_Desc>
   <NHT_YAPEM_DamageColor>Color del daño</NHT_YAPEM_DamageColor>
   <NHT_YAPEM_HueOnly>Solo tono</NHT_YAPEM_HueOnly>
+  <NHT_YAPEM_InheritNone>No heredar</NHT_YAPEM_InheritNone>
+  <NHT_YAPEM_InheritTier>Nivel</NHT_YAPEM_InheritTier>
+  <NHT_YAPEM_InheritDlc>DLC</NHT_YAPEM_InheritDlc>
+  <NHT_YAPEM_InheritMod>Mod</NHT_YAPEM_InheritMod>
+  <NHT_YAPEM_InheritNothing>Nada que heredar</NHT_YAPEM_InheritNothing>
+  <NHT_YAPEM_InheritTip>Heredar el color de un nivel, DLC o mod</NHT_YAPEM_InheritTip>
+  <NHT_YAPEM_InheritedFrom>Hereda el color de: {0}</NHT_YAPEM_InheritedFrom>
 </LanguageData>

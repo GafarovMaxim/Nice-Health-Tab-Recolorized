@@ -121,4 +121,11 @@
   <NHT_YAPEM_UseDamageColor_Desc>Повреждённые части (органы, конечности, импланты) рисуются вашим цветом при тяжёлом повреждении и более светлым оттенком при лёгком, как в Nice Health Tab. Выкл. = цвета Nice Health Tab.</NHT_YAPEM_UseDamageColor_Desc>
   <NHT_YAPEM_DamageColor>Цвет повреждений</NHT_YAPEM_DamageColor>
   <NHT_YAPEM_HueOnly>Только тон</NHT_YAPEM_HueOnly>
+  <NHT_YAPEM_InheritNone>Не наследовать</NHT_YAPEM_InheritNone>
+  <NHT_YAPEM_InheritTier>Тир</NHT_YAPEM_InheritTier>
+  <NHT_YAPEM_InheritDlc>DLC</NHT_YAPEM_InheritDlc>
+  <NHT_YAPEM_InheritMod>Мод</NHT_YAPEM_InheritMod>
+  <NHT_YAPEM_InheritNothing>Не от чего наследовать</NHT_YAPEM_InheritNothing>
+  <NHT_YAPEM_InheritTip>Наследовать цвет от тира, DLC или мода</NHT_YAPEM_InheritTip>
+  <NHT_YAPEM_InheritedFrom>Наследует цвет: {0}</NHT_YAPEM_InheritedFrom>
 </LanguageData>

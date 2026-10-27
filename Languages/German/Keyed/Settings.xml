@@ -121,4 +121,11 @@
   <NHT_YAPEM_UseDamageColor_Desc>Verletzte Teile nutzen Ihre Farbe bei schwerem Schaden und einen helleren Ton bei leichtem, wie Nice Health Tab. Aus = Farben von Nice Health Tab.</NHT_YAPEM_UseDamageColor_Desc>
   <NHT_YAPEM_DamageColor>Schadensfarbe</NHT_YAPEM_DamageColor>
   <NHT_YAPEM_HueOnly>Nur Farbton</NHT_YAPEM_HueOnly>
+  <NHT_YAPEM_InheritNone>Nicht erben</NHT_YAPEM_InheritNone>
+  <NHT_YAPEM_InheritTier>Stufe</NHT_YAPEM_InheritTier>
+  <NHT_YAPEM_InheritDlc>DLC</NHT_YAPEM_InheritDlc>
+  <NHT_YAPEM_InheritMod>Mod</NHT_YAPEM_InheritMod>
+  <NHT_YAPEM_InheritNothing>Nichts zum Erben</NHT_YAPEM_InheritNothing>
+  <NHT_YAPEM_InheritTip>Farbe von Stufe, DLC oder Mod erben</NHT_YAPEM_InheritTip>
+  <NHT_YAPEM_InheritedFrom>Erbt die Farbe von: {0}</NHT_YAPEM_InheritedFrom>
 </LanguageData>

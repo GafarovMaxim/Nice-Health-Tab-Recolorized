@@ -120,7 +120,14 @@
     "NHT_YAPEM_UseDamageColor": "Custom color for damaged parts",
     "NHT_YAPEM_UseDamageColor_Desc": "Wounded parts (organs, limbs, implants) use your color for serious damage and a lighter shade for light damage, like Nice Health Tab. Off = Nice Health Tab colors.",
     "NHT_YAPEM_DamageColor": "Damage color",
-    "NHT_YAPEM_HueOnly": "Hue only"
+    "NHT_YAPEM_HueOnly": "Hue only",
+    "NHT_YAPEM_InheritNone": "Don't inherit",
+    "NHT_YAPEM_InheritTier": "Tier",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "Mod",
+    "NHT_YAPEM_InheritNothing": "Nothing to inherit from",
+    "NHT_YAPEM_InheritTip": "Inherit the color from a tier, DLC or mod",
+    "NHT_YAPEM_InheritedFrom": "Inherits the color of: {0}"
   },
   "Russian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -243,7 +250,14 @@
     "NHT_YAPEM_UseDamageColor": "Свой цвет повреждённых частей",
     "NHT_YAPEM_UseDamageColor_Desc": "Повреждённые части (органы, конечности, импланты) рисуются вашим цветом при тяжёлом повреждении и более светлым оттенком при лёгком, как в Nice Health Tab. Выкл. = цвета Nice Health Tab.",
     "NHT_YAPEM_DamageColor": "Цвет повреждений",
-    "NHT_YAPEM_HueOnly": "Только тон"
+    "NHT_YAPEM_HueOnly": "Только тон",
+    "NHT_YAPEM_InheritNone": "Не наследовать",
+    "NHT_YAPEM_InheritTier": "Тир",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "Мод",
+    "NHT_YAPEM_InheritNothing": "Не от чего наследовать",
+    "NHT_YAPEM_InheritTip": "Наследовать цвет от тира, DLC или мода",
+    "NHT_YAPEM_InheritedFrom": "Наследует цвет: {0}"
   },
   "French": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -366,7 +380,14 @@
     "NHT_YAPEM_UseDamageColor": "Couleur personnalisée des parties blessées",
     "NHT_YAPEM_UseDamageColor_Desc": "Les parties blessées utilisent votre couleur pour les dégâts graves et une teinte plus claire pour les dégâts légers, comme Nice Health Tab. Désactivé = couleurs de Nice Health Tab.",
     "NHT_YAPEM_DamageColor": "Couleur des dégâts",
-    "NHT_YAPEM_HueOnly": "Teinte seule"
+    "NHT_YAPEM_HueOnly": "Teinte seule",
+    "NHT_YAPEM_InheritNone": "Ne pas hériter",
+    "NHT_YAPEM_InheritTier": "Palier",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "Mod",
+    "NHT_YAPEM_InheritNothing": "Rien dont hériter",
+    "NHT_YAPEM_InheritTip": "Hériter la couleur d'un palier, d'un DLC ou d'un mod",
+    "NHT_YAPEM_InheritedFrom": "Hérite de la couleur de : {0}"
   },
   "German": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -489,7 +510,14 @@
     "NHT_YAPEM_UseDamageColor": "Eigene Farbe für verletzte Teile",
     "NHT_YAPEM_UseDamageColor_Desc": "Verletzte Teile nutzen Ihre Farbe bei schwerem Schaden und einen helleren Ton bei leichtem, wie Nice Health Tab. Aus = Farben von Nice Health Tab.",
     "NHT_YAPEM_DamageColor": "Schadensfarbe",
-    "NHT_YAPEM_HueOnly": "Nur Farbton"
+    "NHT_YAPEM_HueOnly": "Nur Farbton",
+    "NHT_YAPEM_InheritNone": "Nicht erben",
+    "NHT_YAPEM_InheritTier": "Stufe",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "Mod",
+    "NHT_YAPEM_InheritNothing": "Nichts zum Erben",
+    "NHT_YAPEM_InheritTip": "Farbe von Stufe, DLC oder Mod erben",
+    "NHT_YAPEM_InheritedFrom": "Erbt die Farbe von: {0}"
   },
   "Italian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -612,7 +640,14 @@
     "NHT_YAPEM_UseDamageColor": "Colore personalizzato per le parti danneggiate",
     "NHT_YAPEM_UseDamageColor_Desc": "Le parti ferite usano il tuo colore per i danni gravi e una tinta più chiara per quelli lievi, come Nice Health Tab. Disattivato = colori di Nice Health Tab.",
     "NHT_YAPEM_DamageColor": "Colore del danno",
-    "NHT_YAPEM_HueOnly": "Solo tonalità"
+    "NHT_YAPEM_HueOnly": "Solo tonalità",
+    "NHT_YAPEM_InheritNone": "Non ereditare",
+    "NHT_YAPEM_InheritTier": "Livello",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "Mod",
+    "NHT_YAPEM_InheritNothing": "Niente da ereditare",
+    "NHT_YAPEM_InheritTip": "Eredita il colore da un livello, DLC o mod",
+    "NHT_YAPEM_InheritedFrom": "Eredita il colore di: {0}"
   },
   "Spanish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -735,7 +770,14 @@
     "NHT_YAPEM_UseDamageColor": "Color propio para partes dañadas",
     "NHT_YAPEM_UseDamageColor_Desc": "Las partes heridas usan tu color con daño grave y un tono más claro con daño leve, como Nice Health Tab. Desactivado = colores de Nice Health Tab.",
     "NHT_YAPEM_DamageColor": "Color del daño",
-    "NHT_YAPEM_HueOnly": "Solo tono"
+    "NHT_YAPEM_HueOnly": "Solo tono",
+    "NHT_YAPEM_InheritNone": "No heredar",
+    "NHT_YAPEM_InheritTier": "Nivel",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "Mod",
+    "NHT_YAPEM_InheritNothing": "Nada que heredar",
+    "NHT_YAPEM_InheritTip": "Heredar el color de un nivel, DLC o mod",
+    "NHT_YAPEM_InheritedFrom": "Hereda el color de: {0}"
   },
   "SpanishLatin": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -858,7 +900,14 @@
     "NHT_YAPEM_UseDamageColor": "Color propio para partes dañadas",
     "NHT_YAPEM_UseDamageColor_Desc": "Las partes heridas usan tu color con daño grave y un tono más claro con daño leve, como Nice Health Tab. Desactivado = colores de Nice Health Tab.",
     "NHT_YAPEM_DamageColor": "Color del daño",
-    "NHT_YAPEM_HueOnly": "Solo tono"
+    "NHT_YAPEM_HueOnly": "Solo tono",
+    "NHT_YAPEM_InheritNone": "No heredar",
+    "NHT_YAPEM_InheritTier": "Nivel",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "Mod",
+    "NHT_YAPEM_InheritNothing": "Nada que heredar",
+    "NHT_YAPEM_InheritTip": "Heredar el color de un nivel, DLC o mod",
+    "NHT_YAPEM_InheritedFrom": "Hereda el color de: {0}"
   },
   "PortugueseBrazilian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -981,7 +1030,14 @@
     "NHT_YAPEM_UseDamageColor": "Cor própria para partes danificadas",
     "NHT_YAPEM_UseDamageColor_Desc": "Partes feridas usam sua cor em dano grave e um tom mais claro em dano leve, como no Nice Health Tab. Desligado = cores do Nice Health Tab.",
     "NHT_YAPEM_DamageColor": "Cor do dano",
-    "NHT_YAPEM_HueOnly": "Só o matiz"
+    "NHT_YAPEM_HueOnly": "Só o matiz",
+    "NHT_YAPEM_InheritNone": "Não herdar",
+    "NHT_YAPEM_InheritTier": "Nível",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "Mod",
+    "NHT_YAPEM_InheritNothing": "Nada para herdar",
+    "NHT_YAPEM_InheritTip": "Herdar a cor de um nível, DLC ou mod",
+    "NHT_YAPEM_InheritedFrom": "Herda a cor de: {0}"
   },
   "Japanese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1104,7 +1160,14 @@
     "NHT_YAPEM_UseDamageColor": "損傷部位に専用の色を使う",
     "NHT_YAPEM_UseDamageColor_Desc": "損傷した部位は、重傷では指定色、軽傷ではより明るい色で表示されます(Nice Health Tab と同様)。オフ = Nice Health Tab の色。",
     "NHT_YAPEM_DamageColor": "損傷の色",
-    "NHT_YAPEM_HueOnly": "色相のみ"
+    "NHT_YAPEM_HueOnly": "色相のみ",
+    "NHT_YAPEM_InheritNone": "継承しない",
+    "NHT_YAPEM_InheritTier": "ティア",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "Mod",
+    "NHT_YAPEM_InheritNothing": "継承元がありません",
+    "NHT_YAPEM_InheritTip": "ティア・DLC・Mod から色を継承",
+    "NHT_YAPEM_InheritedFrom": "色の継承元: {0}"
   },
   "Korean": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1227,7 +1290,14 @@
     "NHT_YAPEM_UseDamageColor": "손상 부위 전용 색상 사용",
     "NHT_YAPEM_UseDamageColor_Desc": "손상된 부위는 중상이면 지정한 색, 경상이면 더 밝은 색으로 표시됩니다(Nice Health Tab과 동일). 끄면 Nice Health Tab 색상을 사용합니다.",
     "NHT_YAPEM_DamageColor": "손상 색상",
-    "NHT_YAPEM_HueOnly": "색조만"
+    "NHT_YAPEM_HueOnly": "색조만",
+    "NHT_YAPEM_InheritNone": "상속 안 함",
+    "NHT_YAPEM_InheritTier": "등급",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "모드",
+    "NHT_YAPEM_InheritNothing": "상속할 대상 없음",
+    "NHT_YAPEM_InheritTip": "등급, DLC 또는 모드에서 색상 상속",
+    "NHT_YAPEM_InheritedFrom": "색상 상속: {0}"
   },
   "ChineseSimplified": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1350,7 +1420,14 @@
     "NHT_YAPEM_UseDamageColor": "受损部位使用自定义颜色",
     "NHT_YAPEM_UseDamageColor_Desc": "受损部位在重伤时使用你的颜色,轻伤时使用更浅的色调,与 Nice Health Tab 一致。关闭 = 使用 Nice Health Tab 的颜色。",
     "NHT_YAPEM_DamageColor": "损伤颜色",
-    "NHT_YAPEM_HueOnly": "仅色相"
+    "NHT_YAPEM_HueOnly": "仅色相",
+    "NHT_YAPEM_InheritNone": "不继承",
+    "NHT_YAPEM_InheritTier": "等级",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "Mod",
+    "NHT_YAPEM_InheritNothing": "没有可继承的对象",
+    "NHT_YAPEM_InheritTip": "从等级、DLC 或 Mod 继承颜色",
+    "NHT_YAPEM_InheritedFrom": "继承颜色自:{0}"
   },
   "ChineseTraditional": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1473,7 +1550,14 @@
     "NHT_YAPEM_UseDamageColor": "受損部位使用自訂顏色",
     "NHT_YAPEM_UseDamageColor_Desc": "受損部位在重傷時使用你的顏色,輕傷時使用較淺的色調,與 Nice Health Tab 一致。關閉 = 使用 Nice Health Tab 的顏色。",
     "NHT_YAPEM_DamageColor": "損傷顏色",
-    "NHT_YAPEM_HueOnly": "僅色相"
+    "NHT_YAPEM_HueOnly": "僅色相",
+    "NHT_YAPEM_InheritNone": "不繼承",
+    "NHT_YAPEM_InheritTier": "等級",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "Mod",
+    "NHT_YAPEM_InheritNothing": "沒有可繼承的對象",
+    "NHT_YAPEM_InheritTip": "從等級、DLC 或 Mod 繼承顏色",
+    "NHT_YAPEM_InheritedFrom": "繼承顏色自:{0}"
   },
   "Turkish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1596,7 +1680,14 @@
     "NHT_YAPEM_UseDamageColor": "Hasarlı parçalar için özel renk",
     "NHT_YAPEM_UseDamageColor_Desc": "Yaralı parçalar ağır hasarda sizin renginizi, hafif hasarda daha açık tonunu kullanır (Nice Health Tab gibi). Kapalı = Nice Health Tab renkleri.",
     "NHT_YAPEM_DamageColor": "Hasar rengi",
-    "NHT_YAPEM_HueOnly": "Yalnızca ton"
+    "NHT_YAPEM_HueOnly": "Yalnızca ton",
+    "NHT_YAPEM_InheritNone": "Miras alma",
+    "NHT_YAPEM_InheritTier": "Kademe",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "Mod",
+    "NHT_YAPEM_InheritNothing": "Miras alınacak bir şey yok",
+    "NHT_YAPEM_InheritTip": "Rengi bir kademeden, DLC'den veya moddan miras al",
+    "NHT_YAPEM_InheritedFrom": "Rengi miras alır: {0}"
   },
   "Ukrainian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1719,7 +1810,14 @@
     "NHT_YAPEM_UseDamageColor": "Власний колір пошкоджених частин",
     "NHT_YAPEM_UseDamageColor_Desc": "Пошкоджені частини малюються вашим кольором при тяжкому пошкодженні та світлішим відтінком при легкому, як у Nice Health Tab. Вимк. = кольори Nice Health Tab.",
     "NHT_YAPEM_DamageColor": "Колір пошкоджень",
-    "NHT_YAPEM_HueOnly": "Лише тон"
+    "NHT_YAPEM_HueOnly": "Лише тон",
+    "NHT_YAPEM_InheritNone": "Не успадковувати",
+    "NHT_YAPEM_InheritTier": "Тир",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "Мод",
+    "NHT_YAPEM_InheritNothing": "Немає від чого успадковувати",
+    "NHT_YAPEM_InheritTip": "Успадкувати колір від тиру, DLC або моду",
+    "NHT_YAPEM_InheritedFrom": "Успадковує колір: {0}"
   },
   "Vietnamese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1842,7 +1940,14 @@
     "NHT_YAPEM_UseDamageColor": "Màu riêng cho bộ phận bị thương",
     "NHT_YAPEM_UseDamageColor_Desc": "Bộ phận bị thương dùng màu của bạn khi tổn thương nặng và sắc nhạt hơn khi nhẹ, như Nice Health Tab. Tắt = màu của Nice Health Tab.",
     "NHT_YAPEM_DamageColor": "Màu tổn thương",
-    "NHT_YAPEM_HueOnly": "Chỉ sắc độ"
+    "NHT_YAPEM_HueOnly": "Chỉ sắc độ",
+    "NHT_YAPEM_InheritNone": "Không kế thừa",
+    "NHT_YAPEM_InheritTier": "Bậc",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "Mod",
+    "NHT_YAPEM_InheritNothing": "Không có gì để kế thừa",
+    "NHT_YAPEM_InheritTip": "Kế thừa màu từ bậc, DLC hoặc mod",
+    "NHT_YAPEM_InheritedFrom": "Kế thừa màu của: {0}"
   },
   "Polish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1965,7 +2070,14 @@
     "NHT_YAPEM_UseDamageColor": "Własny kolor uszkodzonych części",
     "NHT_YAPEM_UseDamageColor_Desc": "Uszkodzone części mają Twój kolor przy ciężkich obrażeniach i jaśniejszy odcień przy lekkich, jak w Nice Health Tab. Wyłączone = kolory Nice Health Tab.",
     "NHT_YAPEM_DamageColor": "Kolor uszkodzeń",
-    "NHT_YAPEM_HueOnly": "Tylko odcień"
+    "NHT_YAPEM_HueOnly": "Tylko odcień",
+    "NHT_YAPEM_InheritNone": "Nie dziedzicz",
+    "NHT_YAPEM_InheritTier": "Poziom",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "Mod",
+    "NHT_YAPEM_InheritNothing": "Brak źródeł do dziedziczenia",
+    "NHT_YAPEM_InheritTip": "Dziedzicz kolor z poziomu, DLC lub moda",
+    "NHT_YAPEM_InheritedFrom": "Dziedziczy kolor: {0}"
   },
   "Czech": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -2088,7 +2200,14 @@
     "NHT_YAPEM_UseDamageColor": "Vlastní barva poškozených částí",
     "NHT_YAPEM_UseDamageColor_Desc": "Poškozené části mají vaši barvu při těžkém poškození a světlejší odstín při lehkém, jako v Nice Health Tab. Vypnuto = barvy Nice Health Tab.",
     "NHT_YAPEM_DamageColor": "Barva poškození",
-    "NHT_YAPEM_HueOnly": "Jen odstín"
+    "NHT_YAPEM_HueOnly": "Jen odstín",
+    "NHT_YAPEM_InheritNone": "Nedědit",
+    "NHT_YAPEM_InheritTier": "Úroveň",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "Mod",
+    "NHT_YAPEM_InheritNothing": "Není od čeho dědit",
+    "NHT_YAPEM_InheritTip": "Zdědit barvu z úrovně, DLC nebo modu",
+    "NHT_YAPEM_InheritedFrom": "Dědí barvu: {0}"
   },
   "Hungarian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -2211,6 +2330,13 @@
     "NHT_YAPEM_UseDamageColor": "Egyéni szín a sérült részeknek",
     "NHT_YAPEM_UseDamageColor_Desc": "A sérült részek súlyos sérülésnél az Ön színét, könnyűnél világosabb árnyalatát kapják, mint a Nice Health Tabban. Ki = Nice Health Tab színei.",
     "NHT_YAPEM_DamageColor": "Sérülés színe",
-    "NHT_YAPEM_HueOnly": "Csak árnyalat"
+    "NHT_YAPEM_HueOnly": "Csak árnyalat",
+    "NHT_YAPEM_InheritNone": "Ne örököljön",
+    "NHT_YAPEM_InheritTier": "Szint",
+    "NHT_YAPEM_InheritDlc": "DLC",
+    "NHT_YAPEM_InheritMod": "Mod",
+    "NHT_YAPEM_InheritNothing": "Nincs mit örökölni",
+    "NHT_YAPEM_InheritTip": "Szín öröklése szintről, DLC-ről vagy modról",
+    "NHT_YAPEM_InheritedFrom": "Örökölt szín: {0}"
   }
 }

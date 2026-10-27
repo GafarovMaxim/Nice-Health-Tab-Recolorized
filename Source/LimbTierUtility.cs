@@ -60,6 +60,12 @@ namespace NiceHealthTab_YAPEM_Patch
 
         public static bool TryGetTierColor(string tierName, out Color color)
         {
+            if (ColorLinkUtil.TryResolve(tierName, out color)) return true;
+            return TryGetOwnTierColor(tierName, out color);
+        }
+
+        public static bool TryGetOwnTierColor(string tierName, out Color color)
+        {
             switch (tierName)
             {
                 case "Archotech":
@@ -186,6 +192,7 @@ namespace NiceHealthTab_YAPEM_Patch
         {
             public string Tier;
             public string ModKey; // lowercase packageId of a third-party mod, null for core/DLC defs
+            public string ModLinkKey; // ColorLinkUtil key of that mod, cached to avoid string building per frame
         }
 
         private static readonly Dictionary<HediffDef, AutoTier> autoTierCache = new Dictionary<HediffDef, AutoTier>();
@@ -212,7 +219,8 @@ namespace NiceHealthTab_YAPEM_Patch
             if (!autoTierCache.TryGetValue(def, out AutoTier auto))
             {
                 CategorizeDefInternal(def, out string found, out _);
-                auto = new AutoTier { Tier = found, ModKey = found == null ? null : GetModKey(def) };
+                string modKey = found == null ? null : GetModKey(def);
+                auto = new AutoTier { Tier = found, ModKey = modKey, ModLinkKey = modKey == null ? null : ColorLinkUtil.ModPrefix + modKey };
                 autoTierCache[def] = auto;
             }
             tier = auto.Tier;
@@ -222,6 +230,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 return false;
             }
             // Mod color beats the tier color; the tier itself stays so limb counting is unchanged.
+            if (auto.ModKey != null && ColorLinkUtil.TryResolve(auto.ModLinkKey, out color)) return true;
             if (auto.ModKey != null
                 && YAPEMPatchMod.Settings?.ModColors != null
                 && YAPEMPatchMod.Settings.ModColors.TryGetValue(auto.ModKey, out string hex)

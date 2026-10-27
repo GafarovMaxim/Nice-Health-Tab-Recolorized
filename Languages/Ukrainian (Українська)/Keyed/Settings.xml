@@ -121,4 +121,11 @@
   <NHT_YAPEM_UseDamageColor_Desc>Пошкоджені частини малюються вашим кольором при тяжкому пошкодженні та світлішим відтінком при легкому, як у Nice Health Tab. Вимк. = кольори Nice Health Tab.</NHT_YAPEM_UseDamageColor_Desc>
   <NHT_YAPEM_DamageColor>Колір пошкоджень</NHT_YAPEM_DamageColor>
   <NHT_YAPEM_HueOnly>Лише тон</NHT_YAPEM_HueOnly>
+  <NHT_YAPEM_InheritNone>Не успадковувати</NHT_YAPEM_InheritNone>
+  <NHT_YAPEM_InheritTier>Тир</NHT_YAPEM_InheritTier>
+  <NHT_YAPEM_InheritDlc>DLC</NHT_YAPEM_InheritDlc>
+  <NHT_YAPEM_InheritMod>Мод</NHT_YAPEM_InheritMod>
+  <NHT_YAPEM_InheritNothing>Немає від чого успадковувати</NHT_YAPEM_InheritNothing>
+  <NHT_YAPEM_InheritTip>Успадкувати колір від тиру, DLC або моду</NHT_YAPEM_InheritTip>
+  <NHT_YAPEM_InheritedFrom>Успадковує колір: {0}</NHT_YAPEM_InheritedFrom>
 </LanguageData>

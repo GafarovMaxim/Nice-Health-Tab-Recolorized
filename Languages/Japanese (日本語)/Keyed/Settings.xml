@@ -121,4 +121,11 @@
   <NHT_YAPEM_UseDamageColor_Desc>損傷した部位は、重傷では指定色、軽傷ではより明るい色で表示されます(Nice Health Tab と同様)。オフ = Nice Health Tab の色。</NHT_YAPEM_UseDamageColor_Desc>
   <NHT_YAPEM_DamageColor>損傷の色</NHT_YAPEM_DamageColor>
   <NHT_YAPEM_HueOnly>色相のみ</NHT_YAPEM_HueOnly>
+  <NHT_YAPEM_InheritNone>継承しない</NHT_YAPEM_InheritNone>
+  <NHT_YAPEM_InheritTier>ティア</NHT_YAPEM_InheritTier>
+  <NHT_YAPEM_InheritDlc>DLC</NHT_YAPEM_InheritDlc>
+  <NHT_YAPEM_InheritMod>Mod</NHT_YAPEM_InheritMod>
+  <NHT_YAPEM_InheritNothing>継承元がありません</NHT_YAPEM_InheritNothing>
+  <NHT_YAPEM_InheritTip>ティア・DLC・Mod から色を継承</NHT_YAPEM_InheritTip>
+  <NHT_YAPEM_InheritedFrom>色の継承元: {0}</NHT_YAPEM_InheritedFrom>
 </LanguageData>

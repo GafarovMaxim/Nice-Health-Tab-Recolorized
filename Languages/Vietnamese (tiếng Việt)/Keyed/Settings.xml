@@ -121,4 +121,11 @@
   <NHT_YAPEM_UseDamageColor_Desc>Bộ phận bị thương dùng màu của bạn khi tổn thương nặng và sắc nhạt hơn khi nhẹ, như Nice Health Tab. Tắt = màu của Nice Health Tab.</NHT_YAPEM_UseDamageColor_Desc>
   <NHT_YAPEM_DamageColor>Màu tổn thương</NHT_YAPEM_DamageColor>
   <NHT_YAPEM_HueOnly>Chỉ sắc độ</NHT_YAPEM_HueOnly>
+  <NHT_YAPEM_InheritNone>Không kế thừa</NHT_YAPEM_InheritNone>
+  <NHT_YAPEM_InheritTier>Bậc</NHT_YAPEM_InheritTier>
+  <NHT_YAPEM_InheritDlc>DLC</NHT_YAPEM_InheritDlc>
+  <NHT_YAPEM_InheritMod>Mod</NHT_YAPEM_InheritMod>
+  <NHT_YAPEM_InheritNothing>Không có gì để kế thừa</NHT_YAPEM_InheritNothing>
+  <NHT_YAPEM_InheritTip>Kế thừa màu từ bậc, DLC hoặc mod</NHT_YAPEM_InheritTip>
+  <NHT_YAPEM_InheritedFrom>Kế thừa màu của: {0}</NHT_YAPEM_InheritedFrom>
 </LanguageData>

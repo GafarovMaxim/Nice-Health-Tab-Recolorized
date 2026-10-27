@@ -121,4 +121,11 @@
   <NHT_YAPEM_UseDamageColor_Desc>Poškozené části mají vaši barvu při těžkém poškození a světlejší odstín při lehkém, jako v Nice Health Tab. Vypnuto = barvy Nice Health Tab.</NHT_YAPEM_UseDamageColor_Desc>
   <NHT_YAPEM_DamageColor>Barva poškození</NHT_YAPEM_DamageColor>
   <NHT_YAPEM_HueOnly>Jen odstín</NHT_YAPEM_HueOnly>
+  <NHT_YAPEM_InheritNone>Nedědit</NHT_YAPEM_InheritNone>
+  <NHT_YAPEM_InheritTier>Úroveň</NHT_YAPEM_InheritTier>
+  <NHT_YAPEM_InheritDlc>DLC</NHT_YAPEM_InheritDlc>
+  <NHT_YAPEM_InheritMod>Mod</NHT_YAPEM_InheritMod>
+  <NHT_YAPEM_InheritNothing>Není od čeho dědit</NHT_YAPEM_InheritNothing>
+  <NHT_YAPEM_InheritTip>Zdědit barvu z úrovně, DLC nebo modu</NHT_YAPEM_InheritTip>
+  <NHT_YAPEM_InheritedFrom>Dědí barvu: {0}</NHT_YAPEM_InheritedFrom>
 </LanguageData>
