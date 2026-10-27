@@ -15,6 +15,10 @@ namespace NiceHealthTab_YAPEM_Patch
         private const float RadiusInner = 76f;
         private const float RadiusDiamond = 60f;
         public const int CustomSlotCount = 8;
+        private const float ChipSize = 28f;
+        private const float ChipGap = 6f;
+        private static readonly Color Accent = new Color(0.37f, 0.66f, 1f);
+        private static readonly Color Grey = new Color(0.68f, 0.72f, 0.78f);
 
         private struct PresetInfo
         {
@@ -70,7 +74,9 @@ namespace NiceHealthTab_YAPEM_Patch
         private bool isDraggingDiamond;
         private bool accepted;
 
-        public override Vector2 InitialSize => new Vector2(440f, 650f);
+        public override Vector2 InitialSize => new Vector2(440f, 560f);
+
+        protected override float Margin => 12f;
 
         public Dialog_TierColorPicker(string title, Color initialColor, Color defaultColor, Action<Color> onColorSaved)
         {
@@ -207,48 +213,34 @@ namespace NiceHealthTab_YAPEM_Patch
         {
             EnsureCustomPresetSlots();
 
-            // 1. Header Bar: Swatch Icon, Category Title, Subtitle, Close 'X'
-            float iconSize = 22f;
-            Rect iconRect = new Rect(0f, 4f, iconSize, iconSize);
-            Widgets.DrawBoxSolid(iconRect, currentColor);
-            Widgets.DrawBox(iconRect, 1);
+            float w = inRect.width;
+            bool changed = !IsColorClose(currentColor, originalColor);
+
+            // Header: swatch, category name, close; hex line under it
+            Rect swatchRect = new Rect(0f, 2f, 28f, 28f);
+            Widgets.DrawBoxSolid(swatchRect, currentColor);
+            Widgets.DrawBox(swatchRect, 1);
 
             Text.Font = GameFont.Medium;
-            Rect titleRect = new Rect(iconSize + 8f, 0f, inRect.width - iconSize - 36f, 24f);
-            Widgets.Label(titleRect, title);
-
-            Text.Font = GameFont.Tiny;
-            GUI.color = new Color(0.68f, 0.72f, 0.78f, 1f);
-            Rect subTitleRect = new Rect(iconSize + 8f, 22f, inRect.width - iconSize - 36f, 16f);
-            Widgets.Label(subTitleRect, "NHT_YAPEM_ColorPickerSubtitle".Translate() + $" • #{ColorUtility.ToHtmlStringRGB(currentColor)}");
-            GUI.color = Color.white;
+            Widgets.Label(new Rect(36f, 0f, w - 36f - 32f, 32f), title);
             Text.Font = GameFont.Small;
 
-            Rect closeBtnRect = new Rect(inRect.width - 24f, 2f, 22f, 22f);
-            if (Widgets.ButtonText(closeBtnRect, "✕"))
+            if (Widgets.ButtonText(new Rect(w - 28f, 2f, 28f, 28f), "✕"))
             {
-                onColorSaved?.Invoke(originalColor);
                 Close();
             }
 
-            // Divider 1
-            Widgets.DrawLineHorizontal(0f, 40f, inRect.width);
+            GUI.color = Grey;
+            Widgets.Label(new Rect(36f, 32f, w - 36f, 20f), "#" + ColorUtility.ToHtmlStringRGB(currentColor));
+            GUI.color = Color.white;
 
-            // 2. Central Wheel Canvas
-            Rect wheelRect = new Rect((inRect.width - TexSize) / 2f, 44f, TexSize, TexSize);
+            // Wheel: ring diameter 200 sits inside the 220 texture, so the ring spans y 62..262
+            Rect wheelRect = new Rect((w - TexSize) / 2f, 52f, TexSize, TexSize);
             if (wheelTexture != null)
             {
                 GUI.DrawTexture(wheelRect, wheelTexture);
             }
 
-            // Subtle HSV Diamond badge
-            Text.Font = GameFont.Tiny;
-            GUI.color = new Color(0.45f, 0.50f, 0.55f, 0.8f);
-            Widgets.Label(new Rect(wheelRect.xMax - 66f, wheelRect.yMax - 14f, 66f, 14f), "HSV Diamond");
-            GUI.color = Color.white;
-            Text.Font = GameFont.Small;
-
-            // Mouse interaction with Wheel & Diamond
             Vector2 mouse = Event.current.mousePosition;
             Vector2 local = mouse - new Vector2(wheelRect.x, wheelRect.y);
             float dx = local.x - Center;
@@ -289,198 +281,39 @@ namespace NiceHealthTab_YAPEM_Patch
                 isDraggingDiamond = false;
             }
 
-            // Reticle cursors
             DrawHueCursor(wheelRect);
             DrawDiamondCursor(wheelRect);
 
-            // Divider 2
-            float yDiv2 = wheelRect.yMax + 6f;
-            Widgets.DrawLineHorizontal(0f, yDiv2, inRect.width);
-
-            // 3. Row 1: Default Presets with Category Tooltips
-            float yPresets1 = yDiv2 + 4f;
-            float chipSize = 22f;
-            float chipGap = 5f;
-
-            Text.Font = GameFont.Tiny;
-            GUI.color = new Color(0.75f, 0.78f, 0.82f, 1f);
-            Widgets.Label(new Rect(0f, yPresets1, 150f, 16f), "NHT_YAPEM_PresetsDefault".Translate());
-            GUI.color = new Color(0.52f, 0.58f, 0.65f, 1f);
-            Widgets.Label(new Rect(inRect.width - 95f, yPresets1, 95f, 16f), $"{DefaultPresets.Length} {"NHT_YAPEM_PresetsCount".Translate()}");
-            GUI.color = Color.white;
-            Text.Font = GameFont.Small;
-
-            float chipsRow1Y = yPresets1 + 18f;
-            float totalWidth1 = DefaultPresets.Length * chipSize + (DefaultPresets.Length - 1) * chipGap;
-            float startX1 = (inRect.width - totalWidth1) / 2f;
-
-            for (int i = 0; i < DefaultPresets.Length; i++)
-            {
-                var preset = DefaultPresets[i];
-                Rect chipRect = new Rect(startX1 + i * (chipSize + chipGap), chipsRow1Y, chipSize, chipSize);
-
-                Widgets.DrawBoxSolid(chipRect, preset.Color);
-                Widgets.DrawBox(chipRect, 1);
-                Widgets.DrawHighlightIfMouseover(chipRect);
-
-                if (IsColorClose(currentColor, preset.Color))
-                {
-                    Widgets.DrawBox(chipRect.ExpandedBy(2f), 2);
-                }
-
-                TooltipHandler.TipRegion(chipRect, preset.Tooltip);
-
-                if (Widgets.ButtonInvisible(chipRect))
-                {
-                    SelectColor(preset.Color);
-                }
-            }
-
-            // Divider 3
-            float yDiv3 = chipsRow1Y + chipSize + 6f;
-            Widgets.DrawLineHorizontal(0f, yDiv3, inRect.width);
-
-            // 4. Row 2: User Custom Preset Slots [1..8]
-            float yPresets2 = yDiv3 + 4f;
-
-            Text.Font = GameFont.Tiny;
-            GUI.color = new Color(0.75f, 0.78f, 0.82f, 1f);
-            Widgets.Label(new Rect(0f, yPresets2, 160f, 16f), "NHT_YAPEM_PresetsCustom".Translate());
-            GUI.color = new Color(0.52f, 0.58f, 0.65f, 1f);
-            Widgets.Label(new Rect(inRect.width - 150f, yPresets2, 150f, 16f), "NHT_YAPEM_CustomSlotsHint".Translate());
-            GUI.color = Color.white;
-            Text.Font = GameFont.Small;
-
-            float chipsRow2Y = yPresets2 + 18f;
-            List<Color> customPresets = YAPEMPatchMod.Settings?.CustomPresets;
-            float totalWidth2 = CustomSlotCount * chipSize + (CustomSlotCount - 1) * chipGap;
-            float startX2 = (inRect.width - totalWidth2) / 2f;
-
-            for (int i = 0; i < CustomSlotCount; i++)
-            {
-                int slotIndex = i;
-                int slotNumber = i + 1;
-                Rect chipRect = new Rect(startX2 + i * (chipSize + chipGap), chipsRow2Y, chipSize, chipSize);
-
-                bool isFilled = (customPresets != null && slotIndex < customPresets.Count && customPresets[slotIndex].a > 0.01f);
-
-                if (isFilled)
-                {
-                    Color c = customPresets[slotIndex];
-                    Widgets.DrawBoxSolid(chipRect, c);
-                    Widgets.DrawBox(chipRect, 1);
-                    Widgets.DrawHighlightIfMouseover(chipRect);
-
-                    if (IsColorClose(currentColor, c))
-                    {
-                        Widgets.DrawBox(chipRect.ExpandedBy(2f), 2);
-                    }
-
-                    // Tiny slot number badge
-                    Text.Font = GameFont.Tiny;
-                    GUI.color = Color.white;
-                    Widgets.Label(new Rect(chipRect.x + 2f, chipRect.y - 1f, 12f, 12f), slotNumber.ToString());
-                    Text.Font = GameFont.Small;
-
-                    string tip = string.Format("NHT_YAPEM_SlotTitle".Translate().RawText, slotNumber) + $" (#{ColorUtility.ToHtmlStringRGB(c)})\n" + "NHT_YAPEM_CustomSlotTip".Translate().RawText;
-                    TooltipHandler.TipRegion(chipRect, tip);
-
-                    if (Widgets.ButtonInvisible(chipRect, true))
-                    {
-                        if (Event.current.button == 1) // RMB
-                        {
-                            OpenCustomSlotMenu(slotIndex, slotNumber, c);
-                        }
-                        else // LMB
-                        {
-                            SelectColor(c);
-                        }
-                    }
-                    else if (Event.current.type == EventType.ContextClick && Mouse.IsOver(chipRect))
-                    {
-                        OpenCustomSlotMenu(slotIndex, slotNumber, c);
-                        Event.current.Use();
-                    }
-                }
-                else
-                {
-                    // Empty slot: clickable to save directly into this exact slot
-                    Widgets.DrawBoxSolid(chipRect, new Color(0.12f, 0.14f, 0.18f, 0.9f));
-                    Widgets.DrawBox(chipRect, 1);
-                    Widgets.DrawHighlightIfMouseover(chipRect);
-
-                    Text.Font = GameFont.Tiny;
-                    GUI.color = new Color(0.48f, 0.52f, 0.58f, 1f);
-                    Widgets.Label(new Rect(chipRect.x + 2f, chipRect.y - 1f, 10f, 10f), slotNumber.ToString());
-                    Widgets.Label(new Rect(chipRect.x + 7f, chipRect.y + 2f, 12f, 14f), "+");
-                    GUI.color = Color.white;
-                    Text.Font = GameFont.Small;
-
-                    string tip = string.Format("NHT_YAPEM_SlotTitle".Translate().RawText, slotNumber) + ": " + "NHT_YAPEM_CustomSlotEmptyTip".Translate().RawText;
-                    TooltipHandler.TipRegion(chipRect, tip);
-
-                    if (Widgets.ButtonInvisible(chipRect, true))
-                    {
-                        customPresets[slotIndex] = currentColor;
-                        YAPEMPatchMod.Settings?.Write();
-                    }
-                    else if (Event.current.type == EventType.ContextClick && Mouse.IsOver(chipRect))
-                    {
-                        customPresets[slotIndex] = currentColor;
-                        YAPEMPatchMod.Settings?.Write();
-                        Event.current.Use();
-                    }
-                }
-            }
-
-            // Divider 4
-            float yDiv4 = chipsRow2Y + chipSize + 6f;
-            Widgets.DrawLineHorizontal(0f, yDiv4, inRect.width);
-
-            // 5. Comparison & Value Inspector Card
-            float yCard = yDiv4 + 6f;
-            float cardH = 68f;
-            Rect cardRect = new Rect(0f, yCard, inRect.width, cardH);
-            Widgets.DrawBoxSolid(cardRect, new Color(0.10f, 0.12f, 0.15f, 0.75f));
-            Widgets.DrawBox(cardRect, 1);
-
-            // Split Swatch (Left = Before, Right = After)
-            float swX = cardRect.x + 10f;
-            float swY = cardRect.y + 10f;
-            float swW = 64f;
-            float swH = 36f;
-            Rect splitRect = new Rect(swX, swY, swW, swH);
-            Rect leftHalf = new Rect(swX, swY, swW / 2f, swH);
-            Rect rightHalf = new Rect(swX + swW / 2f, swY, swW / 2f, swH);
-
-            Widgets.DrawBoxSolid(leftHalf, originalColor);
-            Widgets.DrawBoxSolid(rightHalf, currentColor);
-            Widgets.DrawBox(splitRect, 1);
-            Widgets.DrawLineVertical(swX + swW / 2f, swY, swH);
-            Widgets.DrawHighlightIfMouseover(splitRect);
-
-            TooltipHandler.TipRegion(leftHalf, $"#{ColorUtility.ToHtmlStringRGB(originalColor)} (" + "NHT_YAPEM_ColorBefore".Translate().RawText + ")");
-            TooltipHandler.TipRegion(rightHalf, $"#{ColorUtility.ToHtmlStringRGB(currentColor)} (" + "NHT_YAPEM_ColorAfter".Translate().RawText + ")");
-
-            if (Widgets.ButtonInvisible(leftHalf))
+            // Was / Now swatches (label under each), hex field, copy
+            float rowY = 272f;
+            Rect wasRect = new Rect(0f, rowY, 56f, 28f);
+            Rect nowRect = new Rect(60f, rowY, 56f, 28f);
+            Widgets.DrawBoxSolid(wasRect, originalColor);
+            Widgets.DrawBox(wasRect, 1);
+            Widgets.DrawBoxSolid(nowRect, currentColor);
+            Widgets.DrawBox(nowRect, 1);
+            Widgets.DrawHighlightIfMouseover(wasRect);
+            TooltipHandler.TipRegion(wasRect, $"#{ColorUtility.ToHtmlStringRGB(originalColor)}");
+            TooltipHandler.TipRegion(nowRect, $"#{ColorUtility.ToHtmlStringRGB(currentColor)}");
+            if (Widgets.ButtonInvisible(wasRect))
             {
                 SelectColor(originalColor);
             }
 
             Text.Font = GameFont.Tiny;
-            GUI.color = new Color(0.65f, 0.68f, 0.74f, 1f);
-            Widgets.Label(new Rect(swX + 4f, swY + swH + 2f, 30f, 14f), "NHT_YAPEM_ColorBefore".Translate());
-            Widgets.Label(new Rect(swX + swW / 2f + 4f, swY + swH + 2f, 30f, 14f), "NHT_YAPEM_ColorAfter".Translate());
+            Text.Anchor = TextAnchor.UpperCenter;
+            GUI.color = Grey;
+            Widgets.Label(new Rect(wasRect.x, rowY + 30f, wasRect.width, 16f), "NHT_YAPEM_ColorBefore".Translate());
+            Widgets.Label(new Rect(nowRect.x, rowY + 30f, nowRect.width, 16f), "NHT_YAPEM_ColorAfter".Translate());
             GUI.color = Color.white;
+            Text.Anchor = TextAnchor.UpperLeft;
             Text.Font = GameFont.Small;
 
-            // HEX Text Input & Copy Button
-            float hexX = splitRect.xMax + 14f;
-            Rect hexHashRect = new Rect(hexX, cardRect.y + 16f, 12f, 24f);
-            Widgets.Label(hexHashRect, "#");
+            Text.Anchor = TextAnchor.MiddleLeft;
+            Widgets.Label(new Rect(132f, rowY, 12f, 28f), "#");
+            Text.Anchor = TextAnchor.UpperLeft;
 
-            Rect hexFieldRect = new Rect(hexHashRect.xMax + 2f, cardRect.y + 14f, 84f, 26f);
-            string newHex = Widgets.TextField(hexFieldRect, hexBuffer);
+            string newHex = Widgets.TextField(new Rect(146f, rowY, 96f, 28f), hexBuffer);
             if (newHex != hexBuffer)
             {
                 hexBuffer = newHex.Trim().TrimStart('#').ToUpperInvariant();
@@ -493,69 +326,116 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }
 
-            // Copy [📋] button
-            Rect copyBtnRect = new Rect(hexFieldRect.xMax + 4f, cardRect.y + 14f, 28f, 26f);
-            TooltipHandler.TipRegion(copyBtnRect, "NHT_YAPEM_CopyHex".Translate());
-            if (Widgets.ButtonText(copyBtnRect, "📋"))
+            Rect copyRect = new Rect(246f, rowY, 28f, 28f);
+            TooltipHandler.TipRegion(copyRect, "NHT_YAPEM_CopyHex".Translate());
+            if (Widgets.ButtonText(copyRect, "📋"))
             {
                 string curHex = ColorUtility.ToHtmlStringRGB(currentColor);
                 GUIUtility.systemCopyBuffer = "#" + curHex;
                 Messages.Message(string.Format("NHT_YAPEM_HexCopied".Translate().RawText, curHex), MessageTypeDefOf.TaskCompletion, false);
             }
 
-            // Numeric Readouts: RGB and HSL
+            // One line: RGB and HSL
             int r255 = Mathf.RoundToInt(currentColor.r * 255f);
             int g255 = Mathf.RoundToInt(currentColor.g * 255f);
             int b255 = Mathf.RoundToInt(currentColor.b * 255f);
-
             int hDeg = Mathf.RoundToInt(currentH * 360f);
             int sPct = Mathf.RoundToInt(currentS * 100f);
             int lPct = Mathf.RoundToInt(currentL * 100f);
+            GUI.color = Grey;
+            Widgets.Label(new Rect(0f, 320f, w, 20f), $"R {r255}  G {g255}  B {b255}    H {hDeg}°  S {sPct}%  L {lPct}%");
+            GUI.color = Color.white;
 
-            float infoX = copyBtnRect.xMax + 12f;
+            // Default presets (x starts at 4 so the selection ring is not clipped)
             Text.Font = GameFont.Tiny;
-            GUI.color = new Color(0.82f, 0.85f, 0.90f, 1f);
-            Widgets.Label(new Rect(infoX, cardRect.y + 12f, inRect.width - infoX, 16f), $"R: {r255}   G: {g255}   B: {b255}");
-            GUI.color = new Color(0.65f, 0.70f, 0.78f, 1f);
-            Widgets.Label(new Rect(infoX, cardRect.y + 30f, inRect.width - infoX, 16f), $"H: {hDeg}°   S: {sPct}%   L: {lPct}%");
+            GUI.color = Grey;
+            Widgets.Label(new Rect(0f, 348f, w, 16f), "NHT_YAPEM_PresetsDefault".Translate());
             GUI.color = Color.white;
             Text.Font = GameFont.Small;
 
-            // Divider 5
-            float yDiv5 = cardRect.yMax + 6f;
-            Widgets.DrawLineHorizontal(0f, yDiv5, inRect.width);
+            for (int i = 0; i < DefaultPresets.Length; i++)
+            {
+                var preset = DefaultPresets[i];
+                Rect chipRect = new Rect(4f + i * (ChipSize + ChipGap), 368f, ChipSize, ChipSize);
+                DrawChip(chipRect, preset.Color, IsColorClose(currentColor, preset.Color));
+                TooltipHandler.TipRegion(chipRect, preset.Tooltip);
+                if (Widgets.ButtonInvisible(chipRect))
+                {
+                    SelectColor(preset.Color);
+                }
+            }
 
-            // 6. Profile Toolbar
-            float yProfile = yDiv5 + 6f;
-            Rect profRect = new Rect(0f, yProfile, inRect.width, 28f);
-            DrawProfileBar(profRect);
+            // Custom slots
+            Text.Font = GameFont.Tiny;
+            GUI.color = Grey;
+            Widgets.Label(new Rect(0f, 408f, w, 16f), "NHT_YAPEM_PresetsCustom".Translate());
+            GUI.color = Color.white;
+            Text.Font = GameFont.Small;
 
-            // Divider 6
-            float yDiv6 = yProfile + 34f;
-            Widgets.DrawLineHorizontal(0f, yDiv6, inRect.width);
+            List<Color> customPresets = YAPEMPatchMod.Settings?.CustomPresets;
+            for (int i = 0; i < CustomSlotCount; i++)
+            {
+                int slotIndex = i;
+                int slotNumber = i + 1;
+                Rect chipRect = new Rect(4f + i * (ChipSize + ChipGap), 428f, ChipSize, ChipSize);
+                bool isFilled = customPresets != null && slotIndex < customPresets.Count && customPresets[slotIndex].a > 0.01f;
 
-            // 7. Action Buttons Bar
-            float yBtns = inRect.height - 34f;
-            float btnH = 30f;
+                if (isFilled)
+                {
+                    Color c = customPresets[slotIndex];
+                    DrawChip(chipRect, c, IsColorClose(currentColor, c));
+                    TooltipHandler.TipRegion(chipRect, string.Format("NHT_YAPEM_SlotTitle".Translate().RawText, slotNumber) + $" (#{ColorUtility.ToHtmlStringRGB(c)})\n" + "NHT_YAPEM_CustomSlotTip".Translate().RawText);
 
-            // Reset Button
-            Rect resetRect = new Rect(0f, yBtns, 110f, btnH);
+                    if (Widgets.ButtonInvisible(chipRect, true))
+                    {
+                        if (Event.current.button == 1)
+                        {
+                            OpenCustomSlotMenu(slotIndex, slotNumber, c);
+                        }
+                        else
+                        {
+                            SelectColor(c);
+                        }
+                    }
+                    else if (Event.current.type == EventType.ContextClick && Mouse.IsOver(chipRect))
+                    {
+                        OpenCustomSlotMenu(slotIndex, slotNumber, c);
+                        Event.current.Use();
+                    }
+                }
+                else
+                {
+                    DrawChip(chipRect, Color.clear, false, true);
+                    TooltipHandler.TipRegion(chipRect, string.Format("NHT_YAPEM_SlotTitle".Translate().RawText, slotNumber) + ": " + "NHT_YAPEM_CustomSlotEmptyTip".Translate().RawText);
+
+                    if (customPresets != null && (Widgets.ButtonInvisible(chipRect, true)
+                        || (Event.current.type == EventType.ContextClick && Mouse.IsOver(chipRect))))
+                    {
+                        customPresets[slotIndex] = currentColor;
+                        YAPEMPatchMod.Settings?.Write();
+                        if (Event.current.type == EventType.ContextClick) Event.current.Use();
+                    }
+                }
+            }
+
+            // Buttons: Reset | Cancel, Apply (accent when the color changed)
+            float yBtns = inRect.height - 36f;
+            Rect resetRect = new Rect(0f, yBtns, 108f, 36f);
+            TooltipHandler.TipRegion(resetRect, "#" + ColorUtility.ToHtmlStringRGB(defaultColor));
             if (Widgets.ButtonText(resetRect, "NHT_YAPEM_ResetBtn".Translate()))
             {
                 SelectColor(defaultColor);
             }
 
-            // Cancel Button
-            Rect cancelRect = new Rect(inRect.width - 200f, yBtns, 90f, btnH);
-            if (Widgets.ButtonText(cancelRect, "Cancel".Translate()))
+            if (Widgets.ButtonText(new Rect(w - 216f, yBtns, 104f, 36f), "Cancel".Translate()))
             {
-                onColorSaved?.Invoke(originalColor);
                 Close();
             }
 
-            // Accept / OK Button
-            Rect okRect = new Rect(inRect.width - 100f, yBtns, 100f, btnH);
-            if (Widgets.ButtonText(okRect, "NHT_YAPEM_ApplyBtn".Translate()))
+            if (changed) GUI.color = Accent;
+            bool apply = Widgets.ButtonText(new Rect(w - 104f, yBtns, 104f, 36f), "NHT_YAPEM_ApplyBtn".Translate());
+            GUI.color = Color.white;
+            if (apply)
             {
                 accepted = true;
                 onColorSaved?.Invoke(currentColor);
@@ -565,121 +445,30 @@ namespace NiceHealthTab_YAPEM_Patch
             }
         }
 
-        private void DrawProfileBar(Rect rect)
+        // One look for every swatch: hover = +10% brightness and a light border, selected = accent ring offset by 2px
+        private static void DrawChip(Rect rect, Color color, bool selected, bool empty = false)
         {
-            var settings = YAPEMPatchMod.Settings;
-            if (settings == null) return;
-
-            settings.EnsureProfilesInitialized();
-            var activeProf = settings.GetActiveProfile();
-
-            float x = rect.x;
-            float y = rect.y;
-
-            Text.Font = GameFont.Small;
-            string profLabel = "NHT_YAPEM_Profile".Translate() + ":";
-            Vector2 labelSize = Text.CalcSize(profLabel);
-            Widgets.Label(new Rect(x, y + 2f, labelSize.x + 6f, rect.height), profLabel);
-            x += labelSize.x + 8f;
-
-            // Dropdown
-            float dropW = 125f;
-            Rect dropRect = new Rect(x, y, dropW, rect.height);
-            string dropTitle = (activeProf?.Label ?? "Profile") + " ▾";
-            if (Widgets.ButtonText(dropRect, dropTitle))
+            bool hover = Mouse.IsOver(rect);
+            if (empty)
             {
-                List<FloatMenuOption> options = new List<FloatMenuOption>();
-                foreach (var p in settings.Profiles)
-                {
-                    var captured = p;
-                    options.Add(new FloatMenuOption(captured.Label + (captured.Name == settings.ActiveProfileName ? " ✓" : ""), () =>
-                    {
-                        settings.ApplyProfile(captured, true);
-                        // Refresh current color from the newly active profile
-                        SelectColor(settings.ColorAdvancedBionic);
-                    }));
-                }
-                Find.WindowStack.Add(new FloatMenu(options));
-            }
-            x += dropW + 4f;
-
-            // [+ Нов.]
-            float btnW = 48f;
-            Rect newBtnRect = new Rect(x, y, btnW, rect.height);
-            TooltipHandler.TipRegion(newBtnRect, "NHT_YAPEM_NewProfilePrompt".Translate());
-            if (Widgets.ButtonText(newBtnRect, "NHT_YAPEM_NewProfile".Translate()))
-            {
-                string defName = string.Format("NHT_YAPEM_NewProfileDefaultName".Translate().RawText, settings.Profiles.Count(p => !p.IsBuiltIn) + 1);
-                Find.WindowStack.Add(new Dialog_InputText("NHT_YAPEM_NewProfilePrompt".Translate(), defName, (enteredName) =>
-                {
-                    settings.CreateProfile(enteredName);
-                }));
-            }
-            x += btnW + 4f;
-
-            // [✕ Удал]
-            bool canDelete = activeProf != null && !activeProf.IsBuiltIn;
-            Rect delBtnRect = new Rect(x, y, btnW, rect.height);
-            if (!canDelete)
-            {
-                GUI.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-                TooltipHandler.TipRegion(delBtnRect, "NHT_YAPEM_CannotDeleteDefault".Translate());
-            }
-            else
-            {
-                TooltipHandler.TipRegion(delBtnRect, string.Format("NHT_YAPEM_DeleteProfileConfirm".Translate().RawText, activeProf.Label));
+                GUI.color = new Color(0.5f, 0.5f, 0.5f, hover ? 1f : 0.7f);
+                Widgets.DrawBox(rect, 1);
+                Text.Anchor = TextAnchor.MiddleCenter;
+                Widgets.Label(rect, "+");
+                Text.Anchor = TextAnchor.UpperLeft;
+                GUI.color = Color.white;
+                return;
             }
 
-            if (Widgets.ButtonText(delBtnRect, "NHT_YAPEM_DeleteProfile".Translate()))
+            Widgets.DrawBoxSolid(rect, hover ? Color.Lerp(color, Color.white, 0.1f) : color);
+            GUI.color = hover ? new Color(1f, 1f, 1f, 0.6f) : new Color(0f, 0f, 0f, 0.6f);
+            Widgets.DrawBox(rect, 1);
+            if (selected)
             {
-                if (canDelete)
-                {
-                    string msg = string.Format("NHT_YAPEM_DeleteProfileConfirm".Translate().RawText, activeProf.Label);
-                    Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(msg, () =>
-                    {
-                        settings.DeleteProfile(activeProf);
-                    }));
-                }
-                else
-                {
-                    Messages.Message("NHT_YAPEM_CannotDeleteDefault".Translate(), MessageTypeDefOf.RejectInput, false);
-                }
+                GUI.color = Accent;
+                Widgets.DrawBox(rect.ExpandedBy(4f), 2);
             }
             GUI.color = Color.white;
-            x += btnW + 6f;
-
-            // [Эксп.]
-            float smallBtnW = 44f;
-            Rect expBtnRect = new Rect(x, y, smallBtnW, rect.height);
-            TooltipHandler.TipRegion(expBtnRect, "NHT_YAPEM_ProfileExported".Translate());
-            if (Widgets.ButtonText(expBtnRect, "NHT_YAPEM_ExportProfile".Translate()))
-            {
-                if (activeProf != null)
-                {
-                    GUIUtility.systemCopyBuffer = activeProf.ExportJson();
-                    Messages.Message("NHT_YAPEM_ProfileExported".Translate(), MessageTypeDefOf.PositiveEvent, false);
-                }
-            }
-            x += smallBtnW + 4f;
-
-            // [Имп.]
-            Rect impBtnRect = new Rect(x, y, smallBtnW, rect.height);
-            TooltipHandler.TipRegion(impBtnRect, "NHT_YAPEM_ImportProfile".Translate());
-            if (Widgets.ButtonText(impBtnRect, "NHT_YAPEM_ImportProfile".Translate()))
-            {
-                string json = GUIUtility.systemCopyBuffer;
-                var imported = PaletteProfile.ImportJson(json);
-                if (imported != null)
-                {
-                    settings.Profiles.Add(imported);
-                    settings.ApplyProfile(imported, true);
-                    Messages.Message(string.Format("NHT_YAPEM_ProfileImported".Translate().RawText, imported.Name), MessageTypeDefOf.PositiveEvent, false);
-                }
-                else
-                {
-                    Messages.Message("NHT_YAPEM_InvalidProfileJson".Translate(), MessageTypeDefOf.RejectInput, false);
-                }
-            }
         }
 
         private void OpenCustomSlotMenu(int index, int slotNumber, Color slotColor)
