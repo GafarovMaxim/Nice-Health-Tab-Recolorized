@@ -9,8 +9,8 @@ namespace NiceHealthTab_YAPEM_Patch
 {
     public class PaletteProfile : IExposable
     {
-        // Export format: 1 = tiers/DLC/presets only (no "version" key), 2 = + modTiers and presetNames.
-        public const int JsonVersion = 2;
+        // Export format: 1 = tiers/DLC/presets only (no "version" key), 2 = + modTiers and presetNames, 3 = + color links (modTiers.links).
+        public const int JsonVersion = 3;
 
         public string Name;
         public bool IsBuiltIn;
@@ -36,6 +36,7 @@ namespace NiceHealthTab_YAPEM_Patch
         // "#RRGGBB" per mod packageId and per auto-detected tier key; absent = Auto. Old profiles have none.
         public Dictionary<string, string> ModColors = new Dictionary<string, string>();
         public Dictionary<string, string> DynamicTierColors = new Dictionary<string, string>();
+        public Dictionary<string, string> ColorLinks = new Dictionary<string, string>();
 
         public PaletteProfile()
         {
@@ -78,6 +79,7 @@ namespace NiceHealthTab_YAPEM_Patch
 
             if (ModColors == null) ModColors = new Dictionary<string, string>();
             if (DynamicTierColors == null) DynamicTierColors = new Dictionary<string, string>();
+            if (ColorLinks == null) ColorLinks = new Dictionary<string, string>();
         }
 
         public void ExposeData()
@@ -101,6 +103,7 @@ namespace NiceHealthTab_YAPEM_Patch
             Scribe_Collections.Look(ref CustomPresetNames, "CustomPresetNames", LookMode.Value);
             Scribe_Collections.Look(ref ModColors, "ModColors", LookMode.Value, LookMode.Value);
             Scribe_Collections.Look(ref DynamicTierColors, "DynamicTierColors", LookMode.Value, LookMode.Value);
+            Scribe_Collections.Look(ref ColorLinks, "ColorLinks", LookMode.Value, LookMode.Value);
             EnsureSlotCount();
         }
 
@@ -131,7 +134,9 @@ namespace NiceHealthTab_YAPEM_Patch
             if (!AllColors().Select(ColorUtility.ToHtmlStringRGBA).SequenceEqual(saved.AllColors().Select(ColorUtility.ToHtmlStringRGBA))) return false;
             if (!CustomPresetNames.SequenceEqual(saved.CustomPresetNames)) return false;
             bool strict = !saved.IsBuiltIn;
-            return DictsMatch(ModColors, saved.ModColors, strict) && DictsMatch(DynamicTierColors, saved.DynamicTierColors, strict);
+            // links are always compared strictly: a link overrides the profile's own colors, even for built-in profiles
+            return DictsMatch(ModColors, saved.ModColors, strict) && DictsMatch(DynamicTierColors, saved.DynamicTierColors, strict)
+                && DictsMatch(ColorLinks, saved.ColorLinks, true);
         }
 
         public PaletteProfile Clone(string newName)
@@ -153,6 +158,7 @@ namespace NiceHealthTab_YAPEM_Patch
             p.CustomPresetNames = new List<string>(this.CustomPresetNames ?? new List<string>());
             p.ModColors = new Dictionary<string, string>(this.ModColors ?? new Dictionary<string, string>());
             p.DynamicTierColors = new Dictionary<string, string>(this.DynamicTierColors ?? new Dictionary<string, string>());
+            p.ColorLinks = new Dictionary<string, string>(this.ColorLinks ?? new Dictionary<string, string>());
             p.EnsureSlotCount();
             return p;
         }
@@ -242,6 +248,8 @@ namespace NiceHealthTab_YAPEM_Patch
             AppendMap(sb, ModColors);
             sb.Append(", \"tiers\": ");
             AppendMap(sb, DynamicTierColors);
+            sb.Append(", \"links\": ");
+            AppendMap(sb, ColorLinks);
             sb.AppendLine(" },");
             // positional: an empty string is an empty slot
             sb.AppendLine("  \"customPresets\": [" + string.Join(", ", CustomPresets.Select(c => c.a > 0.01f ? $"\"{Hex(c)}\"" : "\"\"").ToArray()) + "],");
@@ -250,7 +258,7 @@ namespace NiceHealthTab_YAPEM_Patch
             return sb.ToString();
         }
 
-        // Reads versions 1 and 2. Returns null when the text is not an NHT profile.
+        // Reads versions 1 to 3. Returns null when the text is not an NHT profile.
         public static PaletteProfile ImportJson(string json)
         {
             if (string.IsNullOrWhiteSpace(json)) return null;
@@ -297,6 +305,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 {
                     ReadMap(mt, "mods", prof.ModColors);
                     ReadMap(mt, "tiers", prof.DynamicTierColors);
+                    ReadMap(mt, "links", prof.ColorLinks);
                 }
 
                 prof.EnsureSlotCount();

@@ -67,7 +67,7 @@ namespace NiceHealthTab_YAPEM_Patch
         // "#RRGGBB" per third-party mod (lowercase packageId) and per auto-detected tier (tier key). Absent = Auto.
         // Priority when coloring: CustomHediffTiers (single implant) > ModColors > tier color.
         public Dictionary<string, string> ModColors = new Dictionary<string, string>();
-        // Color inheritance (see ColorLinkUtil). Not part of palette profiles yet.
+        // Color inheritance (see ColorLinkUtil). Stored in palette profiles.
         public Dictionary<string, string> ColorLinks = new Dictionary<string, string>();
         public Dictionary<string, string> DynamicTierColors = new Dictionary<string, string>();
 
@@ -219,6 +219,8 @@ namespace NiceHealthTab_YAPEM_Patch
             // A profile without a color for some mod keeps the current one
             foreach (var kv in prof.ModColors) ModColors[kv.Key] = kv.Value;
             foreach (var kv in prof.DynamicTierColors) DynamicTierColors[kv.Key] = kv.Value;
+            // links are replaced, not merged: a leftover link would keep overriding the colors just applied
+            ColorLinks = new Dictionary<string, string>(prof.ColorLinks);
             LimbTierUtility.ClearCaches();
 
             if (save) Write();
@@ -242,6 +244,7 @@ namespace NiceHealthTab_YAPEM_Patch
             prof.CustomPresetNames = CustomPresetNames != null ? new List<string>(CustomPresetNames) : new List<string>();
             prof.ModColors = new Dictionary<string, string>(ModColors);
             prof.DynamicTierColors = new Dictionary<string, string>(DynamicTierColors);
+            prof.ColorLinks = new Dictionary<string, string>(ColorLinks);
             prof.EnsureSlotCount();
         }
 
