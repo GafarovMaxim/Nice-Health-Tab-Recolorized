@@ -110,4 +110,5 @@
   <NHT_YAPEM_ProfileExport>내보내기</NHT_YAPEM_ProfileExport>
   <NHT_YAPEM_ProfileImport>가져오기</NHT_YAPEM_ProfileImport>
   <NHT_YAPEM_ProfileMenuTip>프로필 작업</NHT_YAPEM_ProfileMenuTip>
+  <NHT_YAPEM_SlotNamePrompt>이 색상의 이름을 입력하세요:</NHT_YAPEM_SlotNamePrompt>
 </LanguageData>

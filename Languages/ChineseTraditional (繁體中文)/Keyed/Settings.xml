@@ -110,4 +110,5 @@
   <NHT_YAPEM_ProfileExport>匯出</NHT_YAPEM_ProfileExport>
   <NHT_YAPEM_ProfileImport>匯入</NHT_YAPEM_ProfileImport>
   <NHT_YAPEM_ProfileMenuTip>設定檔操作</NHT_YAPEM_ProfileMenuTip>
+  <NHT_YAPEM_SlotNamePrompt>輸入此顏色的名稱：</NHT_YAPEM_SlotNamePrompt>
 </LanguageData>

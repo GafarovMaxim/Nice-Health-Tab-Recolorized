@@ -110,4 +110,5 @@
   <NHT_YAPEM_ProfileExport>Exportovat</NHT_YAPEM_ProfileExport>
   <NHT_YAPEM_ProfileImport>Importovat</NHT_YAPEM_ProfileImport>
   <NHT_YAPEM_ProfileMenuTip>Akce profilu</NHT_YAPEM_ProfileMenuTip>
+  <NHT_YAPEM_SlotNamePrompt>Zadejte název této barvy:</NHT_YAPEM_SlotNamePrompt>
 </LanguageData>

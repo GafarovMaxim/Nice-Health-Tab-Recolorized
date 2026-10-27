@@ -110,4 +110,5 @@
   <NHT_YAPEM_ProfileExport>Експорт</NHT_YAPEM_ProfileExport>
   <NHT_YAPEM_ProfileImport>Імпорт</NHT_YAPEM_ProfileImport>
   <NHT_YAPEM_ProfileMenuTip>Дії з профілем</NHT_YAPEM_ProfileMenuTip>
+  <NHT_YAPEM_SlotNamePrompt>Введіть назву для цього кольору:</NHT_YAPEM_SlotNamePrompt>
 </LanguageData>

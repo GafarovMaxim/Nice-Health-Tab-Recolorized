@@ -53,6 +53,7 @@ namespace NiceHealthTab_YAPEM_Patch
 
         // User Custom Palette Presets (persisted across sessions, 8 fixed slots)
         public List<Color> CustomPresets = new List<Color>();
+        public List<string> CustomPresetNames = new List<string>(); // "" = unnamed, same indexes as CustomPresets
 
         // Custom implant recolor tier overrides: defName -> tier ("Auto", "None", "Archotech", etc.)
         public Dictionary<string, string> CustomHediffTiers = new Dictionary<string, string>();
@@ -108,6 +109,11 @@ namespace NiceHealthTab_YAPEM_Patch
             if (CustomPresets == null)
             {
                 CustomPresets = new List<Color>();
+            }
+            Scribe_Collections.Look(ref CustomPresetNames, "CustomPresetNames", LookMode.Value);
+            if (CustomPresetNames == null)
+            {
+                CustomPresetNames = new List<string>();
             }
 
             Scribe_Values.Look(ref ActiveProfileName, "ActiveProfileName", "NHT_YAPEM_ProfileDefault");
@@ -194,14 +200,13 @@ namespace NiceHealthTab_YAPEM_Patch
             ColorOdyssey            = prof.ColorOdyssey;
             ColorIntegratedImplants = prof.ColorIntegratedImplants;
 
-            if (prof.CustomPresets != null)
-            {
-                CustomPresets = new List<Color>();
-                for (int i = 0; i < prof.CustomPresets.Count; i++)
-                {
-                    CustomPresets.Add(prof.CustomPresets[i]);
-                }
-            }
+            CustomPresets = new List<Color>(prof.CustomPresets ?? new List<Color>());
+            CustomPresetNames = new List<string>(prof.CustomPresetNames ?? new List<string>());
+
+            // A profile without a color for some mod keeps the current one
+            foreach (var kv in prof.ModColors) ModColors[kv.Key] = kv.Value;
+            foreach (var kv in prof.DynamicTierColors) DynamicTierColors[kv.Key] = kv.Value;
+            LimbTierUtility.ClearCaches();
 
             if (save) Write();
         }
@@ -221,6 +226,9 @@ namespace NiceHealthTab_YAPEM_Patch
             prof.ColorIntegratedImplants = ColorIntegratedImplants;
 
             prof.CustomPresets = CustomPresets != null ? new List<Color>(CustomPresets) : new List<Color>();
+            prof.CustomPresetNames = CustomPresetNames != null ? new List<string>(CustomPresetNames) : new List<string>();
+            prof.ModColors = new Dictionary<string, string>(ModColors);
+            prof.DynamicTierColors = new Dictionary<string, string>(DynamicTierColors);
             prof.EnsureSlotCount();
         }
 

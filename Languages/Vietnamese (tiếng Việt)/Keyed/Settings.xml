@@ -110,4 +110,5 @@
   <NHT_YAPEM_ProfileExport>Xuất</NHT_YAPEM_ProfileExport>
   <NHT_YAPEM_ProfileImport>Nhập</NHT_YAPEM_ProfileImport>
   <NHT_YAPEM_ProfileMenuTip>Thao tác hồ sơ</NHT_YAPEM_ProfileMenuTip>
+  <NHT_YAPEM_SlotNamePrompt>Nhập tên cho màu này:</NHT_YAPEM_SlotNamePrompt>
 </LanguageData>

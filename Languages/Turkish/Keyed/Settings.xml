@@ -110,4 +110,5 @@
   <NHT_YAPEM_ProfileExport>Dışa aktar</NHT_YAPEM_ProfileExport>
   <NHT_YAPEM_ProfileImport>İçe aktar</NHT_YAPEM_ProfileImport>
   <NHT_YAPEM_ProfileMenuTip>Profil işlemleri</NHT_YAPEM_ProfileMenuTip>
+  <NHT_YAPEM_SlotNamePrompt>Bu renk için bir ad girin:</NHT_YAPEM_SlotNamePrompt>
 </LanguageData>

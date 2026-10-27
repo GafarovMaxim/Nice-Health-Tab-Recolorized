@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using UnityEngine;
 using Verse;
 
@@ -10,6 +9,9 @@ namespace NiceHealthTab_YAPEM_Patch
 {
     public class PaletteProfile : IExposable
     {
+        // Export format: 1 = tiers/DLC/presets only (no "version" key), 2 = + modTiers and presetNames.
+        public const int JsonVersion = 2;
+
         public string Name;
         public bool IsBuiltIn;
 
@@ -27,8 +29,13 @@ namespace NiceHealthTab_YAPEM_Patch
         public Color ColorOdyssey            = YAPEMPatchSettings.DefaultColorOdyssey;
         public Color ColorIntegratedImplants = YAPEMPatchSettings.DefaultColorIntegratedImplants;
 
-        // Custom Presets (8 slots)
+        // Custom Presets (CustomSlotCount slots) and their optional names ("" = unnamed)
         public List<Color> CustomPresets = new List<Color>();
+        public List<string> CustomPresetNames = new List<string>();
+
+        // "#RRGGBB" per mod packageId and per auto-detected tier key; absent = Auto. Old profiles have none.
+        public Dictionary<string, string> ModColors = new Dictionary<string, string>();
+        public Dictionary<string, string> DynamicTierColors = new Dictionary<string, string>();
 
         public PaletteProfile()
         {
@@ -59,14 +66,18 @@ namespace NiceHealthTab_YAPEM_Patch
 
         public void EnsureSlotCount()
         {
-            if (CustomPresets == null)
+            if (CustomPresets == null) CustomPresets = new List<Color>();
+            while (CustomPresets.Count < Dialog_TierColorPicker.CustomSlotCount) CustomPresets.Add(Color.clear);
+
+            if (CustomPresetNames == null) CustomPresetNames = new List<string>();
+            while (CustomPresetNames.Count < Dialog_TierColorPicker.CustomSlotCount) CustomPresetNames.Add("");
+            for (int i = 0; i < CustomPresetNames.Count; i++)
             {
-                CustomPresets = new List<Color>();
+                if (CustomPresetNames[i] == null) CustomPresetNames[i] = "";
             }
-            while (CustomPresets.Count < Dialog_TierColorPicker.CustomSlotCount)
-            {
-                CustomPresets.Add(Color.clear);
-            }
+
+            if (ModColors == null) ModColors = new Dictionary<string, string>();
+            if (DynamicTierColors == null) DynamicTierColors = new Dictionary<string, string>();
         }
 
         public void ExposeData()
@@ -87,6 +98,9 @@ namespace NiceHealthTab_YAPEM_Patch
             Scribe_Values.Look(ref ColorIntegratedImplants, "ColorIntegratedImplants", YAPEMPatchSettings.DefaultColorIntegratedImplants);
 
             Scribe_Collections.Look(ref CustomPresets, "CustomPresets", LookMode.Value);
+            Scribe_Collections.Look(ref CustomPresetNames, "CustomPresetNames", LookMode.Value);
+            Scribe_Collections.Look(ref ModColors, "ModColors", LookMode.Value, LookMode.Value);
+            Scribe_Collections.Look(ref DynamicTierColors, "DynamicTierColors", LookMode.Value, LookMode.Value);
             EnsureSlotCount();
         }
 
@@ -99,10 +113,25 @@ namespace NiceHealthTab_YAPEM_Patch
             foreach (var c in CustomPresets) yield return c;
         }
 
-        // Compared as 8-bit hex: saved floats lose precision, so exact float equality would flag false changes.
-        public bool SameAs(PaletteProfile other)
+        // Every key of `profile` must match in `current`; with strict also every key of `current` must exist in `profile`.
+        private static bool DictsMatch(Dictionary<string, string> current, Dictionary<string, string> profile, bool strict)
         {
-            return other != null && AllColors().Select(ColorUtility.ToHtmlStringRGBA).SequenceEqual(other.AllColors().Select(ColorUtility.ToHtmlStringRGBA));
+            foreach (var kv in profile)
+            {
+                if (!current.TryGetValue(kv.Key, out string v) || !string.Equals(v, kv.Value, StringComparison.OrdinalIgnoreCase)) return false;
+            }
+            return !strict || current.Keys.All(profile.ContainsKey);
+        }
+
+        // `this` = current colors, `saved` = the profile. Colors are compared as 8-bit hex: saved floats lose precision.
+        // Built-in profiles hold no mod colors, so colors set for mods are not a difference there (applying keeps them).
+        public bool SameAs(PaletteProfile saved)
+        {
+            if (saved == null) return false;
+            if (!AllColors().Select(ColorUtility.ToHtmlStringRGBA).SequenceEqual(saved.AllColors().Select(ColorUtility.ToHtmlStringRGBA))) return false;
+            if (!CustomPresetNames.SequenceEqual(saved.CustomPresetNames)) return false;
+            bool strict = !saved.IsBuiltIn;
+            return DictsMatch(ModColors, saved.ModColors, strict) && DictsMatch(DynamicTierColors, saved.DynamicTierColors, strict);
         }
 
         public PaletteProfile Clone(string newName)
@@ -120,14 +149,10 @@ namespace NiceHealthTab_YAPEM_Patch
             p.ColorOdyssey = this.ColorOdyssey;
             p.ColorIntegratedImplants = this.ColorIntegratedImplants;
 
-            p.CustomPresets = new List<Color>();
-            if (this.CustomPresets != null)
-            {
-                for (int i = 0; i < this.CustomPresets.Count; i++)
-                {
-                    p.CustomPresets.Add(this.CustomPresets[i]);
-                }
-            }
+            p.CustomPresets = new List<Color>(this.CustomPresets ?? new List<Color>());
+            p.CustomPresetNames = new List<string>(this.CustomPresetNames ?? new List<string>());
+            p.ModColors = new Dictionary<string, string>(this.ModColors ?? new Dictionary<string, string>());
+            p.DynamicTierColors = new Dictionary<string, string>(this.DynamicTierColors ?? new Dictionary<string, string>());
             p.EnsureSlotCount();
             return p;
         }
@@ -180,102 +205,135 @@ namespace NiceHealthTab_YAPEM_Patch
             return p;
         }
 
+        private static string Hex(Color c) => "#" + ColorUtility.ToHtmlStringRGB(c);
+
+        private static void AppendMap(StringBuilder sb, Dictionary<string, string> map)
+        {
+            sb.Append("{");
+            bool first = true;
+            foreach (var kv in map.OrderBy(k => k.Key, StringComparer.Ordinal))
+            {
+                sb.Append(first ? " " : ", ").Append('"').Append(EscapeJson(kv.Key)).Append("\": \"").Append(EscapeJson(kv.Value)).Append('"');
+                first = false;
+            }
+            sb.Append(first ? "}" : " }");
+        }
+
         public string ExportJson()
         {
-            StringBuilder sb = new StringBuilder();
+            EnsureSlotCount();
+            var sb = new StringBuilder();
             sb.AppendLine("{");
+            sb.AppendLine($"  \"version\": {JsonVersion},");
             sb.AppendLine($"  \"name\": \"{EscapeJson(Name)}\",");
             sb.AppendLine("  \"colors\": {");
-            sb.AppendLine($"    \"AdvancedBionic\": \"#{ColorUtility.ToHtmlStringRGB(ColorAdvancedBionic)}\",");
-            sb.AppendLine($"    \"Ultratech\": \"#{ColorUtility.ToHtmlStringRGB(ColorUltratech)}\",");
-            sb.AppendLine($"    \"Archotech\": \"#{ColorUtility.ToHtmlStringRGB(ColorArchotech)}\",");
-            sb.AppendLine($"    \"Bionic\": \"#{ColorUtility.ToHtmlStringRGB(ColorBionic)}\",");
-            sb.AppendLine($"    \"Prosthetic\": \"#{ColorUtility.ToHtmlStringRGB(ColorProsthetic)}\",");
-            sb.AppendLine($"    \"Royalty\": \"#{ColorUtility.ToHtmlStringRGB(ColorRoyalty)}\",");
-            sb.AppendLine($"    \"Biotech\": \"#{ColorUtility.ToHtmlStringRGB(ColorBiotech)}\",");
-            sb.AppendLine($"    \"Anomaly\": \"#{ColorUtility.ToHtmlStringRGB(ColorAnomaly)}\",");
-            sb.AppendLine($"    \"Odyssey\": \"#{ColorUtility.ToHtmlStringRGB(ColorOdyssey)}\",");
-            sb.AppendLine($"    \"IntegratedImplants\": \"#{ColorUtility.ToHtmlStringRGB(ColorIntegratedImplants)}\"");
+            sb.AppendLine($"    \"AdvancedBionic\": \"{Hex(ColorAdvancedBionic)}\",");
+            sb.AppendLine($"    \"Ultratech\": \"{Hex(ColorUltratech)}\",");
+            sb.AppendLine($"    \"Archotech\": \"{Hex(ColorArchotech)}\",");
+            sb.AppendLine($"    \"Bionic\": \"{Hex(ColorBionic)}\",");
+            sb.AppendLine($"    \"Prosthetic\": \"{Hex(ColorProsthetic)}\",");
+            sb.AppendLine($"    \"Royalty\": \"{Hex(ColorRoyalty)}\",");
+            sb.AppendLine($"    \"Biotech\": \"{Hex(ColorBiotech)}\",");
+            sb.AppendLine($"    \"Anomaly\": \"{Hex(ColorAnomaly)}\",");
+            sb.AppendLine($"    \"Odyssey\": \"{Hex(ColorOdyssey)}\",");
+            sb.AppendLine($"    \"IntegratedImplants\": \"{Hex(ColorIntegratedImplants)}\"");
             sb.AppendLine("  },");
-            sb.Append("  \"customPresets\": [");
-            if (CustomPresets != null)
-            {
-                bool first = true;
-                for (int i = 0; i < CustomPresets.Count; i++)
-                {
-                    if (CustomPresets[i].a > 0.01f)
-                    {
-                        if (!first) sb.Append(", ");
-                        sb.Append($"\"#{ColorUtility.ToHtmlStringRGB(CustomPresets[i])}\"");
-                        first = false;
-                    }
-                }
-            }
-            sb.AppendLine("]");
+            sb.Append("  \"modTiers\": { \"mods\": ");
+            AppendMap(sb, ModColors);
+            sb.Append(", \"tiers\": ");
+            AppendMap(sb, DynamicTierColors);
+            sb.AppendLine(" },");
+            // positional: an empty string is an empty slot
+            sb.AppendLine("  \"customPresets\": [" + string.Join(", ", CustomPresets.Select(c => c.a > 0.01f ? $"\"{Hex(c)}\"" : "\"\"").ToArray()) + "],");
+            sb.AppendLine("  \"presetNames\": [" + string.Join(", ", CustomPresetNames.Select(n => $"\"{EscapeJson(n)}\"").ToArray()) + "]");
             sb.AppendLine("}");
             return sb.ToString();
         }
 
+        // Reads versions 1 and 2. Returns null when the text is not an NHT profile.
         public static PaletteProfile ImportJson(string json)
         {
-            if (string.IsNullOrEmpty(json)) return null;
+            if (string.IsNullOrWhiteSpace(json)) return null;
             try
             {
-                string name = "Imported Profile";
-                var matchName = Regex.Match(json, "\"name\"\\s*:\\s*\"([^\"]+)\"");
-                if (matchName.Success) name = matchName.Groups[1].Value;
+                var root = MiniJson.Parse(json) as Dictionary<string, object>;
+                var colors = root != null && root.TryGetValue("colors", out object c) ? c as Dictionary<string, object> : null;
+                if (colors == null) return null;
 
+                string name = root.TryGetValue("name", out object n) && n is string ns && !string.IsNullOrWhiteSpace(ns) ? ns.Trim() : "Imported Profile";
                 var prof = new PaletteProfile(name, false);
 
-                prof.ColorAdvancedBionic = ParseColorInJson(json, "AdvancedBionic", YAPEMPatchSettings.DefaultColorAdvancedBionic);
-                prof.ColorUltratech      = ParseColorInJson(json, "Ultratech", YAPEMPatchSettings.DefaultColorUltratech);
-                prof.ColorArchotech      = ParseColorInJson(json, "Archotech", YAPEMPatchSettings.DefaultColorArchotech);
-                prof.ColorBionic         = ParseColorInJson(json, "Bionic", YAPEMPatchSettings.DefaultColorBionic);
-                prof.ColorProsthetic     = ParseColorInJson(json, "Prosthetic", YAPEMPatchSettings.DefaultColorProsthetic);
+                prof.ColorAdvancedBionic = ReadColor(colors, "AdvancedBionic", YAPEMPatchSettings.DefaultColorAdvancedBionic);
+                prof.ColorUltratech      = ReadColor(colors, "Ultratech", YAPEMPatchSettings.DefaultColorUltratech);
+                prof.ColorArchotech      = ReadColor(colors, "Archotech", YAPEMPatchSettings.DefaultColorArchotech);
+                prof.ColorBionic         = ReadColor(colors, "Bionic", YAPEMPatchSettings.DefaultColorBionic);
+                prof.ColorProsthetic     = ReadColor(colors, "Prosthetic", YAPEMPatchSettings.DefaultColorProsthetic);
 
-                prof.ColorRoyalty        = ParseColorInJson(json, "Royalty", YAPEMPatchSettings.DefaultColorRoyalty);
-                prof.ColorBiotech        = ParseColorInJson(json, "Biotech", YAPEMPatchSettings.DefaultColorBiotech);
-                prof.ColorAnomaly        = ParseColorInJson(json, "Anomaly", YAPEMPatchSettings.DefaultColorAnomaly);
-                prof.ColorOdyssey        = ParseColorInJson(json, "Odyssey", YAPEMPatchSettings.DefaultColorOdyssey);
-                prof.ColorIntegratedImplants = ParseColorInJson(json, "IntegratedImplants", YAPEMPatchSettings.DefaultColorIntegratedImplants);
+                prof.ColorRoyalty        = ReadColor(colors, "Royalty", YAPEMPatchSettings.DefaultColorRoyalty);
+                prof.ColorBiotech        = ReadColor(colors, "Biotech", YAPEMPatchSettings.DefaultColorBiotech);
+                prof.ColorAnomaly        = ReadColor(colors, "Anomaly", YAPEMPatchSettings.DefaultColorAnomaly);
+                prof.ColorOdyssey        = ReadColor(colors, "Odyssey", YAPEMPatchSettings.DefaultColorOdyssey);
+                prof.ColorIntegratedImplants = ReadColor(colors, "IntegratedImplants", YAPEMPatchSettings.DefaultColorIntegratedImplants);
 
                 prof.CustomPresets = new List<Color>();
-                var matchPresets = Regex.Match(json, "\"customPresets\"\\s*:\\s*\\[([^\\]]*)\\]");
-                if (matchPresets.Success)
+                if (root.TryGetValue("customPresets", out object presets) && presets is List<object> presetList)
                 {
-                    var matches = Regex.Matches(matchPresets.Groups[1].Value, "\"#?([A-Fa-f0-9]{6})\"");
-                    foreach (Match m in matches)
+                    foreach (object item in presetList)
                     {
-                        if (ColorUtility.TryParseHtmlString("#" + m.Groups[1].Value, out Color c))
-                        {
-                            prof.CustomPresets.Add(c);
-                        }
+                        // version 1 listed only filled slots, version 2 keeps positions with "" for empty ones
+                        string s = item as string;
+                        if (s != null && ColorUtility.TryParseHtmlString(s.StartsWith("#") ? s : "#" + s, out Color col)) prof.CustomPresets.Add(col);
+                        else if (root.ContainsKey("version")) prof.CustomPresets.Add(Color.clear);
                     }
                 }
+
+                prof.CustomPresetNames = new List<string>();
+                if (root.TryGetValue("presetNames", out object names) && names is List<object> nameList)
+                {
+                    foreach (object item in nameList) prof.CustomPresetNames.Add(item as string ?? "");
+                }
+
+                if (root.TryGetValue("modTiers", out object modTiers) && modTiers is Dictionary<string, object> mt)
+                {
+                    ReadMap(mt, "mods", prof.ModColors);
+                    ReadMap(mt, "tiers", prof.DynamicTierColors);
+                }
+
                 prof.EnsureSlotCount();
                 return prof;
             }
             catch (Exception ex)
             {
-                Log.Warning("[NiceHealthTab: Recolorized] Failed to parse profile JSON: " + ex);
+                Log.Warning("[NiceHealthTab: Recolorized] Failed to parse profile JSON: " + ex.Message);
                 return null;
             }
         }
 
-        private static Color ParseColorInJson(string json, string key, Color fallback)
+        private static Color ReadColor(Dictionary<string, object> map, string key, Color fallback)
         {
-            var m = Regex.Match(json, $"\"{key}\"\\s*:\\s*\"#?([A-Fa-f0-9]{{6}})\"");
-            if (m.Success && ColorUtility.TryParseHtmlString("#" + m.Groups[1].Value, out Color c))
+            if (map.TryGetValue(key, out object v) && v is string s && ColorUtility.TryParseHtmlString(s.StartsWith("#") ? s : "#" + s, out Color c))
             {
                 return c;
             }
             return fallback;
         }
 
+        private static void ReadMap(Dictionary<string, object> parent, string key, Dictionary<string, string> into)
+        {
+            if (!parent.TryGetValue(key, out object v) || !(v is Dictionary<string, object> map)) return;
+            foreach (var kv in map)
+            {
+                if (kv.Value is string s && ColorUtility.TryParseHtmlString(s.StartsWith("#") ? s : "#" + s, out Color c))
+                {
+                    into[kv.Key] = Hex(c);
+                }
+            }
+        }
+
         private static string EscapeJson(string str)
         {
             if (str == null) return "";
-            return str.Replace("\\", "\\\\").Replace("\"", "\\\"");
+            return str.Replace("\\", "\\\\").Replace("\"", "\\\"").Replace("\n", "\\n").Replace("\r", "\\r").Replace("\t", "\\t");
         }
     }
 }

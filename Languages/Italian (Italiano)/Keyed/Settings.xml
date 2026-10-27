@@ -110,4 +110,5 @@
   <NHT_YAPEM_ProfileExport>Esporta</NHT_YAPEM_ProfileExport>
   <NHT_YAPEM_ProfileImport>Importa</NHT_YAPEM_ProfileImport>
   <NHT_YAPEM_ProfileMenuTip>Azioni profilo</NHT_YAPEM_ProfileMenuTip>
+  <NHT_YAPEM_SlotNamePrompt>Inserisci un nome per questo colore:</NHT_YAPEM_SlotNamePrompt>
 </LanguageData>

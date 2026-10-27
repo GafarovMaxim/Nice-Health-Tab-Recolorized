@@ -109,7 +109,8 @@
     "NHT_YAPEM_ProfileNew": "New",
     "NHT_YAPEM_ProfileExport": "Export",
     "NHT_YAPEM_ProfileImport": "Import",
-    "NHT_YAPEM_ProfileMenuTip": "Profile actions"
+    "NHT_YAPEM_ProfileMenuTip": "Profile actions",
+    "NHT_YAPEM_SlotNamePrompt": "Enter a name for this color:"
   },
   "Russian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -221,7 +222,8 @@
     "NHT_YAPEM_ProfileNew": "Новый",
     "NHT_YAPEM_ProfileExport": "Экспорт",
     "NHT_YAPEM_ProfileImport": "Импорт",
-    "NHT_YAPEM_ProfileMenuTip": "Действия с профилем"
+    "NHT_YAPEM_ProfileMenuTip": "Действия с профилем",
+    "NHT_YAPEM_SlotNamePrompt": "Введите название для этого цвета:"
   },
   "French": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -333,7 +335,8 @@
     "NHT_YAPEM_ProfileNew": "Nouveau",
     "NHT_YAPEM_ProfileExport": "Exporter",
     "NHT_YAPEM_ProfileImport": "Importer",
-    "NHT_YAPEM_ProfileMenuTip": "Actions du profil"
+    "NHT_YAPEM_ProfileMenuTip": "Actions du profil",
+    "NHT_YAPEM_SlotNamePrompt": "Entrez un nom pour cette couleur :"
   },
   "German": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -445,7 +448,8 @@
     "NHT_YAPEM_ProfileNew": "Neu",
     "NHT_YAPEM_ProfileExport": "Exportieren",
     "NHT_YAPEM_ProfileImport": "Importieren",
-    "NHT_YAPEM_ProfileMenuTip": "Profilaktionen"
+    "NHT_YAPEM_ProfileMenuTip": "Profilaktionen",
+    "NHT_YAPEM_SlotNamePrompt": "Namen für diese Farbe eingeben:"
   },
   "Italian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -557,7 +561,8 @@
     "NHT_YAPEM_ProfileNew": "Nuovo",
     "NHT_YAPEM_ProfileExport": "Esporta",
     "NHT_YAPEM_ProfileImport": "Importa",
-    "NHT_YAPEM_ProfileMenuTip": "Azioni profilo"
+    "NHT_YAPEM_ProfileMenuTip": "Azioni profilo",
+    "NHT_YAPEM_SlotNamePrompt": "Inserisci un nome per questo colore:"
   },
   "Spanish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -669,7 +674,8 @@
     "NHT_YAPEM_ProfileNew": "Nuevo",
     "NHT_YAPEM_ProfileExport": "Exportar",
     "NHT_YAPEM_ProfileImport": "Importar",
-    "NHT_YAPEM_ProfileMenuTip": "Acciones de perfil"
+    "NHT_YAPEM_ProfileMenuTip": "Acciones de perfil",
+    "NHT_YAPEM_SlotNamePrompt": "Introduce un nombre para este color:"
   },
   "SpanishLatin": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -781,7 +787,8 @@
     "NHT_YAPEM_ProfileNew": "Nuevo",
     "NHT_YAPEM_ProfileExport": "Exportar",
     "NHT_YAPEM_ProfileImport": "Importar",
-    "NHT_YAPEM_ProfileMenuTip": "Acciones del perfil"
+    "NHT_YAPEM_ProfileMenuTip": "Acciones del perfil",
+    "NHT_YAPEM_SlotNamePrompt": "Ingresa un nombre para este color:"
   },
   "PortugueseBrazilian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -893,7 +900,8 @@
     "NHT_YAPEM_ProfileNew": "Novo",
     "NHT_YAPEM_ProfileExport": "Exportar",
     "NHT_YAPEM_ProfileImport": "Importar",
-    "NHT_YAPEM_ProfileMenuTip": "Ações do perfil"
+    "NHT_YAPEM_ProfileMenuTip": "Ações do perfil",
+    "NHT_YAPEM_SlotNamePrompt": "Digite um nome para esta cor:"
   },
   "Japanese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1005,7 +1013,8 @@
     "NHT_YAPEM_ProfileNew": "新規",
     "NHT_YAPEM_ProfileExport": "エクスポート",
     "NHT_YAPEM_ProfileImport": "インポート",
-    "NHT_YAPEM_ProfileMenuTip": "プロファイル操作"
+    "NHT_YAPEM_ProfileMenuTip": "プロファイル操作",
+    "NHT_YAPEM_SlotNamePrompt": "この色の名前を入力:"
   },
   "Korean": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1117,7 +1126,8 @@
     "NHT_YAPEM_ProfileNew": "새로 만들기",
     "NHT_YAPEM_ProfileExport": "내보내기",
     "NHT_YAPEM_ProfileImport": "가져오기",
-    "NHT_YAPEM_ProfileMenuTip": "프로필 작업"
+    "NHT_YAPEM_ProfileMenuTip": "프로필 작업",
+    "NHT_YAPEM_SlotNamePrompt": "이 색상의 이름을 입력하세요:"
   },
   "ChineseSimplified": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1229,7 +1239,8 @@
     "NHT_YAPEM_ProfileNew": "新建",
     "NHT_YAPEM_ProfileExport": "导出",
     "NHT_YAPEM_ProfileImport": "导入",
-    "NHT_YAPEM_ProfileMenuTip": "配置操作"
+    "NHT_YAPEM_ProfileMenuTip": "配置操作",
+    "NHT_YAPEM_SlotNamePrompt": "输入此颜色的名称："
   },
   "ChineseTraditional": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1341,7 +1352,8 @@
     "NHT_YAPEM_ProfileNew": "新增",
     "NHT_YAPEM_ProfileExport": "匯出",
     "NHT_YAPEM_ProfileImport": "匯入",
-    "NHT_YAPEM_ProfileMenuTip": "設定檔操作"
+    "NHT_YAPEM_ProfileMenuTip": "設定檔操作",
+    "NHT_YAPEM_SlotNamePrompt": "輸入此顏色的名稱："
   },
   "Turkish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1453,7 +1465,8 @@
     "NHT_YAPEM_ProfileNew": "Yeni",
     "NHT_YAPEM_ProfileExport": "Dışa aktar",
     "NHT_YAPEM_ProfileImport": "İçe aktar",
-    "NHT_YAPEM_ProfileMenuTip": "Profil işlemleri"
+    "NHT_YAPEM_ProfileMenuTip": "Profil işlemleri",
+    "NHT_YAPEM_SlotNamePrompt": "Bu renk için bir ad girin:"
   },
   "Ukrainian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1565,7 +1578,8 @@
     "NHT_YAPEM_ProfileNew": "Новий",
     "NHT_YAPEM_ProfileExport": "Експорт",
     "NHT_YAPEM_ProfileImport": "Імпорт",
-    "NHT_YAPEM_ProfileMenuTip": "Дії з профілем"
+    "NHT_YAPEM_ProfileMenuTip": "Дії з профілем",
+    "NHT_YAPEM_SlotNamePrompt": "Введіть назву для цього кольору:"
   },
   "Vietnamese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1677,7 +1691,8 @@
     "NHT_YAPEM_ProfileNew": "Mới",
     "NHT_YAPEM_ProfileExport": "Xuất",
     "NHT_YAPEM_ProfileImport": "Nhập",
-    "NHT_YAPEM_ProfileMenuTip": "Thao tác hồ sơ"
+    "NHT_YAPEM_ProfileMenuTip": "Thao tác hồ sơ",
+    "NHT_YAPEM_SlotNamePrompt": "Nhập tên cho màu này:"
   },
   "Polish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1789,7 +1804,8 @@
     "NHT_YAPEM_ProfileNew": "Nowy",
     "NHT_YAPEM_ProfileExport": "Eksportuj",
     "NHT_YAPEM_ProfileImport": "Importuj",
-    "NHT_YAPEM_ProfileMenuTip": "Działania profilu"
+    "NHT_YAPEM_ProfileMenuTip": "Działania profilu",
+    "NHT_YAPEM_SlotNamePrompt": "Wpisz nazwę tego koloru:"
   },
   "Czech": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1901,7 +1917,8 @@
     "NHT_YAPEM_ProfileNew": "Nový",
     "NHT_YAPEM_ProfileExport": "Exportovat",
     "NHT_YAPEM_ProfileImport": "Importovat",
-    "NHT_YAPEM_ProfileMenuTip": "Akce profilu"
+    "NHT_YAPEM_ProfileMenuTip": "Akce profilu",
+    "NHT_YAPEM_SlotNamePrompt": "Zadejte název této barvy:"
   },
   "Hungarian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -2013,6 +2030,7 @@
     "NHT_YAPEM_ProfileNew": "Új",
     "NHT_YAPEM_ProfileExport": "Exportálás",
     "NHT_YAPEM_ProfileImport": "Importálás",
-    "NHT_YAPEM_ProfileMenuTip": "Profilműveletek"
+    "NHT_YAPEM_ProfileMenuTip": "Profilműveletek",
+    "NHT_YAPEM_SlotNamePrompt": "Adja meg a szín nevét:"
   }
 }

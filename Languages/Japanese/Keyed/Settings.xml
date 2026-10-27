@@ -110,4 +110,5 @@
   <NHT_YAPEM_ProfileExport>エクスポート</NHT_YAPEM_ProfileExport>
   <NHT_YAPEM_ProfileImport>インポート</NHT_YAPEM_ProfileImport>
   <NHT_YAPEM_ProfileMenuTip>プロファイル操作</NHT_YAPEM_ProfileMenuTip>
+  <NHT_YAPEM_SlotNamePrompt>この色の名前を入力:</NHT_YAPEM_SlotNamePrompt>
 </LanguageData>

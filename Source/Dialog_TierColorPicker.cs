@@ -111,6 +111,27 @@ namespace NiceHealthTab_YAPEM_Patch
             {
                 YAPEMPatchMod.Settings.CustomPresets.Add(Color.clear);
             }
+            var names = YAPEMPatchMod.Settings.CustomPresetNames ?? (YAPEMPatchMod.Settings.CustomPresetNames = new List<string>());
+            while (names.Count < CustomSlotCount)
+            {
+                names.Add("");
+            }
+        }
+
+        // The slot's own name when it has one, otherwise "Slot N"
+        private static string SlotLabel(int index, int number)
+        {
+            var names = YAPEMPatchMod.Settings?.CustomPresetNames;
+            string name = names != null && index < names.Count ? names[index] : null;
+            return string.IsNullOrEmpty(name) ? string.Format("NHT_YAPEM_SlotTitle".Translate().RawText, number) : name;
+        }
+
+        private static void SetSlotName(int index, string name)
+        {
+            var names = YAPEMPatchMod.Settings?.CustomPresetNames;
+            if (names == null || index < 0 || index >= names.Count) return;
+            names[index] = name ?? "";
+            YAPEMPatchMod.Settings.Write();
         }
 
         private void GenerateWheelTexture()
@@ -385,7 +406,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 {
                     Color c = customPresets[slotIndex];
                     DrawChip(chipRect, c, IsColorClose(currentColor, c));
-                    TooltipHandler.TipRegion(chipRect, string.Format("NHT_YAPEM_SlotTitle".Translate().RawText, slotNumber) + $" (#{ColorUtility.ToHtmlStringRGB(c)})\n" + "NHT_YAPEM_CustomSlotTip".Translate().RawText);
+                    TooltipHandler.TipRegion(chipRect, SlotLabel(slotIndex, slotNumber) + $" (#{ColorUtility.ToHtmlStringRGB(c)})\n" + "NHT_YAPEM_CustomSlotTip".Translate().RawText);
 
                     if (Widgets.ButtonInvisible(chipRect, true))
                     {
@@ -476,7 +497,7 @@ namespace NiceHealthTab_YAPEM_Patch
             List<FloatMenuOption> options = new List<FloatMenuOption>();
             string slotHex = ColorUtility.ToHtmlStringRGB(slotColor);
             string curHex = ColorUtility.ToHtmlStringRGB(currentColor);
-            string prefix = string.Format("NHT_YAPEM_SlotTitle".Translate().RawText, slotNumber) + ": ";
+            string prefix = SlotLabel(index, slotNumber) + ": ";
 
             // 1. Select / Apply this slot color
             options.Add(new FloatMenuOption(prefix + string.Format("NHT_YAPEM_ApplySlot".Translate().RawText, slotHex), () =>
@@ -495,9 +516,18 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }));
 
-            // 3. Clear this slot
+            // 3. Rename (an empty name is not accepted by the input dialog; Clear removes the name)
+            options.Add(new FloatMenuOption(prefix + "NHT_YAPEM_ProfileRename".Translate().RawText, () =>
+            {
+                var names = YAPEMPatchMod.Settings?.CustomPresetNames;
+                string current = names != null && index < names.Count ? names[index] : "";
+                Find.WindowStack.Add(new Dialog_InputText("NHT_YAPEM_SlotNamePrompt".Translate(), current, n => SetSlotName(index, n.Length > 40 ? n.Substring(0, 40) : n)));
+            }));
+
+            // 4. Clear this slot
             options.Add(new FloatMenuOption(prefix + "NHT_YAPEM_ClearSlot".Translate().RawText, () =>
             {
+                SetSlotName(index, "");
                 var custom = YAPEMPatchMod.Settings?.CustomPresets;
                 if (custom != null && index >= 0 && index < custom.Count)
                 {
@@ -506,9 +536,14 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }));
 
-            // 4. Clear all custom presets
+            // 5. Clear all custom presets
             options.Add(new FloatMenuOption("NHT_YAPEM_ClearAllSlots".Translate().RawText, () =>
             {
+                var allNames = YAPEMPatchMod.Settings?.CustomPresetNames;
+                if (allNames != null)
+                {
+                    for (int s = 0; s < allNames.Count; s++) allNames[s] = "";
+                }
                 var custom = YAPEMPatchMod.Settings?.CustomPresets;
                 if (custom != null)
                 {
