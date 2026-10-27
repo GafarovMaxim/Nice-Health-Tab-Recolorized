@@ -136,7 +136,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 Hediff h = list[i];
                 if (h.def.countsAsAddedPartOrImplant || h.def.addedPartProps != null)
                 {
-                    return "\n" + string.Format("NHT_YAPEM_PreviewModLine".Translate().RawText, h.def.modContentPack?.Name ?? "?");
+                    return "\n" + h.LabelCap + "\n" + string.Format("NHT_YAPEM_PreviewModLine".Translate().RawText, h.def.modContentPack?.Name ?? "?");
                 }
             }
             return string.Empty;
