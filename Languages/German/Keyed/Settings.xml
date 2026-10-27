@@ -117,4 +117,7 @@
   <NHT_YAPEM_PreviewBody>Körper anzeigen</NHT_YAPEM_PreviewBody>
   <NHT_YAPEM_PreviewModLine>Mod: {0}</NHT_YAPEM_PreviewModLine>
   <NHT_YAPEM_OpenSettings>Recolorized-Einstellungen öffnen</NHT_YAPEM_OpenSettings>
+  <NHT_YAPEM_UseDamageColor>Eigene Farbe für verletzte Teile</NHT_YAPEM_UseDamageColor>
+  <NHT_YAPEM_UseDamageColor_Desc>Verletzte Teile (Organe, Gliedmaßen, Implantate) nutzen eine Farbe; je stärker der Schaden, desto gesättigter. Aus = Farben von Nice Health Tab.</NHT_YAPEM_UseDamageColor_Desc>
+  <NHT_YAPEM_DamageColor>Schadensfarbe</NHT_YAPEM_DamageColor>
 </LanguageData>

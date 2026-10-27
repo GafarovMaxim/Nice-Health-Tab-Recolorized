@@ -117,4 +117,7 @@
   <NHT_YAPEM_PreviewBody>顯示身體</NHT_YAPEM_PreviewBody>
   <NHT_YAPEM_PreviewModLine>Mod：{0}</NHT_YAPEM_PreviewModLine>
   <NHT_YAPEM_OpenSettings>開啟 Recolorized 設定</NHT_YAPEM_OpenSettings>
+  <NHT_YAPEM_UseDamageColor>受損部位使用自訂顏色</NHT_YAPEM_UseDamageColor>
+  <NHT_YAPEM_UseDamageColor_Desc>受損部位(器官、肢體、植入物)使用同一種顏色,損傷越重飽和度越高。關閉 = 使用 Nice Health Tab 的顏色。</NHT_YAPEM_UseDamageColor_Desc>
+  <NHT_YAPEM_DamageColor>損傷顏色</NHT_YAPEM_DamageColor>
 </LanguageData>

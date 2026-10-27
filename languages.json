@@ -116,7 +116,10 @@
     "NHT_YAPEM_PreviewOrgans": "Show organs",
     "NHT_YAPEM_PreviewBody": "Show body",
     "NHT_YAPEM_PreviewModLine": "Mod: {0}",
-    "NHT_YAPEM_OpenSettings": "Open Recolorized settings"
+    "NHT_YAPEM_OpenSettings": "Open Recolorized settings",
+    "NHT_YAPEM_UseDamageColor": "Custom color for damaged parts",
+    "NHT_YAPEM_UseDamageColor_Desc": "Wounded parts (organs, limbs, implants) use one color; the more damaged, the more saturated. Off = Nice Health Tab colors.",
+    "NHT_YAPEM_DamageColor": "Damage color"
   },
   "Russian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -235,7 +238,10 @@
     "NHT_YAPEM_PreviewOrgans": "Показать органы",
     "NHT_YAPEM_PreviewBody": "Показать тело",
     "NHT_YAPEM_PreviewModLine": "Мод: {0}",
-    "NHT_YAPEM_OpenSettings": "Открыть настройки Recolorized"
+    "NHT_YAPEM_OpenSettings": "Открыть настройки Recolorized",
+    "NHT_YAPEM_UseDamageColor": "Свой цвет повреждённых частей",
+    "NHT_YAPEM_UseDamageColor_Desc": "Повреждённые части (органы, конечности, импланты) рисуются одним цветом: чем сильнее повреждение, тем насыщеннее. Выкл. = цвета Nice Health Tab.",
+    "NHT_YAPEM_DamageColor": "Цвет повреждений"
   },
   "French": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -354,7 +360,10 @@
     "NHT_YAPEM_PreviewOrgans": "Afficher les organes",
     "NHT_YAPEM_PreviewBody": "Afficher le corps",
     "NHT_YAPEM_PreviewModLine": "Mod : {0}",
-    "NHT_YAPEM_OpenSettings": "Ouvrir les paramètres de Recolorized"
+    "NHT_YAPEM_OpenSettings": "Ouvrir les paramètres de Recolorized",
+    "NHT_YAPEM_UseDamageColor": "Couleur personnalisée des parties blessées",
+    "NHT_YAPEM_UseDamageColor_Desc": "Les parties blessées (organes, membres, implants) utilisent une seule couleur ; plus elles sont abîmées, plus elle est saturée. Désactivé = couleurs de Nice Health Tab.",
+    "NHT_YAPEM_DamageColor": "Couleur des dégâts"
   },
   "German": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -473,7 +482,10 @@
     "NHT_YAPEM_PreviewOrgans": "Organe anzeigen",
     "NHT_YAPEM_PreviewBody": "Körper anzeigen",
     "NHT_YAPEM_PreviewModLine": "Mod: {0}",
-    "NHT_YAPEM_OpenSettings": "Recolorized-Einstellungen öffnen"
+    "NHT_YAPEM_OpenSettings": "Recolorized-Einstellungen öffnen",
+    "NHT_YAPEM_UseDamageColor": "Eigene Farbe für verletzte Teile",
+    "NHT_YAPEM_UseDamageColor_Desc": "Verletzte Teile (Organe, Gliedmaßen, Implantate) nutzen eine Farbe; je stärker der Schaden, desto gesättigter. Aus = Farben von Nice Health Tab.",
+    "NHT_YAPEM_DamageColor": "Schadensfarbe"
   },
   "Italian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -592,7 +604,10 @@
     "NHT_YAPEM_PreviewOrgans": "Mostra organi",
     "NHT_YAPEM_PreviewBody": "Mostra corpo",
     "NHT_YAPEM_PreviewModLine": "Mod: {0}",
-    "NHT_YAPEM_OpenSettings": "Apri le impostazioni di Recolorized"
+    "NHT_YAPEM_OpenSettings": "Apri le impostazioni di Recolorized",
+    "NHT_YAPEM_UseDamageColor": "Colore personalizzato per le parti danneggiate",
+    "NHT_YAPEM_UseDamageColor_Desc": "Le parti ferite (organi, arti, impianti) usano un solo colore; più sono danneggiate, più è saturo. Disattivato = colori di Nice Health Tab.",
+    "NHT_YAPEM_DamageColor": "Colore del danno"
   },
   "Spanish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -711,7 +726,10 @@
     "NHT_YAPEM_PreviewOrgans": "Mostrar órganos",
     "NHT_YAPEM_PreviewBody": "Mostrar cuerpo",
     "NHT_YAPEM_PreviewModLine": "Mod: {0}",
-    "NHT_YAPEM_OpenSettings": "Abrir ajustes de Recolorized"
+    "NHT_YAPEM_OpenSettings": "Abrir ajustes de Recolorized",
+    "NHT_YAPEM_UseDamageColor": "Color propio para partes dañadas",
+    "NHT_YAPEM_UseDamageColor_Desc": "Las partes heridas (órganos, miembros, implantes) usan un solo color; cuanto más daño, más saturado. Desactivado = colores de Nice Health Tab.",
+    "NHT_YAPEM_DamageColor": "Color del daño"
   },
   "SpanishLatin": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -830,7 +848,10 @@
     "NHT_YAPEM_PreviewOrgans": "Mostrar órganos",
     "NHT_YAPEM_PreviewBody": "Mostrar cuerpo",
     "NHT_YAPEM_PreviewModLine": "Mod: {0}",
-    "NHT_YAPEM_OpenSettings": "Abrir ajustes de Recolorized"
+    "NHT_YAPEM_OpenSettings": "Abrir ajustes de Recolorized",
+    "NHT_YAPEM_UseDamageColor": "Color propio para partes dañadas",
+    "NHT_YAPEM_UseDamageColor_Desc": "Las partes heridas (órganos, miembros, implantes) usan un solo color; cuanto más daño, más saturado. Desactivado = colores de Nice Health Tab.",
+    "NHT_YAPEM_DamageColor": "Color del daño"
   },
   "PortugueseBrazilian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -949,7 +970,10 @@
     "NHT_YAPEM_PreviewOrgans": "Mostrar órgãos",
     "NHT_YAPEM_PreviewBody": "Mostrar corpo",
     "NHT_YAPEM_PreviewModLine": "Mod: {0}",
-    "NHT_YAPEM_OpenSettings": "Abrir configurações do Recolorized"
+    "NHT_YAPEM_OpenSettings": "Abrir configurações do Recolorized",
+    "NHT_YAPEM_UseDamageColor": "Cor própria para partes danificadas",
+    "NHT_YAPEM_UseDamageColor_Desc": "Partes feridas (órgãos, membros, implantes) usam uma só cor; quanto maior o dano, mais saturada. Desligado = cores do Nice Health Tab.",
+    "NHT_YAPEM_DamageColor": "Cor do dano"
   },
   "Japanese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1068,7 +1092,10 @@
     "NHT_YAPEM_PreviewOrgans": "臓器を表示",
     "NHT_YAPEM_PreviewBody": "身体を表示",
     "NHT_YAPEM_PreviewModLine": "Mod: {0}",
-    "NHT_YAPEM_OpenSettings": "Recolorized の設定を開く"
+    "NHT_YAPEM_OpenSettings": "Recolorized の設定を開く",
+    "NHT_YAPEM_UseDamageColor": "損傷部位に専用の色を使う",
+    "NHT_YAPEM_UseDamageColor_Desc": "損傷した部位(臓器・四肢・インプラント)を1色で表示し、損傷が重いほど彩度が高くなります。オフ = Nice Health Tab の色。",
+    "NHT_YAPEM_DamageColor": "損傷の色"
   },
   "Korean": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1187,7 +1214,10 @@
     "NHT_YAPEM_PreviewOrgans": "장기 보기",
     "NHT_YAPEM_PreviewBody": "신체 보기",
     "NHT_YAPEM_PreviewModLine": "모드: {0}",
-    "NHT_YAPEM_OpenSettings": "Recolorized 설정 열기"
+    "NHT_YAPEM_OpenSettings": "Recolorized 설정 열기",
+    "NHT_YAPEM_UseDamageColor": "손상 부위 전용 색상 사용",
+    "NHT_YAPEM_UseDamageColor_Desc": "손상된 부위(장기, 사지, 임플란트)를 한 가지 색으로 표시하며, 손상이 클수록 채도가 높아집니다. 끄면 Nice Health Tab 색상을 사용합니다.",
+    "NHT_YAPEM_DamageColor": "손상 색상"
   },
   "ChineseSimplified": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1306,7 +1336,10 @@
     "NHT_YAPEM_PreviewOrgans": "显示器官",
     "NHT_YAPEM_PreviewBody": "显示身体",
     "NHT_YAPEM_PreviewModLine": "Mod：{0}",
-    "NHT_YAPEM_OpenSettings": "打开 Recolorized 设置"
+    "NHT_YAPEM_OpenSettings": "打开 Recolorized 设置",
+    "NHT_YAPEM_UseDamageColor": "受损部位使用自定义颜色",
+    "NHT_YAPEM_UseDamageColor_Desc": "受损部位(器官、肢体、植入物)使用同一种颜色,损伤越重饱和度越高。关闭 = 使用 Nice Health Tab 的颜色。",
+    "NHT_YAPEM_DamageColor": "损伤颜色"
   },
   "ChineseTraditional": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1425,7 +1458,10 @@
     "NHT_YAPEM_PreviewOrgans": "顯示器官",
     "NHT_YAPEM_PreviewBody": "顯示身體",
     "NHT_YAPEM_PreviewModLine": "Mod：{0}",
-    "NHT_YAPEM_OpenSettings": "開啟 Recolorized 設定"
+    "NHT_YAPEM_OpenSettings": "開啟 Recolorized 設定",
+    "NHT_YAPEM_UseDamageColor": "受損部位使用自訂顏色",
+    "NHT_YAPEM_UseDamageColor_Desc": "受損部位(器官、肢體、植入物)使用同一種顏色,損傷越重飽和度越高。關閉 = 使用 Nice Health Tab 的顏色。",
+    "NHT_YAPEM_DamageColor": "損傷顏色"
   },
   "Turkish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1544,7 +1580,10 @@
     "NHT_YAPEM_PreviewOrgans": "Organları göster",
     "NHT_YAPEM_PreviewBody": "Vücudu göster",
     "NHT_YAPEM_PreviewModLine": "Mod: {0}",
-    "NHT_YAPEM_OpenSettings": "Recolorized ayarlarını aç"
+    "NHT_YAPEM_OpenSettings": "Recolorized ayarlarını aç",
+    "NHT_YAPEM_UseDamageColor": "Hasarlı parçalar için özel renk",
+    "NHT_YAPEM_UseDamageColor_Desc": "Yaralı parçalar (organlar, uzuvlar, implantlar) tek renk kullanır; hasar arttıkça renk doygunlaşır. Kapalı = Nice Health Tab renkleri.",
+    "NHT_YAPEM_DamageColor": "Hasar rengi"
   },
   "Ukrainian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1663,7 +1702,10 @@
     "NHT_YAPEM_PreviewOrgans": "Показати органи",
     "NHT_YAPEM_PreviewBody": "Показати тіло",
     "NHT_YAPEM_PreviewModLine": "Мод: {0}",
-    "NHT_YAPEM_OpenSettings": "Відкрити налаштування Recolorized"
+    "NHT_YAPEM_OpenSettings": "Відкрити налаштування Recolorized",
+    "NHT_YAPEM_UseDamageColor": "Власний колір пошкоджених частин",
+    "NHT_YAPEM_UseDamageColor_Desc": "Пошкоджені частини (органи, кінцівки, імпланти) малюються одним кольором: чим сильніше пошкодження, тим насиченіше. Вимк. = кольори Nice Health Tab.",
+    "NHT_YAPEM_DamageColor": "Колір пошкоджень"
   },
   "Vietnamese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1782,7 +1824,10 @@
     "NHT_YAPEM_PreviewOrgans": "Hiện nội tạng",
     "NHT_YAPEM_PreviewBody": "Hiện cơ thể",
     "NHT_YAPEM_PreviewModLine": "Mod: {0}",
-    "NHT_YAPEM_OpenSettings": "Mở cài đặt Recolorized"
+    "NHT_YAPEM_OpenSettings": "Mở cài đặt Recolorized",
+    "NHT_YAPEM_UseDamageColor": "Màu riêng cho bộ phận bị thương",
+    "NHT_YAPEM_UseDamageColor_Desc": "Các bộ phận bị thương (nội tạng, chi, cấy ghép) dùng một màu; càng tổn thương nặng càng đậm. Tắt = màu của Nice Health Tab.",
+    "NHT_YAPEM_DamageColor": "Màu tổn thương"
   },
   "Polish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1901,7 +1946,10 @@
     "NHT_YAPEM_PreviewOrgans": "Pokaż narządy",
     "NHT_YAPEM_PreviewBody": "Pokaż ciało",
     "NHT_YAPEM_PreviewModLine": "Mod: {0}",
-    "NHT_YAPEM_OpenSettings": "Otwórz ustawienia Recolorized"
+    "NHT_YAPEM_OpenSettings": "Otwórz ustawienia Recolorized",
+    "NHT_YAPEM_UseDamageColor": "Własny kolor uszkodzonych części",
+    "NHT_YAPEM_UseDamageColor_Desc": "Uszkodzone części (narządy, kończyny, implanty) mają jeden kolor; im większe uszkodzenie, tym bardziej nasycony. Wyłączone = kolory Nice Health Tab.",
+    "NHT_YAPEM_DamageColor": "Kolor uszkodzeń"
   },
   "Czech": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -2020,7 +2068,10 @@
     "NHT_YAPEM_PreviewOrgans": "Zobrazit orgány",
     "NHT_YAPEM_PreviewBody": "Zobrazit tělo",
     "NHT_YAPEM_PreviewModLine": "Mod: {0}",
-    "NHT_YAPEM_OpenSettings": "Otevřít nastavení Recolorized"
+    "NHT_YAPEM_OpenSettings": "Otevřít nastavení Recolorized",
+    "NHT_YAPEM_UseDamageColor": "Vlastní barva poškozených částí",
+    "NHT_YAPEM_UseDamageColor_Desc": "Poškozené části (orgány, končetiny, implantáty) mají jednu barvu; čím větší poškození, tím sytější. Vypnuto = barvy Nice Health Tab.",
+    "NHT_YAPEM_DamageColor": "Barva poškození"
   },
   "Hungarian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -2139,6 +2190,9 @@
     "NHT_YAPEM_PreviewOrgans": "Szervek mutatása",
     "NHT_YAPEM_PreviewBody": "Test mutatása",
     "NHT_YAPEM_PreviewModLine": "Mod: {0}",
-    "NHT_YAPEM_OpenSettings": "Recolorized beállítások megnyitása"
+    "NHT_YAPEM_OpenSettings": "Recolorized beállítások megnyitása",
+    "NHT_YAPEM_UseDamageColor": "Egyéni szín a sérült részeknek",
+    "NHT_YAPEM_UseDamageColor_Desc": "A sérült részek (szervek, végtagok, implantátumok) egy színt kapnak; minél súlyosabb a sérülés, annál telítettebb. Ki = Nice Health Tab színei.",
+    "NHT_YAPEM_DamageColor": "Sérülés színe"
   }
 }

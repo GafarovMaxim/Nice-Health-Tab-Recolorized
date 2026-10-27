@@ -51,6 +51,11 @@ namespace NiceHealthTab_YAPEM_Patch
         public Color ColorOdyssey            = DefaultColorOdyssey;
         public Color ColorIntegratedImplants = DefaultColorIntegratedImplants;
 
+        // Not part of palette profiles: one color for wounded parts, its saturation follows the damage.
+        public static readonly Color DefaultColorDamage = new Color(0.85f, 0.1f, 0.1f, 1f);
+        public bool UseDamageColor = false;
+        public Color ColorDamage = DefaultColorDamage;
+
         // User Custom Palette Presets (persisted across sessions, 8 fixed slots)
         public List<Color> CustomPresets = new List<Color>();
         public List<string> CustomPresetNames = new List<string>(); // "" = unnamed, same indexes as CustomPresets
@@ -104,6 +109,8 @@ namespace NiceHealthTab_YAPEM_Patch
             Scribe_Values.Look(ref ColorAnomaly, "ColorAnomaly", DefaultColorAnomaly);
             Scribe_Values.Look(ref ColorOdyssey, "ColorOdyssey", DefaultColorOdyssey);
             Scribe_Values.Look(ref ColorIntegratedImplants, "ColorIntegratedImplants", DefaultColorIntegratedImplants);
+            Scribe_Values.Look(ref UseDamageColor, "UseDamageColor", false);
+            Scribe_Values.Look(ref ColorDamage, "ColorDamage", DefaultColorDamage);
 
             Scribe_Collections.Look(ref CustomPresets, "CustomPresets", LookMode.Value);
             if (CustomPresets == null)
@@ -509,6 +516,8 @@ namespace NiceHealthTab_YAPEM_Patch
             ColorBottomIcons = true;
             OnlyShowOrgansInOrganMode = false;
             UseDLCColors = true;
+            UseDamageColor = false;
+            ColorDamage = DefaultColorDamage;
             ResetColorsToDefault();
             CustomHediffTiers?.Clear();
             ModColors?.Clear();
@@ -728,6 +737,16 @@ namespace NiceHealthTab_YAPEM_Patch
                 ref OnlyShowOrgansInOrganMode,
                 "NHT_YAPEM_OnlyShowOrgansInOrganMode_Desc".Translate()
             );
+
+            listing.CheckboxLabeled(
+                "NHT_YAPEM_UseDamageColor".Translate(),
+                ref UseDamageColor,
+                "NHT_YAPEM_UseDamageColor_Desc".Translate()
+            );
+            if (UseDamageColor)
+            {
+                DrawColorEntry(listing, "NHT_YAPEM_DamageColor".Translate(), ref ColorDamage, DefaultColorDamage, c => ColorDamage = c);
+            }
 
             listing.Gap(6f);
             listing.GapLine();

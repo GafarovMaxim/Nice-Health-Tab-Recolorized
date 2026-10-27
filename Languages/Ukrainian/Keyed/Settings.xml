@@ -117,4 +117,7 @@
   <NHT_YAPEM_PreviewBody>Показати тіло</NHT_YAPEM_PreviewBody>
   <NHT_YAPEM_PreviewModLine>Мод: {0}</NHT_YAPEM_PreviewModLine>
   <NHT_YAPEM_OpenSettings>Відкрити налаштування Recolorized</NHT_YAPEM_OpenSettings>
+  <NHT_YAPEM_UseDamageColor>Власний колір пошкоджених частин</NHT_YAPEM_UseDamageColor>
+  <NHT_YAPEM_UseDamageColor_Desc>Пошкоджені частини (органи, кінцівки, імпланти) малюються одним кольором: чим сильніше пошкодження, тим насиченіше. Вимк. = кольори Nice Health Tab.</NHT_YAPEM_UseDamageColor_Desc>
+  <NHT_YAPEM_DamageColor>Колір пошкоджень</NHT_YAPEM_DamageColor>
 </LanguageData>
