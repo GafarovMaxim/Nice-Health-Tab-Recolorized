@@ -93,4 +93,21 @@
   <NHT_YAPEM_ResetTierColors>Скинути кольори рівнів</NHT_YAPEM_ResetTierColors>
   <NHT_YAPEM_ResetDlcColors>Скинути кольори DLC</NHT_YAPEM_ResetDlcColors>
   <NHT_YAPEM_ResetModColors>Скинути кольори всіх модів</NHT_YAPEM_ResetModColors>
+  <NHT_YAPEM_ProfileSave>Зберегти</NHT_YAPEM_ProfileSave>
+  <NHT_YAPEM_ProfileSaveAsCopy>Зберегти як копію</NHT_YAPEM_ProfileSaveAsCopy>
+  <NHT_YAPEM_ProfileDuplicate>Дублювати</NHT_YAPEM_ProfileDuplicate>
+  <NHT_YAPEM_ProfileRename>Перейменувати</NHT_YAPEM_ProfileRename>
+  <NHT_YAPEM_ProfileRevert>Повернути до збереженого</NHT_YAPEM_ProfileRevert>
+  <NHT_YAPEM_ProfileModified>Змінено: кольори відрізняються від збереженого профілю</NHT_YAPEM_ProfileModified>
+  <NHT_YAPEM_ProfileBuiltIn>вбудований</NHT_YAPEM_ProfileBuiltIn>
+  <NHT_YAPEM_ProfileDiscardConfirm>Скасувати незбережені зміни в "{0}"?</NHT_YAPEM_ProfileDiscardConfirm>
+  <NHT_YAPEM_ProfileExistsConfirm>Профіль "{0}" уже існує. Замінити його чи зберегти імпортований як копію?</NHT_YAPEM_ProfileExistsConfirm>
+  <NHT_YAPEM_ProfileReplace>Замінити</NHT_YAPEM_ProfileReplace>
+  <NHT_YAPEM_ProfileSaved>Профіль "{0}" збережено.</NHT_YAPEM_ProfileSaved>
+  <NHT_YAPEM_ProfileCopyName>{0} (копія)</NHT_YAPEM_ProfileCopyName>
+  <NHT_YAPEM_ProfileDelete>Видалити</NHT_YAPEM_ProfileDelete>
+  <NHT_YAPEM_ProfileNew>Новий</NHT_YAPEM_ProfileNew>
+  <NHT_YAPEM_ProfileExport>Експорт</NHT_YAPEM_ProfileExport>
+  <NHT_YAPEM_ProfileImport>Імпорт</NHT_YAPEM_ProfileImport>
+  <NHT_YAPEM_ProfileMenuTip>Дії з профілем</NHT_YAPEM_ProfileMenuTip>
 </LanguageData>

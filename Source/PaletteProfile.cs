@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
@@ -87,6 +88,21 @@ namespace NiceHealthTab_YAPEM_Patch
 
             Scribe_Collections.Look(ref CustomPresets, "CustomPresets", LookMode.Value);
             EnsureSlotCount();
+        }
+
+        private IEnumerable<Color> AllColors()
+        {
+            yield return ColorAdvancedBionic; yield return ColorUltratech; yield return ColorArchotech;
+            yield return ColorBionic; yield return ColorProsthetic;
+            yield return ColorRoyalty; yield return ColorBiotech; yield return ColorAnomaly;
+            yield return ColorOdyssey; yield return ColorIntegratedImplants;
+            foreach (var c in CustomPresets) yield return c;
+        }
+
+        // Compared as 8-bit hex: saved floats lose precision, so exact float equality would flag false changes.
+        public bool SameAs(PaletteProfile other)
+        {
+            return other != null && AllColors().Select(ColorUtility.ToHtmlStringRGBA).SequenceEqual(other.AllColors().Select(ColorUtility.ToHtmlStringRGBA));
         }
 
         public PaletteProfile Clone(string newName)

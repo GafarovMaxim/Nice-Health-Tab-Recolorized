@@ -93,4 +93,21 @@
   <NHT_YAPEM_ResetTierColors>Restablecer colores de nivel</NHT_YAPEM_ResetTierColors>
   <NHT_YAPEM_ResetDlcColors>Restablecer colores de DLC</NHT_YAPEM_ResetDlcColors>
   <NHT_YAPEM_ResetModColors>Restablecer colores de todos los mods</NHT_YAPEM_ResetModColors>
+  <NHT_YAPEM_ProfileSave>Guardar</NHT_YAPEM_ProfileSave>
+  <NHT_YAPEM_ProfileSaveAsCopy>Guardar como copia</NHT_YAPEM_ProfileSaveAsCopy>
+  <NHT_YAPEM_ProfileDuplicate>Duplicar</NHT_YAPEM_ProfileDuplicate>
+  <NHT_YAPEM_ProfileRename>Renombrar</NHT_YAPEM_ProfileRename>
+  <NHT_YAPEM_ProfileRevert>Revertir a lo guardado</NHT_YAPEM_ProfileRevert>
+  <NHT_YAPEM_ProfileModified>Modificado: los colores difieren del perfil guardado</NHT_YAPEM_ProfileModified>
+  <NHT_YAPEM_ProfileBuiltIn>integrado</NHT_YAPEM_ProfileBuiltIn>
+  <NHT_YAPEM_ProfileDiscardConfirm>¿Descartar los cambios sin guardar en "{0}"?</NHT_YAPEM_ProfileDiscardConfirm>
+  <NHT_YAPEM_ProfileExistsConfirm>El perfil "{0}" ya existe. ¿Reemplazarlo o guardar el importado como copia?</NHT_YAPEM_ProfileExistsConfirm>
+  <NHT_YAPEM_ProfileReplace>Reemplazar</NHT_YAPEM_ProfileReplace>
+  <NHT_YAPEM_ProfileSaved>Perfil "{0}" guardado.</NHT_YAPEM_ProfileSaved>
+  <NHT_YAPEM_ProfileCopyName>{0} (copia)</NHT_YAPEM_ProfileCopyName>
+  <NHT_YAPEM_ProfileDelete>Eliminar</NHT_YAPEM_ProfileDelete>
+  <NHT_YAPEM_ProfileNew>Nuevo</NHT_YAPEM_ProfileNew>
+  <NHT_YAPEM_ProfileExport>Exportar</NHT_YAPEM_ProfileExport>
+  <NHT_YAPEM_ProfileImport>Importar</NHT_YAPEM_ProfileImport>
+  <NHT_YAPEM_ProfileMenuTip>Acciones de perfil</NHT_YAPEM_ProfileMenuTip>
 </LanguageData>

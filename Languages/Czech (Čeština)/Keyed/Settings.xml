@@ -93,4 +93,21 @@
   <NHT_YAPEM_ResetTierColors>Obnovit barvy úrovní</NHT_YAPEM_ResetTierColors>
   <NHT_YAPEM_ResetDlcColors>Obnovit barvy DLC</NHT_YAPEM_ResetDlcColors>
   <NHT_YAPEM_ResetModColors>Obnovit barvy všech módů</NHT_YAPEM_ResetModColors>
+  <NHT_YAPEM_ProfileSave>Uložit</NHT_YAPEM_ProfileSave>
+  <NHT_YAPEM_ProfileSaveAsCopy>Uložit jako kopii</NHT_YAPEM_ProfileSaveAsCopy>
+  <NHT_YAPEM_ProfileDuplicate>Duplikovat</NHT_YAPEM_ProfileDuplicate>
+  <NHT_YAPEM_ProfileRename>Přejmenovat</NHT_YAPEM_ProfileRename>
+  <NHT_YAPEM_ProfileRevert>Vrátit na uložené</NHT_YAPEM_ProfileRevert>
+  <NHT_YAPEM_ProfileModified>Upraveno: barvy se liší od uloženého profilu</NHT_YAPEM_ProfileModified>
+  <NHT_YAPEM_ProfileBuiltIn>vestavěný</NHT_YAPEM_ProfileBuiltIn>
+  <NHT_YAPEM_ProfileDiscardConfirm>Zahodit neuložené změny v "{0}"?</NHT_YAPEM_ProfileDiscardConfirm>
+  <NHT_YAPEM_ProfileExistsConfirm>Profil "{0}" již existuje. Nahradit jej, nebo uložit importovaný jako kopii?</NHT_YAPEM_ProfileExistsConfirm>
+  <NHT_YAPEM_ProfileReplace>Nahradit</NHT_YAPEM_ProfileReplace>
+  <NHT_YAPEM_ProfileSaved>Profil "{0}" uložen.</NHT_YAPEM_ProfileSaved>
+  <NHT_YAPEM_ProfileCopyName>{0} (kopie)</NHT_YAPEM_ProfileCopyName>
+  <NHT_YAPEM_ProfileDelete>Smazat</NHT_YAPEM_ProfileDelete>
+  <NHT_YAPEM_ProfileNew>Nový</NHT_YAPEM_ProfileNew>
+  <NHT_YAPEM_ProfileExport>Exportovat</NHT_YAPEM_ProfileExport>
+  <NHT_YAPEM_ProfileImport>Importovat</NHT_YAPEM_ProfileImport>
+  <NHT_YAPEM_ProfileMenuTip>Akce profilu</NHT_YAPEM_ProfileMenuTip>
 </LanguageData>

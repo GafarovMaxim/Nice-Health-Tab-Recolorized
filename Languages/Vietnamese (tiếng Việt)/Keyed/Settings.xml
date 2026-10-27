@@ -93,4 +93,21 @@
   <NHT_YAPEM_ResetTierColors>Đặt lại màu cấp bậc</NHT_YAPEM_ResetTierColors>
   <NHT_YAPEM_ResetDlcColors>Đặt lại màu DLC</NHT_YAPEM_ResetDlcColors>
   <NHT_YAPEM_ResetModColors>Đặt lại màu của mọi mod</NHT_YAPEM_ResetModColors>
+  <NHT_YAPEM_ProfileSave>Lưu</NHT_YAPEM_ProfileSave>
+  <NHT_YAPEM_ProfileSaveAsCopy>Lưu thành bản sao</NHT_YAPEM_ProfileSaveAsCopy>
+  <NHT_YAPEM_ProfileDuplicate>Nhân bản</NHT_YAPEM_ProfileDuplicate>
+  <NHT_YAPEM_ProfileRename>Đổi tên</NHT_YAPEM_ProfileRename>
+  <NHT_YAPEM_ProfileRevert>Khôi phục đã lưu</NHT_YAPEM_ProfileRevert>
+  <NHT_YAPEM_ProfileModified>Đã sửa: màu khác với hồ sơ đã lưu</NHT_YAPEM_ProfileModified>
+  <NHT_YAPEM_ProfileBuiltIn>có sẵn</NHT_YAPEM_ProfileBuiltIn>
+  <NHT_YAPEM_ProfileDiscardConfirm>Hủy các thay đổi chưa lưu trong "{0}"?</NHT_YAPEM_ProfileDiscardConfirm>
+  <NHT_YAPEM_ProfileExistsConfirm>Hồ sơ "{0}" đã tồn tại. Thay thế hay lưu hồ sơ đã nhập thành bản sao?</NHT_YAPEM_ProfileExistsConfirm>
+  <NHT_YAPEM_ProfileReplace>Thay thế</NHT_YAPEM_ProfileReplace>
+  <NHT_YAPEM_ProfileSaved>Đã lưu hồ sơ "{0}".</NHT_YAPEM_ProfileSaved>
+  <NHT_YAPEM_ProfileCopyName>{0} (bản sao)</NHT_YAPEM_ProfileCopyName>
+  <NHT_YAPEM_ProfileDelete>Xóa</NHT_YAPEM_ProfileDelete>
+  <NHT_YAPEM_ProfileNew>Mới</NHT_YAPEM_ProfileNew>
+  <NHT_YAPEM_ProfileExport>Xuất</NHT_YAPEM_ProfileExport>
+  <NHT_YAPEM_ProfileImport>Nhập</NHT_YAPEM_ProfileImport>
+  <NHT_YAPEM_ProfileMenuTip>Thao tác hồ sơ</NHT_YAPEM_ProfileMenuTip>
 </LanguageData>

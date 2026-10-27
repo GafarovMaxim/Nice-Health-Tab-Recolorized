@@ -93,4 +93,21 @@
   <NHT_YAPEM_ResetTierColors>Reset tier colors</NHT_YAPEM_ResetTierColors>
   <NHT_YAPEM_ResetDlcColors>Reset DLC colors</NHT_YAPEM_ResetDlcColors>
   <NHT_YAPEM_ResetModColors>Reset all mod colors</NHT_YAPEM_ResetModColors>
+  <NHT_YAPEM_ProfileSave>Save</NHT_YAPEM_ProfileSave>
+  <NHT_YAPEM_ProfileSaveAsCopy>Save as copy</NHT_YAPEM_ProfileSaveAsCopy>
+  <NHT_YAPEM_ProfileDuplicate>Duplicate</NHT_YAPEM_ProfileDuplicate>
+  <NHT_YAPEM_ProfileRename>Rename</NHT_YAPEM_ProfileRename>
+  <NHT_YAPEM_ProfileRevert>Revert to saved</NHT_YAPEM_ProfileRevert>
+  <NHT_YAPEM_ProfileModified>Modified: colors differ from the saved profile</NHT_YAPEM_ProfileModified>
+  <NHT_YAPEM_ProfileBuiltIn>built-in</NHT_YAPEM_ProfileBuiltIn>
+  <NHT_YAPEM_ProfileDiscardConfirm>Discard unsaved changes to "{0}"?</NHT_YAPEM_ProfileDiscardConfirm>
+  <NHT_YAPEM_ProfileExistsConfirm>Profile "{0}" already exists. Replace it or save the imported one as a copy?</NHT_YAPEM_ProfileExistsConfirm>
+  <NHT_YAPEM_ProfileReplace>Replace</NHT_YAPEM_ProfileReplace>
+  <NHT_YAPEM_ProfileSaved>Profile "{0}" saved.</NHT_YAPEM_ProfileSaved>
+  <NHT_YAPEM_ProfileCopyName>{0} (copy)</NHT_YAPEM_ProfileCopyName>
+  <NHT_YAPEM_ProfileDelete>Delete</NHT_YAPEM_ProfileDelete>
+  <NHT_YAPEM_ProfileNew>New</NHT_YAPEM_ProfileNew>
+  <NHT_YAPEM_ProfileExport>Export</NHT_YAPEM_ProfileExport>
+  <NHT_YAPEM_ProfileImport>Import</NHT_YAPEM_ProfileImport>
+  <NHT_YAPEM_ProfileMenuTip>Profile actions</NHT_YAPEM_ProfileMenuTip>
 </LanguageData>

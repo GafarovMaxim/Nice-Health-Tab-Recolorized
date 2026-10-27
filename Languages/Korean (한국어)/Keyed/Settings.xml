@@ -93,4 +93,21 @@
   <NHT_YAPEM_ResetTierColors>등급 색상 초기화</NHT_YAPEM_ResetTierColors>
   <NHT_YAPEM_ResetDlcColors>DLC 색상 초기화</NHT_YAPEM_ResetDlcColors>
   <NHT_YAPEM_ResetModColors>모든 모드 색상 초기화</NHT_YAPEM_ResetModColors>
+  <NHT_YAPEM_ProfileSave>저장</NHT_YAPEM_ProfileSave>
+  <NHT_YAPEM_ProfileSaveAsCopy>복사본으로 저장</NHT_YAPEM_ProfileSaveAsCopy>
+  <NHT_YAPEM_ProfileDuplicate>복제</NHT_YAPEM_ProfileDuplicate>
+  <NHT_YAPEM_ProfileRename>이름 변경</NHT_YAPEM_ProfileRename>
+  <NHT_YAPEM_ProfileRevert>저장된 상태로 되돌리기</NHT_YAPEM_ProfileRevert>
+  <NHT_YAPEM_ProfileModified>수정됨: 색상이 저장된 프로필과 다릅니다</NHT_YAPEM_ProfileModified>
+  <NHT_YAPEM_ProfileBuiltIn>기본 제공</NHT_YAPEM_ProfileBuiltIn>
+  <NHT_YAPEM_ProfileDiscardConfirm>"{0}"의 저장되지 않은 변경 사항을 취소하시겠습니까?</NHT_YAPEM_ProfileDiscardConfirm>
+  <NHT_YAPEM_ProfileExistsConfirm>프로필 "{0}"이(가) 이미 있습니다. 바꾸시겠습니까, 아니면 가져온 프로필을 복사본으로 저장하시겠습니까?</NHT_YAPEM_ProfileExistsConfirm>
+  <NHT_YAPEM_ProfileReplace>바꾸기</NHT_YAPEM_ProfileReplace>
+  <NHT_YAPEM_ProfileSaved>프로필 "{0}"을(를) 저장했습니다.</NHT_YAPEM_ProfileSaved>
+  <NHT_YAPEM_ProfileCopyName>{0} (복사본)</NHT_YAPEM_ProfileCopyName>
+  <NHT_YAPEM_ProfileDelete>삭제</NHT_YAPEM_ProfileDelete>
+  <NHT_YAPEM_ProfileNew>새로 만들기</NHT_YAPEM_ProfileNew>
+  <NHT_YAPEM_ProfileExport>내보내기</NHT_YAPEM_ProfileExport>
+  <NHT_YAPEM_ProfileImport>가져오기</NHT_YAPEM_ProfileImport>
+  <NHT_YAPEM_ProfileMenuTip>프로필 작업</NHT_YAPEM_ProfileMenuTip>
 </LanguageData>

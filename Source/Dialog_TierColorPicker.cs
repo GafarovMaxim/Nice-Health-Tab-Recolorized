@@ -440,7 +440,6 @@ namespace NiceHealthTab_YAPEM_Patch
             {
                 accepted = true;
                 onColorSaved?.Invoke(currentColor);
-                YAPEMPatchMod.Settings?.SyncActiveColorsToProfile();
                 YAPEMPatchMod.Settings?.Write();
                 Close();
             }

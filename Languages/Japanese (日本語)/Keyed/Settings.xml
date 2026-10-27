@@ -93,4 +93,21 @@
   <NHT_YAPEM_ResetTierColors>ティアの色をリセット</NHT_YAPEM_ResetTierColors>
   <NHT_YAPEM_ResetDlcColors>DLCの色をリセット</NHT_YAPEM_ResetDlcColors>
   <NHT_YAPEM_ResetModColors>すべてのModの色をリセット</NHT_YAPEM_ResetModColors>
+  <NHT_YAPEM_ProfileSave>保存</NHT_YAPEM_ProfileSave>
+  <NHT_YAPEM_ProfileSaveAsCopy>コピーとして保存</NHT_YAPEM_ProfileSaveAsCopy>
+  <NHT_YAPEM_ProfileDuplicate>複製</NHT_YAPEM_ProfileDuplicate>
+  <NHT_YAPEM_ProfileRename>名前を変更</NHT_YAPEM_ProfileRename>
+  <NHT_YAPEM_ProfileRevert>保存済みに戻す</NHT_YAPEM_ProfileRevert>
+  <NHT_YAPEM_ProfileModified>変更あり: 色が保存済みのプロファイルと異なります</NHT_YAPEM_ProfileModified>
+  <NHT_YAPEM_ProfileBuiltIn>組み込み</NHT_YAPEM_ProfileBuiltIn>
+  <NHT_YAPEM_ProfileDiscardConfirm>"{0}" の未保存の変更を破棄しますか?</NHT_YAPEM_ProfileDiscardConfirm>
+  <NHT_YAPEM_ProfileExistsConfirm>プロファイル "{0}" は既に存在します。置き換えますか、それともインポートしたものをコピーとして保存しますか?</NHT_YAPEM_ProfileExistsConfirm>
+  <NHT_YAPEM_ProfileReplace>置き換え</NHT_YAPEM_ProfileReplace>
+  <NHT_YAPEM_ProfileSaved>プロファイル "{0}" を保存しました。</NHT_YAPEM_ProfileSaved>
+  <NHT_YAPEM_ProfileCopyName>{0} (コピー)</NHT_YAPEM_ProfileCopyName>
+  <NHT_YAPEM_ProfileDelete>削除</NHT_YAPEM_ProfileDelete>
+  <NHT_YAPEM_ProfileNew>新規</NHT_YAPEM_ProfileNew>
+  <NHT_YAPEM_ProfileExport>エクスポート</NHT_YAPEM_ProfileExport>
+  <NHT_YAPEM_ProfileImport>インポート</NHT_YAPEM_ProfileImport>
+  <NHT_YAPEM_ProfileMenuTip>プロファイル操作</NHT_YAPEM_ProfileMenuTip>
 </LanguageData>

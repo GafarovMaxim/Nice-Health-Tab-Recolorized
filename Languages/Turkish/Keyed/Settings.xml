@@ -93,4 +93,21 @@
   <NHT_YAPEM_ResetTierColors>Seviye renklerini sıfırla</NHT_YAPEM_ResetTierColors>
   <NHT_YAPEM_ResetDlcColors>DLC renklerini sıfırla</NHT_YAPEM_ResetDlcColors>
   <NHT_YAPEM_ResetModColors>Tüm mod renklerini sıfırla</NHT_YAPEM_ResetModColors>
+  <NHT_YAPEM_ProfileSave>Kaydet</NHT_YAPEM_ProfileSave>
+  <NHT_YAPEM_ProfileSaveAsCopy>Kopya olarak kaydet</NHT_YAPEM_ProfileSaveAsCopy>
+  <NHT_YAPEM_ProfileDuplicate>Çoğalt</NHT_YAPEM_ProfileDuplicate>
+  <NHT_YAPEM_ProfileRename>Yeniden adlandır</NHT_YAPEM_ProfileRename>
+  <NHT_YAPEM_ProfileRevert>Kaydedilene döndür</NHT_YAPEM_ProfileRevert>
+  <NHT_YAPEM_ProfileModified>Değiştirildi: renkler kayıtlı profilden farklı</NHT_YAPEM_ProfileModified>
+  <NHT_YAPEM_ProfileBuiltIn>yerleşik</NHT_YAPEM_ProfileBuiltIn>
+  <NHT_YAPEM_ProfileDiscardConfirm>"{0}" için kaydedilmemiş değişiklikler silinsin mi?</NHT_YAPEM_ProfileDiscardConfirm>
+  <NHT_YAPEM_ProfileExistsConfirm>"{0}" profili zaten var. Üzerine yazılsın mı, yoksa içe aktarılan kopya olarak mı kaydedilsin?</NHT_YAPEM_ProfileExistsConfirm>
+  <NHT_YAPEM_ProfileReplace>Değiştir</NHT_YAPEM_ProfileReplace>
+  <NHT_YAPEM_ProfileSaved>"{0}" profili kaydedildi.</NHT_YAPEM_ProfileSaved>
+  <NHT_YAPEM_ProfileCopyName>{0} (kopya)</NHT_YAPEM_ProfileCopyName>
+  <NHT_YAPEM_ProfileDelete>Sil</NHT_YAPEM_ProfileDelete>
+  <NHT_YAPEM_ProfileNew>Yeni</NHT_YAPEM_ProfileNew>
+  <NHT_YAPEM_ProfileExport>Dışa aktar</NHT_YAPEM_ProfileExport>
+  <NHT_YAPEM_ProfileImport>İçe aktar</NHT_YAPEM_ProfileImport>
+  <NHT_YAPEM_ProfileMenuTip>Profil işlemleri</NHT_YAPEM_ProfileMenuTip>
 </LanguageData>

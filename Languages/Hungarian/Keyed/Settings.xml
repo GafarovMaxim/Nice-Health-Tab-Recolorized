@@ -93,4 +93,21 @@
   <NHT_YAPEM_ResetTierColors>Szintek színeinek visszaállítása</NHT_YAPEM_ResetTierColors>
   <NHT_YAPEM_ResetDlcColors>DLC-színek visszaállítása</NHT_YAPEM_ResetDlcColors>
   <NHT_YAPEM_ResetModColors>Minden mod színének visszaállítása</NHT_YAPEM_ResetModColors>
+  <NHT_YAPEM_ProfileSave>Mentés</NHT_YAPEM_ProfileSave>
+  <NHT_YAPEM_ProfileSaveAsCopy>Mentés másolatként</NHT_YAPEM_ProfileSaveAsCopy>
+  <NHT_YAPEM_ProfileDuplicate>Duplikálás</NHT_YAPEM_ProfileDuplicate>
+  <NHT_YAPEM_ProfileRename>Átnevezés</NHT_YAPEM_ProfileRename>
+  <NHT_YAPEM_ProfileRevert>Visszaállítás a mentettre</NHT_YAPEM_ProfileRevert>
+  <NHT_YAPEM_ProfileModified>Módosítva: a színek eltérnek a mentett profiltól</NHT_YAPEM_ProfileModified>
+  <NHT_YAPEM_ProfileBuiltIn>beépített</NHT_YAPEM_ProfileBuiltIn>
+  <NHT_YAPEM_ProfileDiscardConfirm>Elvetjük a(z) "{0}" nem mentett változtatásait?</NHT_YAPEM_ProfileDiscardConfirm>
+  <NHT_YAPEM_ProfileExistsConfirm>A(z) "{0}" profil már létezik. Felülírjuk, vagy az importált profilt másolatként mentsük?</NHT_YAPEM_ProfileExistsConfirm>
+  <NHT_YAPEM_ProfileReplace>Csere</NHT_YAPEM_ProfileReplace>
+  <NHT_YAPEM_ProfileSaved>A(z) "{0}" profil mentve.</NHT_YAPEM_ProfileSaved>
+  <NHT_YAPEM_ProfileCopyName>{0} (másolat)</NHT_YAPEM_ProfileCopyName>
+  <NHT_YAPEM_ProfileDelete>Törlés</NHT_YAPEM_ProfileDelete>
+  <NHT_YAPEM_ProfileNew>Új</NHT_YAPEM_ProfileNew>
+  <NHT_YAPEM_ProfileExport>Exportálás</NHT_YAPEM_ProfileExport>
+  <NHT_YAPEM_ProfileImport>Importálás</NHT_YAPEM_ProfileImport>
+  <NHT_YAPEM_ProfileMenuTip>Profilműveletek</NHT_YAPEM_ProfileMenuTip>
 </LanguageData>

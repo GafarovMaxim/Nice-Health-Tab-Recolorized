@@ -93,4 +93,21 @@
   <NHT_YAPEM_ResetTierColors>重置等级颜色</NHT_YAPEM_ResetTierColors>
   <NHT_YAPEM_ResetDlcColors>重置 DLC 颜色</NHT_YAPEM_ResetDlcColors>
   <NHT_YAPEM_ResetModColors>重置所有模组颜色</NHT_YAPEM_ResetModColors>
+  <NHT_YAPEM_ProfileSave>保存</NHT_YAPEM_ProfileSave>
+  <NHT_YAPEM_ProfileSaveAsCopy>另存为副本</NHT_YAPEM_ProfileSaveAsCopy>
+  <NHT_YAPEM_ProfileDuplicate>复制</NHT_YAPEM_ProfileDuplicate>
+  <NHT_YAPEM_ProfileRename>重命名</NHT_YAPEM_ProfileRename>
+  <NHT_YAPEM_ProfileRevert>恢复为已保存</NHT_YAPEM_ProfileRevert>
+  <NHT_YAPEM_ProfileModified>已修改：颜色与已保存的配置不同</NHT_YAPEM_ProfileModified>
+  <NHT_YAPEM_ProfileBuiltIn>内置</NHT_YAPEM_ProfileBuiltIn>
+  <NHT_YAPEM_ProfileDiscardConfirm>放弃对"{0}"未保存的更改？</NHT_YAPEM_ProfileDiscardConfirm>
+  <NHT_YAPEM_ProfileExistsConfirm>配置"{0}"已存在。替换它，还是将导入的配置另存为副本？</NHT_YAPEM_ProfileExistsConfirm>
+  <NHT_YAPEM_ProfileReplace>替换</NHT_YAPEM_ProfileReplace>
+  <NHT_YAPEM_ProfileSaved>配置"{0}"已保存。</NHT_YAPEM_ProfileSaved>
+  <NHT_YAPEM_ProfileCopyName>{0}（副本）</NHT_YAPEM_ProfileCopyName>
+  <NHT_YAPEM_ProfileDelete>删除</NHT_YAPEM_ProfileDelete>
+  <NHT_YAPEM_ProfileNew>新建</NHT_YAPEM_ProfileNew>
+  <NHT_YAPEM_ProfileExport>导出</NHT_YAPEM_ProfileExport>
+  <NHT_YAPEM_ProfileImport>导入</NHT_YAPEM_ProfileImport>
+  <NHT_YAPEM_ProfileMenuTip>配置操作</NHT_YAPEM_ProfileMenuTip>
 </LanguageData>
