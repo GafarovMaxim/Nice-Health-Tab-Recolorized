@@ -115,7 +115,8 @@
     "NHT_YAPEM_PreviewInGameOnly": "Preview is available in game only",
     "NHT_YAPEM_PreviewOrgans": "Show organs",
     "NHT_YAPEM_PreviewBody": "Show body",
-    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}",
+    "NHT_YAPEM_OpenSettings": "Open Recolorized settings"
   },
   "Russian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -233,7 +234,8 @@
     "NHT_YAPEM_PreviewInGameOnly": "Превью доступно только в игре",
     "NHT_YAPEM_PreviewOrgans": "Показать органы",
     "NHT_YAPEM_PreviewBody": "Показать тело",
-    "NHT_YAPEM_PreviewModLine": "Мод: {0}"
+    "NHT_YAPEM_PreviewModLine": "Мод: {0}",
+    "NHT_YAPEM_OpenSettings": "Открыть настройки Recolorized"
   },
   "French": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -351,7 +353,8 @@
     "NHT_YAPEM_PreviewInGameOnly": "L'aperçu n'est disponible qu'en jeu",
     "NHT_YAPEM_PreviewOrgans": "Afficher les organes",
     "NHT_YAPEM_PreviewBody": "Afficher le corps",
-    "NHT_YAPEM_PreviewModLine": "Mod : {0}"
+    "NHT_YAPEM_PreviewModLine": "Mod : {0}",
+    "NHT_YAPEM_OpenSettings": "Ouvrir les paramètres de Recolorized"
   },
   "German": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -469,7 +472,8 @@
     "NHT_YAPEM_PreviewInGameOnly": "Vorschau nur im Spiel verfügbar",
     "NHT_YAPEM_PreviewOrgans": "Organe anzeigen",
     "NHT_YAPEM_PreviewBody": "Körper anzeigen",
-    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}",
+    "NHT_YAPEM_OpenSettings": "Recolorized-Einstellungen öffnen"
   },
   "Italian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -587,7 +591,8 @@
     "NHT_YAPEM_PreviewInGameOnly": "L'anteprima è disponibile solo in gioco",
     "NHT_YAPEM_PreviewOrgans": "Mostra organi",
     "NHT_YAPEM_PreviewBody": "Mostra corpo",
-    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}",
+    "NHT_YAPEM_OpenSettings": "Apri le impostazioni di Recolorized"
   },
   "Spanish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -705,7 +710,8 @@
     "NHT_YAPEM_PreviewInGameOnly": "La vista previa solo está disponible en partida",
     "NHT_YAPEM_PreviewOrgans": "Mostrar órganos",
     "NHT_YAPEM_PreviewBody": "Mostrar cuerpo",
-    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}",
+    "NHT_YAPEM_OpenSettings": "Abrir ajustes de Recolorized"
   },
   "SpanishLatin": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -823,7 +829,8 @@
     "NHT_YAPEM_PreviewInGameOnly": "La vista previa solo está disponible en partida",
     "NHT_YAPEM_PreviewOrgans": "Mostrar órganos",
     "NHT_YAPEM_PreviewBody": "Mostrar cuerpo",
-    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}",
+    "NHT_YAPEM_OpenSettings": "Abrir ajustes de Recolorized"
   },
   "PortugueseBrazilian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -941,7 +948,8 @@
     "NHT_YAPEM_PreviewInGameOnly": "A prévia só está disponível no jogo",
     "NHT_YAPEM_PreviewOrgans": "Mostrar órgãos",
     "NHT_YAPEM_PreviewBody": "Mostrar corpo",
-    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}",
+    "NHT_YAPEM_OpenSettings": "Abrir configurações do Recolorized"
   },
   "Japanese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1059,7 +1067,8 @@
     "NHT_YAPEM_PreviewInGameOnly": "プレビューはゲーム中のみ利用できます",
     "NHT_YAPEM_PreviewOrgans": "臓器を表示",
     "NHT_YAPEM_PreviewBody": "身体を表示",
-    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}",
+    "NHT_YAPEM_OpenSettings": "Recolorized の設定を開く"
   },
   "Korean": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1177,7 +1186,8 @@
     "NHT_YAPEM_PreviewInGameOnly": "미리보기는 게임 중에만 사용할 수 있습니다",
     "NHT_YAPEM_PreviewOrgans": "장기 보기",
     "NHT_YAPEM_PreviewBody": "신체 보기",
-    "NHT_YAPEM_PreviewModLine": "모드: {0}"
+    "NHT_YAPEM_PreviewModLine": "모드: {0}",
+    "NHT_YAPEM_OpenSettings": "Recolorized 설정 열기"
   },
   "ChineseSimplified": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1295,7 +1305,8 @@
     "NHT_YAPEM_PreviewInGameOnly": "预览仅在游戏中可用",
     "NHT_YAPEM_PreviewOrgans": "显示器官",
     "NHT_YAPEM_PreviewBody": "显示身体",
-    "NHT_YAPEM_PreviewModLine": "Mod：{0}"
+    "NHT_YAPEM_PreviewModLine": "Mod：{0}",
+    "NHT_YAPEM_OpenSettings": "打开 Recolorized 设置"
   },
   "ChineseTraditional": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1413,7 +1424,8 @@
     "NHT_YAPEM_PreviewInGameOnly": "預覽僅在遊戲中可用",
     "NHT_YAPEM_PreviewOrgans": "顯示器官",
     "NHT_YAPEM_PreviewBody": "顯示身體",
-    "NHT_YAPEM_PreviewModLine": "Mod：{0}"
+    "NHT_YAPEM_PreviewModLine": "Mod：{0}",
+    "NHT_YAPEM_OpenSettings": "開啟 Recolorized 設定"
   },
   "Turkish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1531,7 +1543,8 @@
     "NHT_YAPEM_PreviewInGameOnly": "Önizleme yalnızca oyunda kullanılabilir",
     "NHT_YAPEM_PreviewOrgans": "Organları göster",
     "NHT_YAPEM_PreviewBody": "Vücudu göster",
-    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}",
+    "NHT_YAPEM_OpenSettings": "Recolorized ayarlarını aç"
   },
   "Ukrainian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1649,7 +1662,8 @@
     "NHT_YAPEM_PreviewInGameOnly": "Превʼю доступне лише в грі",
     "NHT_YAPEM_PreviewOrgans": "Показати органи",
     "NHT_YAPEM_PreviewBody": "Показати тіло",
-    "NHT_YAPEM_PreviewModLine": "Мод: {0}"
+    "NHT_YAPEM_PreviewModLine": "Мод: {0}",
+    "NHT_YAPEM_OpenSettings": "Відкрити налаштування Recolorized"
   },
   "Vietnamese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1767,7 +1781,8 @@
     "NHT_YAPEM_PreviewInGameOnly": "Chỉ xem trước được trong game",
     "NHT_YAPEM_PreviewOrgans": "Hiện nội tạng",
     "NHT_YAPEM_PreviewBody": "Hiện cơ thể",
-    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}",
+    "NHT_YAPEM_OpenSettings": "Mở cài đặt Recolorized"
   },
   "Polish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1885,7 +1900,8 @@
     "NHT_YAPEM_PreviewInGameOnly": "Podgląd jest dostępny tylko w grze",
     "NHT_YAPEM_PreviewOrgans": "Pokaż narządy",
     "NHT_YAPEM_PreviewBody": "Pokaż ciało",
-    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}",
+    "NHT_YAPEM_OpenSettings": "Otwórz ustawienia Recolorized"
   },
   "Czech": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -2003,7 +2019,8 @@
     "NHT_YAPEM_PreviewInGameOnly": "Náhled je dostupný jen ve hře",
     "NHT_YAPEM_PreviewOrgans": "Zobrazit orgány",
     "NHT_YAPEM_PreviewBody": "Zobrazit tělo",
-    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}",
+    "NHT_YAPEM_OpenSettings": "Otevřít nastavení Recolorized"
   },
   "Hungarian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -2121,6 +2138,7 @@
     "NHT_YAPEM_PreviewInGameOnly": "Az előnézet csak játékban érhető el",
     "NHT_YAPEM_PreviewOrgans": "Szervek mutatása",
     "NHT_YAPEM_PreviewBody": "Test mutatása",
-    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}",
+    "NHT_YAPEM_OpenSettings": "Recolorized beállítások megnyitása"
   }
 }

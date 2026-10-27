@@ -116,4 +116,5 @@
   <NHT_YAPEM_PreviewOrgans>Afficher les organes</NHT_YAPEM_PreviewOrgans>
   <NHT_YAPEM_PreviewBody>Afficher le corps</NHT_YAPEM_PreviewBody>
   <NHT_YAPEM_PreviewModLine>Mod : {0}</NHT_YAPEM_PreviewModLine>
+  <NHT_YAPEM_OpenSettings>Ouvrir les paramètres de Recolorized</NHT_YAPEM_OpenSettings>
 </LanguageData>
