@@ -664,7 +664,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 hasColor = true;
             }
 
-            float titleW = Mathf.Clamp(entryRect.width - 340f, 200f, 440f);
+            float titleW = Mathf.Clamp(entryRect.width - 390f, 200f, 440f);
             string title = g.GroupTitle + " (" + string.Format("NHT_YAPEM_ModImplantCount".Translate().RawText, g.Defs.Count) + ")";
             Widgets.Label(new Rect(entryRect.x, entryRect.y + 4f, titleW, 24f), title);
 
@@ -683,7 +683,7 @@ namespace NiceHealthTab_YAPEM_Patch
             TooltipHandler.TipRegion(swatchRect, "NHT_YAPEM_PaletteTip".Translate());
             if (Widgets.ButtonInvisible(swatchRect)) open();
 
-            Rect hexRect = new Rect(swatchRect.xMax + 10f, entryRect.y + 4f, 80f, 24f);
+            Rect hexRect = new Rect(swatchRect.xMax + 10f, entryRect.y + 4f, 130f, 24f);
             if (hasColor) DrawHexOrLink(hexRect, shown, linked ? linkKey : null);
             else Widgets.Label(hexRect, (string)"NHT_YAPEM_ModAuto".Translate());
 
@@ -692,7 +692,12 @@ namespace NiceHealthTab_YAPEM_Patch
 
             Rect resetBtnRect = new Rect(pickBtnRect.xMax + 6f, entryRect.y + 2f, 62f, 26f);
             DrawInheritButton(new Rect(resetBtnRect.xMax + 4f, entryRect.y + 2f, 30f, 26f), linkKey);
-            if ((hasColor || linked) && Widgets.ButtonText(resetBtnRect, "NHT_YAPEM_ResetBtn".Translate()))
+            // Always drawn (greyed when there is nothing to reset) so the row layout matches the tier rows.
+            bool canReset = hasColor || linked;
+            if (!canReset) GUI.color = new Color(1f, 1f, 1f, 0.4f);
+            bool resetClicked = Widgets.ButtonText(resetBtnRect, "NHT_YAPEM_ResetBtn".Translate());
+            GUI.color = Color.white;
+            if (canReset && resetClicked)
             {
                 ColorLinks.Remove(linkKey);
                 ModColors.Remove(key);
@@ -1320,7 +1325,7 @@ namespace NiceHealthTab_YAPEM_Patch
             Color shown = linked && ColorLinkUtil.TryResolve(linkKey, out Color resolved) ? resolved : color;
             Rect entryRect = listing.GetRect(32f);
 
-            float titleW = Mathf.Clamp(entryRect.width - 340f, 200f, 440f);
+            float titleW = Mathf.Clamp(entryRect.width - 390f, 200f, 440f);
 
             // 1. Title
             Rect titleRect = new Rect(entryRect.x, entryRect.y + 4f, titleW, 24f);
@@ -1346,7 +1351,7 @@ namespace NiceHealthTab_YAPEM_Patch
             }
 
             // 3. Hex code display
-            Rect hexRect = new Rect(swatchRect.xMax + 10f, entryRect.y + 4f, 80f, 24f);
+            Rect hexRect = new Rect(swatchRect.xMax + 10f, entryRect.y + 4f, 130f, 24f);
             DrawHexOrLink(hexRect, shown, linked ? linkKey : null);
 
             // 4. "Palette..." button

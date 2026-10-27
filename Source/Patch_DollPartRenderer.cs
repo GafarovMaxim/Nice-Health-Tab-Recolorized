@@ -112,7 +112,7 @@ namespace NiceHealthTab_YAPEM_Patch
             // In Bones view: ONLY bones (and spine) are shown
             if (ctx.FilterMode == DollFilterMode.Bones)
             {
-                if (!isBone)
+                if (!isBone || !BoneViewUtil.IsShown(val, ctx.Hediffs.GetHediffs(val)))
                 {
                     return false;
                 }
