@@ -305,7 +305,13 @@ namespace NiceHealthTab_YAPEM_Patch
                 {
                     ReadMap(mt, "mods", prof.ModColors);
                     ReadMap(mt, "tiers", prof.DynamicTierColors);
-                    ReadMap(mt, "links", prof.ColorLinks);
+                    if (mt.TryGetValue("links", out object lk) && lk is Dictionary<string, object> linkMap)
+                    {
+                        foreach (var kv in linkMap)
+                        {
+                            if (kv.Value is string target && target.Length > 0) prof.ColorLinks[kv.Key] = target;
+                        }
+                    }
                 }
 
                 prof.EnsureSlotCount();
