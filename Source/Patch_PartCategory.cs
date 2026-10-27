@@ -30,9 +30,13 @@ namespace NiceHealthTab_YAPEM_Patch
             List<Hediff> hediffs = pawn.health.hediffSet.hediffs;
             foreach (BodyPartRecord part in pawn.RaceProps.body.AllParts)
             {
-                if (!IsInCategory(part, mode, NoHediffs)) continue;
-                if (mode == DollFilterMode.Bones && !BoneViewUtil.IsShown(part, hediffs)) continue;
-                __result.Add(part);
+                // Same def-based kind the doll renderer uses, so the list never has a part the doll cannot draw in that view.
+                LimbTierUtility.PartKind kind = LimbTierUtility.ClassifyPart(part.def, null, null);
+                bool solid = IsInCategory(part, DollFilterMode.Bones, NoHediffs);
+                bool show = mode == DollFilterMode.Bones
+                    ? solid && kind.IsBone && BoneViewUtil.IsShown(part, hediffs)
+                    : IsInCategory(part, DollFilterMode.Organs, NoHediffs) || (solid && kind.IsOrgan);
+                if (show) __result.Add(part);
             }
             return false;
         }

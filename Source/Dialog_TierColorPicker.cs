@@ -225,6 +225,11 @@ namespace NiceHealthTab_YAPEM_Patch
 
                     if (manhattan <= RadiusDiamond + 0.75f)
                     {
+                        if (hueOnly)
+                        {
+                            wheelTexture.SetPixel(x, y, Color.clear);
+                            continue;
+                        }
                         // Top (dy_gui = -RadiusDiamond) -> White (l = 1.0)
                         // Bottom (dy_gui = +RadiusDiamond) -> Black (l = 0.0)
                         float l = Mathf.Clamp01(0.5f - dy_gui / (2f * RadiusDiamond));
@@ -289,6 +294,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 {
                     onHueOnlyChanged?.Invoke(hueOnly);
                     if (hueOnly) ApplyHueOnly(true);
+                    else RedrawDiamond();
                 }
             }
 
@@ -340,15 +346,7 @@ namespace NiceHealthTab_YAPEM_Patch
             }
 
             DrawHueCursor(wheelRect);
-            if (hueOnly)
-            {
-                float half = RadiusDiamond * 0.72f;
-                Widgets.DrawBoxSolid(new Rect(wheelRect.x + Center - half, wheelRect.y + Center - half, half * 2f, half * 2f), new Color(0.09f, 0.1f, 0.12f, 0.92f));
-            }
-            else
-            {
-                DrawDiamondCursor(wheelRect);
-            }
+            if (!hueOnly) DrawDiamondCursor(wheelRect);
 
             // Was / Now swatches (label under each), hex field, copy
             float rowY = 272f;

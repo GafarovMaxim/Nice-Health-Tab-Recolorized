@@ -18,6 +18,9 @@ namespace NiceHealthTab_YAPEM_Patch
             YAPEMPatchSettings settings = YAPEMPatchMod.Settings;
             if (settings == null || !settings.UseDamageColor) return;
 
+            // The untouched default is NHT's own pair (#F82D45 / #FF7878), so leave NHT's result alone.
+            if (settings.ColorDamage == YAPEMPatchSettings.DefaultColorDamage) return;
+
             if (status == DollPartStatus.Critical)
             {
                 __result = settings.ColorDamage;
