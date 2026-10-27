@@ -111,4 +111,9 @@
   <NHT_YAPEM_ProfileImport>Importálás</NHT_YAPEM_ProfileImport>
   <NHT_YAPEM_ProfileMenuTip>Profilműveletek</NHT_YAPEM_ProfileMenuTip>
   <NHT_YAPEM_SlotNamePrompt>Adja meg a szín nevét:</NHT_YAPEM_SlotNamePrompt>
+  <NHT_YAPEM_Preview>Előnézet</NHT_YAPEM_Preview>
+  <NHT_YAPEM_PreviewInGameOnly>Az előnézet csak játékban érhető el</NHT_YAPEM_PreviewInGameOnly>
+  <NHT_YAPEM_PreviewOrgans>Szervek mutatása</NHT_YAPEM_PreviewOrgans>
+  <NHT_YAPEM_PreviewBody>Test mutatása</NHT_YAPEM_PreviewBody>
+  <NHT_YAPEM_PreviewModLine>Mod: {0}</NHT_YAPEM_PreviewModLine>
 </LanguageData>

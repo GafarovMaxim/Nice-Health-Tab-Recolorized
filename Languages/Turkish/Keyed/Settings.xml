@@ -111,4 +111,9 @@
   <NHT_YAPEM_ProfileImport>İçe aktar</NHT_YAPEM_ProfileImport>
   <NHT_YAPEM_ProfileMenuTip>Profil işlemleri</NHT_YAPEM_ProfileMenuTip>
   <NHT_YAPEM_SlotNamePrompt>Bu renk için bir ad girin:</NHT_YAPEM_SlotNamePrompt>
+  <NHT_YAPEM_Preview>Önizleme</NHT_YAPEM_Preview>
+  <NHT_YAPEM_PreviewInGameOnly>Önizleme yalnızca oyunda kullanılabilir</NHT_YAPEM_PreviewInGameOnly>
+  <NHT_YAPEM_PreviewOrgans>Organları göster</NHT_YAPEM_PreviewOrgans>
+  <NHT_YAPEM_PreviewBody>Vücudu göster</NHT_YAPEM_PreviewBody>
+  <NHT_YAPEM_PreviewModLine>Mod: {0}</NHT_YAPEM_PreviewModLine>
 </LanguageData>

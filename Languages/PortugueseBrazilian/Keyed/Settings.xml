@@ -111,4 +111,9 @@
   <NHT_YAPEM_ProfileImport>Importar</NHT_YAPEM_ProfileImport>
   <NHT_YAPEM_ProfileMenuTip>Ações do perfil</NHT_YAPEM_ProfileMenuTip>
   <NHT_YAPEM_SlotNamePrompt>Digite um nome para esta cor:</NHT_YAPEM_SlotNamePrompt>
+  <NHT_YAPEM_Preview>Prévia</NHT_YAPEM_Preview>
+  <NHT_YAPEM_PreviewInGameOnly>A prévia só está disponível no jogo</NHT_YAPEM_PreviewInGameOnly>
+  <NHT_YAPEM_PreviewOrgans>Mostrar órgãos</NHT_YAPEM_PreviewOrgans>
+  <NHT_YAPEM_PreviewBody>Mostrar corpo</NHT_YAPEM_PreviewBody>
+  <NHT_YAPEM_PreviewModLine>Mod: {0}</NHT_YAPEM_PreviewModLine>
 </LanguageData>

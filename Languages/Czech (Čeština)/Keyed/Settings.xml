@@ -111,4 +111,9 @@
   <NHT_YAPEM_ProfileImport>Importovat</NHT_YAPEM_ProfileImport>
   <NHT_YAPEM_ProfileMenuTip>Akce profilu</NHT_YAPEM_ProfileMenuTip>
   <NHT_YAPEM_SlotNamePrompt>Zadejte název této barvy:</NHT_YAPEM_SlotNamePrompt>
+  <NHT_YAPEM_Preview>Náhled</NHT_YAPEM_Preview>
+  <NHT_YAPEM_PreviewInGameOnly>Náhled je dostupný jen ve hře</NHT_YAPEM_PreviewInGameOnly>
+  <NHT_YAPEM_PreviewOrgans>Zobrazit orgány</NHT_YAPEM_PreviewOrgans>
+  <NHT_YAPEM_PreviewBody>Zobrazit tělo</NHT_YAPEM_PreviewBody>
+  <NHT_YAPEM_PreviewModLine>Mod: {0}</NHT_YAPEM_PreviewModLine>
 </LanguageData>

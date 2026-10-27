@@ -111,4 +111,9 @@
   <NHT_YAPEM_ProfileImport>匯入</NHT_YAPEM_ProfileImport>
   <NHT_YAPEM_ProfileMenuTip>設定檔操作</NHT_YAPEM_ProfileMenuTip>
   <NHT_YAPEM_SlotNamePrompt>輸入此顏色的名稱：</NHT_YAPEM_SlotNamePrompt>
+  <NHT_YAPEM_Preview>預覽</NHT_YAPEM_Preview>
+  <NHT_YAPEM_PreviewInGameOnly>預覽僅在遊戲中可用</NHT_YAPEM_PreviewInGameOnly>
+  <NHT_YAPEM_PreviewOrgans>顯示器官</NHT_YAPEM_PreviewOrgans>
+  <NHT_YAPEM_PreviewBody>顯示身體</NHT_YAPEM_PreviewBody>
+  <NHT_YAPEM_PreviewModLine>Mod：{0}</NHT_YAPEM_PreviewModLine>
 </LanguageData>

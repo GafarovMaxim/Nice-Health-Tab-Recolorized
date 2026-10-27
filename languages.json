@@ -110,7 +110,12 @@
     "NHT_YAPEM_ProfileExport": "Export",
     "NHT_YAPEM_ProfileImport": "Import",
     "NHT_YAPEM_ProfileMenuTip": "Profile actions",
-    "NHT_YAPEM_SlotNamePrompt": "Enter a name for this color:"
+    "NHT_YAPEM_SlotNamePrompt": "Enter a name for this color:",
+    "NHT_YAPEM_Preview": "Preview",
+    "NHT_YAPEM_PreviewInGameOnly": "Preview is available in game only",
+    "NHT_YAPEM_PreviewOrgans": "Show organs",
+    "NHT_YAPEM_PreviewBody": "Show body",
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
   },
   "Russian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -223,7 +228,12 @@
     "NHT_YAPEM_ProfileExport": "Экспорт",
     "NHT_YAPEM_ProfileImport": "Импорт",
     "NHT_YAPEM_ProfileMenuTip": "Действия с профилем",
-    "NHT_YAPEM_SlotNamePrompt": "Введите название для этого цвета:"
+    "NHT_YAPEM_SlotNamePrompt": "Введите название для этого цвета:",
+    "NHT_YAPEM_Preview": "Превью",
+    "NHT_YAPEM_PreviewInGameOnly": "Превью доступно только в игре",
+    "NHT_YAPEM_PreviewOrgans": "Показать органы",
+    "NHT_YAPEM_PreviewBody": "Показать тело",
+    "NHT_YAPEM_PreviewModLine": "Мод: {0}"
   },
   "French": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -336,7 +346,12 @@
     "NHT_YAPEM_ProfileExport": "Exporter",
     "NHT_YAPEM_ProfileImport": "Importer",
     "NHT_YAPEM_ProfileMenuTip": "Actions du profil",
-    "NHT_YAPEM_SlotNamePrompt": "Entrez un nom pour cette couleur :"
+    "NHT_YAPEM_SlotNamePrompt": "Entrez un nom pour cette couleur :",
+    "NHT_YAPEM_Preview": "Aperçu",
+    "NHT_YAPEM_PreviewInGameOnly": "L'aperçu n'est disponible qu'en jeu",
+    "NHT_YAPEM_PreviewOrgans": "Afficher les organes",
+    "NHT_YAPEM_PreviewBody": "Afficher le corps",
+    "NHT_YAPEM_PreviewModLine": "Mod : {0}"
   },
   "German": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -449,7 +464,12 @@
     "NHT_YAPEM_ProfileExport": "Exportieren",
     "NHT_YAPEM_ProfileImport": "Importieren",
     "NHT_YAPEM_ProfileMenuTip": "Profilaktionen",
-    "NHT_YAPEM_SlotNamePrompt": "Namen für diese Farbe eingeben:"
+    "NHT_YAPEM_SlotNamePrompt": "Namen für diese Farbe eingeben:",
+    "NHT_YAPEM_Preview": "Vorschau",
+    "NHT_YAPEM_PreviewInGameOnly": "Vorschau nur im Spiel verfügbar",
+    "NHT_YAPEM_PreviewOrgans": "Organe anzeigen",
+    "NHT_YAPEM_PreviewBody": "Körper anzeigen",
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
   },
   "Italian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -562,7 +582,12 @@
     "NHT_YAPEM_ProfileExport": "Esporta",
     "NHT_YAPEM_ProfileImport": "Importa",
     "NHT_YAPEM_ProfileMenuTip": "Azioni profilo",
-    "NHT_YAPEM_SlotNamePrompt": "Inserisci un nome per questo colore:"
+    "NHT_YAPEM_SlotNamePrompt": "Inserisci un nome per questo colore:",
+    "NHT_YAPEM_Preview": "Anteprima",
+    "NHT_YAPEM_PreviewInGameOnly": "L'anteprima è disponibile solo in gioco",
+    "NHT_YAPEM_PreviewOrgans": "Mostra organi",
+    "NHT_YAPEM_PreviewBody": "Mostra corpo",
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
   },
   "Spanish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -675,7 +700,12 @@
     "NHT_YAPEM_ProfileExport": "Exportar",
     "NHT_YAPEM_ProfileImport": "Importar",
     "NHT_YAPEM_ProfileMenuTip": "Acciones de perfil",
-    "NHT_YAPEM_SlotNamePrompt": "Introduce un nombre para este color:"
+    "NHT_YAPEM_SlotNamePrompt": "Introduce un nombre para este color:",
+    "NHT_YAPEM_Preview": "Vista previa",
+    "NHT_YAPEM_PreviewInGameOnly": "La vista previa solo está disponible en partida",
+    "NHT_YAPEM_PreviewOrgans": "Mostrar órganos",
+    "NHT_YAPEM_PreviewBody": "Mostrar cuerpo",
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
   },
   "SpanishLatin": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -788,7 +818,12 @@
     "NHT_YAPEM_ProfileExport": "Exportar",
     "NHT_YAPEM_ProfileImport": "Importar",
     "NHT_YAPEM_ProfileMenuTip": "Acciones del perfil",
-    "NHT_YAPEM_SlotNamePrompt": "Ingresa un nombre para este color:"
+    "NHT_YAPEM_SlotNamePrompt": "Ingresa un nombre para este color:",
+    "NHT_YAPEM_Preview": "Vista previa",
+    "NHT_YAPEM_PreviewInGameOnly": "La vista previa solo está disponible en partida",
+    "NHT_YAPEM_PreviewOrgans": "Mostrar órganos",
+    "NHT_YAPEM_PreviewBody": "Mostrar cuerpo",
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
   },
   "PortugueseBrazilian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -901,7 +936,12 @@
     "NHT_YAPEM_ProfileExport": "Exportar",
     "NHT_YAPEM_ProfileImport": "Importar",
     "NHT_YAPEM_ProfileMenuTip": "Ações do perfil",
-    "NHT_YAPEM_SlotNamePrompt": "Digite um nome para esta cor:"
+    "NHT_YAPEM_SlotNamePrompt": "Digite um nome para esta cor:",
+    "NHT_YAPEM_Preview": "Prévia",
+    "NHT_YAPEM_PreviewInGameOnly": "A prévia só está disponível no jogo",
+    "NHT_YAPEM_PreviewOrgans": "Mostrar órgãos",
+    "NHT_YAPEM_PreviewBody": "Mostrar corpo",
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
   },
   "Japanese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1014,7 +1054,12 @@
     "NHT_YAPEM_ProfileExport": "エクスポート",
     "NHT_YAPEM_ProfileImport": "インポート",
     "NHT_YAPEM_ProfileMenuTip": "プロファイル操作",
-    "NHT_YAPEM_SlotNamePrompt": "この色の名前を入力:"
+    "NHT_YAPEM_SlotNamePrompt": "この色の名前を入力:",
+    "NHT_YAPEM_Preview": "プレビュー",
+    "NHT_YAPEM_PreviewInGameOnly": "プレビューはゲーム中のみ利用できます",
+    "NHT_YAPEM_PreviewOrgans": "臓器を表示",
+    "NHT_YAPEM_PreviewBody": "身体を表示",
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
   },
   "Korean": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1127,7 +1172,12 @@
     "NHT_YAPEM_ProfileExport": "내보내기",
     "NHT_YAPEM_ProfileImport": "가져오기",
     "NHT_YAPEM_ProfileMenuTip": "프로필 작업",
-    "NHT_YAPEM_SlotNamePrompt": "이 색상의 이름을 입력하세요:"
+    "NHT_YAPEM_SlotNamePrompt": "이 색상의 이름을 입력하세요:",
+    "NHT_YAPEM_Preview": "미리보기",
+    "NHT_YAPEM_PreviewInGameOnly": "미리보기는 게임 중에만 사용할 수 있습니다",
+    "NHT_YAPEM_PreviewOrgans": "장기 보기",
+    "NHT_YAPEM_PreviewBody": "신체 보기",
+    "NHT_YAPEM_PreviewModLine": "모드: {0}"
   },
   "ChineseSimplified": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1240,7 +1290,12 @@
     "NHT_YAPEM_ProfileExport": "导出",
     "NHT_YAPEM_ProfileImport": "导入",
     "NHT_YAPEM_ProfileMenuTip": "配置操作",
-    "NHT_YAPEM_SlotNamePrompt": "输入此颜色的名称："
+    "NHT_YAPEM_SlotNamePrompt": "输入此颜色的名称：",
+    "NHT_YAPEM_Preview": "预览",
+    "NHT_YAPEM_PreviewInGameOnly": "预览仅在游戏中可用",
+    "NHT_YAPEM_PreviewOrgans": "显示器官",
+    "NHT_YAPEM_PreviewBody": "显示身体",
+    "NHT_YAPEM_PreviewModLine": "Mod：{0}"
   },
   "ChineseTraditional": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1353,7 +1408,12 @@
     "NHT_YAPEM_ProfileExport": "匯出",
     "NHT_YAPEM_ProfileImport": "匯入",
     "NHT_YAPEM_ProfileMenuTip": "設定檔操作",
-    "NHT_YAPEM_SlotNamePrompt": "輸入此顏色的名稱："
+    "NHT_YAPEM_SlotNamePrompt": "輸入此顏色的名稱：",
+    "NHT_YAPEM_Preview": "預覽",
+    "NHT_YAPEM_PreviewInGameOnly": "預覽僅在遊戲中可用",
+    "NHT_YAPEM_PreviewOrgans": "顯示器官",
+    "NHT_YAPEM_PreviewBody": "顯示身體",
+    "NHT_YAPEM_PreviewModLine": "Mod：{0}"
   },
   "Turkish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1466,7 +1526,12 @@
     "NHT_YAPEM_ProfileExport": "Dışa aktar",
     "NHT_YAPEM_ProfileImport": "İçe aktar",
     "NHT_YAPEM_ProfileMenuTip": "Profil işlemleri",
-    "NHT_YAPEM_SlotNamePrompt": "Bu renk için bir ad girin:"
+    "NHT_YAPEM_SlotNamePrompt": "Bu renk için bir ad girin:",
+    "NHT_YAPEM_Preview": "Önizleme",
+    "NHT_YAPEM_PreviewInGameOnly": "Önizleme yalnızca oyunda kullanılabilir",
+    "NHT_YAPEM_PreviewOrgans": "Organları göster",
+    "NHT_YAPEM_PreviewBody": "Vücudu göster",
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
   },
   "Ukrainian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1579,7 +1644,12 @@
     "NHT_YAPEM_ProfileExport": "Експорт",
     "NHT_YAPEM_ProfileImport": "Імпорт",
     "NHT_YAPEM_ProfileMenuTip": "Дії з профілем",
-    "NHT_YAPEM_SlotNamePrompt": "Введіть назву для цього кольору:"
+    "NHT_YAPEM_SlotNamePrompt": "Введіть назву для цього кольору:",
+    "NHT_YAPEM_Preview": "Превʼю",
+    "NHT_YAPEM_PreviewInGameOnly": "Превʼю доступне лише в грі",
+    "NHT_YAPEM_PreviewOrgans": "Показати органи",
+    "NHT_YAPEM_PreviewBody": "Показати тіло",
+    "NHT_YAPEM_PreviewModLine": "Мод: {0}"
   },
   "Vietnamese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1692,7 +1762,12 @@
     "NHT_YAPEM_ProfileExport": "Xuất",
     "NHT_YAPEM_ProfileImport": "Nhập",
     "NHT_YAPEM_ProfileMenuTip": "Thao tác hồ sơ",
-    "NHT_YAPEM_SlotNamePrompt": "Nhập tên cho màu này:"
+    "NHT_YAPEM_SlotNamePrompt": "Nhập tên cho màu này:",
+    "NHT_YAPEM_Preview": "Xem trước",
+    "NHT_YAPEM_PreviewInGameOnly": "Chỉ xem trước được trong game",
+    "NHT_YAPEM_PreviewOrgans": "Hiện nội tạng",
+    "NHT_YAPEM_PreviewBody": "Hiện cơ thể",
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
   },
   "Polish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1805,7 +1880,12 @@
     "NHT_YAPEM_ProfileExport": "Eksportuj",
     "NHT_YAPEM_ProfileImport": "Importuj",
     "NHT_YAPEM_ProfileMenuTip": "Działania profilu",
-    "NHT_YAPEM_SlotNamePrompt": "Wpisz nazwę tego koloru:"
+    "NHT_YAPEM_SlotNamePrompt": "Wpisz nazwę tego koloru:",
+    "NHT_YAPEM_Preview": "Podgląd",
+    "NHT_YAPEM_PreviewInGameOnly": "Podgląd jest dostępny tylko w grze",
+    "NHT_YAPEM_PreviewOrgans": "Pokaż narządy",
+    "NHT_YAPEM_PreviewBody": "Pokaż ciało",
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
   },
   "Czech": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1918,7 +1998,12 @@
     "NHT_YAPEM_ProfileExport": "Exportovat",
     "NHT_YAPEM_ProfileImport": "Importovat",
     "NHT_YAPEM_ProfileMenuTip": "Akce profilu",
-    "NHT_YAPEM_SlotNamePrompt": "Zadejte název této barvy:"
+    "NHT_YAPEM_SlotNamePrompt": "Zadejte název této barvy:",
+    "NHT_YAPEM_Preview": "Náhled",
+    "NHT_YAPEM_PreviewInGameOnly": "Náhled je dostupný jen ve hře",
+    "NHT_YAPEM_PreviewOrgans": "Zobrazit orgány",
+    "NHT_YAPEM_PreviewBody": "Zobrazit tělo",
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
   },
   "Hungarian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -2031,6 +2116,11 @@
     "NHT_YAPEM_ProfileExport": "Exportálás",
     "NHT_YAPEM_ProfileImport": "Importálás",
     "NHT_YAPEM_ProfileMenuTip": "Profilműveletek",
-    "NHT_YAPEM_SlotNamePrompt": "Adja meg a szín nevét:"
+    "NHT_YAPEM_SlotNamePrompt": "Adja meg a szín nevét:",
+    "NHT_YAPEM_Preview": "Előnézet",
+    "NHT_YAPEM_PreviewInGameOnly": "Az előnézet csak játékban érhető el",
+    "NHT_YAPEM_PreviewOrgans": "Szervek mutatása",
+    "NHT_YAPEM_PreviewBody": "Test mutatása",
+    "NHT_YAPEM_PreviewModLine": "Mod: {0}"
   }
 }

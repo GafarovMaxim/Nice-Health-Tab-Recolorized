@@ -111,4 +111,9 @@
   <NHT_YAPEM_ProfileImport>가져오기</NHT_YAPEM_ProfileImport>
   <NHT_YAPEM_ProfileMenuTip>프로필 작업</NHT_YAPEM_ProfileMenuTip>
   <NHT_YAPEM_SlotNamePrompt>이 색상의 이름을 입력하세요:</NHT_YAPEM_SlotNamePrompt>
+  <NHT_YAPEM_Preview>미리보기</NHT_YAPEM_Preview>
+  <NHT_YAPEM_PreviewInGameOnly>미리보기는 게임 중에만 사용할 수 있습니다</NHT_YAPEM_PreviewInGameOnly>
+  <NHT_YAPEM_PreviewOrgans>장기 보기</NHT_YAPEM_PreviewOrgans>
+  <NHT_YAPEM_PreviewBody>신체 보기</NHT_YAPEM_PreviewBody>
+  <NHT_YAPEM_PreviewModLine>모드: {0}</NHT_YAPEM_PreviewModLine>
 </LanguageData>

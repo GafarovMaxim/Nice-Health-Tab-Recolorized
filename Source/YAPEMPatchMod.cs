@@ -19,8 +19,21 @@ namespace NiceHealthTab_YAPEM_Patch
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
-            Settings.DoSettingsWindowContents(inRect);
+            Rect left = inRect;
+            if (DollPreview.Show)
+            {
+                left.width -= DollPreview.PanelWidth + 8f;
+                DollPreview.DrawPanel(new Rect(left.xMax + 8f, inRect.y + 36f, DollPreview.PanelWidth, inRect.height - 36f));
+            }
+            Settings.DoSettingsWindowContents(left);
+            DollPreview.DrawToggle(new Rect(inRect.xMax - 140f, inRect.y, 140f, 28f));
             base.DoSettingsWindowContents(inRect);
+        }
+
+        public override void WriteSettings()
+        {
+            DollPreview.OnWindowClosed();
+            base.WriteSettings();
         }
     }
 }

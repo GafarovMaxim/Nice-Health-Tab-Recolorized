@@ -111,4 +111,9 @@
   <NHT_YAPEM_ProfileImport>Nhập</NHT_YAPEM_ProfileImport>
   <NHT_YAPEM_ProfileMenuTip>Thao tác hồ sơ</NHT_YAPEM_ProfileMenuTip>
   <NHT_YAPEM_SlotNamePrompt>Nhập tên cho màu này:</NHT_YAPEM_SlotNamePrompt>
+  <NHT_YAPEM_Preview>Xem trước</NHT_YAPEM_Preview>
+  <NHT_YAPEM_PreviewInGameOnly>Chỉ xem trước được trong game</NHT_YAPEM_PreviewInGameOnly>
+  <NHT_YAPEM_PreviewOrgans>Hiện nội tạng</NHT_YAPEM_PreviewOrgans>
+  <NHT_YAPEM_PreviewBody>Hiện cơ thể</NHT_YAPEM_PreviewBody>
+  <NHT_YAPEM_PreviewModLine>Mod: {0}</NHT_YAPEM_PreviewModLine>
 </LanguageData>

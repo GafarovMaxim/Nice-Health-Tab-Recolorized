@@ -111,4 +111,9 @@
   <NHT_YAPEM_ProfileImport>Импорт</NHT_YAPEM_ProfileImport>
   <NHT_YAPEM_ProfileMenuTip>Действия с профилем</NHT_YAPEM_ProfileMenuTip>
   <NHT_YAPEM_SlotNamePrompt>Введите название для этого цвета:</NHT_YAPEM_SlotNamePrompt>
+  <NHT_YAPEM_Preview>Превью</NHT_YAPEM_Preview>
+  <NHT_YAPEM_PreviewInGameOnly>Превью доступно только в игре</NHT_YAPEM_PreviewInGameOnly>
+  <NHT_YAPEM_PreviewOrgans>Показать органы</NHT_YAPEM_PreviewOrgans>
+  <NHT_YAPEM_PreviewBody>Показать тело</NHT_YAPEM_PreviewBody>
+  <NHT_YAPEM_PreviewModLine>Мод: {0}</NHT_YAPEM_PreviewModLine>
 </LanguageData>

@@ -111,4 +111,9 @@
   <NHT_YAPEM_ProfileImport>インポート</NHT_YAPEM_ProfileImport>
   <NHT_YAPEM_ProfileMenuTip>プロファイル操作</NHT_YAPEM_ProfileMenuTip>
   <NHT_YAPEM_SlotNamePrompt>この色の名前を入力:</NHT_YAPEM_SlotNamePrompt>
+  <NHT_YAPEM_Preview>プレビュー</NHT_YAPEM_Preview>
+  <NHT_YAPEM_PreviewInGameOnly>プレビューはゲーム中のみ利用できます</NHT_YAPEM_PreviewInGameOnly>
+  <NHT_YAPEM_PreviewOrgans>臓器を表示</NHT_YAPEM_PreviewOrgans>
+  <NHT_YAPEM_PreviewBody>身体を表示</NHT_YAPEM_PreviewBody>
+  <NHT_YAPEM_PreviewModLine>Mod: {0}</NHT_YAPEM_PreviewModLine>
 </LanguageData>
