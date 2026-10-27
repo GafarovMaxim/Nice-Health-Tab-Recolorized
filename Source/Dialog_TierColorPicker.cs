@@ -14,7 +14,8 @@ namespace NiceHealthTab_YAPEM_Patch
         private const float RadiusOuter = 100f;
         private const float RadiusInner = 76f;
         private const float RadiusDiamond = 60f;
-        public const int CustomSlotCount = 8;
+        public const int CustomSlotCount = 24;
+        private const int ChipsPerRow = 12;
         private const float ChipSize = 28f;
         private const float ChipGap = 6f;
         private static readonly Color Accent = new Color(0.37f, 0.66f, 1f);
@@ -74,7 +75,7 @@ namespace NiceHealthTab_YAPEM_Patch
         private bool isDraggingDiamond;
         private bool accepted;
 
-        public override Vector2 InitialSize => new Vector2(440f, 560f);
+        public override Vector2 InitialSize => new Vector2(440f, 584f);
 
         protected override float Margin => 12f;
 
@@ -377,7 +378,7 @@ namespace NiceHealthTab_YAPEM_Patch
             {
                 int slotIndex = i;
                 int slotNumber = i + 1;
-                Rect chipRect = new Rect(4f + i * (ChipSize + ChipGap), 428f, ChipSize, ChipSize);
+                Rect chipRect = new Rect(4f + (i % ChipsPerRow) * (ChipSize + ChipGap), 428f + (i / ChipsPerRow) * (ChipSize + ChipGap), ChipSize, ChipSize);
                 bool isFilled = customPresets != null && slotIndex < customPresets.Count && customPresets[slotIndex].a > 0.01f;
 
                 if (isFilled)
