@@ -118,6 +118,7 @@
   <NHT_YAPEM_PreviewModLine>Mod: {0}</NHT_YAPEM_PreviewModLine>
   <NHT_YAPEM_OpenSettings>Otevřít nastavení Recolorized</NHT_YAPEM_OpenSettings>
   <NHT_YAPEM_UseDamageColor>Vlastní barva poškozených částí</NHT_YAPEM_UseDamageColor>
-  <NHT_YAPEM_UseDamageColor_Desc>Poškozené části (orgány, končetiny, implantáty) mají jednu barvu; čím větší poškození, tím sytější. Vypnuto = barvy Nice Health Tab.</NHT_YAPEM_UseDamageColor_Desc>
+  <NHT_YAPEM_UseDamageColor_Desc>Poškozené části mají vaši barvu při těžkém poškození a světlejší odstín při lehkém, jako v Nice Health Tab. Vypnuto = barvy Nice Health Tab.</NHT_YAPEM_UseDamageColor_Desc>
   <NHT_YAPEM_DamageColor>Barva poškození</NHT_YAPEM_DamageColor>
+  <NHT_YAPEM_HueOnly>Jen odstín</NHT_YAPEM_HueOnly>
 </LanguageData>

@@ -118,6 +118,7 @@
   <NHT_YAPEM_PreviewModLine>Mod: {0}</NHT_YAPEM_PreviewModLine>
   <NHT_YAPEM_OpenSettings>Recolorized ayarlarını aç</NHT_YAPEM_OpenSettings>
   <NHT_YAPEM_UseDamageColor>Hasarlı parçalar için özel renk</NHT_YAPEM_UseDamageColor>
-  <NHT_YAPEM_UseDamageColor_Desc>Yaralı parçalar (organlar, uzuvlar, implantlar) tek renk kullanır; hasar arttıkça renk doygunlaşır. Kapalı = Nice Health Tab renkleri.</NHT_YAPEM_UseDamageColor_Desc>
+  <NHT_YAPEM_UseDamageColor_Desc>Yaralı parçalar ağır hasarda sizin renginizi, hafif hasarda daha açık tonunu kullanır (Nice Health Tab gibi). Kapalı = Nice Health Tab renkleri.</NHT_YAPEM_UseDamageColor_Desc>
   <NHT_YAPEM_DamageColor>Hasar rengi</NHT_YAPEM_DamageColor>
+  <NHT_YAPEM_HueOnly>Yalnızca ton</NHT_YAPEM_HueOnly>
 </LanguageData>

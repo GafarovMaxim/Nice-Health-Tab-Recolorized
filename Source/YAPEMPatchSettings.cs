@@ -52,8 +52,9 @@ namespace NiceHealthTab_YAPEM_Patch
         public Color ColorIntegratedImplants = DefaultColorIntegratedImplants;
 
         // Not part of palette profiles: one color for wounded parts, its saturation follows the damage.
-        public static readonly Color DefaultColorDamage = new Color(0.85f, 0.1f, 0.1f, 1f);
+        public static readonly Color DefaultColorDamage = new Color(248f / 255f, 45f / 255f, 69f / 255f, 1f); // NHT's own serious-wound color
         public bool UseDamageColor = false;
+        public bool DamageHueOnly = true;
         public Color ColorDamage = DefaultColorDamage;
 
         // User Custom Palette Presets (persisted across sessions, 8 fixed slots)
@@ -110,6 +111,7 @@ namespace NiceHealthTab_YAPEM_Patch
             Scribe_Values.Look(ref ColorOdyssey, "ColorOdyssey", DefaultColorOdyssey);
             Scribe_Values.Look(ref ColorIntegratedImplants, "ColorIntegratedImplants", DefaultColorIntegratedImplants);
             Scribe_Values.Look(ref UseDamageColor, "UseDamageColor", false);
+            Scribe_Values.Look(ref DamageHueOnly, "DamageHueOnly", true);
             Scribe_Values.Look(ref ColorDamage, "ColorDamage", DefaultColorDamage);
 
             Scribe_Collections.Look(ref CustomPresets, "CustomPresets", LookMode.Value);
@@ -517,6 +519,7 @@ namespace NiceHealthTab_YAPEM_Patch
             OnlyShowOrgansInOrganMode = false;
             UseDLCColors = true;
             UseDamageColor = false;
+            DamageHueOnly = true;
             ColorDamage = DefaultColorDamage;
             ResetColorsToDefault();
             CustomHediffTiers?.Clear();
@@ -745,7 +748,7 @@ namespace NiceHealthTab_YAPEM_Patch
             );
             if (UseDamageColor)
             {
-                DrawColorEntry(listing, "NHT_YAPEM_DamageColor".Translate(), ref ColorDamage, DefaultColorDamage, c => ColorDamage = c);
+                DrawColorEntry(listing, "NHT_YAPEM_DamageColor".Translate(), ref ColorDamage, DefaultColorDamage, c => ColorDamage = c, true);
             }
 
             listing.Gap(6f);
@@ -1233,7 +1236,17 @@ namespace NiceHealthTab_YAPEM_Patch
             return false;
         }
 
-        private void DrawColorEntry(Listing_Standard listing, string title, ref Color color, Color defaultColor, Action<Color> saveAction)
+        private void OpenPicker(string title, Color cur, Color defaultColor, Action<Color> action, bool hueOnlyOption)
+        {
+            var dialog = new Dialog_TierColorPicker(title, cur, defaultColor, action);
+            if (hueOnlyOption)
+            {
+                dialog.EnableHueOnlyOption(DamageHueOnly, DefaultColorDamage, v => { DamageHueOnly = v; Write(); });
+            }
+            Find.WindowStack.Add(dialog);
+        }
+
+        private void DrawColorEntry(Listing_Standard listing, string title, ref Color color, Color defaultColor, Action<Color> saveAction, bool hueOnlyOption = false)
         {
             Rect entryRect = listing.GetRect(32f);
 
@@ -1258,7 +1271,7 @@ namespace NiceHealthTab_YAPEM_Patch
             if (Widgets.ButtonInvisible(swatchRect))
             {
                 Color cur = color;
-                Find.WindowStack.Add(new Dialog_TierColorPicker(title, cur, defaultColor, wrappedAction));
+                OpenPicker(title, cur, defaultColor, wrappedAction, hueOnlyOption);
             }
 
             // 3. Hex code display
@@ -1270,7 +1283,7 @@ namespace NiceHealthTab_YAPEM_Patch
             if (Widgets.ButtonText(pickBtnRect, "NHT_YAPEM_PaletteBtn".Translate()))
             {
                 Color cur = color;
-                Find.WindowStack.Add(new Dialog_TierColorPicker(title, cur, defaultColor, wrappedAction));
+                OpenPicker(title, cur, defaultColor, wrappedAction, hueOnlyOption);
             }
 
             // 5. Reset button

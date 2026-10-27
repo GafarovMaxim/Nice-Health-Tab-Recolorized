@@ -75,6 +75,12 @@ namespace NiceHealthTab_YAPEM_Patch
         private bool isDraggingDiamond;
         private bool accepted;
 
+        // Optional "hue only" mode: saturation and lightness stay fixed, only the hue changes.
+        private bool hueOnlyEnabled;
+        private bool hueOnly;
+        private float fixedS, fixedL;
+        private Action<bool> onHueOnlyChanged;
+
         public override Vector2 InitialSize => new Vector2(440f, 584f);
 
         protected override float Margin => 12f;
@@ -98,6 +104,25 @@ namespace NiceHealthTab_YAPEM_Patch
 
             EnsureCustomPresetSlots();
             GenerateWheelTexture();
+        }
+
+        public void EnableHueOnlyOption(bool current, Color fixedColor, Action<bool> onChanged)
+        {
+            hueOnlyEnabled = true;
+            hueOnly = current;
+            onHueOnlyChanged = onChanged;
+            RgbToHsl(fixedColor, out _, out fixedS, out fixedL);
+            if (hueOnly) ApplyHueOnly(false);
+        }
+
+        private void ApplyHueOnly(bool notify)
+        {
+            currentS = fixedS;
+            currentL = fixedL;
+            currentColor = HslToRgb(currentH, currentS, currentL);
+            hexBuffer = ColorUtility.ToHtmlStringRGB(currentColor);
+            RedrawDiamond();
+            if (notify) onColorSaved?.Invoke(currentColor);
         }
 
         private static void EnsureCustomPresetSlots()
@@ -256,6 +281,17 @@ namespace NiceHealthTab_YAPEM_Patch
             Widgets.Label(new Rect(36f, 32f, w - 36f, 20f), "#" + ColorUtility.ToHtmlStringRGB(currentColor));
             GUI.color = Color.white;
 
+            if (hueOnlyEnabled)
+            {
+                bool was = hueOnly;
+                Widgets.CheckboxLabeled(new Rect(w - 190f, 30f, 190f, 24f), "NHT_YAPEM_HueOnly".Translate(), ref hueOnly);
+                if (hueOnly != was)
+                {
+                    onHueOnlyChanged?.Invoke(hueOnly);
+                    if (hueOnly) ApplyHueOnly(true);
+                }
+            }
+
             // Wheel: ring diameter 200 sits inside the 220 texture, so the ring spans y 62..262
             Rect wheelRect = new Rect((w - TexSize) / 2f, 52f, TexSize, TexSize);
             if (wheelTexture != null)
@@ -277,7 +313,7 @@ namespace NiceHealthTab_YAPEM_Patch
                     UpdateHue(dx, dy);
                     Event.current.Use();
                 }
-                else if (Mathf.Abs(dx) + Mathf.Abs(dy) <= RadiusDiamond + 6f)
+                else if (!hueOnly && Mathf.Abs(dx) + Mathf.Abs(dy) <= RadiusDiamond + 6f)
                 {
                     isDraggingDiamond = true;
                     UpdateDiamond(dx, dy);
@@ -291,7 +327,7 @@ namespace NiceHealthTab_YAPEM_Patch
                     UpdateHue(dx, dy);
                     Event.current.Use();
                 }
-                else if (isDraggingDiamond)
+                else if (isDraggingDiamond && !hueOnly)
                 {
                     UpdateDiamond(dx, dy);
                     Event.current.Use();
@@ -304,7 +340,15 @@ namespace NiceHealthTab_YAPEM_Patch
             }
 
             DrawHueCursor(wheelRect);
-            DrawDiamondCursor(wheelRect);
+            if (hueOnly)
+            {
+                float half = RadiusDiamond * 0.72f;
+                Widgets.DrawBoxSolid(new Rect(wheelRect.x + Center - half, wheelRect.y + Center - half, half * 2f, half * 2f), new Color(0.09f, 0.1f, 0.12f, 0.92f));
+            }
+            else
+            {
+                DrawDiamondCursor(wheelRect);
+            }
 
             // Was / Now swatches (label under each), hex field, copy
             float rowY = 272f;
@@ -343,8 +387,15 @@ namespace NiceHealthTab_YAPEM_Patch
                 {
                     currentColor = parsed;
                     RgbToHsl(currentColor, out currentH, out currentS, out currentL);
-                    RedrawDiamond();
-                    onColorSaved?.Invoke(currentColor);
+                    if (hueOnly)
+                    {
+                        ApplyHueOnly(true);
+                    }
+                    else
+                    {
+                        RedrawDiamond();
+                        onColorSaved?.Invoke(currentColor);
+                    }
                 }
             }
 
@@ -571,6 +622,11 @@ namespace NiceHealthTab_YAPEM_Patch
             currentColor = color;
             hexBuffer = ColorUtility.ToHtmlStringRGB(currentColor);
             RgbToHsl(currentColor, out currentH, out currentS, out currentL);
+            if (hueOnly)
+            {
+                ApplyHueOnly(true);
+                return;
+            }
             RedrawDiamond();
             onColorSaved?.Invoke(currentColor);
         }

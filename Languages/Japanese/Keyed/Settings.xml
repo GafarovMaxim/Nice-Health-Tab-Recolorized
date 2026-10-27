@@ -118,6 +118,7 @@
   <NHT_YAPEM_PreviewModLine>Mod: {0}</NHT_YAPEM_PreviewModLine>
   <NHT_YAPEM_OpenSettings>Recolorized の設定を開く</NHT_YAPEM_OpenSettings>
   <NHT_YAPEM_UseDamageColor>損傷部位に専用の色を使う</NHT_YAPEM_UseDamageColor>
-  <NHT_YAPEM_UseDamageColor_Desc>損傷した部位(臓器・四肢・インプラント)を1色で表示し、損傷が重いほど彩度が高くなります。オフ = Nice Health Tab の色。</NHT_YAPEM_UseDamageColor_Desc>
+  <NHT_YAPEM_UseDamageColor_Desc>損傷した部位は、重傷では指定色、軽傷ではより明るい色で表示されます(Nice Health Tab と同様)。オフ = Nice Health Tab の色。</NHT_YAPEM_UseDamageColor_Desc>
   <NHT_YAPEM_DamageColor>損傷の色</NHT_YAPEM_DamageColor>
+  <NHT_YAPEM_HueOnly>色相のみ</NHT_YAPEM_HueOnly>
 </LanguageData>

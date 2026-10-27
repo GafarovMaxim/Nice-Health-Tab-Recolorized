@@ -118,6 +118,7 @@
   <NHT_YAPEM_PreviewModLine>Mod: {0}</NHT_YAPEM_PreviewModLine>
   <NHT_YAPEM_OpenSettings>Mở cài đặt Recolorized</NHT_YAPEM_OpenSettings>
   <NHT_YAPEM_UseDamageColor>Màu riêng cho bộ phận bị thương</NHT_YAPEM_UseDamageColor>
-  <NHT_YAPEM_UseDamageColor_Desc>Các bộ phận bị thương (nội tạng, chi, cấy ghép) dùng một màu; càng tổn thương nặng càng đậm. Tắt = màu của Nice Health Tab.</NHT_YAPEM_UseDamageColor_Desc>
+  <NHT_YAPEM_UseDamageColor_Desc>Bộ phận bị thương dùng màu của bạn khi tổn thương nặng và sắc nhạt hơn khi nhẹ, như Nice Health Tab. Tắt = màu của Nice Health Tab.</NHT_YAPEM_UseDamageColor_Desc>
   <NHT_YAPEM_DamageColor>Màu tổn thương</NHT_YAPEM_DamageColor>
+  <NHT_YAPEM_HueOnly>Chỉ sắc độ</NHT_YAPEM_HueOnly>
 </LanguageData>

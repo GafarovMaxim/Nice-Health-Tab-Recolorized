@@ -118,6 +118,7 @@
   <NHT_YAPEM_PreviewModLine>모드: {0}</NHT_YAPEM_PreviewModLine>
   <NHT_YAPEM_OpenSettings>Recolorized 설정 열기</NHT_YAPEM_OpenSettings>
   <NHT_YAPEM_UseDamageColor>손상 부위 전용 색상 사용</NHT_YAPEM_UseDamageColor>
-  <NHT_YAPEM_UseDamageColor_Desc>손상된 부위(장기, 사지, 임플란트)를 한 가지 색으로 표시하며, 손상이 클수록 채도가 높아집니다. 끄면 Nice Health Tab 색상을 사용합니다.</NHT_YAPEM_UseDamageColor_Desc>
+  <NHT_YAPEM_UseDamageColor_Desc>손상된 부위는 중상이면 지정한 색, 경상이면 더 밝은 색으로 표시됩니다(Nice Health Tab과 동일). 끄면 Nice Health Tab 색상을 사용합니다.</NHT_YAPEM_UseDamageColor_Desc>
   <NHT_YAPEM_DamageColor>손상 색상</NHT_YAPEM_DamageColor>
+  <NHT_YAPEM_HueOnly>색조만</NHT_YAPEM_HueOnly>
 </LanguageData>
