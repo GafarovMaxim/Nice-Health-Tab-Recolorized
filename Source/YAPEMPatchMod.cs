@@ -6,10 +6,12 @@ namespace NiceHealthTab_YAPEM_Patch
     public class YAPEMPatchMod : Verse.Mod
     {
         public static YAPEMPatchSettings Settings { get; private set; }
+        public static ModContentPack ContentPack { get; private set; }
 
         public YAPEMPatchMod(ModContentPack content) : base(content)
         {
             Settings = GetSettings<YAPEMPatchSettings>();
+            ContentPack = content;
         }
 
         public override string SettingsCategory()

@@ -255,6 +255,7 @@ namespace NiceHealthTab_YAPEM_Patch
 
             partDef.PartColor = color;
             partDef.GetSource(out Texture2D tex, out Rect uv);
+            tex = TintTextures.Neutral(partDef, tex, uv);
 
             Color prev = GUI.color;
             GUI.color = color;
