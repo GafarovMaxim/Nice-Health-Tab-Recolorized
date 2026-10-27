@@ -88,4 +88,9 @@
   <NHT_YAPEM_ModImplantCount>임플란트 {0}개</NHT_YAPEM_ModImplantCount>
   <NHT_YAPEM_DetectedTiersHeader>모드가 추가한 등급</NHT_YAPEM_DetectedTiersHeader>
   <NHT_YAPEM_DetectedTiersHint>모드에서 자동으로 찾은 새 등급입니다. 각각 고유한 색상을 지정할 수 있습니다.</NHT_YAPEM_DetectedTiersHint>
+  <NHT_YAPEM_GroupLabel>모드:</NHT_YAPEM_GroupLabel>
+  <NHT_YAPEM_ResetAllOverrides>모든 개별 설정 초기화</NHT_YAPEM_ResetAllOverrides>
+  <NHT_YAPEM_ResetTierColors>등급 색상 초기화</NHT_YAPEM_ResetTierColors>
+  <NHT_YAPEM_ResetDlcColors>DLC 색상 초기화</NHT_YAPEM_ResetDlcColors>
+  <NHT_YAPEM_ResetModColors>모든 모드 색상 초기화</NHT_YAPEM_ResetModColors>
 </LanguageData>

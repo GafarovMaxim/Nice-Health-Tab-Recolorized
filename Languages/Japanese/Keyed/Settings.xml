@@ -88,4 +88,9 @@
   <NHT_YAPEM_ModImplantCount>インプラント {0} 個</NHT_YAPEM_ModImplantCount>
   <NHT_YAPEM_DetectedTiersHeader>Modが追加したティア</NHT_YAPEM_DetectedTiersHeader>
   <NHT_YAPEM_DetectedTiersHint>Modから自動的に見つかった新しいティアです。それぞれに専用の色を設定できます。</NHT_YAPEM_DetectedTiersHint>
+  <NHT_YAPEM_GroupLabel>Mod:</NHT_YAPEM_GroupLabel>
+  <NHT_YAPEM_ResetAllOverrides>個別設定をすべてリセット</NHT_YAPEM_ResetAllOverrides>
+  <NHT_YAPEM_ResetTierColors>ティアの色をリセット</NHT_YAPEM_ResetTierColors>
+  <NHT_YAPEM_ResetDlcColors>DLCの色をリセット</NHT_YAPEM_ResetDlcColors>
+  <NHT_YAPEM_ResetModColors>すべてのModの色をリセット</NHT_YAPEM_ResetModColors>
 </LanguageData>

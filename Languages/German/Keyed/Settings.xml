@@ -88,4 +88,9 @@
   <NHT_YAPEM_ModImplantCount>{0} Implantate</NHT_YAPEM_ModImplantCount>
   <NHT_YAPEM_DetectedTiersHeader>Von Mods hinzugefügte Stufen</NHT_YAPEM_DetectedTiersHeader>
   <NHT_YAPEM_DetectedTiersHint>Neue Stufen, die in deinen Mods automatisch gefunden wurden. Jede erhält eine eigene Farbe.</NHT_YAPEM_DetectedTiersHint>
+  <NHT_YAPEM_GroupLabel>Mod:</NHT_YAPEM_GroupLabel>
+  <NHT_YAPEM_ResetAllOverrides>Alle Überschreibungen zurücksetzen</NHT_YAPEM_ResetAllOverrides>
+  <NHT_YAPEM_ResetTierColors>Stufenfarben zurücksetzen</NHT_YAPEM_ResetTierColors>
+  <NHT_YAPEM_ResetDlcColors>DLC-Farben zurücksetzen</NHT_YAPEM_ResetDlcColors>
+  <NHT_YAPEM_ResetModColors>Alle Mod-Farben zurücksetzen</NHT_YAPEM_ResetModColors>
 </LanguageData>

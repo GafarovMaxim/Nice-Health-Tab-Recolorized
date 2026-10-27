@@ -88,4 +88,9 @@
   <NHT_YAPEM_ModImplantCount>implantátů: {0}</NHT_YAPEM_ModImplantCount>
   <NHT_YAPEM_DetectedTiersHeader>Úrovně přidané módy</NHT_YAPEM_DetectedTiersHeader>
   <NHT_YAPEM_DetectedTiersHint>Nové úrovně automaticky nalezené ve vašich módech. Každá má vlastní barvu.</NHT_YAPEM_DetectedTiersHint>
+  <NHT_YAPEM_GroupLabel>Mód:</NHT_YAPEM_GroupLabel>
+  <NHT_YAPEM_ResetAllOverrides>Obnovit všechna nastavení</NHT_YAPEM_ResetAllOverrides>
+  <NHT_YAPEM_ResetTierColors>Obnovit barvy úrovní</NHT_YAPEM_ResetTierColors>
+  <NHT_YAPEM_ResetDlcColors>Obnovit barvy DLC</NHT_YAPEM_ResetDlcColors>
+  <NHT_YAPEM_ResetModColors>Obnovit barvy všech módů</NHT_YAPEM_ResetModColors>
 </LanguageData>

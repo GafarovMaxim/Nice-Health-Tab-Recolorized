@@ -88,4 +88,9 @@
   <NHT_YAPEM_ModImplantCount>{0} 個植入物</NHT_YAPEM_ModImplantCount>
   <NHT_YAPEM_DetectedTiersHeader>模組新增的等級</NHT_YAPEM_DetectedTiersHeader>
   <NHT_YAPEM_DetectedTiersHint>在你的模組中自動發現的新等級，每個等級都有獨立的顏色。</NHT_YAPEM_DetectedTiersHint>
+  <NHT_YAPEM_GroupLabel>模組：</NHT_YAPEM_GroupLabel>
+  <NHT_YAPEM_ResetAllOverrides>重設所有個別設定</NHT_YAPEM_ResetAllOverrides>
+  <NHT_YAPEM_ResetTierColors>重設等級顏色</NHT_YAPEM_ResetTierColors>
+  <NHT_YAPEM_ResetDlcColors>重設 DLC 顏色</NHT_YAPEM_ResetDlcColors>
+  <NHT_YAPEM_ResetModColors>重設所有模組顏色</NHT_YAPEM_ResetModColors>
 </LanguageData>

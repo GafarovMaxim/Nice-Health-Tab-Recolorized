@@ -88,4 +88,9 @@
   <NHT_YAPEM_ModImplantCount>имплантов: {0}</NHT_YAPEM_ModImplantCount>
   <NHT_YAPEM_DetectedTiersHeader>Тиры из модов</NHT_YAPEM_DetectedTiersHeader>
   <NHT_YAPEM_DetectedTiersHint>Новые тиры, найденные автоматически в ваших модах. У каждого свой цвет.</NHT_YAPEM_DetectedTiersHint>
+  <NHT_YAPEM_GroupLabel>Мод:</NHT_YAPEM_GroupLabel>
+  <NHT_YAPEM_ResetAllOverrides>Сбросить все настройки</NHT_YAPEM_ResetAllOverrides>
+  <NHT_YAPEM_ResetTierColors>Сбросить цвета тиров</NHT_YAPEM_ResetTierColors>
+  <NHT_YAPEM_ResetDlcColors>Сбросить цвета DLC</NHT_YAPEM_ResetDlcColors>
+  <NHT_YAPEM_ResetModColors>Сбросить цвета всех модов</NHT_YAPEM_ResetModColors>
 </LanguageData>

@@ -90,9 +90,10 @@ namespace NiceHealthTab_YAPEM_Patch
                 case "Odyssey":
                     color = ColorOdyssey;
                     return true;
+                // Integrated Implants is a regular mod now (see ModColors); old saved overrides fall back to Bionic.
                 case "IntegratedImplants":
                 case "Integrated":
-                    color = ColorIntegratedImplants;
+                    color = ColorBionic;
                     return true;
                 default:
                     if (IsDynamicTier(tierName))
@@ -120,7 +121,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 case "Anomaly": return "NHT_YAPEM_TierAnomaly".Translate();
                 case "Odyssey": return "NHT_YAPEM_TierOdyssey".Translate();
                 case "IntegratedImplants":
-                case "Integrated": return "NHT_YAPEM_TierIntegrated".Translate();
+                case "Integrated": return "NHT_YAPEM_TierBionic".Translate();
                 case "None": return "NHT_YAPEM_TierNone".Translate();
                 case "Auto": return "NHT_YAPEM_TierAuto".Translate();
                 default: return dynamicTierLabels.TryGetValue(tierName ?? "", out string label) ? label : tierName;
@@ -235,6 +236,7 @@ namespace NiceHealthTab_YAPEM_Patch
         // whose name is not one of the known tiers. Key is "Cat:<defName>"; label and default color are derived from it.
         private static readonly Dictionary<ThingCategoryDef, string> dynamicTierKeys = new Dictionary<ThingCategoryDef, string>();
         private static readonly Dictionary<string, string> dynamicTierLabels = new Dictionary<string, string>();
+        private static readonly Dictionary<string, string> dynamicTierSources = new Dictionary<string, string>();
         private static readonly Dictionary<string, Color> dynamicTierDefaultColors = new Dictionary<string, Color>();
         private static bool dynamicTiersScanned;
 
@@ -259,6 +261,7 @@ namespace NiceHealthTab_YAPEM_Patch
                     key = "Cat:" + cat.defName;
                     dynamicTierKeys[cat] = key;
                     dynamicTierLabels[key] = cat.LabelCap.ToString();
+                    dynamicTierSources[key] = cat.modContentPack?.Name ?? "";
                     // Stable hue per category so each new tier is distinguishable without any user input.
                     float hue = (Mathf.Abs(cat.defName.GetHashCode()) % 360) / 360f;
                     dynamicTierDefaultColors[key] = Color.HSVToRGB(hue, 0.45f, 0.95f);
@@ -286,6 +289,10 @@ namespace NiceHealthTab_YAPEM_Patch
             }
             return dynamicTierDefaultColors.TryGetValue(tierKey, out Color def) ? def : Color.white;
         }
+
+        // Name of the mod or DLC that declares the tier, shown next to it in settings.
+        public static string GetDynamicTierSource(string tierKey) =>
+            dynamicTierSources.TryGetValue(tierKey, out string source) ? source : "";
 
         public static Color GetDynamicTierDefaultColor(string tierKey) =>
             dynamicTierDefaultColors.TryGetValue(tierKey, out Color def) ? def : Color.white;
@@ -353,6 +360,9 @@ namespace NiceHealthTab_YAPEM_Patch
                                     (def.hediffClass != null && (typeof(Hediff_AddedPart).IsAssignableFrom(def.hediffClass) || typeof(Hediff_Implant).IsAssignableFrom(def.hediffClass))) ||
                                     spawnThing != null;
 
+            // Name checks below are loose substring matches ("Hook", "Ultra", ...): only implants and prosthetics may be tinted.
+            if (!isAddedOrImplant) return false;
+
             string dlcPkg = def.modContentPack?.PackageIdPlayerFacing?.ToLowerInvariant() ?? "";
 
             // Dedicated DLC Categories (Royalty, Biotech, Anomaly, Odyssey)
@@ -387,14 +397,6 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }
 
-            // Dedicated Integrated Implants Category
-            if (isIntegratedImplants && isAddedOrImplant)
-            {
-                tier = "IntegratedImplants";
-                color = ColorIntegratedImplants;
-                return true;
-            }
-
             // Tier introduced by a mod (unknown category under BodyParts)
             if (isAddedOrImplant)
             {
@@ -414,8 +416,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 fullLabel.IndexOf("archotech", StringComparison.OrdinalIgnoreCase) >= 0 ||
                 fullLabel.IndexOf("архотек", StringComparison.OrdinalIgnoreCase) >= 0 ||
                 defName.Equals("MechlinkImplant", StringComparison.OrdinalIgnoreCase) ||
-                defName.Equals("Mechlink", StringComparison.OrdinalIgnoreCase) ||
-                (spawnThing?.techHediffsTags?.Contains("ImplantEmpireRoyal") == true))
+                defName.Equals("Mechlink", StringComparison.OrdinalIgnoreCase))
             {
                 tier = "Archotech";
                 color = ColorArchotech;
@@ -448,6 +449,15 @@ namespace NiceHealthTab_YAPEM_Patch
             {
                 tier = "Ultratech";
                 color = ColorUltratech;
+                return true;
+            }
+
+            // 3b. Royal implant tag marks archotech-grade items, but only if no more specific tier matched above:
+            // YAPEM ultratech/advanced parts copy this tag from vanilla royal implants.
+            if (spawnThing?.techHediffsTags?.Contains("ImplantEmpireRoyal") == true)
+            {
+                tier = "Archotech";
+                color = ColorArchotech;
                 return true;
             }
 

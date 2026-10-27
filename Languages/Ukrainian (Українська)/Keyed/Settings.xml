@@ -88,4 +88,9 @@
   <NHT_YAPEM_ModImplantCount>імплантів: {0}</NHT_YAPEM_ModImplantCount>
   <NHT_YAPEM_DetectedTiersHeader>Рівні з модів</NHT_YAPEM_DetectedTiersHeader>
   <NHT_YAPEM_DetectedTiersHint>Нові рівні, автоматично знайдені у ваших модах. Кожен має власний колір.</NHT_YAPEM_DetectedTiersHint>
+  <NHT_YAPEM_GroupLabel>Мод:</NHT_YAPEM_GroupLabel>
+  <NHT_YAPEM_ResetAllOverrides>Скинути всі налаштування</NHT_YAPEM_ResetAllOverrides>
+  <NHT_YAPEM_ResetTierColors>Скинути кольори рівнів</NHT_YAPEM_ResetTierColors>
+  <NHT_YAPEM_ResetDlcColors>Скинути кольори DLC</NHT_YAPEM_ResetDlcColors>
+  <NHT_YAPEM_ResetModColors>Скинути кольори всіх модів</NHT_YAPEM_ResetModColors>
 </LanguageData>

@@ -88,4 +88,9 @@
   <NHT_YAPEM_ModImplantCount>{0} implantes</NHT_YAPEM_ModImplantCount>
   <NHT_YAPEM_DetectedTiersHeader>Níveis adicionados por mods</NHT_YAPEM_DetectedTiersHeader>
   <NHT_YAPEM_DetectedTiersHint>Novos níveis encontrados automaticamente nos seus mods. Cada um recebe a própria cor.</NHT_YAPEM_DetectedTiersHint>
+  <NHT_YAPEM_GroupLabel>Mod:</NHT_YAPEM_GroupLabel>
+  <NHT_YAPEM_ResetAllOverrides>Redefinir todos os ajustes</NHT_YAPEM_ResetAllOverrides>
+  <NHT_YAPEM_ResetTierColors>Redefinir cores dos níveis</NHT_YAPEM_ResetTierColors>
+  <NHT_YAPEM_ResetDlcColors>Redefinir cores das DLCs</NHT_YAPEM_ResetDlcColors>
+  <NHT_YAPEM_ResetModColors>Redefinir cores de todos os mods</NHT_YAPEM_ResetModColors>
 </LanguageData>

@@ -24,10 +24,10 @@ namespace NiceHealthTab_YAPEM_Patch
         public static readonly Color DefaultColorProsthetic     = new Color(176f / 255f, 176f / 255f, 176f / 255f, 1f); // #B0B0B0 Silver Grey
 
         // Canonical defaults - DLC & Mod Categories
-        public static readonly Color DefaultColorRoyalty            = new Color(222f / 255f, 184f / 255f, 65f / 255f, 1f);  // #DEB841 Imperial Gold
-        public static readonly Color DefaultColorBiotech            = new Color(56f / 255f, 217f / 255f, 169f / 255f, 1f); // #38D9A9 Bio Mint
-        public static readonly Color DefaultColorAnomaly            = new Color(168f / 255f, 85f / 255f, 247f / 255f, 1f); // #A855F7 Void Violet
-        public static readonly Color DefaultColorOdyssey            = new Color(56f / 255f, 189f / 255f, 248f / 255f, 1f); // #38BDF8 Cosmic Sky
+        public static readonly Color DefaultColorRoyalty            = DefaultColorBionic; // same as the Bionic tier by default
+        public static readonly Color DefaultColorBiotech            = DefaultColorBionic; // same as the Bionic tier by default
+        public static readonly Color DefaultColorAnomaly            = DefaultColorBionic; // same as the Bionic tier by default
+        public static readonly Color DefaultColorOdyssey            = DefaultColorBionic; // same as the Bionic tier by default
         public static readonly Color DefaultColorIntegratedImplants = new Color(153f / 255f, 153f / 255f, 255f / 255f, 1f); // #9999FF Cyber Lavender
 
         // Body substrate, icon, and display toggles
@@ -392,6 +392,29 @@ namespace NiceHealthTab_YAPEM_Patch
             }
         }
 
+        public void ResetTierColors()
+        {
+            ColorAdvancedBionic = DefaultColorAdvancedBionic;
+            ColorUltratech = DefaultColorUltratech;
+            ColorArchotech = DefaultColorArchotech;
+            ColorBionic = DefaultColorBionic;
+            ColorProsthetic = DefaultColorProsthetic;
+            DynamicTierColors.Clear();
+            SyncActiveColorsToProfile();
+            Write();
+        }
+
+        public void ResetDlcColors()
+        {
+            ColorRoyalty = DefaultColorRoyalty;
+            ColorBiotech = DefaultColorBiotech;
+            ColorAnomaly = DefaultColorAnomaly;
+            ColorOdyssey = DefaultColorOdyssey;
+            UseDLCColors = true;
+            SyncActiveColorsToProfile();
+            Write();
+        }
+
         public void ResetColorsToDefault()
         {
             ColorAdvancedBionic = DefaultColorAdvancedBionic;
@@ -481,7 +504,9 @@ namespace NiceHealthTab_YAPEM_Patch
                 string key = tier.Key;
                 Color defaultColor = LimbTierUtility.GetDynamicTierDefaultColor(key);
                 Color current = LimbTierUtility.GetDynamicTierColor(key);
-                DrawColorEntry(listing, tier.Value, ref current, defaultColor, c =>
+                string source = LimbTierUtility.GetDynamicTierSource(key);
+                string title = string.IsNullOrEmpty(source) ? tier.Value : tier.Value + "  (" + source + ")";
+                DrawColorEntry(listing, title, ref current, defaultColor, c =>
                 {
                     if (c == defaultColor) DynamicTierColors.Remove(key);
                     else DynamicTierColors[key] = ToHex(c);
@@ -493,7 +518,7 @@ namespace NiceHealthTab_YAPEM_Patch
         {
             switch (g.GroupKey)
             {
-                case "core": case "royalty": case "biotech": case "anomaly": case "odyssey": case "integrated":
+                case "core": case "royalty": case "biotech": case "anomaly": case "odyssey":
                     return false;
                 default:
                     return !string.IsNullOrEmpty(g.GroupKey);
@@ -528,7 +553,9 @@ namespace NiceHealthTab_YAPEM_Patch
         private void DrawModColorEntry(Listing_Standard listing, ImplantGroup g)
         {
             Rect entryRect = listing.GetRect(32f);
-            string key = g.GroupKey;
+            // Must match LimbTierUtility.GetModKey(def): the real lowercase packageId (group keys are only that for some groups).
+            string key = g.Defs.Count > 0 ? LimbTierUtility.GetModKey(g.Defs[0]) : null;
+            if (key == null) return;
             Color shown = new Color(0.25f, 0.25f, 0.25f);
             bool hasColor = false;
             if (ModColors.TryGetValue(key, out string hex) && TryParseHex(hex, out Color parsed))
@@ -676,7 +703,6 @@ namespace NiceHealthTab_YAPEM_Patch
                 DrawColorEntry(listing, "NHT_YAPEM_TierBiotech".Translate(), ref ColorBiotech, DefaultColorBiotech, c => ColorBiotech = c);
                 DrawColorEntry(listing, "NHT_YAPEM_TierAnomaly".Translate(), ref ColorAnomaly, DefaultColorAnomaly, c => ColorAnomaly = c);
                 DrawColorEntry(listing, "NHT_YAPEM_TierOdyssey".Translate(), ref ColorOdyssey, DefaultColorOdyssey, c => ColorOdyssey = c);
-                DrawColorEntry(listing, "NHT_YAPEM_TierIntegrated".Translate(), ref ColorIntegratedImplants, DefaultColorIntegratedImplants, c => ColorIntegratedImplants = c);
             }
 
             }
@@ -694,11 +720,22 @@ namespace NiceHealthTab_YAPEM_Patch
             listing.GapLine();
             listing.Gap(6f);
 
-            Rect resetAllRect = listing.GetRect(32f);
-            resetAllRect.width = Mathf.Min(340f, viewRect.width);
-            if (Widgets.ButtonText(resetAllRect, "NHT_YAPEM_ResetAllBtn".Translate()))
+            // Each tab resets only itself; General resets everything. Fine-tune has its own buttons next to the search.
+            if (selectedTab != TabFineTune)
             {
-                ResetAllToDefault();
+                string resetKey = selectedTab == TabGeneral ? "NHT_YAPEM_ResetAllBtn"
+                    : selectedTab == TabTiers ? "NHT_YAPEM_ResetTierColors"
+                    : selectedTab == TabDLC ? "NHT_YAPEM_ResetDlcColors"
+                    : "NHT_YAPEM_ResetModColors";
+                Rect resetAllRect = listing.GetRect(32f);
+                resetAllRect.width = Mathf.Min(340f, viewRect.width);
+                if (Widgets.ButtonText(resetAllRect, resetKey.Translate()))
+                {
+                    if (selectedTab == TabGeneral) ResetAllToDefault();
+                    else if (selectedTab == TabTiers) ResetTierColors();
+                    else if (selectedTab == TabDLC) ResetDlcColors();
+                    else { ModColors.Clear(); Write(); }
+                }
             }
 
             }
@@ -728,59 +765,22 @@ namespace NiceHealthTab_YAPEM_Patch
                 return;
             }
 
-            // Draw Tabs
-            float containerWidth = listing.ColumnWidth;
-            float curX = 0f;
-            float curY = 0f;
-            float rowH = 28f;
-            float gap = 4f;
-
-            // Measure tab bar height
-            for (int i = 0; i < cachedGroups.Count; i++)
+            // Group picker: one dropdown instead of a chip per mod (the list can hold dozens of mods).
+            selectedTabGroupIndex = Mathf.Clamp(selectedTabGroupIndex, 0, cachedGroups.Count - 1);
+            ImplantGroup selectedGroup = cachedGroups[selectedTabGroupIndex];
+            Rect pickerRow = listing.GetRect(30f);
+            Widgets.Label(new Rect(pickerRow.x, pickerRow.y + 4f, 70f, 24f), "NHT_YAPEM_GroupLabel".Translate());
+            Rect pickerBtn = new Rect(pickerRow.x + 74f, pickerRow.y, Mathf.Min(420f, pickerRow.width - 74f), 30f);
+            if (Widgets.ButtonText(pickerBtn, $"{selectedGroup.GroupTitle} ({selectedGroup.Defs.Count}) ▾"))
             {
-                string tabTitle = $"{cachedGroups[i].GroupTitle} ({cachedGroups[i].Defs.Count})";
-                float btnW = Mathf.Max(80f, Text.CalcSize(tabTitle).x + 16f);
-                if (curX + btnW > containerWidth && curX > 0f)
+                var groupOptions = new List<FloatMenuOption>();
+                for (int gi = 0; gi < cachedGroups.Count; gi++)
                 {
-                    curX = 0f;
-                    curY += rowH + gap;
+                    int captured = gi;
+                    ImplantGroup g = cachedGroups[gi];
+                    groupOptions.Add(new FloatMenuOption($"{g.GroupTitle} ({g.Defs.Count})", () => selectedTabGroupIndex = captured));
                 }
-                curX += btnW + gap;
-            }
-            float totalTabH = curY + rowH;
-
-            Rect tabsRect = listing.GetRect(totalTabH);
-            curX = 0f;
-            curY = 0f;
-
-            for (int i = 0; i < cachedGroups.Count; i++)
-            {
-                var grp = cachedGroups[i];
-                string tabTitle = $"{grp.GroupTitle} ({grp.Defs.Count})";
-                float btnW = Mathf.Max(80f, Text.CalcSize(tabTitle).x + 16f);
-
-                if (curX + btnW > containerWidth && curX > 0f)
-                {
-                    curX = 0f;
-                    curY += rowH + gap;
-                }
-
-                Rect btnRect = new Rect(tabsRect.x + curX, tabsRect.y + curY, btnW, rowH);
-                bool isSelected = (i == selectedTabGroupIndex);
-
-                if (isSelected)
-                {
-                    Widgets.DrawBoxSolid(btnRect, new Color(0.22f, 0.45f, 0.65f, 0.45f));
-                    Widgets.DrawHighlightSelected(btnRect);
-                    Widgets.DrawBox(btnRect, 1);
-                }
-
-                if (Widgets.ButtonText(btnRect, tabTitle, drawBackground: !isSelected))
-                {
-                    selectedTabGroupIndex = i;
-                }
-
-                curX += btnW + gap;
+                Find.WindowStack.Add(new FloatMenu(groupOptions));
             }
 
             listing.Gap(6f);
@@ -810,6 +810,15 @@ namespace NiceHealthTab_YAPEM_Patch
                 string resetTabLabel = "NHT_YAPEM_ResetTabOverrides".Translate();
                 float resetTabW = Text.CalcSize(resetTabLabel).x + 16f;
                 Rect resetTabRect = new Rect(searchRow.xMax - resetTabW, searchRow.y + 1f, resetTabW, 26f);
+
+                // Section-level reset: every per-implant override of every mod.
+                string resetAllLabel = "NHT_YAPEM_ResetAllOverrides".Translate();
+                float resetAllW = Text.CalcSize(resetAllLabel).x + 16f;
+                Rect resetAllOverridesRect = new Rect(resetTabRect.x - resetAllW - 6f, searchRow.y + 1f, resetAllW, 26f);
+                if (Widgets.ButtonText(resetAllOverridesRect, resetAllLabel))
+                {
+                    CustomHediffTiers?.Clear();
+                }
                 if (Widgets.ButtonText(resetTabRect, resetTabLabel))
                 {
                     if (CustomHediffTiers != null)
@@ -991,8 +1000,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 ("Royalty",    "NHT_YAPEM_TierRoyalty".Translate(),    LimbTierUtility.ColorRoyalty),
                 ("Biotech",    "NHT_YAPEM_TierBiotech".Translate(),    LimbTierUtility.ColorBiotech),
                 ("Anomaly",    "NHT_YAPEM_TierAnomaly".Translate(),    LimbTierUtility.ColorAnomaly),
-                ("Odyssey",    "NHT_YAPEM_TierOdyssey".Translate(),    LimbTierUtility.ColorOdyssey),
-                ("Integrated", "NHT_YAPEM_TierIntegrated".Translate(), LimbTierUtility.ColorIntegratedImplants)
+                ("Odyssey",    "NHT_YAPEM_TierOdyssey".Translate(),    LimbTierUtility.ColorOdyssey)
             };
 
             foreach (var t in tiers)

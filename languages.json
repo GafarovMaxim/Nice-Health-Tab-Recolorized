@@ -87,7 +87,12 @@
     "NHT_YAPEM_ModAuto": "Auto",
     "NHT_YAPEM_ModImplantCount": "{0} implants",
     "NHT_YAPEM_DetectedTiersHeader": "Tiers added by mods",
-    "NHT_YAPEM_DetectedTiersHint": "New tiers found automatically in your mods. Each one gets its own color."
+    "NHT_YAPEM_DetectedTiersHint": "New tiers found automatically in your mods. Each one gets its own color.",
+    "NHT_YAPEM_GroupLabel": "Mod:",
+    "NHT_YAPEM_ResetAllOverrides": "Reset all overrides",
+    "NHT_YAPEM_ResetTierColors": "Reset tier colors",
+    "NHT_YAPEM_ResetDlcColors": "Reset DLC colors",
+    "NHT_YAPEM_ResetModColors": "Reset all mod colors"
   },
   "Russian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -177,7 +182,12 @@
     "NHT_YAPEM_ModAuto": "Авто",
     "NHT_YAPEM_ModImplantCount": "имплантов: {0}",
     "NHT_YAPEM_DetectedTiersHeader": "Тиры из модов",
-    "NHT_YAPEM_DetectedTiersHint": "Новые тиры, найденные автоматически в ваших модах. У каждого свой цвет."
+    "NHT_YAPEM_DetectedTiersHint": "Новые тиры, найденные автоматически в ваших модах. У каждого свой цвет.",
+    "NHT_YAPEM_GroupLabel": "Мод:",
+    "NHT_YAPEM_ResetAllOverrides": "Сбросить все настройки",
+    "NHT_YAPEM_ResetTierColors": "Сбросить цвета тиров",
+    "NHT_YAPEM_ResetDlcColors": "Сбросить цвета DLC",
+    "NHT_YAPEM_ResetModColors": "Сбросить цвета всех модов"
   },
   "French": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -267,7 +277,12 @@
     "NHT_YAPEM_ModAuto": "Auto",
     "NHT_YAPEM_ModImplantCount": "{0} implants",
     "NHT_YAPEM_DetectedTiersHeader": "Niveaux ajoutés par des mods",
-    "NHT_YAPEM_DetectedTiersHint": "Nouveaux niveaux détectés automatiquement dans vos mods. Chacun a sa propre couleur."
+    "NHT_YAPEM_DetectedTiersHint": "Nouveaux niveaux détectés automatiquement dans vos mods. Chacun a sa propre couleur.",
+    "NHT_YAPEM_GroupLabel": "Mod :",
+    "NHT_YAPEM_ResetAllOverrides": "Tout réinitialiser",
+    "NHT_YAPEM_ResetTierColors": "Réinitialiser les couleurs des niveaux",
+    "NHT_YAPEM_ResetDlcColors": "Réinitialiser les couleurs des DLC",
+    "NHT_YAPEM_ResetModColors": "Réinitialiser les couleurs des mods"
   },
   "German": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -357,7 +372,12 @@
     "NHT_YAPEM_ModAuto": "Auto",
     "NHT_YAPEM_ModImplantCount": "{0} Implantate",
     "NHT_YAPEM_DetectedTiersHeader": "Von Mods hinzugefügte Stufen",
-    "NHT_YAPEM_DetectedTiersHint": "Neue Stufen, die in deinen Mods automatisch gefunden wurden. Jede erhält eine eigene Farbe."
+    "NHT_YAPEM_DetectedTiersHint": "Neue Stufen, die in deinen Mods automatisch gefunden wurden. Jede erhält eine eigene Farbe.",
+    "NHT_YAPEM_GroupLabel": "Mod:",
+    "NHT_YAPEM_ResetAllOverrides": "Alle Überschreibungen zurücksetzen",
+    "NHT_YAPEM_ResetTierColors": "Stufenfarben zurücksetzen",
+    "NHT_YAPEM_ResetDlcColors": "DLC-Farben zurücksetzen",
+    "NHT_YAPEM_ResetModColors": "Alle Mod-Farben zurücksetzen"
   },
   "Italian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -447,7 +467,12 @@
     "NHT_YAPEM_ModAuto": "Auto",
     "NHT_YAPEM_ModImplantCount": "{0} impianti",
     "NHT_YAPEM_DetectedTiersHeader": "Livelli aggiunti dalle mod",
-    "NHT_YAPEM_DetectedTiersHint": "Nuovi livelli trovati automaticamente nelle tue mod. Ognuno ha il proprio colore."
+    "NHT_YAPEM_DetectedTiersHint": "Nuovi livelli trovati automaticamente nelle tue mod. Ognuno ha il proprio colore.",
+    "NHT_YAPEM_GroupLabel": "Mod:",
+    "NHT_YAPEM_ResetAllOverrides": "Ripristina tutte le personalizzazioni",
+    "NHT_YAPEM_ResetTierColors": "Ripristina i colori dei livelli",
+    "NHT_YAPEM_ResetDlcColors": "Ripristina i colori dei DLC",
+    "NHT_YAPEM_ResetModColors": "Ripristina i colori di tutte le mod"
   },
   "Spanish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -537,7 +562,12 @@
     "NHT_YAPEM_ModAuto": "Auto",
     "NHT_YAPEM_ModImplantCount": "{0} implantes",
     "NHT_YAPEM_DetectedTiersHeader": "Niveles añadidos por mods",
-    "NHT_YAPEM_DetectedTiersHint": "Nuevos niveles detectados automáticamente en tus mods. Cada uno tiene su propio color."
+    "NHT_YAPEM_DetectedTiersHint": "Nuevos niveles detectados automáticamente en tus mods. Cada uno tiene su propio color.",
+    "NHT_YAPEM_GroupLabel": "Mod:",
+    "NHT_YAPEM_ResetAllOverrides": "Restablecer todos los ajustes",
+    "NHT_YAPEM_ResetTierColors": "Restablecer colores de nivel",
+    "NHT_YAPEM_ResetDlcColors": "Restablecer colores de DLC",
+    "NHT_YAPEM_ResetModColors": "Restablecer colores de todos los mods"
   },
   "SpanishLatin": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -627,7 +657,12 @@
     "NHT_YAPEM_ModAuto": "Auto",
     "NHT_YAPEM_ModImplantCount": "{0} implantes",
     "NHT_YAPEM_DetectedTiersHeader": "Niveles agregados por mods",
-    "NHT_YAPEM_DetectedTiersHint": "Nuevos niveles detectados automáticamente en tus mods. Cada uno tiene su propio color."
+    "NHT_YAPEM_DetectedTiersHint": "Nuevos niveles detectados automáticamente en tus mods. Cada uno tiene su propio color.",
+    "NHT_YAPEM_GroupLabel": "Mod:",
+    "NHT_YAPEM_ResetAllOverrides": "Restablecer todos los ajustes",
+    "NHT_YAPEM_ResetTierColors": "Restablecer colores de nivel",
+    "NHT_YAPEM_ResetDlcColors": "Restablecer colores de DLC",
+    "NHT_YAPEM_ResetModColors": "Restablecer colores de todos los mods"
   },
   "PortugueseBrazilian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -717,7 +752,12 @@
     "NHT_YAPEM_ModAuto": "Auto",
     "NHT_YAPEM_ModImplantCount": "{0} implantes",
     "NHT_YAPEM_DetectedTiersHeader": "Níveis adicionados por mods",
-    "NHT_YAPEM_DetectedTiersHint": "Novos níveis encontrados automaticamente nos seus mods. Cada um recebe a própria cor."
+    "NHT_YAPEM_DetectedTiersHint": "Novos níveis encontrados automaticamente nos seus mods. Cada um recebe a própria cor.",
+    "NHT_YAPEM_GroupLabel": "Mod:",
+    "NHT_YAPEM_ResetAllOverrides": "Redefinir todos os ajustes",
+    "NHT_YAPEM_ResetTierColors": "Redefinir cores dos níveis",
+    "NHT_YAPEM_ResetDlcColors": "Redefinir cores das DLCs",
+    "NHT_YAPEM_ResetModColors": "Redefinir cores de todos os mods"
   },
   "Japanese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -807,7 +847,12 @@
     "NHT_YAPEM_ModAuto": "自動",
     "NHT_YAPEM_ModImplantCount": "インプラント {0} 個",
     "NHT_YAPEM_DetectedTiersHeader": "Modが追加したティア",
-    "NHT_YAPEM_DetectedTiersHint": "Modから自動的に見つかった新しいティアです。それぞれに専用の色を設定できます。"
+    "NHT_YAPEM_DetectedTiersHint": "Modから自動的に見つかった新しいティアです。それぞれに専用の色を設定できます。",
+    "NHT_YAPEM_GroupLabel": "Mod:",
+    "NHT_YAPEM_ResetAllOverrides": "個別設定をすべてリセット",
+    "NHT_YAPEM_ResetTierColors": "ティアの色をリセット",
+    "NHT_YAPEM_ResetDlcColors": "DLCの色をリセット",
+    "NHT_YAPEM_ResetModColors": "すべてのModの色をリセット"
   },
   "Korean": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -897,7 +942,12 @@
     "NHT_YAPEM_ModAuto": "자동",
     "NHT_YAPEM_ModImplantCount": "임플란트 {0}개",
     "NHT_YAPEM_DetectedTiersHeader": "모드가 추가한 등급",
-    "NHT_YAPEM_DetectedTiersHint": "모드에서 자동으로 찾은 새 등급입니다. 각각 고유한 색상을 지정할 수 있습니다."
+    "NHT_YAPEM_DetectedTiersHint": "모드에서 자동으로 찾은 새 등급입니다. 각각 고유한 색상을 지정할 수 있습니다.",
+    "NHT_YAPEM_GroupLabel": "모드:",
+    "NHT_YAPEM_ResetAllOverrides": "모든 개별 설정 초기화",
+    "NHT_YAPEM_ResetTierColors": "등급 색상 초기화",
+    "NHT_YAPEM_ResetDlcColors": "DLC 색상 초기화",
+    "NHT_YAPEM_ResetModColors": "모든 모드 색상 초기화"
   },
   "ChineseSimplified": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -987,7 +1037,12 @@
     "NHT_YAPEM_ModAuto": "自动",
     "NHT_YAPEM_ModImplantCount": "{0} 个植入物",
     "NHT_YAPEM_DetectedTiersHeader": "模组添加的等级",
-    "NHT_YAPEM_DetectedTiersHint": "在你的模组中自动发现的新等级，每个等级都有独立的颜色。"
+    "NHT_YAPEM_DetectedTiersHint": "在你的模组中自动发现的新等级，每个等级都有独立的颜色。",
+    "NHT_YAPEM_GroupLabel": "模组：",
+    "NHT_YAPEM_ResetAllOverrides": "重置所有单独设置",
+    "NHT_YAPEM_ResetTierColors": "重置等级颜色",
+    "NHT_YAPEM_ResetDlcColors": "重置 DLC 颜色",
+    "NHT_YAPEM_ResetModColors": "重置所有模组颜色"
   },
   "ChineseTraditional": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1077,7 +1132,12 @@
     "NHT_YAPEM_ModAuto": "自動",
     "NHT_YAPEM_ModImplantCount": "{0} 個植入物",
     "NHT_YAPEM_DetectedTiersHeader": "模組新增的等級",
-    "NHT_YAPEM_DetectedTiersHint": "在你的模組中自動發現的新等級，每個等級都有獨立的顏色。"
+    "NHT_YAPEM_DetectedTiersHint": "在你的模組中自動發現的新等級，每個等級都有獨立的顏色。",
+    "NHT_YAPEM_GroupLabel": "模組：",
+    "NHT_YAPEM_ResetAllOverrides": "重設所有個別設定",
+    "NHT_YAPEM_ResetTierColors": "重設等級顏色",
+    "NHT_YAPEM_ResetDlcColors": "重設 DLC 顏色",
+    "NHT_YAPEM_ResetModColors": "重設所有模組顏色"
   },
   "Turkish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1167,7 +1227,12 @@
     "NHT_YAPEM_ModAuto": "Otomatik",
     "NHT_YAPEM_ModImplantCount": "{0} implant",
     "NHT_YAPEM_DetectedTiersHeader": "Modların eklediği seviyeler",
-    "NHT_YAPEM_DetectedTiersHint": "Modlarında otomatik olarak bulunan yeni seviyeler. Her birinin kendi rengi vardır."
+    "NHT_YAPEM_DetectedTiersHint": "Modlarında otomatik olarak bulunan yeni seviyeler. Her birinin kendi rengi vardır.",
+    "NHT_YAPEM_GroupLabel": "Mod:",
+    "NHT_YAPEM_ResetAllOverrides": "Tüm özel ayarları sıfırla",
+    "NHT_YAPEM_ResetTierColors": "Seviye renklerini sıfırla",
+    "NHT_YAPEM_ResetDlcColors": "DLC renklerini sıfırla",
+    "NHT_YAPEM_ResetModColors": "Tüm mod renklerini sıfırla"
   },
   "Ukrainian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1257,7 +1322,12 @@
     "NHT_YAPEM_ModAuto": "Авто",
     "NHT_YAPEM_ModImplantCount": "імплантів: {0}",
     "NHT_YAPEM_DetectedTiersHeader": "Рівні з модів",
-    "NHT_YAPEM_DetectedTiersHint": "Нові рівні, автоматично знайдені у ваших модах. Кожен має власний колір."
+    "NHT_YAPEM_DetectedTiersHint": "Нові рівні, автоматично знайдені у ваших модах. Кожен має власний колір.",
+    "NHT_YAPEM_GroupLabel": "Мод:",
+    "NHT_YAPEM_ResetAllOverrides": "Скинути всі налаштування",
+    "NHT_YAPEM_ResetTierColors": "Скинути кольори рівнів",
+    "NHT_YAPEM_ResetDlcColors": "Скинути кольори DLC",
+    "NHT_YAPEM_ResetModColors": "Скинути кольори всіх модів"
   },
   "Vietnamese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1347,7 +1417,12 @@
     "NHT_YAPEM_ModAuto": "Tự động",
     "NHT_YAPEM_ModImplantCount": "{0} bộ phận cấy ghép",
     "NHT_YAPEM_DetectedTiersHeader": "Cấp bậc do mod thêm",
-    "NHT_YAPEM_DetectedTiersHint": "Các cấp bậc mới được tự động tìm thấy trong mod của bạn. Mỗi cấp có màu riêng."
+    "NHT_YAPEM_DetectedTiersHint": "Các cấp bậc mới được tự động tìm thấy trong mod của bạn. Mỗi cấp có màu riêng.",
+    "NHT_YAPEM_GroupLabel": "Mod:",
+    "NHT_YAPEM_ResetAllOverrides": "Đặt lại mọi tùy chỉnh",
+    "NHT_YAPEM_ResetTierColors": "Đặt lại màu cấp bậc",
+    "NHT_YAPEM_ResetDlcColors": "Đặt lại màu DLC",
+    "NHT_YAPEM_ResetModColors": "Đặt lại màu của mọi mod"
   },
   "Polish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1437,7 +1512,12 @@
     "NHT_YAPEM_ModAuto": "Auto",
     "NHT_YAPEM_ModImplantCount": "implanty: {0}",
     "NHT_YAPEM_DetectedTiersHeader": "Poziomy dodane przez mody",
-    "NHT_YAPEM_DetectedTiersHint": "Nowe poziomy wykryte automatycznie w twoich modach. Każdy ma własny kolor."
+    "NHT_YAPEM_DetectedTiersHint": "Nowe poziomy wykryte automatycznie w twoich modach. Każdy ma własny kolor.",
+    "NHT_YAPEM_GroupLabel": "Mod:",
+    "NHT_YAPEM_ResetAllOverrides": "Zresetuj wszystkie ustawienia",
+    "NHT_YAPEM_ResetTierColors": "Zresetuj kolory poziomów",
+    "NHT_YAPEM_ResetDlcColors": "Zresetuj kolory DLC",
+    "NHT_YAPEM_ResetModColors": "Zresetuj kolory wszystkich modów"
   },
   "Czech": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1527,7 +1607,12 @@
     "NHT_YAPEM_ModAuto": "Auto",
     "NHT_YAPEM_ModImplantCount": "implantátů: {0}",
     "NHT_YAPEM_DetectedTiersHeader": "Úrovně přidané módy",
-    "NHT_YAPEM_DetectedTiersHint": "Nové úrovně automaticky nalezené ve vašich módech. Každá má vlastní barvu."
+    "NHT_YAPEM_DetectedTiersHint": "Nové úrovně automaticky nalezené ve vašich módech. Každá má vlastní barvu.",
+    "NHT_YAPEM_GroupLabel": "Mód:",
+    "NHT_YAPEM_ResetAllOverrides": "Obnovit všechna nastavení",
+    "NHT_YAPEM_ResetTierColors": "Obnovit barvy úrovní",
+    "NHT_YAPEM_ResetDlcColors": "Obnovit barvy DLC",
+    "NHT_YAPEM_ResetModColors": "Obnovit barvy všech módů"
   },
   "Hungarian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1617,6 +1702,11 @@
     "NHT_YAPEM_ModAuto": "Auto",
     "NHT_YAPEM_ModImplantCount": "{0} implantátum",
     "NHT_YAPEM_DetectedTiersHeader": "Modok által hozzáadott szintek",
-    "NHT_YAPEM_DetectedTiersHint": "A modjaidban automatikusan talált új szintek. Mindegyiknek saját színe van."
+    "NHT_YAPEM_DetectedTiersHint": "A modjaidban automatikusan talált új szintek. Mindegyiknek saját színe van.",
+    "NHT_YAPEM_GroupLabel": "Mod:",
+    "NHT_YAPEM_ResetAllOverrides": "Összes egyéni beállítás visszaállítása",
+    "NHT_YAPEM_ResetTierColors": "Szintek színeinek visszaállítása",
+    "NHT_YAPEM_ResetDlcColors": "DLC-színek visszaállítása",
+    "NHT_YAPEM_ResetModColors": "Minden mod színének visszaállítása"
   }
 }

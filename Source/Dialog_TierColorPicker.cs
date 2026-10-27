@@ -51,11 +51,6 @@ namespace NiceHealthTab_YAPEM_Patch
             new PresetInfo("NHT_YAPEM_TierUltratech",  "Ultratech",           new Color(113f / 255f, 203f / 255f, 194f / 255f)), // #71CBC2
             new PresetInfo("NHT_YAPEM_TierBionic",     "Standard Bionic",     new Color(230f / 255f, 230f / 255f, 230f / 255f)), // #E6E6E6
             new PresetInfo("NHT_YAPEM_TierProsthetic", "Simple Prosthetic",   new Color(176f / 255f, 176f / 255f, 176f / 255f)), // #B0B0B0
-            new PresetInfo("NHT_YAPEM_TierRoyalty",    "Royalty",             new Color(222f / 255f, 184f / 255f, 65f / 255f)),  // #DEB841
-            new PresetInfo("NHT_YAPEM_TierBiotech",    "Biotech",             new Color(56f / 255f, 217f / 255f, 169f / 255f)),  // #38D9A9
-            new PresetInfo("NHT_YAPEM_TierAnomaly",    "Anomaly",             new Color(168f / 255f, 85f / 255f, 247f / 255f)),  // #A855F7
-            new PresetInfo("NHT_YAPEM_TierOdyssey",    "Odyssey",             new Color(56f / 255f, 189f / 255f, 248f / 255f)),  // #38BDF8
-            new PresetInfo("NHT_YAPEM_TierIntegrated", "Integrated Implants", new Color(153f / 255f, 153f / 255f, 255f / 255f)), // #9999FF
             new PresetInfo("NHT_YAPEM_PureWhite",      "Pure White",          new Color(1f, 1f, 1f))                              // #FFFFFF
         };
 

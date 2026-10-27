@@ -88,4 +88,9 @@
   <NHT_YAPEM_ModImplantCount>{0} implants</NHT_YAPEM_ModImplantCount>
   <NHT_YAPEM_DetectedTiersHeader>Tiers added by mods</NHT_YAPEM_DetectedTiersHeader>
   <NHT_YAPEM_DetectedTiersHint>New tiers found automatically in your mods. Each one gets its own color.</NHT_YAPEM_DetectedTiersHint>
+  <NHT_YAPEM_GroupLabel>Mod:</NHT_YAPEM_GroupLabel>
+  <NHT_YAPEM_ResetAllOverrides>Reset all overrides</NHT_YAPEM_ResetAllOverrides>
+  <NHT_YAPEM_ResetTierColors>Reset tier colors</NHT_YAPEM_ResetTierColors>
+  <NHT_YAPEM_ResetDlcColors>Reset DLC colors</NHT_YAPEM_ResetDlcColors>
+  <NHT_YAPEM_ResetModColors>Reset all mod colors</NHT_YAPEM_ResetModColors>
 </LanguageData>

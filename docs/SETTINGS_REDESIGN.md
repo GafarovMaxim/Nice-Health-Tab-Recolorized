@@ -24,3 +24,14 @@
 1. Preview via NHT DollRenderer (see above). Not started.
 2. Profiles (`PaletteProfile`) do not include ModColors / DynamicTierColors yet.
 3. Default colors: see audit notes (Bionic #E6E6E6 is nearly white, dE 5.2; AdvBionic vs Odyssey dE 10.8; textures are dark, mean luminance ~45%, so on-screen color = texture x tint, darker than the swatch).
+
+## Done (stage 2b)
+- Ultratech/Advanced parts of YAPEM were classified as Archotech: they copy the `ImplantEmpireRoyal` tag, which now only gives Archotech if no
+  Ultra/Advanced name or category matched. Non-implant hediffs are no longer tinted at all.
+- Fine-tune: mod picker is a FloatMenu; buttons "Reset all overrides" and per-mod reset.
+- Reset buttons per tab (General = everything).
+- Integrated Implants is a normal mod now (Mods tab); DLC default colors = default Bionic color.
+- Detected tiers show their source mod/DLC.
+
+## Next
+- `docs/PALETTE_PROFILES_SPEC.md` (palette dialog + profiles), then the NHT-doll preview.
