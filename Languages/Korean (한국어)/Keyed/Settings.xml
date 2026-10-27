@@ -77,4 +77,15 @@
   <NHT_YAPEM_InvalidProfileJson>Clipboard does not contain valid palette data.</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>Apply</NHT_YAPEM_ApplyBtn>
   <NHT_YAPEM_PresetsCount>presets</NHT_YAPEM_PresetsCount>
+  <NHT_YAPEM_TabGeneral>일반</NHT_YAPEM_TabGeneral>
+  <NHT_YAPEM_TabTiers>등급 색상</NHT_YAPEM_TabTiers>
+  <NHT_YAPEM_TabDLC>DLC</NHT_YAPEM_TabDLC>
+  <NHT_YAPEM_TabMods>모드</NHT_YAPEM_TabMods>
+  <NHT_YAPEM_TabFineTune>세부 조정</NHT_YAPEM_TabFineTune>
+  <NHT_YAPEM_ModsHint>임플란트나 의수족을 추가하는 모드는 자동으로 감지됩니다. 사용자 지정 색상은 해당 모드의 모든 임플란트에서 등급 색상보다 우선합니다. 세부 조정에서 개별 임플란트에 지정한 색상이 가장 우선합니다.</NHT_YAPEM_ModsHint>
+  <NHT_YAPEM_ModsNone>임플란트나 의수족을 추가하는 모드를 찾지 못했습니다.</NHT_YAPEM_ModsNone>
+  <NHT_YAPEM_ModAuto>자동</NHT_YAPEM_ModAuto>
+  <NHT_YAPEM_ModImplantCount>임플란트 {0}개</NHT_YAPEM_ModImplantCount>
+  <NHT_YAPEM_DetectedTiersHeader>모드가 추가한 등급</NHT_YAPEM_DetectedTiersHeader>
+  <NHT_YAPEM_DetectedTiersHint>모드에서 자동으로 찾은 새 등급입니다. 각각 고유한 색상을 지정할 수 있습니다.</NHT_YAPEM_DetectedTiersHint>
 </LanguageData>

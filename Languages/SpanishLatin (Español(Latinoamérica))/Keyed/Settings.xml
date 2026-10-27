@@ -77,4 +77,15 @@
   <NHT_YAPEM_InvalidProfileJson>El portapapeles no contiene datos de paleta válidos.</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>Aplicar</NHT_YAPEM_ApplyBtn>
   <NHT_YAPEM_PresetsCount>preajustes</NHT_YAPEM_PresetsCount>
+  <NHT_YAPEM_TabGeneral>General</NHT_YAPEM_TabGeneral>
+  <NHT_YAPEM_TabTiers>Colores de nivel</NHT_YAPEM_TabTiers>
+  <NHT_YAPEM_TabDLC>DLC</NHT_YAPEM_TabDLC>
+  <NHT_YAPEM_TabMods>Mods</NHT_YAPEM_TabMods>
+  <NHT_YAPEM_TabFineTune>Ajuste fino</NHT_YAPEM_TabFineTune>
+  <NHT_YAPEM_ModsHint>Los mods que agregan implantes o prótesis se detectan automáticamente. Un color personalizado reemplaza el color del nivel para todos los implantes de ese mod. Un color definido para un solo implante en Ajuste fino tiene prioridad.</NHT_YAPEM_ModsHint>
+  <NHT_YAPEM_ModsNone>No se encontraron mods con implantes o prótesis.</NHT_YAPEM_ModsNone>
+  <NHT_YAPEM_ModAuto>Auto</NHT_YAPEM_ModAuto>
+  <NHT_YAPEM_ModImplantCount>{0} implantes</NHT_YAPEM_ModImplantCount>
+  <NHT_YAPEM_DetectedTiersHeader>Niveles agregados por mods</NHT_YAPEM_DetectedTiersHeader>
+  <NHT_YAPEM_DetectedTiersHint>Nuevos niveles detectados automáticamente en tus mods. Cada uno tiene su propio color.</NHT_YAPEM_DetectedTiersHint>
 </LanguageData>

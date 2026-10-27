@@ -77,4 +77,15 @@
   <NHT_YAPEM_InvalidProfileJson>В буфере обмена нет корректных данных палитры.</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>Принять</NHT_YAPEM_ApplyBtn>
   <NHT_YAPEM_PresetsCount>пресетов</NHT_YAPEM_PresetsCount>
+  <NHT_YAPEM_TabGeneral>Общее</NHT_YAPEM_TabGeneral>
+  <NHT_YAPEM_TabTiers>Цвета тиров</NHT_YAPEM_TabTiers>
+  <NHT_YAPEM_TabDLC>DLC</NHT_YAPEM_TabDLC>
+  <NHT_YAPEM_TabMods>Моды</NHT_YAPEM_TabMods>
+  <NHT_YAPEM_TabFineTune>Тонкая настройка</NHT_YAPEM_TabFineTune>
+  <NHT_YAPEM_ModsHint>Моды с имплантами и протезами находятся автоматически. Свой цвет заменяет цвет тира для всех имплантов этого мода. Цвет, заданный для отдельного импланта во вкладке «Тонкая настройка», главнее.</NHT_YAPEM_ModsHint>
+  <NHT_YAPEM_ModsNone>Модов с имплантами или протезами не найдено.</NHT_YAPEM_ModsNone>
+  <NHT_YAPEM_ModAuto>Авто</NHT_YAPEM_ModAuto>
+  <NHT_YAPEM_ModImplantCount>имплантов: {0}</NHT_YAPEM_ModImplantCount>
+  <NHT_YAPEM_DetectedTiersHeader>Тиры из модов</NHT_YAPEM_DetectedTiersHeader>
+  <NHT_YAPEM_DetectedTiersHint>Новые тиры, найденные автоматически в ваших модах. У каждого свой цвет.</NHT_YAPEM_DetectedTiersHint>
 </LanguageData>

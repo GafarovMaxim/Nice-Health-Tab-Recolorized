@@ -77,4 +77,15 @@
   <NHT_YAPEM_InvalidProfileJson>Clipboard does not contain valid palette data.</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>Apply</NHT_YAPEM_ApplyBtn>
   <NHT_YAPEM_PresetsCount>presets</NHT_YAPEM_PresetsCount>
+  <NHT_YAPEM_TabGeneral>Generale</NHT_YAPEM_TabGeneral>
+  <NHT_YAPEM_TabTiers>Colori dei livelli</NHT_YAPEM_TabTiers>
+  <NHT_YAPEM_TabDLC>DLC</NHT_YAPEM_TabDLC>
+  <NHT_YAPEM_TabMods>Mod</NHT_YAPEM_TabMods>
+  <NHT_YAPEM_TabFineTune>Regolazione fine</NHT_YAPEM_TabFineTune>
+  <NHT_YAPEM_ModsHint>Le mod che aggiungono impianti o protesi vengono rilevate automaticamente. Un colore personalizzato sostituisce il colore del livello per tutti gli impianti di quella mod. Un colore impostato per un singolo impianto in Regolazione fine ha la precedenza.</NHT_YAPEM_ModsHint>
+  <NHT_YAPEM_ModsNone>Nessuna mod con impianti o protesi trovata.</NHT_YAPEM_ModsNone>
+  <NHT_YAPEM_ModAuto>Auto</NHT_YAPEM_ModAuto>
+  <NHT_YAPEM_ModImplantCount>{0} impianti</NHT_YAPEM_ModImplantCount>
+  <NHT_YAPEM_DetectedTiersHeader>Livelli aggiunti dalle mod</NHT_YAPEM_DetectedTiersHeader>
+  <NHT_YAPEM_DetectedTiersHint>Nuovi livelli trovati automaticamente nelle tue mod. Ognuno ha il proprio colore.</NHT_YAPEM_DetectedTiersHint>
 </LanguageData>

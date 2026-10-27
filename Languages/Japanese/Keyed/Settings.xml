@@ -77,4 +77,15 @@
   <NHT_YAPEM_InvalidProfileJson>Clipboard does not contain valid palette data.</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>Apply</NHT_YAPEM_ApplyBtn>
   <NHT_YAPEM_PresetsCount>presets</NHT_YAPEM_PresetsCount>
+  <NHT_YAPEM_TabGeneral>一般</NHT_YAPEM_TabGeneral>
+  <NHT_YAPEM_TabTiers>ティアの色</NHT_YAPEM_TabTiers>
+  <NHT_YAPEM_TabDLC>DLC</NHT_YAPEM_TabDLC>
+  <NHT_YAPEM_TabMods>Mod</NHT_YAPEM_TabMods>
+  <NHT_YAPEM_TabFineTune>個別調整</NHT_YAPEM_TabFineTune>
+  <NHT_YAPEM_ModsHint>インプラントや義肢を追加するModは自動的に検出されます。独自の色を設定すると、そのModのすべてのインプラントでティアの色より優先されます。個別調整で単一のインプラントに設定した色が最優先です。</NHT_YAPEM_ModsHint>
+  <NHT_YAPEM_ModsNone>インプラントや義肢を追加するModは見つかりませんでした。</NHT_YAPEM_ModsNone>
+  <NHT_YAPEM_ModAuto>自動</NHT_YAPEM_ModAuto>
+  <NHT_YAPEM_ModImplantCount>インプラント {0} 個</NHT_YAPEM_ModImplantCount>
+  <NHT_YAPEM_DetectedTiersHeader>Modが追加したティア</NHT_YAPEM_DetectedTiersHeader>
+  <NHT_YAPEM_DetectedTiersHint>Modから自動的に見つかった新しいティアです。それぞれに専用の色を設定できます。</NHT_YAPEM_DetectedTiersHint>
 </LanguageData>

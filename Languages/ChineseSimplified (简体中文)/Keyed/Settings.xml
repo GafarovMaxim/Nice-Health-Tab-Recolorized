@@ -77,4 +77,15 @@
   <NHT_YAPEM_InvalidProfileJson>剪贴板中未包含有效的调色板数据。</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>应用</NHT_YAPEM_ApplyBtn>
   <NHT_YAPEM_PresetsCount>预设</NHT_YAPEM_PresetsCount>
+  <NHT_YAPEM_TabGeneral>常规</NHT_YAPEM_TabGeneral>
+  <NHT_YAPEM_TabTiers>等级颜色</NHT_YAPEM_TabTiers>
+  <NHT_YAPEM_TabDLC>DLC</NHT_YAPEM_TabDLC>
+  <NHT_YAPEM_TabMods>模组</NHT_YAPEM_TabMods>
+  <NHT_YAPEM_TabFineTune>精细调整</NHT_YAPEM_TabFineTune>
+  <NHT_YAPEM_ModsHint>添加义体或植入物的模组会被自动检测。自定义颜色会覆盖该模组所有植入物的等级颜色。在“精细调整”中为单个植入物设置的颜色优先级最高。</NHT_YAPEM_ModsHint>
+  <NHT_YAPEM_ModsNone>未找到添加植入物或义体的模组。</NHT_YAPEM_ModsNone>
+  <NHT_YAPEM_ModAuto>自动</NHT_YAPEM_ModAuto>
+  <NHT_YAPEM_ModImplantCount>{0} 个植入物</NHT_YAPEM_ModImplantCount>
+  <NHT_YAPEM_DetectedTiersHeader>模组添加的等级</NHT_YAPEM_DetectedTiersHeader>
+  <NHT_YAPEM_DetectedTiersHint>在你的模组中自动发现的新等级，每个等级都有独立的颜色。</NHT_YAPEM_DetectedTiersHint>
 </LanguageData>

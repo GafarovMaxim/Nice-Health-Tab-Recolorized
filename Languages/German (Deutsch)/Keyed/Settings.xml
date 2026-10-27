@@ -77,4 +77,15 @@
   <NHT_YAPEM_InvalidProfileJson>Zwischenablage enthält keine gültigen Palettendaten.</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>Übernehmen</NHT_YAPEM_ApplyBtn>
   <NHT_YAPEM_PresetsCount>Voreinstellungen</NHT_YAPEM_PresetsCount>
+  <NHT_YAPEM_TabGeneral>Allgemein</NHT_YAPEM_TabGeneral>
+  <NHT_YAPEM_TabTiers>Stufenfarben</NHT_YAPEM_TabTiers>
+  <NHT_YAPEM_TabDLC>DLC</NHT_YAPEM_TabDLC>
+  <NHT_YAPEM_TabMods>Mods</NHT_YAPEM_TabMods>
+  <NHT_YAPEM_TabFineTune>Feinabstimmung</NHT_YAPEM_TabFineTune>
+  <NHT_YAPEM_ModsHint>Mods, die Implantate oder Prothesen hinzufügen, werden automatisch erkannt. Eine eigene Farbe ersetzt die Stufenfarbe für alle Implantate dieses Mods. Eine für ein einzelnes Implantat in der Feinabstimmung gesetzte Farbe hat Vorrang.</NHT_YAPEM_ModsHint>
+  <NHT_YAPEM_ModsNone>Keine Mods mit Implantaten oder Prothesen gefunden.</NHT_YAPEM_ModsNone>
+  <NHT_YAPEM_ModAuto>Auto</NHT_YAPEM_ModAuto>
+  <NHT_YAPEM_ModImplantCount>{0} Implantate</NHT_YAPEM_ModImplantCount>
+  <NHT_YAPEM_DetectedTiersHeader>Von Mods hinzugefügte Stufen</NHT_YAPEM_DetectedTiersHeader>
+  <NHT_YAPEM_DetectedTiersHint>Neue Stufen, die in deinen Mods automatisch gefunden wurden. Jede erhält eine eigene Farbe.</NHT_YAPEM_DetectedTiersHint>
 </LanguageData>

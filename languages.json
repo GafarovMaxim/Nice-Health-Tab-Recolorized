@@ -76,7 +76,18 @@
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
     "NHT_YAPEM_ApplyBtn": "Apply",
-    "NHT_YAPEM_PresetsCount": "presets"
+    "NHT_YAPEM_PresetsCount": "presets",
+    "NHT_YAPEM_TabGeneral": "General",
+    "NHT_YAPEM_TabTiers": "Tier colors",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "Mods",
+    "NHT_YAPEM_TabFineTune": "Fine-tune",
+    "NHT_YAPEM_ModsHint": "Mods that add implants or prosthetics are detected automatically. A custom color overrides the tier color for every implant of that mod. A color set for a single implant in Fine-tune wins over it.",
+    "NHT_YAPEM_ModsNone": "No mods with implants or prosthetics found.",
+    "NHT_YAPEM_ModAuto": "Auto",
+    "NHT_YAPEM_ModImplantCount": "{0} implants",
+    "NHT_YAPEM_DetectedTiersHeader": "Tiers added by mods",
+    "NHT_YAPEM_DetectedTiersHint": "New tiers found automatically in your mods. Each one gets its own color."
   },
   "Russian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -155,7 +166,18 @@
     "NHT_YAPEM_ProfileImported": "Профиль «{0}» успешно импортирован!",
     "NHT_YAPEM_InvalidProfileJson": "В буфере обмена нет корректных данных палитры.",
     "NHT_YAPEM_ApplyBtn": "Принять",
-    "NHT_YAPEM_PresetsCount": "пресетов"
+    "NHT_YAPEM_PresetsCount": "пресетов",
+    "NHT_YAPEM_TabGeneral": "Общее",
+    "NHT_YAPEM_TabTiers": "Цвета тиров",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "Моды",
+    "NHT_YAPEM_TabFineTune": "Тонкая настройка",
+    "NHT_YAPEM_ModsHint": "Моды с имплантами и протезами находятся автоматически. Свой цвет заменяет цвет тира для всех имплантов этого мода. Цвет, заданный для отдельного импланта во вкладке «Тонкая настройка», главнее.",
+    "NHT_YAPEM_ModsNone": "Модов с имплантами или протезами не найдено.",
+    "NHT_YAPEM_ModAuto": "Авто",
+    "NHT_YAPEM_ModImplantCount": "имплантов: {0}",
+    "NHT_YAPEM_DetectedTiersHeader": "Тиры из модов",
+    "NHT_YAPEM_DetectedTiersHint": "Новые тиры, найденные автоматически в ваших модах. У каждого свой цвет."
   },
   "French": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -234,7 +256,18 @@
     "NHT_YAPEM_ProfileImported": "Profil \"{0}\" importé avec succès!",
     "NHT_YAPEM_InvalidProfileJson": "Le presse-papiers ne contient pas de données de palette valides.",
     "NHT_YAPEM_ApplyBtn": "Appliquer",
-    "NHT_YAPEM_PresetsCount": "préréglages"
+    "NHT_YAPEM_PresetsCount": "préréglages",
+    "NHT_YAPEM_TabGeneral": "Général",
+    "NHT_YAPEM_TabTiers": "Couleurs des niveaux",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "Mods",
+    "NHT_YAPEM_TabFineTune": "Réglage fin",
+    "NHT_YAPEM_ModsHint": "Les mods qui ajoutent des implants ou des prothèses sont détectés automatiquement. Une couleur personnalisée remplace la couleur du niveau pour tous les implants de ce mod. Une couleur définie pour un seul implant dans Réglage fin est prioritaire.",
+    "NHT_YAPEM_ModsNone": "Aucun mod avec des implants ou des prothèses trouvé.",
+    "NHT_YAPEM_ModAuto": "Auto",
+    "NHT_YAPEM_ModImplantCount": "{0} implants",
+    "NHT_YAPEM_DetectedTiersHeader": "Niveaux ajoutés par des mods",
+    "NHT_YAPEM_DetectedTiersHint": "Nouveaux niveaux détectés automatiquement dans vos mods. Chacun a sa propre couleur."
   },
   "German": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -313,7 +346,18 @@
     "NHT_YAPEM_ProfileImported": "Profil \"{0}\" erfolgreich importiert!",
     "NHT_YAPEM_InvalidProfileJson": "Zwischenablage enthält keine gültigen Palettendaten.",
     "NHT_YAPEM_ApplyBtn": "Übernehmen",
-    "NHT_YAPEM_PresetsCount": "Voreinstellungen"
+    "NHT_YAPEM_PresetsCount": "Voreinstellungen",
+    "NHT_YAPEM_TabGeneral": "Allgemein",
+    "NHT_YAPEM_TabTiers": "Stufenfarben",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "Mods",
+    "NHT_YAPEM_TabFineTune": "Feinabstimmung",
+    "NHT_YAPEM_ModsHint": "Mods, die Implantate oder Prothesen hinzufügen, werden automatisch erkannt. Eine eigene Farbe ersetzt die Stufenfarbe für alle Implantate dieses Mods. Eine für ein einzelnes Implantat in der Feinabstimmung gesetzte Farbe hat Vorrang.",
+    "NHT_YAPEM_ModsNone": "Keine Mods mit Implantaten oder Prothesen gefunden.",
+    "NHT_YAPEM_ModAuto": "Auto",
+    "NHT_YAPEM_ModImplantCount": "{0} Implantate",
+    "NHT_YAPEM_DetectedTiersHeader": "Von Mods hinzugefügte Stufen",
+    "NHT_YAPEM_DetectedTiersHint": "Neue Stufen, die in deinen Mods automatisch gefunden wurden. Jede erhält eine eigene Farbe."
   },
   "Italian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -392,7 +436,18 @@
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
     "NHT_YAPEM_ApplyBtn": "Apply",
-    "NHT_YAPEM_PresetsCount": "presets"
+    "NHT_YAPEM_PresetsCount": "presets",
+    "NHT_YAPEM_TabGeneral": "Generale",
+    "NHT_YAPEM_TabTiers": "Colori dei livelli",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "Mod",
+    "NHT_YAPEM_TabFineTune": "Regolazione fine",
+    "NHT_YAPEM_ModsHint": "Le mod che aggiungono impianti o protesi vengono rilevate automaticamente. Un colore personalizzato sostituisce il colore del livello per tutti gli impianti di quella mod. Un colore impostato per un singolo impianto in Regolazione fine ha la precedenza.",
+    "NHT_YAPEM_ModsNone": "Nessuna mod con impianti o protesi trovata.",
+    "NHT_YAPEM_ModAuto": "Auto",
+    "NHT_YAPEM_ModImplantCount": "{0} impianti",
+    "NHT_YAPEM_DetectedTiersHeader": "Livelli aggiunti dalle mod",
+    "NHT_YAPEM_DetectedTiersHint": "Nuovi livelli trovati automaticamente nelle tue mod. Ognuno ha il proprio colore."
   },
   "Spanish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -471,7 +526,18 @@
     "NHT_YAPEM_ProfileImported": "¡Perfil \"{0}\" importado con éxito!",
     "NHT_YAPEM_InvalidProfileJson": "El portapapeles no contiene datos de paleta válidos.",
     "NHT_YAPEM_ApplyBtn": "Aplicar",
-    "NHT_YAPEM_PresetsCount": "preajustes"
+    "NHT_YAPEM_PresetsCount": "preajustes",
+    "NHT_YAPEM_TabGeneral": "General",
+    "NHT_YAPEM_TabTiers": "Colores de nivel",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "Mods",
+    "NHT_YAPEM_TabFineTune": "Ajuste fino",
+    "NHT_YAPEM_ModsHint": "Los mods que añaden implantes o prótesis se detectan automáticamente. Un color personalizado sustituye el color del nivel para todos los implantes de ese mod. Un color definido para un solo implante en Ajuste fino tiene prioridad.",
+    "NHT_YAPEM_ModsNone": "No se encontraron mods con implantes o prótesis.",
+    "NHT_YAPEM_ModAuto": "Auto",
+    "NHT_YAPEM_ModImplantCount": "{0} implantes",
+    "NHT_YAPEM_DetectedTiersHeader": "Niveles añadidos por mods",
+    "NHT_YAPEM_DetectedTiersHint": "Nuevos niveles detectados automáticamente en tus mods. Cada uno tiene su propio color."
   },
   "SpanishLatin": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -550,7 +616,18 @@
     "NHT_YAPEM_ProfileImported": "¡Perfil \"{0}\" importado con éxito!",
     "NHT_YAPEM_InvalidProfileJson": "El portapapeles no contiene datos de paleta válidos.",
     "NHT_YAPEM_ApplyBtn": "Aplicar",
-    "NHT_YAPEM_PresetsCount": "preajustes"
+    "NHT_YAPEM_PresetsCount": "preajustes",
+    "NHT_YAPEM_TabGeneral": "General",
+    "NHT_YAPEM_TabTiers": "Colores de nivel",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "Mods",
+    "NHT_YAPEM_TabFineTune": "Ajuste fino",
+    "NHT_YAPEM_ModsHint": "Los mods que agregan implantes o prótesis se detectan automáticamente. Un color personalizado reemplaza el color del nivel para todos los implantes de ese mod. Un color definido para un solo implante en Ajuste fino tiene prioridad.",
+    "NHT_YAPEM_ModsNone": "No se encontraron mods con implantes o prótesis.",
+    "NHT_YAPEM_ModAuto": "Auto",
+    "NHT_YAPEM_ModImplantCount": "{0} implantes",
+    "NHT_YAPEM_DetectedTiersHeader": "Niveles agregados por mods",
+    "NHT_YAPEM_DetectedTiersHint": "Nuevos niveles detectados automáticamente en tus mods. Cada uno tiene su propio color."
   },
   "PortugueseBrazilian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -629,7 +706,18 @@
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
     "NHT_YAPEM_ApplyBtn": "Apply",
-    "NHT_YAPEM_PresetsCount": "presets"
+    "NHT_YAPEM_PresetsCount": "presets",
+    "NHT_YAPEM_TabGeneral": "Geral",
+    "NHT_YAPEM_TabTiers": "Cores dos níveis",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "Mods",
+    "NHT_YAPEM_TabFineTune": "Ajuste fino",
+    "NHT_YAPEM_ModsHint": "Mods que adicionam implantes ou próteses são detectados automaticamente. Uma cor personalizada substitui a cor do nível para todos os implantes desse mod. Uma cor definida para um único implante em Ajuste fino tem prioridade.",
+    "NHT_YAPEM_ModsNone": "Nenhum mod com implantes ou próteses encontrado.",
+    "NHT_YAPEM_ModAuto": "Auto",
+    "NHT_YAPEM_ModImplantCount": "{0} implantes",
+    "NHT_YAPEM_DetectedTiersHeader": "Níveis adicionados por mods",
+    "NHT_YAPEM_DetectedTiersHint": "Novos níveis encontrados automaticamente nos seus mods. Cada um recebe a própria cor."
   },
   "Japanese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -708,7 +796,18 @@
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
     "NHT_YAPEM_ApplyBtn": "Apply",
-    "NHT_YAPEM_PresetsCount": "presets"
+    "NHT_YAPEM_PresetsCount": "presets",
+    "NHT_YAPEM_TabGeneral": "一般",
+    "NHT_YAPEM_TabTiers": "ティアの色",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "Mod",
+    "NHT_YAPEM_TabFineTune": "個別調整",
+    "NHT_YAPEM_ModsHint": "インプラントや義肢を追加するModは自動的に検出されます。独自の色を設定すると、そのModのすべてのインプラントでティアの色より優先されます。個別調整で単一のインプラントに設定した色が最優先です。",
+    "NHT_YAPEM_ModsNone": "インプラントや義肢を追加するModは見つかりませんでした。",
+    "NHT_YAPEM_ModAuto": "自動",
+    "NHT_YAPEM_ModImplantCount": "インプラント {0} 個",
+    "NHT_YAPEM_DetectedTiersHeader": "Modが追加したティア",
+    "NHT_YAPEM_DetectedTiersHint": "Modから自動的に見つかった新しいティアです。それぞれに専用の色を設定できます。"
   },
   "Korean": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -787,7 +886,18 @@
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
     "NHT_YAPEM_ApplyBtn": "Apply",
-    "NHT_YAPEM_PresetsCount": "presets"
+    "NHT_YAPEM_PresetsCount": "presets",
+    "NHT_YAPEM_TabGeneral": "일반",
+    "NHT_YAPEM_TabTiers": "등급 색상",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "모드",
+    "NHT_YAPEM_TabFineTune": "세부 조정",
+    "NHT_YAPEM_ModsHint": "임플란트나 의수족을 추가하는 모드는 자동으로 감지됩니다. 사용자 지정 색상은 해당 모드의 모든 임플란트에서 등급 색상보다 우선합니다. 세부 조정에서 개별 임플란트에 지정한 색상이 가장 우선합니다.",
+    "NHT_YAPEM_ModsNone": "임플란트나 의수족을 추가하는 모드를 찾지 못했습니다.",
+    "NHT_YAPEM_ModAuto": "자동",
+    "NHT_YAPEM_ModImplantCount": "임플란트 {0}개",
+    "NHT_YAPEM_DetectedTiersHeader": "모드가 추가한 등급",
+    "NHT_YAPEM_DetectedTiersHint": "모드에서 자동으로 찾은 새 등급입니다. 각각 고유한 색상을 지정할 수 있습니다."
   },
   "ChineseSimplified": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -866,7 +976,18 @@
     "NHT_YAPEM_ProfileImported": "成功导入配置 \"{0}\"！",
     "NHT_YAPEM_InvalidProfileJson": "剪贴板中未包含有效的调色板数据。",
     "NHT_YAPEM_ApplyBtn": "应用",
-    "NHT_YAPEM_PresetsCount": "预设"
+    "NHT_YAPEM_PresetsCount": "预设",
+    "NHT_YAPEM_TabGeneral": "常规",
+    "NHT_YAPEM_TabTiers": "等级颜色",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "模组",
+    "NHT_YAPEM_TabFineTune": "精细调整",
+    "NHT_YAPEM_ModsHint": "添加义体或植入物的模组会被自动检测。自定义颜色会覆盖该模组所有植入物的等级颜色。在“精细调整”中为单个植入物设置的颜色优先级最高。",
+    "NHT_YAPEM_ModsNone": "未找到添加植入物或义体的模组。",
+    "NHT_YAPEM_ModAuto": "自动",
+    "NHT_YAPEM_ModImplantCount": "{0} 个植入物",
+    "NHT_YAPEM_DetectedTiersHeader": "模组添加的等级",
+    "NHT_YAPEM_DetectedTiersHint": "在你的模组中自动发现的新等级，每个等级都有独立的颜色。"
   },
   "ChineseTraditional": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -945,7 +1066,18 @@
     "NHT_YAPEM_ProfileImported": "成功导入配置 \"{0}\"！",
     "NHT_YAPEM_InvalidProfileJson": "剪贴板中未包含有效的调色板数据。",
     "NHT_YAPEM_ApplyBtn": "应用",
-    "NHT_YAPEM_PresetsCount": "预设"
+    "NHT_YAPEM_PresetsCount": "预设",
+    "NHT_YAPEM_TabGeneral": "一般",
+    "NHT_YAPEM_TabTiers": "等級顏色",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "模組",
+    "NHT_YAPEM_TabFineTune": "細部調整",
+    "NHT_YAPEM_ModsHint": "新增義體或植入物的模組會被自動偵測。自訂顏色會覆蓋該模組所有植入物的等級顏色。在「細部調整」中為單一植入物設定的顏色優先權最高。",
+    "NHT_YAPEM_ModsNone": "未找到新增植入物或義體的模組。",
+    "NHT_YAPEM_ModAuto": "自動",
+    "NHT_YAPEM_ModImplantCount": "{0} 個植入物",
+    "NHT_YAPEM_DetectedTiersHeader": "模組新增的等級",
+    "NHT_YAPEM_DetectedTiersHint": "在你的模組中自動發現的新等級，每個等級都有獨立的顏色。"
   },
   "Turkish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1024,7 +1156,18 @@
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
     "NHT_YAPEM_ApplyBtn": "Apply",
-    "NHT_YAPEM_PresetsCount": "presets"
+    "NHT_YAPEM_PresetsCount": "presets",
+    "NHT_YAPEM_TabGeneral": "Genel",
+    "NHT_YAPEM_TabTiers": "Seviye renkleri",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "Modlar",
+    "NHT_YAPEM_TabFineTune": "İnce ayar",
+    "NHT_YAPEM_ModsHint": "İmplant veya protez ekleyen modlar otomatik olarak algılanır. Özel bir renk, o modun tüm implantları için seviye rengini geçersiz kılar. İnce ayarda tek bir implant için belirlenen renk bunun önüne geçer.",
+    "NHT_YAPEM_ModsNone": "İmplant veya protez içeren mod bulunamadı.",
+    "NHT_YAPEM_ModAuto": "Otomatik",
+    "NHT_YAPEM_ModImplantCount": "{0} implant",
+    "NHT_YAPEM_DetectedTiersHeader": "Modların eklediği seviyeler",
+    "NHT_YAPEM_DetectedTiersHint": "Modlarında otomatik olarak bulunan yeni seviyeler. Her birinin kendi rengi vardır."
   },
   "Ukrainian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1103,7 +1246,18 @@
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
     "NHT_YAPEM_ApplyBtn": "Apply",
-    "NHT_YAPEM_PresetsCount": "presets"
+    "NHT_YAPEM_PresetsCount": "presets",
+    "NHT_YAPEM_TabGeneral": "Загальне",
+    "NHT_YAPEM_TabTiers": "Кольори рівнів",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "Моди",
+    "NHT_YAPEM_TabFineTune": "Тонке налаштування",
+    "NHT_YAPEM_ModsHint": "Моди з імплантами та протезами виявляються автоматично. Власний колір замінює колір рівня для всіх імплантів цього моду. Колір, заданий для окремого імпланта у «Тонкому налаштуванні», важливіший.",
+    "NHT_YAPEM_ModsNone": "Модів з імплантами чи протезами не знайдено.",
+    "NHT_YAPEM_ModAuto": "Авто",
+    "NHT_YAPEM_ModImplantCount": "імплантів: {0}",
+    "NHT_YAPEM_DetectedTiersHeader": "Рівні з модів",
+    "NHT_YAPEM_DetectedTiersHint": "Нові рівні, автоматично знайдені у ваших модах. Кожен має власний колір."
   },
   "Vietnamese": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1182,7 +1336,18 @@
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
     "NHT_YAPEM_ApplyBtn": "Apply",
-    "NHT_YAPEM_PresetsCount": "presets"
+    "NHT_YAPEM_PresetsCount": "presets",
+    "NHT_YAPEM_TabGeneral": "Chung",
+    "NHT_YAPEM_TabTiers": "Màu cấp bậc",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "Mod",
+    "NHT_YAPEM_TabFineTune": "Tinh chỉnh",
+    "NHT_YAPEM_ModsHint": "Các mod thêm bộ phận cấy ghép hoặc chi giả được tự động phát hiện. Màu tùy chỉnh sẽ thay thế màu cấp bậc cho mọi bộ phận cấy ghép của mod đó. Màu đặt cho một bộ phận riêng trong Tinh chỉnh sẽ được ưu tiên cao nhất.",
+    "NHT_YAPEM_ModsNone": "Không tìm thấy mod nào có bộ phận cấy ghép hoặc chi giả.",
+    "NHT_YAPEM_ModAuto": "Tự động",
+    "NHT_YAPEM_ModImplantCount": "{0} bộ phận cấy ghép",
+    "NHT_YAPEM_DetectedTiersHeader": "Cấp bậc do mod thêm",
+    "NHT_YAPEM_DetectedTiersHint": "Các cấp bậc mới được tự động tìm thấy trong mod của bạn. Mỗi cấp có màu riêng."
   },
   "Polish": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1261,7 +1426,18 @@
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
     "NHT_YAPEM_ApplyBtn": "Apply",
-    "NHT_YAPEM_PresetsCount": "presets"
+    "NHT_YAPEM_PresetsCount": "presets",
+    "NHT_YAPEM_TabGeneral": "Ogólne",
+    "NHT_YAPEM_TabTiers": "Kolory poziomów",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "Mody",
+    "NHT_YAPEM_TabFineTune": "Dostrajanie",
+    "NHT_YAPEM_ModsHint": "Mody dodające implanty lub protezy są wykrywane automatycznie. Własny kolor zastępuje kolor poziomu dla wszystkich implantów tego modu. Kolor ustawiony dla pojedynczego implantu w Dostrajaniu ma pierwszeństwo.",
+    "NHT_YAPEM_ModsNone": "Nie znaleziono modów z implantami ani protezami.",
+    "NHT_YAPEM_ModAuto": "Auto",
+    "NHT_YAPEM_ModImplantCount": "implanty: {0}",
+    "NHT_YAPEM_DetectedTiersHeader": "Poziomy dodane przez mody",
+    "NHT_YAPEM_DetectedTiersHint": "Nowe poziomy wykryte automatycznie w twoich modach. Każdy ma własny kolor."
   },
   "Czech": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1340,7 +1516,18 @@
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
     "NHT_YAPEM_ApplyBtn": "Apply",
-    "NHT_YAPEM_PresetsCount": "presets"
+    "NHT_YAPEM_PresetsCount": "presets",
+    "NHT_YAPEM_TabGeneral": "Obecné",
+    "NHT_YAPEM_TabTiers": "Barvy úrovní",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "Módy",
+    "NHT_YAPEM_TabFineTune": "Jemné ladění",
+    "NHT_YAPEM_ModsHint": "Módy přidávající implantáty nebo protézy se rozpoznají automaticky. Vlastní barva nahradí barvu úrovně pro všechny implantáty tohoto módu. Barva nastavená pro jeden implantát v Jemném ladění má přednost.",
+    "NHT_YAPEM_ModsNone": "Nenalezeny žádné módy s implantáty nebo protézami.",
+    "NHT_YAPEM_ModAuto": "Auto",
+    "NHT_YAPEM_ModImplantCount": "implantátů: {0}",
+    "NHT_YAPEM_DetectedTiersHeader": "Úrovně přidané módy",
+    "NHT_YAPEM_DetectedTiersHint": "Nové úrovně automaticky nalezené ve vašich módech. Každá má vlastní barvu."
   },
   "Hungarian": {
     "NHT_YAPEM_ModCategory": "Nice Health Tab: Recolorized",
@@ -1419,6 +1606,17 @@
     "NHT_YAPEM_ProfileImported": "Profile \"{0}\" successfully imported!",
     "NHT_YAPEM_InvalidProfileJson": "Clipboard does not contain valid palette data.",
     "NHT_YAPEM_ApplyBtn": "Apply",
-    "NHT_YAPEM_PresetsCount": "presets"
+    "NHT_YAPEM_PresetsCount": "presets",
+    "NHT_YAPEM_TabGeneral": "Általános",
+    "NHT_YAPEM_TabTiers": "Szintek színei",
+    "NHT_YAPEM_TabDLC": "DLC",
+    "NHT_YAPEM_TabMods": "Modok",
+    "NHT_YAPEM_TabFineTune": "Finomhangolás",
+    "NHT_YAPEM_ModsHint": "Az implantátumokat vagy protéziseket hozzáadó modok automatikusan felismerődnek. Az egyéni szín felülírja a szint színét a mod összes implantátumánál. A Finomhangolásban egyetlen implantátumhoz beállított szín előnyt élvez.",
+    "NHT_YAPEM_ModsNone": "Nem található implantátumot vagy protézist tartalmazó mod.",
+    "NHT_YAPEM_ModAuto": "Auto",
+    "NHT_YAPEM_ModImplantCount": "{0} implantátum",
+    "NHT_YAPEM_DetectedTiersHeader": "Modok által hozzáadott szintek",
+    "NHT_YAPEM_DetectedTiersHint": "A modjaidban automatikusan talált új szintek. Mindegyiknek saját színe van."
   }
 }

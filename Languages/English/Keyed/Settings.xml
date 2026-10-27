@@ -77,4 +77,15 @@
   <NHT_YAPEM_InvalidProfileJson>Clipboard does not contain valid palette data.</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>Apply</NHT_YAPEM_ApplyBtn>
   <NHT_YAPEM_PresetsCount>presets</NHT_YAPEM_PresetsCount>
+  <NHT_YAPEM_TabGeneral>General</NHT_YAPEM_TabGeneral>
+  <NHT_YAPEM_TabTiers>Tier colors</NHT_YAPEM_TabTiers>
+  <NHT_YAPEM_TabDLC>DLC</NHT_YAPEM_TabDLC>
+  <NHT_YAPEM_TabMods>Mods</NHT_YAPEM_TabMods>
+  <NHT_YAPEM_TabFineTune>Fine-tune</NHT_YAPEM_TabFineTune>
+  <NHT_YAPEM_ModsHint>Mods that add implants or prosthetics are detected automatically. A custom color overrides the tier color for every implant of that mod. A color set for a single implant in Fine-tune wins over it.</NHT_YAPEM_ModsHint>
+  <NHT_YAPEM_ModsNone>No mods with implants or prosthetics found.</NHT_YAPEM_ModsNone>
+  <NHT_YAPEM_ModAuto>Auto</NHT_YAPEM_ModAuto>
+  <NHT_YAPEM_ModImplantCount>{0} implants</NHT_YAPEM_ModImplantCount>
+  <NHT_YAPEM_DetectedTiersHeader>Tiers added by mods</NHT_YAPEM_DetectedTiersHeader>
+  <NHT_YAPEM_DetectedTiersHint>New tiers found automatically in your mods. Each one gets its own color.</NHT_YAPEM_DetectedTiersHint>
 </LanguageData>

@@ -14,11 +14,13 @@
 - `LimbTierUtility`: auto tier cached per def with mod key; mod color applied over tier color; dynamic tiers
   (`FindDynamicTierKey`, `GetDynamicTiers()`, `GetDynamicTierColor`, `IsDynamicTier`); `GetModKey(def)`; `ClearCaches()`.
 
-## Todo (stage 2, UI)
-1. Tabs UI in `YAPEMPatchSettings.DoSettingsWindowContents` (now one long scroll, ~1000 lines).
-2. Mods tab: groups from `EnsureImplantGroupsCached` except core/DLC; row = mod name, count, Auto/custom color; key = `LimbTierUtility.GetModKey`.
-3. Tier colors tab: add rows for `LimbTierUtility.GetDynamicTiers()` (color in `DynamicTierColors`).
-4. Fine-tune dropdown (`OpenTierSelectionMenu`): add dynamic tiers to the list.
-5. Preview via NHT DollRenderer (see above).
-6. New Keyed strings in `languages.json` for all 18 languages, then run `generate_languages.py`.
-7. Profiles (`PaletteProfile`) do not include ModColors / DynamicTierColors yet.
+## Done (stage 2a, window)
+- Tabs: General / Tier colors / DLC / Mods / Fine-tune (`DrawTabBar`, own buttons: TabDrawer signatures differ between RimWorld versions).
+- Mods tab (`DrawModsTab`, `DrawModColorEntry`): third-party groups, Auto or custom color, Reset returns to Auto.
+- Tier colors tab lists auto-detected tiers (`DrawDetectedTiers`); Fine-tune dropdown includes them.
+- 11 new NHT_YAPEM_* keys in all 18 languages (machine-written, not reviewed by native speakers).
+
+## Todo (stage 2b)
+1. Preview via NHT DollRenderer (see above). Not started.
+2. Profiles (`PaletteProfile`) do not include ModColors / DynamicTierColors yet.
+3. Default colors: see audit notes (Bionic #E6E6E6 is nearly white, dE 5.2; AdvBionic vs Odyssey dE 10.8; textures are dark, mean luminance ~45%, so on-screen color = texture x tint, darker than the swatch).

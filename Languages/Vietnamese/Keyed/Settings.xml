@@ -77,4 +77,15 @@
   <NHT_YAPEM_InvalidProfileJson>Clipboard does not contain valid palette data.</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>Apply</NHT_YAPEM_ApplyBtn>
   <NHT_YAPEM_PresetsCount>presets</NHT_YAPEM_PresetsCount>
+  <NHT_YAPEM_TabGeneral>Chung</NHT_YAPEM_TabGeneral>
+  <NHT_YAPEM_TabTiers>Màu cấp bậc</NHT_YAPEM_TabTiers>
+  <NHT_YAPEM_TabDLC>DLC</NHT_YAPEM_TabDLC>
+  <NHT_YAPEM_TabMods>Mod</NHT_YAPEM_TabMods>
+  <NHT_YAPEM_TabFineTune>Tinh chỉnh</NHT_YAPEM_TabFineTune>
+  <NHT_YAPEM_ModsHint>Các mod thêm bộ phận cấy ghép hoặc chi giả được tự động phát hiện. Màu tùy chỉnh sẽ thay thế màu cấp bậc cho mọi bộ phận cấy ghép của mod đó. Màu đặt cho một bộ phận riêng trong Tinh chỉnh sẽ được ưu tiên cao nhất.</NHT_YAPEM_ModsHint>
+  <NHT_YAPEM_ModsNone>Không tìm thấy mod nào có bộ phận cấy ghép hoặc chi giả.</NHT_YAPEM_ModsNone>
+  <NHT_YAPEM_ModAuto>Tự động</NHT_YAPEM_ModAuto>
+  <NHT_YAPEM_ModImplantCount>{0} bộ phận cấy ghép</NHT_YAPEM_ModImplantCount>
+  <NHT_YAPEM_DetectedTiersHeader>Cấp bậc do mod thêm</NHT_YAPEM_DetectedTiersHeader>
+  <NHT_YAPEM_DetectedTiersHint>Các cấp bậc mới được tự động tìm thấy trong mod của bạn. Mỗi cấp có màu riêng.</NHT_YAPEM_DetectedTiersHint>
 </LanguageData>

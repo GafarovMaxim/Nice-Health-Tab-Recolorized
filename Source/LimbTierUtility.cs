@@ -268,7 +268,13 @@ namespace NiceHealthTab_YAPEM_Patch
             return null;
         }
 
-        public static bool IsDynamicTier(string tierKey) => tierKey != null && dynamicTierLabels.ContainsKey(tierKey);
+        public static bool IsDynamicTier(string tierKey)
+        {
+            if (tierKey == null || !tierKey.StartsWith("Cat:")) return false;
+            // A saved per-implant override can name a tier before any def of it was classified.
+            if (!dynamicTiersScanned) GetDynamicTiers();
+            return dynamicTierLabels.ContainsKey(tierKey);
+        }
 
         public static Color GetDynamicTierColor(string tierKey)
         {

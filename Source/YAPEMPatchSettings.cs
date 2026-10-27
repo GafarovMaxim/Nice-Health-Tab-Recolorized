@@ -420,6 +420,157 @@ namespace NiceHealthTab_YAPEM_Patch
             DynamicTierColors?.Clear();
         }
 
+        private const int TabGeneral = 0, TabTiers = 1, TabDLC = 2, TabMods = 3, TabFineTune = 4;
+        private static readonly string[] TabLabelKeys =
+        {
+            "NHT_YAPEM_TabGeneral", "NHT_YAPEM_TabTiers", "NHT_YAPEM_TabDLC", "NHT_YAPEM_TabMods", "NHT_YAPEM_TabFineTune"
+        };
+        private static int selectedTab = TabGeneral;
+
+        // Row of tab buttons at the top; returns the area left for the tab content.
+        private Rect DrawTabBar(Rect inRect)
+        {
+            const float tabH = 30f;
+            Text.Font = GameFont.Small;
+            float x = inRect.x;
+            for (int i = 0; i < TabLabelKeys.Length; i++)
+            {
+                string label = TabLabelKeys[i].Translate();
+                float w = Text.CalcSize(label).x + 28f;
+                Rect r = new Rect(x, inRect.y, w, tabH);
+                bool selected = i == selectedTab;
+                if (selected)
+                {
+                    Widgets.DrawBoxSolid(r, new Color(1f, 1f, 1f, 0.12f));
+                    Widgets.DrawBoxSolid(new Rect(r.x, r.yMax - 3f, r.width, 3f), new Color(0.37f, 0.66f, 1f));
+                }
+                else
+                {
+                    Widgets.DrawHighlightIfMouseover(r);
+                }
+                Widgets.Label(new Rect(r.x + 14f, r.y + 4f, w - 14f, tabH - 4f), label);
+                if (!selected && Widgets.ButtonInvisible(r))
+                {
+                    selectedTab = i;
+                    scrollPosition = Vector2.zero;
+                }
+                x += w + 2f;
+            }
+            Widgets.DrawBoxSolid(new Rect(inRect.x, inRect.y + tabH, inRect.width, 1f), new Color(1f, 1f, 1f, 0.2f));
+            float top = tabH + 8f;
+            return new Rect(inRect.x, inRect.y + top, inRect.width, inRect.height - top);
+        }
+
+        // Tiers found automatically in loaded mods (see LimbTierUtility.FindDynamicTierKey).
+        private void DrawDetectedTiers(Listing_Standard listing)
+        {
+            List<KeyValuePair<string, string>> tiers = LimbTierUtility.GetDynamicTiers();
+            if (tiers.Count == 0) return;
+
+            listing.Gap(8f);
+            listing.GapLine();
+            listing.Gap(4f);
+            Text.Font = GameFont.Medium;
+            listing.Label("NHT_YAPEM_DetectedTiersHeader".Translate());
+            Text.Font = GameFont.Small;
+            listing.Label("NHT_YAPEM_DetectedTiersHint".Translate());
+            listing.Gap(4f);
+
+            foreach (KeyValuePair<string, string> tier in tiers)
+            {
+                string key = tier.Key;
+                Color defaultColor = LimbTierUtility.GetDynamicTierDefaultColor(key);
+                Color current = LimbTierUtility.GetDynamicTierColor(key);
+                DrawColorEntry(listing, tier.Value, ref current, defaultColor, c =>
+                {
+                    if (c == defaultColor) DynamicTierColors.Remove(key);
+                    else DynamicTierColors[key] = ToHex(c);
+                });
+            }
+        }
+
+        private static bool IsThirdPartyGroup(ImplantGroup g)
+        {
+            switch (g.GroupKey)
+            {
+                case "core": case "royalty": case "biotech": case "anomaly": case "odyssey": case "integrated":
+                    return false;
+                default:
+                    return !string.IsNullOrEmpty(g.GroupKey);
+            }
+        }
+
+        private void DrawModsTab(Listing_Standard listing)
+        {
+            Text.Font = GameFont.Medium;
+            listing.Label("NHT_YAPEM_TabMods".Translate());
+            Text.Font = GameFont.Small;
+            listing.Label("NHT_YAPEM_ModsHint".Translate());
+            listing.Gap(6f);
+
+            bool any = false;
+            if (cachedGroups != null)
+            {
+                foreach (ImplantGroup g in cachedGroups)
+                {
+                    if (!IsThirdPartyGroup(g)) continue;
+                    any = true;
+                    DrawModColorEntry(listing, g);
+                }
+            }
+            if (!any)
+            {
+                listing.Label("NHT_YAPEM_ModsNone".Translate());
+            }
+        }
+
+        // Same row layout as DrawColorEntry, but "no entry" means Auto (colored by tier) instead of a default color.
+        private void DrawModColorEntry(Listing_Standard listing, ImplantGroup g)
+        {
+            Rect entryRect = listing.GetRect(32f);
+            string key = g.GroupKey;
+            Color shown = new Color(0.25f, 0.25f, 0.25f);
+            bool hasColor = false;
+            if (ModColors.TryGetValue(key, out string hex) && TryParseHex(hex, out Color parsed))
+            {
+                shown = parsed;
+                hasColor = true;
+            }
+
+            float titleW = Mathf.Clamp(entryRect.width - 340f, 200f, 440f);
+            string title = g.GroupTitle + " (" + string.Format("NHT_YAPEM_ModImplantCount".Translate().RawText, g.Defs.Count) + ")";
+            Widgets.Label(new Rect(entryRect.x, entryRect.y + 4f, titleW, 24f), title);
+
+            Action<Color> save = c =>
+            {
+                ModColors[key] = ToHex(c);
+                Write();
+            };
+            Action open = () => Find.WindowStack.Add(new Dialog_TierColorPicker(g.GroupTitle, hasColor ? shown : Color.white, Color.white, save));
+
+            Rect swatchRect = new Rect(entryRect.x + titleW + 10f, entryRect.y + 2f, 36f, 26f);
+            Widgets.DrawBoxSolid(swatchRect, shown);
+            Widgets.DrawBox(swatchRect, 1);
+            Widgets.DrawHighlightIfMouseover(swatchRect);
+            TooltipHandler.TipRegion(swatchRect, "NHT_YAPEM_PaletteTip".Translate());
+            if (Widgets.ButtonInvisible(swatchRect)) open();
+
+            Rect hexRect = new Rect(swatchRect.xMax + 10f, entryRect.y + 4f, 80f, 24f);
+            Widgets.Label(hexRect, hasColor ? "#" + ColorUtility.ToHtmlStringRGB(shown) : (string)"NHT_YAPEM_ModAuto".Translate());
+
+            Rect pickBtnRect = new Rect(hexRect.xMax + 10f, entryRect.y + 2f, 105f, 26f);
+            if (Widgets.ButtonText(pickBtnRect, "NHT_YAPEM_PaletteBtn".Translate())) open();
+
+            Rect resetBtnRect = new Rect(pickBtnRect.xMax + 8f, entryRect.y + 2f, 75f, 26f);
+            if (hasColor && Widgets.ButtonText(resetBtnRect, "NHT_YAPEM_ResetBtn".Translate()))
+            {
+                ModColors.Remove(key);
+                Write();
+            }
+
+            listing.Gap(2f);
+        }
+
         public void DoSettingsWindowContents(Rect inRect)
         {
             try
@@ -431,8 +582,8 @@ namespace NiceHealthTab_YAPEM_Patch
                 Log.ErrorOnce("[NiceHealthTab: Recolorized] Error caching implant groups: " + ex, 8192837);
             }
 
-            Rect outRect = inRect;
-            Rect viewRect = new Rect(0f, 0f, inRect.width - 24f, Mathf.Max(viewHeight, inRect.height));
+            Rect outRect = DrawTabBar(inRect);
+            Rect viewRect = new Rect(0f, 0f, outRect.width - 24f, Mathf.Max(viewHeight, outRect.height));
 
             Widgets.BeginScrollView(outRect, ref scrollPosition, viewRect);
 
@@ -441,6 +592,8 @@ namespace NiceHealthTab_YAPEM_Patch
             listing.Begin(viewRect);
             try {
 
+            if (selectedTab == TabGeneral)
+            {
             // 1. General, Body & Organ Display Options
             Text.Font = GameFont.Medium;
             listing.Label("NHT_YAPEM_SectionBody".Translate());
@@ -480,6 +633,9 @@ namespace NiceHealthTab_YAPEM_Patch
             listing.GapLine();
             listing.Gap(4f);
 
+            }
+            else if (selectedTab == TabTiers)
+            {
             // 2. Base Tier Colors
             Text.Font = GameFont.Medium;
             listing.Label("NHT_YAPEM_SectionColors".Translate());
@@ -498,10 +654,10 @@ namespace NiceHealthTab_YAPEM_Patch
             DrawColorEntry(listing, "NHT_YAPEM_TierBionic".Translate(), ref ColorBionic, DefaultColorBionic, c => ColorBionic = c);
             DrawColorEntry(listing, "NHT_YAPEM_TierProsthetic".Translate(), ref ColorProsthetic, DefaultColorProsthetic, c => ColorProsthetic = c);
 
-            listing.Gap(6f);
-            listing.GapLine();
-            listing.Gap(4f);
-
+            DrawDetectedTiers(listing);
+            }
+            else if (selectedTab == TabDLC)
+            {
             // 3. DLC & Mod Category Colors
             Text.Font = GameFont.Medium;
             listing.Label("NHT_YAPEM_SectionDLCColors".Translate());
@@ -523,12 +679,16 @@ namespace NiceHealthTab_YAPEM_Patch
                 DrawColorEntry(listing, "NHT_YAPEM_TierIntegrated".Translate(), ref ColorIntegratedImplants, DefaultColorIntegratedImplants, c => ColorIntegratedImplants = c);
             }
 
-            listing.Gap(8f);
-            listing.GapLine();
-            listing.Gap(6f);
-
-            // 4. Section: Fine-tuning implant categories
-            DrawImplantFineTuningSection(listing, viewRect);
+            }
+            else if (selectedTab == TabMods)
+            {
+                DrawModsTab(listing);
+            }
+            else
+            {
+                // 4. Section: Fine-tuning implant categories
+                DrawImplantFineTuningSection(listing, viewRect);
+            }
 
             listing.Gap(8f);
             listing.GapLine();
@@ -548,7 +708,7 @@ namespace NiceHealthTab_YAPEM_Patch
             }
             finally
             {
-                viewHeight = Mathf.Max(listing.CurHeight + 30f, inRect.height);
+                viewHeight = Mathf.Max(listing.CurHeight + 30f, outRect.height);
                 listing.End();
                 Widgets.EndScrollView();
             }
@@ -845,6 +1005,20 @@ namespace NiceHealthTab_YAPEM_Patch
                     },
                     BaseContent.WhiteTex,
                     t.color
+                ));
+            }
+
+            // 4. Tiers added by mods, detected automatically
+            foreach (KeyValuePair<string, string> dyn in LimbTierUtility.GetDynamicTiers())
+            {
+                string dynKey = dyn.Key;
+                options.Add(new FloatMenuOption(
+                    dyn.Value,
+                    () => {
+                        CustomHediffTiers[def.defName] = dynKey;
+                    },
+                    BaseContent.WhiteTex,
+                    LimbTierUtility.GetDynamicTierColor(dynKey)
                 ));
             }
 

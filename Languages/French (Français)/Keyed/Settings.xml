@@ -77,4 +77,15 @@
   <NHT_YAPEM_InvalidProfileJson>Le presse-papiers ne contient pas de données de palette valides.</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>Appliquer</NHT_YAPEM_ApplyBtn>
   <NHT_YAPEM_PresetsCount>préréglages</NHT_YAPEM_PresetsCount>
+  <NHT_YAPEM_TabGeneral>Général</NHT_YAPEM_TabGeneral>
+  <NHT_YAPEM_TabTiers>Couleurs des niveaux</NHT_YAPEM_TabTiers>
+  <NHT_YAPEM_TabDLC>DLC</NHT_YAPEM_TabDLC>
+  <NHT_YAPEM_TabMods>Mods</NHT_YAPEM_TabMods>
+  <NHT_YAPEM_TabFineTune>Réglage fin</NHT_YAPEM_TabFineTune>
+  <NHT_YAPEM_ModsHint>Les mods qui ajoutent des implants ou des prothèses sont détectés automatiquement. Une couleur personnalisée remplace la couleur du niveau pour tous les implants de ce mod. Une couleur définie pour un seul implant dans Réglage fin est prioritaire.</NHT_YAPEM_ModsHint>
+  <NHT_YAPEM_ModsNone>Aucun mod avec des implants ou des prothèses trouvé.</NHT_YAPEM_ModsNone>
+  <NHT_YAPEM_ModAuto>Auto</NHT_YAPEM_ModAuto>
+  <NHT_YAPEM_ModImplantCount>{0} implants</NHT_YAPEM_ModImplantCount>
+  <NHT_YAPEM_DetectedTiersHeader>Niveaux ajoutés par des mods</NHT_YAPEM_DetectedTiersHeader>
+  <NHT_YAPEM_DetectedTiersHint>Nouveaux niveaux détectés automatiquement dans vos mods. Chacun a sa propre couleur.</NHT_YAPEM_DetectedTiersHint>
 </LanguageData>

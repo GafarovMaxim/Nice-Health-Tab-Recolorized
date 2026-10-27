@@ -77,4 +77,15 @@
   <NHT_YAPEM_InvalidProfileJson>Clipboard does not contain valid palette data.</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>Apply</NHT_YAPEM_ApplyBtn>
   <NHT_YAPEM_PresetsCount>presets</NHT_YAPEM_PresetsCount>
+  <NHT_YAPEM_TabGeneral>Загальне</NHT_YAPEM_TabGeneral>
+  <NHT_YAPEM_TabTiers>Кольори рівнів</NHT_YAPEM_TabTiers>
+  <NHT_YAPEM_TabDLC>DLC</NHT_YAPEM_TabDLC>
+  <NHT_YAPEM_TabMods>Моди</NHT_YAPEM_TabMods>
+  <NHT_YAPEM_TabFineTune>Тонке налаштування</NHT_YAPEM_TabFineTune>
+  <NHT_YAPEM_ModsHint>Моди з імплантами та протезами виявляються автоматично. Власний колір замінює колір рівня для всіх імплантів цього моду. Колір, заданий для окремого імпланта у «Тонкому налаштуванні», важливіший.</NHT_YAPEM_ModsHint>
+  <NHT_YAPEM_ModsNone>Модів з імплантами чи протезами не знайдено.</NHT_YAPEM_ModsNone>
+  <NHT_YAPEM_ModAuto>Авто</NHT_YAPEM_ModAuto>
+  <NHT_YAPEM_ModImplantCount>імплантів: {0}</NHT_YAPEM_ModImplantCount>
+  <NHT_YAPEM_DetectedTiersHeader>Рівні з модів</NHT_YAPEM_DetectedTiersHeader>
+  <NHT_YAPEM_DetectedTiersHint>Нові рівні, автоматично знайдені у ваших модах. Кожен має власний колір.</NHT_YAPEM_DetectedTiersHint>
 </LanguageData>

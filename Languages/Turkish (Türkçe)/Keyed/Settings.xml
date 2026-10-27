@@ -77,4 +77,15 @@
   <NHT_YAPEM_InvalidProfileJson>Clipboard does not contain valid palette data.</NHT_YAPEM_InvalidProfileJson>
   <NHT_YAPEM_ApplyBtn>Apply</NHT_YAPEM_ApplyBtn>
   <NHT_YAPEM_PresetsCount>presets</NHT_YAPEM_PresetsCount>
+  <NHT_YAPEM_TabGeneral>Genel</NHT_YAPEM_TabGeneral>
+  <NHT_YAPEM_TabTiers>Seviye renkleri</NHT_YAPEM_TabTiers>
+  <NHT_YAPEM_TabDLC>DLC</NHT_YAPEM_TabDLC>
+  <NHT_YAPEM_TabMods>Modlar</NHT_YAPEM_TabMods>
+  <NHT_YAPEM_TabFineTune>İnce ayar</NHT_YAPEM_TabFineTune>
+  <NHT_YAPEM_ModsHint>İmplant veya protez ekleyen modlar otomatik olarak algılanır. Özel bir renk, o modun tüm implantları için seviye rengini geçersiz kılar. İnce ayarda tek bir implant için belirlenen renk bunun önüne geçer.</NHT_YAPEM_ModsHint>
+  <NHT_YAPEM_ModsNone>İmplant veya protez içeren mod bulunamadı.</NHT_YAPEM_ModsNone>
+  <NHT_YAPEM_ModAuto>Otomatik</NHT_YAPEM_ModAuto>
+  <NHT_YAPEM_ModImplantCount>{0} implant</NHT_YAPEM_ModImplantCount>
+  <NHT_YAPEM_DetectedTiersHeader>Modların eklediği seviyeler</NHT_YAPEM_DetectedTiersHeader>
+  <NHT_YAPEM_DetectedTiersHint>Modlarında otomatik olarak bulunan yeni seviyeler. Her birinin kendi rengi vardır.</NHT_YAPEM_DetectedTiersHint>
 </LanguageData>
