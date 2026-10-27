@@ -463,7 +463,8 @@ namespace NiceHealthTab_YAPEM_Patch
 
         public struct PartKind
         {
-            public bool IsSpine, IsNeck, IsBone, IsOrgan, IsEye;
+            // IsBonesOnly: spine and ribcage are drawn in the bones view only, never in the overview.
+            public bool IsSpine, IsNeck, IsBone, IsOrgan, IsEye, IsBonesOnly;
         }
 
         // Part kind depends only on defs, so it is computed once per (body part, doll part, rendered part) combination.
@@ -536,7 +537,11 @@ namespace NiceHealthTab_YAPEM_Patch
                 IsNeck = isNeck,
                 IsBone = isBone,
                 IsOrgan = isOrgan,
-                IsEye = part is DollEye || effectivePart is DollEye
+                IsEye = part is DollEye || effectivePart is DollEye,
+                IsBonesOnly = isSpine
+                    || ContainsIgnoreCase(bodyName, "Ribcage")
+                    || ContainsIgnoreCase(partName, "Ribcage")
+                    || ContainsIgnoreCase(effectiveName, "Ribcage")
             };
         }
 

@@ -17,6 +17,19 @@ namespace NiceHealthTab_YAPEM_Patch
         private static readonly object[] HeadOverlayArgs = new object[5];
         private static readonly object BoxedStatusOk = DollPartStatus.Ok;
 
+        [HarmonyFinalizer]
+        public static void Finalizer()
+        {
+            OrganVisibilityOverride.Restore();
+        }
+
+        private static bool IsDamaged(DollRenderContext ctx, BodyPartRecord part)
+        {
+            PartFrameInfo frame = ctx.GetPartFrameInfo(part);
+            DollPartStatus status = ctx.GetPartVisual(part, ctx.Hediffs.GetHediffs(part), frame.Health, frame.MaxHealth).Status;
+            return status != DollPartStatus.Ok && status != DollPartStatus.NonOk;
+        }
+
         [HarmonyPrefix]
         public static bool Prefix(DollRenderContext ctx, DollBodyPartDef _part, Doll doll, Rect rectDoll, float dollScale, bool selectable, Vector2 extraOffset)
         {
@@ -78,16 +91,16 @@ namespace NiceHealthTab_YAPEM_Patch
                 : _part;
 
             var kind = LimbTierUtility.ClassifyPart(val.def, _part, effectivePart);
-            bool isSpine = kind.IsSpine;
+            bool isBonesOnly = kind.IsBonesOnly;
             bool isBone = kind.IsBone;
             bool isOrgan = kind.IsOrgan;
             bool isEye = kind.IsEye;
 
             // 3. Strict Filter Mode conformance:
 
-            // User Rule: Spines must strictly ONLY show in Bone view mode!
-            // In Overview and Organ modes, spines are always hidden.
-            if (isSpine && ctx.FilterMode != DollFilterMode.Bones)
+            // User Rule: Spines and ribs must strictly ONLY show in Bone view mode!
+            // In Overview and Organ modes, they are always hidden.
+            if (isBonesOnly && ctx.FilterMode != DollFilterMode.Bones)
             {
                 return false;
             }
@@ -113,9 +126,14 @@ namespace NiceHealthTab_YAPEM_Patch
             {
                 // User option: display organs ONLY in organ view mode
                 // When enabled, hides ALL organs (natural AND bionic/implanted) in overview!
+                // Exception: a damaged organ is always shown (armor mode still hides it).
                 if (isOrgan && (YAPEMPatchMod.Settings?.OnlyShowOrgansInOrganMode == true || !NiceHediffTabSettings.ShowOrgan || ctx.ArmorMode))
                 {
-                    return false;
+                    if (ctx.ArmorMode || !IsDamaged(ctx, val))
+                    {
+                        return false;
+                    }
+                    OrganVisibilityOverride.Force();
                 }
                 if (isBone && (!NiceHediffTabSettings.ShowBones || ctx.ArmorMode))
                 {

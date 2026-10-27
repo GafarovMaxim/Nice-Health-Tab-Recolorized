@@ -27,6 +27,26 @@ namespace NiceHealthTab_YAPEM_Patch
         private static readonly object[] PartConditionArgs = new object[5];
         private static readonly object[] HeadOverlayArgs = new object[4];
 
+        [HarmonyFinalizer]
+        public static void Finalizer()
+        {
+            OrganVisibilityOverride.Restore();
+        }
+
+        private static bool IsDamaged(Pawn pawn, BodyPartRecord part)
+        {
+            if (GetPartConditionLabelMethod == null) return false;
+            object[] args = PartConditionArgs;
+            args[0] = DollDrawer.Hediffs.GetHediffs(part);
+            args[1] = pawn;
+            args[2] = part;
+            args[3] = null;
+            args[4] = null;
+            GetPartConditionLabelMethod.Invoke(null, args);
+            string status = args[3]?.ToString() ?? "";
+            return status != "Ok" && status != "NonOk";
+        }
+
         [HarmonyPrefix]
         public static bool Prefix(BodyPartIndexesRemap BodyPartIndexRemapper, DollBodyPartDef _part, Pawn pawn, Doll doll, Rect rectDoll, float DollScale, bool Selectable, Vector2 ExtraOffset)
         {
@@ -50,20 +70,25 @@ namespace NiceHealthTab_YAPEM_Patch
 
             // No alternative-part lookup on this legacy path, so the rendered part is _part itself.
             var kind = LimbTierUtility.ClassifyPart(val.def, _part, _part);
-            bool isSpine = kind.IsSpine;
+            bool isBonesOnly = kind.IsBonesOnly;
             bool isBone = kind.IsBone;
             bool isOrgan = kind.IsOrgan;
             bool isEye = kind.IsEye;
 
             // Strict Filter Conformance:
             // Spines only show when bones are viewed!
-            if (isSpine && (!DollDrawer.ShowBones || DollDrawer.ShowArmorCover))
+            if (isBonesOnly && (!DollDrawer.ShowBones || DollDrawer.ShowArmorCover))
             {
                 return false;
             }
+            // Exception: a damaged organ is always shown (armor cover still hides it).
             if (isOrgan && (YAPEMPatchMod.Settings?.OnlyShowOrgansInOrganMode == true || !DollDrawer.ShowOrgan || DollDrawer.ShowArmorCover))
             {
-                return false;
+                if (DollDrawer.ShowArmorCover || !IsDamaged(pawn, val))
+                {
+                    return false;
+                }
+                OrganVisibilityOverride.Force();
             }
             if (isBone && (!DollDrawer.ShowBones || DollDrawer.ShowArmorCover))
             {
