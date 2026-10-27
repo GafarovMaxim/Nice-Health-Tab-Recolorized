@@ -95,6 +95,11 @@ namespace NiceHealthTab_YAPEM_Patch
                     color = ColorIntegratedImplants;
                     return true;
                 default:
+                    if (IsDynamicTier(tierName))
+                    {
+                        color = GetDynamicTierColor(tierName);
+                        return true;
+                    }
                     color = Color.white;
                     return false;
             }
@@ -118,7 +123,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 case "Integrated": return "NHT_YAPEM_TierIntegrated".Translate();
                 case "None": return "NHT_YAPEM_TierNone".Translate();
                 case "Auto": return "NHT_YAPEM_TierAuto".Translate();
-                default: return tierName;
+                default: return dynamicTierLabels.TryGetValue(tierName ?? "", out string label) ? label : tierName;
             }
         }
 
@@ -176,8 +181,24 @@ namespace NiceHealthTab_YAPEM_Patch
         }
 
         // Auto tier depends only on the def and UseDLCColors; colors are resolved live so palette edits need no invalidation.
-        private static readonly Dictionary<HediffDef, string> autoTierCache = new Dictionary<HediffDef, string>();
+        private struct AutoTier
+        {
+            public string Tier;
+            public string ModKey; // lowercase packageId of a third-party mod, null for core/DLC defs
+        }
+
+        private static readonly Dictionary<HediffDef, AutoTier> autoTierCache = new Dictionary<HediffDef, AutoTier>();
         private static bool autoTierCacheUseDLC = true;
+
+        public static void ClearCaches() => autoTierCache.Clear();
+
+        public static string GetModKey(HediffDef def)
+        {
+            string pkg = def?.modContentPack?.PackageIdPlayerFacing;
+            if (string.IsNullOrEmpty(pkg)) return null;
+            pkg = pkg.ToLowerInvariant();
+            return pkg.StartsWith("ludeon.rimworld") ? null : pkg;
+        }
 
         private static bool CategorizeAutoCached(HediffDef def, out string tier, out Color color)
         {
@@ -187,17 +208,97 @@ namespace NiceHealthTab_YAPEM_Patch
                 autoTierCache.Clear();
                 autoTierCacheUseDLC = useDLC;
             }
-            if (!autoTierCache.TryGetValue(def, out tier))
+            if (!autoTierCache.TryGetValue(def, out AutoTier auto))
             {
-                CategorizeDefInternal(def, out tier, out _);
-                autoTierCache[def] = tier;
+                CategorizeDefInternal(def, out string found, out _);
+                auto = new AutoTier { Tier = found, ModKey = found == null ? null : GetModKey(def) };
+                autoTierCache[def] = auto;
             }
+            tier = auto.Tier;
             if (tier == null)
             {
                 color = Color.white;
                 return false;
             }
+            // Mod color beats the tier color; the tier itself stays so limb counting is unchanged.
+            if (auto.ModKey != null
+                && YAPEMPatchMod.Settings?.ModColors != null
+                && YAPEMPatchMod.Settings.ModColors.TryGetValue(auto.ModKey, out string hex)
+                && YAPEMPatchSettings.TryParseHex(hex, out color))
+            {
+                return true;
+            }
             return TryGetTierColor(tier, out color);
+        }
+
+        // New tiers added by mods: a ThingCategoryDef directly under "BodyParts" (how vanilla and YAPEM declare tiers)
+        // whose name is not one of the known tiers. Key is "Cat:<defName>"; label and default color are derived from it.
+        private static readonly Dictionary<ThingCategoryDef, string> dynamicTierKeys = new Dictionary<ThingCategoryDef, string>();
+        private static readonly Dictionary<string, string> dynamicTierLabels = new Dictionary<string, string>();
+        private static readonly Dictionary<string, Color> dynamicTierDefaultColors = new Dictionary<string, Color>();
+        private static bool dynamicTiersScanned;
+
+        private static readonly string[] KnownTierCategoryWords = { "Natural", "Simple", "Archotech", "Ultra", "Bionic", "Prosthetic" };
+
+        private static string FindDynamicTierKey(ThingDef spawnThing)
+        {
+            var cats = spawnThing?.thingCategories;
+            if (cats == null) return null;
+            for (int i = 0; i < cats.Count; i++)
+            {
+                ThingCategoryDef cat = cats[i];
+                if (cat == null || cat.parent == null || cat.parent.defName != "BodyParts") continue;
+                bool known = false;
+                for (int w = 0; w < KnownTierCategoryWords.Length && !known; w++)
+                {
+                    known = ContainsIgnoreCase(cat.defName, KnownTierCategoryWords[w]);
+                }
+                if (known) continue;
+                if (!dynamicTierKeys.TryGetValue(cat, out string key))
+                {
+                    key = "Cat:" + cat.defName;
+                    dynamicTierKeys[cat] = key;
+                    dynamicTierLabels[key] = cat.LabelCap.ToString();
+                    // Stable hue per category so each new tier is distinguishable without any user input.
+                    float hue = (Mathf.Abs(cat.defName.GetHashCode()) % 360) / 360f;
+                    dynamicTierDefaultColors[key] = Color.HSVToRGB(hue, 0.45f, 0.95f);
+                }
+                return key;
+            }
+            return null;
+        }
+
+        public static bool IsDynamicTier(string tierKey) => tierKey != null && dynamicTierLabels.ContainsKey(tierKey);
+
+        public static Color GetDynamicTierColor(string tierKey)
+        {
+            if (YAPEMPatchMod.Settings?.DynamicTierColors != null
+                && YAPEMPatchMod.Settings.DynamicTierColors.TryGetValue(tierKey, out string hex)
+                && YAPEMPatchSettings.TryParseHex(hex, out Color custom))
+            {
+                return custom;
+            }
+            return dynamicTierDefaultColors.TryGetValue(tierKey, out Color def) ? def : Color.white;
+        }
+
+        public static Color GetDynamicTierDefaultColor(string tierKey) =>
+            dynamicTierDefaultColors.TryGetValue(tierKey, out Color def) ? def : Color.white;
+
+        // Settings UI list: (tier key, label) of every auto-detected tier. Scans defs once.
+        public static List<KeyValuePair<string, string>> GetDynamicTiers()
+        {
+            if (!dynamicTiersScanned)
+            {
+                dynamicTiersScanned = true;
+                var defs = DefDatabase<HediffDef>.AllDefsListForReading;
+                for (int i = 0; i < defs.Count; i++)
+                {
+                    FindDynamicTierKey(defs[i].spawnThingOnRemoved);
+                }
+            }
+            var list = new List<KeyValuePair<string, string>>(dynamicTierLabels);
+            list.Sort((a, b) => string.Compare(a.Value, b.Value, StringComparison.OrdinalIgnoreCase));
+            return list;
         }
 
         private static bool CategorizeDefInternal(HediffDef def, out string tier, out Color color)
@@ -286,6 +387,18 @@ namespace NiceHealthTab_YAPEM_Patch
                 tier = "IntegratedImplants";
                 color = ColorIntegratedImplants;
                 return true;
+            }
+
+            // Tier introduced by a mod (unknown category under BodyParts)
+            if (isAddedOrImplant)
+            {
+                string dynamicKey = FindDynamicTierKey(spawnThing);
+                if (dynamicKey != null)
+                {
+                    tier = dynamicKey;
+                    color = GetDynamicTierColor(dynamicKey);
+                    return true;
+                }
             }
 
             // 1. Archotech (Archotech Expanded, Vanilla, Royalty Royal implants, Biotech Mechlink, etc.)

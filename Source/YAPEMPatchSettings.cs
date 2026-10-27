@@ -57,6 +57,19 @@ namespace NiceHealthTab_YAPEM_Patch
         // Custom implant recolor tier overrides: defName -> tier ("Auto", "None", "Archotech", etc.)
         public Dictionary<string, string> CustomHediffTiers = new Dictionary<string, string>();
 
+        // "#RRGGBB" per third-party mod (lowercase packageId) and per auto-detected tier (tier key). Absent = Auto.
+        // Priority when coloring: CustomHediffTiers (single implant) > ModColors > tier color.
+        public Dictionary<string, string> ModColors = new Dictionary<string, string>();
+        public Dictionary<string, string> DynamicTierColors = new Dictionary<string, string>();
+
+        public static bool TryParseHex(string hex, out Color color)
+        {
+            color = Color.white;
+            return !string.IsNullOrEmpty(hex) && ColorUtility.TryParseHtmlString(hex, out color);
+        }
+
+        public static string ToHex(Color color) => "#" + ColorUtility.ToHtmlStringRGB(color);
+
         // Scroll view state
         private Vector2 scrollPosition = Vector2.zero;
         private float viewHeight = 1600f;
@@ -105,6 +118,22 @@ namespace NiceHealthTab_YAPEM_Patch
             if (CustomHediffTiers == null)
             {
                 CustomHediffTiers = new Dictionary<string, string>();
+            }
+
+            Scribe_Collections.Look(ref ModColors, "ModColors", LookMode.Value, LookMode.Value);
+            if (ModColors == null)
+            {
+                ModColors = new Dictionary<string, string>();
+            }
+            Scribe_Collections.Look(ref DynamicTierColors, "DynamicTierColors", LookMode.Value, LookMode.Value);
+            if (DynamicTierColors == null)
+            {
+                DynamicTierColors = new Dictionary<string, string>();
+            }
+
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                LimbTierUtility.ClearCaches();
             }
         }
 
@@ -387,6 +416,8 @@ namespace NiceHealthTab_YAPEM_Patch
             UseDLCColors = true;
             ResetColorsToDefault();
             CustomHediffTiers?.Clear();
+            ModColors?.Clear();
+            DynamicTierColors?.Clear();
         }
 
         public void DoSettingsWindowContents(Rect inRect)

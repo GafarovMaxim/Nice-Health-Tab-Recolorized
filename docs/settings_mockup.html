@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мокап настроек Recolorized</title>
+<style>
+  :root {
+    --bg: #14171c; --panel: #1c2027; --panel2: #232831; --line: #343b47;
+    --text: #d9dde4; --muted: #8b93a1; --accent: #5fa8ff; --good: #3fcf6b;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #0b0d10; color: var(--text); font: 14px/1.4 "Segoe UI", system-ui, sans-serif; padding: 20px; }
+  .note { max-width: 1040px; margin: 0 auto 12px; color: var(--muted); font-size: 13px; }
+  .win { max-width: 1040px; margin: 0 auto; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .title { padding: 12px 18px; font-size: 18px; border-bottom: 1px solid var(--line); background: var(--panel); }
+  .tabs { display: flex; gap: 2px; padding: 8px 12px 0; background: var(--panel); border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+  .tab { padding: 9px 16px; background: transparent; color: var(--muted); border: 1px solid transparent; border-bottom: 0; border-radius: 4px 4px 0 0; cursor: pointer; font: inherit; }
+  .tab:hover { color: var(--text); }
+  .tab.on { background: var(--bg); color: var(--text); border-color: var(--line); position: relative; top: 1px; }
+  .tab .n { color: var(--muted); font-size: 12px; margin-left: 4px; }
+  .body { display: grid; grid-template-columns: 1fr 250px; min-height: 520px; }
+  .main { padding: 16px 20px; overflow: auto; max-height: 560px; }
+  .side { border-left: 1px solid var(--line); background: var(--panel); padding: 14px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .side h4 { margin: 0; font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; align-self: flex-start; }
+  .legend { font-size: 12px; color: var(--muted); text-align: center; min-height: 34px; }
+  .legend b { color: var(--text); }
+  .pane { display: none; } .pane.on { display: block; }
+  .group { margin-bottom: 18px; }
+  .group > h3 { margin: 0 0 8px; font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+  .row { display: flex; align-items: center; gap: 12px; padding: 8px 10px; border-radius: 5px; }
+  .row:nth-child(odd) { background: rgba(255,255,255,.025); }
+  .row:hover { background: rgba(95,168,255,.08); }
+  .row .name { flex: 1; min-width: 0; }
+  .row .name small { display: block; color: var(--muted); font-size: 12px; }
+  .sw { width: 30px; height: 22px; border-radius: 4px; border: 1px solid #fff6; cursor: pointer; padding: 0; flex: none; position: relative; overflow: hidden; }
+  .sw input { position: absolute; inset: -6px; width: 50px; height: 40px; opacity: 0; cursor: pointer; }
+  .hex { width: 84px; background: #0f1216; border: 1px solid var(--line); color: var(--text); border-radius: 4px; padding: 4px 6px; font: 13px Consolas, monospace; }
+  .btn { background: var(--panel2); color: var(--text); border: 1px solid var(--line); border-radius: 4px; padding: 5px 12px; cursor: pointer; font: inherit; }
+  .btn:hover { border-color: var(--accent); }
+  .btn.ghost { background: transparent; color: var(--muted); padding: 5px 8px; }
+  select.btn { padding: 5px 8px; }
+  .sw.muted { background: repeating-linear-gradient(45deg, #2b313b 0 6px, #232831 6px 12px); border-style: dashed; }
+  .toggle { display: flex; align-items: flex-start; gap: 12px; padding: 10px; border-radius: 5px; }
+  .toggle:hover { background: rgba(255,255,255,.03); }
+  .toggle .t { flex: 1; } .toggle small { display: block; color: var(--muted); font-size: 12px; }
+  .switch { width: 38px; height: 20px; border-radius: 10px; background: #3a414d; position: relative; cursor: pointer; flex: none; margin-top: 2px; border: 0; padding: 0; }
+  .switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: #fff; transition: left .12s; }
+  .switch.on { background: var(--good); } .switch.on::after { left: 20px; }
+  .bar { display: flex; gap: 8px; align-items: center; margin-bottom: 14px; flex-wrap: wrap; }
+  .bar .sp { flex: 1; }
+  .search { background: #0f1216; border: 1px solid var(--line); color: var(--text); border-radius: 4px; padding: 6px 10px; min-width: 200px; font: inherit; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .chip { background: var(--panel2); border: 1px solid var(--line); color: var(--muted); border-radius: 12px; padding: 3px 10px; font-size: 12px; cursor: pointer; }
+  .chip.on { color: #fff; border-color: var(--accent); background: rgba(95,168,255,.15); }
+  .slider { display: flex; align-items: center; gap: 10px; padding: 0 10px 8px 60px; color: var(--muted); font-size: 12px; }
+  .slider input { flex: 1; max-width: 240px; }
+  .tag { font-size: 11px; padding: 1px 7px; border-radius: 9px; background: var(--panel2); color: var(--muted); border: 1px solid var(--line); }
+  .tag.auto { color: var(--accent); border-color: #2c4f7c; }
+  .hint { background: rgba(95,168,255,.08); border: 1px solid #2c4f7c; border-radius: 5px; padding: 8px 12px; color: #b8d4f5; font-size: 13px; margin-bottom: 14px; }
+  .foot { display: flex; justify-content: flex-end; gap: 8px; padding: 10px 16px; border-top: 1px solid var(--line); background: var(--panel); }
+  @media (max-width: 760px) { .body { grid-template-columns: 1fr; } .side { border-left: 0; border-top: 1px solid var(--line); } }
+</style>
+</head>
+<body>
+<div class="note">Мокап (кликабельный): вкладки, переключатели, цвета и превью работают. Данные примерные, значения по умолчанию взяты с твоих скриншотов.</div>
+<div class="win">
+  <div class="title">Nice Health Tab: Recolorized</div>
+  <div class="tabs" id="tabs"></div>
+  <div class="body">
+    <div class="main" id="main"></div>
+    <aside class="side">
+      <h4>Превью</h4>
+      <svg id="doll" width="170" height="300" viewBox="0 0 170 300" aria-label="Манекен">
+        <g id="dollParts" stroke="#0008" stroke-width="1.5">
+          <ellipse data-p="body" cx="85" cy="30" rx="20" ry="24"/>
+          <rect data-p="body" x="76" y="52" width="18" height="12" rx="4"/>
+          <path data-p="body" d="M55 66 Q85 58 115 66 L108 150 Q85 158 62 150 Z"/>
+          <rect data-p="arm" x="30" y="68" width="22" height="82" rx="10"/>
+          <rect data-p="arm" x="118" y="68" width="22" height="82" rx="10"/>
+          <rect data-p="leg" x="62" y="152" width="22" height="116" rx="10"/>
+          <rect data-p="leg" x="86" y="152" width="22" height="116" rx="10"/>
+          <ellipse data-p="hand" cx="41" cy="162" rx="9" ry="11"/>
+          <ellipse data-p="hand" cx="129" cy="162" rx="9" ry="11"/>
+          <ellipse data-p="foot" cx="73" cy="278" rx="11" ry="8"/>
+          <ellipse data-p="foot" cx="97" cy="278" rx="11" ry="8"/>
+        </g>
+      </svg>
+      <div class="legend" id="legend">Наведи на строку цвета, чтобы увидеть его на манекене</div>
+    </aside>
+  </div>
+  <div class="foot"><button class="btn">Сбросить всё</button><button class="btn" style="border-color:var(--accent)">Закрыть</button></div>
+</div>
+
+<script>
+const state = {
+  tint: true, minLimbs: 3, bottom: true, organsOnly: true, dlc: true,
+  tiers: [
+    ["Advanced Bionics (YAPEM)", "Продвинутая бионика", "#95BDFF"],
+    ["Ultratech", "Ультратех-протезы", "#71CBC2"],
+    ["Archotech", "Архотех-конечности", "#CBD0AB"],
+    ["Standard Bionics", "Стандартная бионика", "#95D8FF"],
+    ["Simple Prosthetics", "Деревянные и простые протезы", "#B0B0B0"],
+  ],
+  dlcs: [
+    ["Royalty", "Империя и королевские импланты", "#DEB841"],
+    ["Biotech", "Механитор и детокс", "#38D9A9"],
+    ["Anomaly", "Гуль и биоферрит", "#A855F7"],
+    ["Odyssey", "Пилот и космос", "#38BDF8"],
+    ["Integrated Implants", "Киберпанк-импланты", "#95BDFF"],
+  ],
+  mods: [
+    ["RimJobWorld", 61, null], ["Yet another prosthetic expansion mod - Core", 57, "#E58FFF"],
+    ["Yet another prosthetic expansion mod - Animals", 24, null], ["Vanilla Ideology Expanded - Memes and Structures", 17, null],
+    ["Ushankas Hacking Expansion", 2, null], ["Hacking Expansion: Netrun", 1, null],
+  ],
+  implants: [
+    ["Archotech arm", "ArchotechArm", "Core"], ["Archotech eye", "ArchotechEye", "Core"], ["Archotech leg", "ArchotechLeg", "Core"],
+    ["Bionic arm", "BionicArm", "Core"], ["Bionic ear", "BionicEar", "Core"], ["Bionic eye", "BionicEye", "Core"], ["Bionic heart", "BionicHeart", "Core"],
+  ],
+};
+const TABS = ["Общее", "Цвета тиров", "DLC", "Моды", "Тонкая настройка"];
+let cur = 0, mod = "Core";
+
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => s.replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+
+function toggle(key, title, hint) {
+  return `<div class="toggle"><button class="switch ${state[key] ? "on" : ""}" data-k="${key}" aria-label="${esc(title)}"></button>
+  <div class="t">${esc(title)}<small>${esc(hint)}</small></div></div>`;
+}
+function colorRow(group, i, name, hint, hex, extra = "") {
+  return `<div class="row" data-g="${group}" data-i="${i}" data-hex="${hex}" data-name="${esc(name)}">
+    <div class="name">${esc(name)}<small>${esc(hint)}</small></div>${extra}
+    <label class="sw" style="background:${hex}"><input type="color" value="${hex}"></label>
+    <input class="hex" value="${hex.toUpperCase()}" maxlength="7" spellcheck="false">
+    <button class="btn ghost" data-reset>Сброс</button></div>`;
+}
+function profileBar() {
+  return `<div class="bar"><span style="color:var(--muted)">Профиль</span>
+    <select class="btn"><option>Custom Profile 1</option><option>По умолчанию</option></select>
+    <button class="btn">+ Новый</button><button class="btn">Удалить</button><span class="sp"></span>
+    <button class="btn">Экспорт</button><button class="btn">Импорт</button></div>`;
+}
+
+function render() {
+  $("#tabs").innerHTML = TABS.map((t, i) =>
+    `<button class="tab ${i === cur ? "on" : ""}" data-t="${i}">${t}${i === 3 ? `<span class="n">${state.mods.length}</span>` : ""}</button>`).join("");
+  let h = "";
+  if (cur === 0) {
+    h = `<div class="group"><h3>Силуэт и иконки</h3>
+      ${toggle("tint", "Красить силуэт по преобладающим протезам", "Если у пешки достаточно протезов одного тира, тело окрашивается в его цвет.")}
+      <div class="slider">Минимум одинаковых конечностей: <b style="color:var(--text)" id="minv">${state.minLimbs} из 4</b>
+        <input type="range" min="1" max="4" value="${state.minLimbs}" id="min"></div>
+      ${toggle("bottom", "Красить иконки кистей и стоп", "Нижние иконки повторяют цвет установленных протезов.")}</div>
+      <div class="group"><h3>Органы</h3>
+      ${toggle("organsOnly", "Показывать органы только в режиме органов", "В обзоре органы скрыты, кроме повреждённых: их видно всегда.")}</div>`;
+  } else if (cur === 1) {
+    h = profileBar() + `<div class="hint">Эти пять цветов определяют вид протезов по тирам. Моды и импланты без тира подхватят ближайший.</div><div class="group">` +
+      state.tiers.map((t, i) => colorRow("tiers", i, t[0], t[1], t[2])).join("") + `</div>`;
+  } else if (cur === 2) {
+    h = `<div class="group">${toggle("dlc", "Отдельные цвета для DLC", "Импланты Royalty, Biotech, Anomaly и Odyssey получают свои цвета.")}</div>
+      <div class="group" style="${state.dlc ? "" : "opacity:.4;pointer-events:none"}"><h3>Цвета DLC</h3>` +
+      state.dlcs.map((t, i) => colorRow("dlcs", i, t[0], t[1], t[2])).join("") + `</div>`;
+  } else if (cur === 3) {
+    h = `<div class="hint">Мод нашёл установленные моды с протезами и имплантами. «Авто» красит их по тирам. Свой цвет перекрывает тир для всех имплантов мода.</div>
+      <div class="bar"><input class="search" placeholder="Поиск по модам"><span class="sp"></span><button class="btn">Сбросить все моды</button></div><div class="group">` +
+      state.mods.map((m, i) => {
+        const custom = !!m[2], hex = m[2] || "#8b93a1";
+        return `<div class="row" data-g="mods" data-i="${i}" data-hex="${hex}" data-name="${esc(m[0])}">
+          <div class="name">${esc(m[0])}<small>${m[1]} имплантов</small></div>
+          <span class="tag ${custom ? "" : "auto"}">${custom ? "Свой цвет" : "Авто"}</span>
+          <label class="sw ${custom ? "" : "muted"}" style="${custom ? "background:" + hex : ""}" title="Выбрать цвет"><input type="color" value="${hex}"></label>
+          <input class="hex" value="${custom ? hex.toUpperCase() : "авто"}" maxlength="7" spellcheck="false">
+          <button class="btn ghost" data-reset>Сброс</button></div>`;
+      }).join("") + `</div>`;
+  } else {
+    h = `<div class="hint">Назначение категории для отдельного импланта. Работает выше цвета мода.</div>
+      <div class="bar"><input class="search" placeholder="Поиск по названию или defName"><span class="sp"></span><button class="btn">Сбросить вкладку</button></div>
+      <div class="chips">${["Core", "Royalty", "Biotech", "Anomaly", "RimJobWorld", "YAPEM - Core"].map(c => `<span class="chip ${c === mod ? "on" : ""}" data-m="${c}">${c}</span>`).join("")}</div>
+      <div class="group">${state.implants.map(([n, d, m]) => {
+        const hex = d.startsWith("Archo") ? "#CBD0AB" : "#95D8FF";
+        return `<div class="row" data-g="imp" data-hex="${hex}" data-name="${n}"><div class="name">${n}<small>${d}</small></div>
+          <span class="sw" style="background:${hex};cursor:default"></span>
+          <select class="btn"><option>Авто (по умолчанию)</option><option>Archotech</option><option>Ultratech</option><option>Bionic</option><option>Не красить</option></select></div>`;
+      }).join("")}</div>`;
+  }
+  $("#main").innerHTML = h;
+}
+
+function paint(hex, label, parts) {
+  document.querySelectorAll("#dollParts [data-p]").forEach(el => {
+    const on = !parts || parts.includes(el.dataset.p);
+    el.style.fill = on ? hex : "#3b4350";
+  });
+  $("#legend").innerHTML = label ? `<b>${esc(label)}</b><br>${hex.toUpperCase()}` : "Наведи на строку цвета, чтобы увидеть его на манекене";
+}
+paint("#3b4350", null);
+
+document.addEventListener("click", e => {
+  const t = e.target.closest("[data-t]"); if (t) { cur = +t.dataset.t; render(); return; }
+  const c = e.target.closest("[data-m]"); if (c) { mod = c.dataset.m; render(); return; }
+  const s = e.target.closest(".switch"); if (s) { state[s.dataset.k] = !state[s.dataset.k]; render(); return; }
+  const r = e.target.closest("[data-reset]");
+  if (r) { const row = r.closest(".row"); if (row.dataset.g === "mods") { state.mods[+row.dataset.i][2] = null; render(); } }
+});
+document.addEventListener("input", e => {
+  if (e.target.id === "min") { state.minLimbs = +e.target.value; $("#minv").textContent = state.minLimbs + " из 4"; return; }
+  const row = e.target.closest(".row"); if (!row) return;
+  if (e.target.type === "color" || e.target.classList.contains("hex")) {
+    let v = e.target.value; if (!v.startsWith("#")) v = "#" + v;
+    if (!/^#[0-9a-f]{6}$/i.test(v)) return;
+    row.dataset.hex = v; row.querySelector(".sw").style.background = v; row.querySelector(".sw").classList.remove("muted");
+    row.querySelector(".hex").value = v.toUpperCase();
+    const g = row.dataset.g, i = +row.dataset.i;
+    if (g === "mods") state.mods[i][2] = v; else if (g === "tiers") state.tiers[i][2] = v; else if (g === "dlcs") state.dlcs[i][2] = v;
+    paint(v, row.dataset.name, g === "mods" ? ["body", "arm", "leg", "hand", "foot"] : null);
+  }
+});
+document.addEventListener("mouseover", e => {
+  const row = e.target.closest(".row[data-hex]"); if (!row || row.dataset.g === "imp" && 0) return;
+  const hex = row.dataset.hex; if (row.dataset.g === "mods" && !state.mods[+row.dataset.i][2]) { paint("#3b4350", row.dataset.name + " (авто)"); return; }
+  paint(hex, row.dataset.name);
+});
+render();
+</script>
+</body>
+</html>
