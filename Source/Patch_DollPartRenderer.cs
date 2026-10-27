@@ -23,6 +23,10 @@ namespace NiceHealthTab_YAPEM_Patch
             OrganVisibilityOverride.Restore();
         }
 
+        // Like the original DrawPart: the tier color only shows on an undamaged part, a wounded one shows its damage color.
+        private static Color DamageAware(PartVisual visual, Color tierColor) =>
+            visual.Status == DollPartStatus.Ok || visual.Status == DollPartStatus.NonOk ? tierColor : visual.Color;
+
         private static bool IsDamaged(DollRenderContext ctx, BodyPartRecord part)
         {
             PartFrameInfo frame = ctx.GetPartFrameInfo(part);
@@ -166,7 +170,7 @@ namespace NiceHealthTab_YAPEM_Patch
                             {
                                 return false;
                             }
-                            DrawCustomPart(ctx, implantInfo.Part, doll, val, rectDoll, extraOffset, selectable, tierColor);
+                            DrawCustomPart(ctx, implantInfo.Part, doll, val, rectDoll, extraOffset, selectable, DamageAware(partVisual, tierColor));
                             return false;
                         }
                     }
@@ -182,7 +186,7 @@ namespace NiceHealthTab_YAPEM_Patch
                     {
                         return false;
                     }
-                    Color drawColor = implantInfo.Color != Color.clear ? implantInfo.Color : Color.white;
+                    Color drawColor = DamageAware(partVisual, implantInfo.Color != Color.clear ? implantInfo.Color : Color.white);
                     DrawCustomPart(ctx, implantInfo.Part, doll, val, rectDoll, extraOffset, selectable, drawColor);
                     return false;
                 }
@@ -204,7 +208,7 @@ namespace NiceHealthTab_YAPEM_Patch
                             {
                                 return false;
                             }
-                            DrawCustomPart(ctx, directProsthesis, doll, val, rectDoll, extraOffset, selectable, tierColor);
+                            DrawCustomPart(ctx, directProsthesis, doll, val, rectDoll, extraOffset, selectable, DamageAware(partVisual, tierColor));
                             return false;
                         }
                     }

@@ -33,6 +33,21 @@ namespace NiceHealthTab_YAPEM_Patch
             OrganVisibilityOverride.Restore();
         }
 
+        // Like the original DrawPart: the tier color only shows on an undamaged part, a wounded one shows its damage color.
+        private static Color DamageAwareColor(System.Collections.Generic.List<Hediff> hediffs, Pawn pawn, BodyPartRecord part, Color tierColor)
+        {
+            if (GetPartConditionLabelMethod == null) return tierColor;
+            object[] args = PartConditionArgs;
+            args[0] = hediffs;
+            args[1] = pawn;
+            args[2] = part;
+            args[3] = null;
+            args[4] = null;
+            object damageColor = GetPartConditionLabelMethod.Invoke(null, args);
+            string status = args[3]?.ToString() ?? "";
+            return status == "" || status == "Ok" || status == "NonOk" || !(damageColor is Color c) ? tierColor : c;
+        }
+
         private static bool IsDamaged(Pawn pawn, BodyPartRecord part)
         {
             if (GetPartConditionLabelMethod == null) return false;
@@ -111,7 +126,7 @@ namespace NiceHealthTab_YAPEM_Patch
                         if (LimbTierUtility.CategorizeHediffTier(h, out _, out Color tierColor))
                         {
                             _part.PartColor = tierColor;
-                            DrawCustomPart(_part, doll, val, rectDoll, ExtraOffset, Selectable, tierColor, pawn);
+                            DrawCustomPart(_part, doll, val, rectDoll, ExtraOffset, Selectable, DamageAwareColor(hediffs, pawn, val, tierColor), pawn);
                             return false;
                         }
                     }
