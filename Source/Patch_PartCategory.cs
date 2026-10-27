@@ -35,7 +35,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 bool solid = IsInCategory(part, DollFilterMode.Bones, NoHediffs);
                 bool show = mode == DollFilterMode.Bones
                     ? solid && kind.IsBone && BoneViewUtil.IsShown(part, hediffs)
-                    : IsInCategory(part, DollFilterMode.Organs, NoHediffs) || (solid && kind.IsOrgan);
+                    : IsInCategory(part, DollFilterMode.Organs, NoHediffs) || (solid && (kind.IsOrgan || part.def.defName == "Jaw"));
                 if (show) __result.Add(part);
             }
             return false;
@@ -46,13 +46,25 @@ namespace NiceHealthTab_YAPEM_Patch
     {
         private static bool Has(string name, string what) => name != null && name.IndexOf(what, StringComparison.OrdinalIgnoreCase) >= 0;
 
+        private static readonly Dictionary<BodyPartDef, bool> coreCache = new Dictionary<BodyPartDef, bool>();
+
+        // Def-only check, cached: the doll renderer asks for every bone on every frame.
+        private static bool IsCore(BodyPartDef def)
+        {
+            if (!coreCache.TryGetValue(def, out bool core))
+            {
+                core = (def.tags != null && (def.tags.Contains(BodyPartTagDefOf.Spine) || def.tags.Contains(BodyPartTagDefOf.Pelvis)))
+                    || Has(def.defName, "Spine") || Has(def.defName, "Pelvis") || Has(def.defName, "Rib");
+                coreCache[def] = core;
+            }
+            return core;
+        }
+
         // Spine, pelvis and ribs are always listed; any other bone only when it has a hediff other than "missing" (injury, fracture, implant).
         // A missing bone (or one under a missing limb) is not interesting.
         public static bool IsShown(BodyPartRecord part, IEnumerable<Hediff> hediffs)
         {
-            BodyPartDef def = part.def;
-            if (def.tags != null && (def.tags.Contains(BodyPartTagDefOf.Spine) || def.tags.Contains(BodyPartTagDefOf.Pelvis))) return true;
-            if (Has(def.defName, "Spine") || Has(def.defName, "Pelvis") || Has(def.defName, "Rib")) return true;
+            if (IsCore(part.def)) return true;
             if (hediffs == null) return false;
             foreach (Hediff h in hediffs)
             {
