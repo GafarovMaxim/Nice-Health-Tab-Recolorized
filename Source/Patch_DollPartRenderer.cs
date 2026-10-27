@@ -14,6 +14,9 @@ namespace NiceHealthTab_YAPEM_Patch
         private static readonly MethodInfo DrawHeadOverlayMethod = 
             AccessTools.Method(typeof(DollPartRenderer), "DrawHeadOverlay");
 
+        private static readonly object[] HeadOverlayArgs = new object[5];
+        private static readonly object BoxedStatusOk = DollPartStatus.Ok;
+
         [HarmonyPrefix]
         public static bool Prefix(DollRenderContext ctx, DollBodyPartDef _part, Doll doll, Rect rectDoll, float dollScale, bool selectable, Vector2 extraOffset)
         {
@@ -74,71 +77,11 @@ namespace NiceHealthTab_YAPEM_Patch
                 ? implantInfo.Part
                 : _part;
 
-            bool isSpine = (val.def != null && val.def.tags != null && val.def.tags.Contains(BodyPartTagDefOf.Spine))
-                || (val.def != null && val.def.defName.IndexOf("Spine", StringComparison.OrdinalIgnoreCase) >= 0)
-                || (_part != null && _part.defName.IndexOf("Spine", StringComparison.OrdinalIgnoreCase) >= 0)
-                || (effectivePart != null && effectivePart.defName.IndexOf("Spine", StringComparison.OrdinalIgnoreCase) >= 0);
-
-            // Neck is part of the body silhouette (like Torso or Head). It is NOT an organ or bone.
-            bool isNeck = (val.def == BodyPartDefOf.Neck)
-                || (val.def != null && val.def.defName.IndexOf("Neck", StringComparison.OrdinalIgnoreCase) >= 0)
-                || (_part != null && _part.defName.IndexOf("Neck", StringComparison.OrdinalIgnoreCase) >= 0);
-
-            bool isBone = (_part is DollBone)
-                || (effectivePart is DollBone)
-                || isSpine
-                || (val.def != null && val.def.tags != null && val.def.tags.Contains(BodyPartTagDefOf.Pelvis))
-                || (val.def != null && (
-                    val.def.defName.IndexOf("Bone", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Clavicle", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Ribcage", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Pelvis", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Sternum", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Skull", StringComparison.OrdinalIgnoreCase) >= 0
-                ))
-                || (_part != null && (
-                    _part.defName.IndexOf("Bone", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Ribcage", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Pelvis", StringComparison.OrdinalIgnoreCase) >= 0
-                ));
-
-            // Organs strictly exclude bones and the neck
-            bool isOrgan = !isBone && !isNeck && (
-                (_part is DollOrgan)
-                || (effectivePart is DollOrgan)
-                || (val.def == BodyPartDefOf.Heart)
-                || (val.def == BodyPartDefOf.Lung)
-                || (val.def != null && (
-                    (val.def.tags != null && (
-                        val.def.tags.Contains(BodyPartTagDefOf.BloodFiltrationSource) ||
-                        val.def.tags.Contains(BodyPartTagDefOf.BloodFiltrationLiver) ||
-                        val.def.tags.Contains(BodyPartTagDefOf.BloodFiltrationKidney) ||
-                        val.def.tags.Contains(BodyPartTagDefOf.BloodPumpingSource) ||
-                        val.def.tags.Contains(BodyPartTagDefOf.BreathingSource) ||
-                        val.def.tags.Contains(BodyPartTagDefOf.ConsciousnessSource) ||
-                        val.def.tags.Contains(BodyPartTagDefOf.MetabolismSource)
-                    )) ||
-                    val.def.defName.IndexOf("Stomach", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Heart", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Liver", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Kidney", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Lung", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Brain", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Nose", StringComparison.OrdinalIgnoreCase) >= 0
-                ))
-                || (_part != null && (
-                    _part.defName.IndexOf("Organ", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Stomach", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Heart", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Liver", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Kidney", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Lung", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Brain", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Nose", StringComparison.OrdinalIgnoreCase) >= 0
-                ))
-            );
-
-            bool isEye = effectivePart is DollEye || _part is DollEye;
+            var kind = LimbTierUtility.ClassifyPart(val.def, _part, effectivePart);
+            bool isSpine = kind.IsSpine;
+            bool isBone = kind.IsBone;
+            bool isOrgan = kind.IsOrgan;
+            bool isEye = kind.IsEye;
 
             // 3. Strict Filter Mode conformance:
 
@@ -360,7 +303,13 @@ namespace NiceHealthTab_YAPEM_Patch
                 Rect headOverlayRect = (humanlikeDoll != null) ? humanlikeDoll.GetHeadOverlayRect(rectDoll) : Rect.zero;
                 if (headOverlayRect != Rect.zero)
                 {
-                    DrawHeadOverlayMethod.Invoke(null, new object[] { ctx, ctx.Pawn, headOverlayRect, partDef, DollPartStatus.Ok });
+                    // Reused buffer: OnGUI is single-threaded and Invoke does not keep the array.
+                    HeadOverlayArgs[0] = ctx;
+                    HeadOverlayArgs[1] = ctx.Pawn;
+                    HeadOverlayArgs[2] = headOverlayRect;
+                    HeadOverlayArgs[3] = partDef;
+                    HeadOverlayArgs[4] = BoxedStatusOk;
+                    DrawHeadOverlayMethod.Invoke(null, HeadOverlayArgs);
                 }
             }
 

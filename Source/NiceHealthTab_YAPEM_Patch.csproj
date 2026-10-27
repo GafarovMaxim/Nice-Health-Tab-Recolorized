@@ -7,6 +7,9 @@
     <OutputPath>..\1.7\Assemblies</OutputPath>
     <Nullable>disable</Nullable>
     <LangVersion>latest</LangVersion>
+    <!-- RimWorld loads only the .dll; pdb and deps.json would just ship as clutter. -->
+    <DebugType>none</DebugType>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
   </PropertyGroup>
 
   <ItemGroup>

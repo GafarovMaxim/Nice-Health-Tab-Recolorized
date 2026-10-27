@@ -18,6 +18,15 @@ namespace NiceHealthTab_YAPEM_Patch
         private static readonly MethodInfo GetPartConditionLabelMethod =
             AccessTools.Method(typeof(DollDrawer), "_GetPartConditionLabel");
 
+        // Resolved once: TypeByName scans every loaded assembly and was called per head draw.
+        private static readonly Type PartStatusType = AccessTools.TypeByName("NiceHealthTab.PartStatus");
+        private static readonly object PartStatusOk = PartStatusType != null ? Enum.ToObject(PartStatusType, 0) : null;
+        private static readonly int HeadOverlayParamCount = DrawHeadOverlayMethod?.GetParameters().Length ?? 0;
+
+        // Reused Invoke buffers: OnGUI is single-threaded and Invoke does not keep the arrays.
+        private static readonly object[] PartConditionArgs = new object[5];
+        private static readonly object[] HeadOverlayArgs = new object[4];
+
         [HarmonyPrefix]
         public static bool Prefix(BodyPartIndexesRemap BodyPartIndexRemapper, DollBodyPartDef _part, Pawn pawn, Doll doll, Rect rectDoll, float DollScale, bool Selectable, Vector2 ExtraOffset)
         {
@@ -39,66 +48,12 @@ namespace NiceHealthTab_YAPEM_Patch
                 return true;
             }
 
-            bool isSpine = (val.def != null && val.def.tags != null && val.def.tags.Contains(BodyPartTagDefOf.Spine))
-                || (val.def != null && val.def.defName.IndexOf("Spine", StringComparison.OrdinalIgnoreCase) >= 0)
-                || (_part != null && _part.defName.IndexOf("Spine", StringComparison.OrdinalIgnoreCase) >= 0);
-
-            bool isNeck = (val.def == BodyPartDefOf.Neck)
-                || (val.def != null && val.def.defName.IndexOf("Neck", StringComparison.OrdinalIgnoreCase) >= 0)
-                || (_part != null && _part.defName.IndexOf("Neck", StringComparison.OrdinalIgnoreCase) >= 0);
-
-            bool isBone = (_part is DollBone)
-                || isSpine
-                || (val.def != null && val.def.tags != null && val.def.tags.Contains(BodyPartTagDefOf.Pelvis))
-                || (val.def != null && (
-                    val.def.defName.IndexOf("Bone", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Clavicle", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Ribcage", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Pelvis", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Sternum", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Skull", StringComparison.OrdinalIgnoreCase) >= 0
-                ))
-                || (_part != null && (
-                    _part.defName.IndexOf("Bone", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Ribcage", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Pelvis", StringComparison.OrdinalIgnoreCase) >= 0
-                ));
-
-            bool isOrgan = !isBone && !isNeck && (
-                (_part is DollOrgan)
-                || (val.def == BodyPartDefOf.Heart)
-                || (val.def == BodyPartDefOf.Lung)
-                || (val.def != null && (
-                    (val.def.tags != null && (
-                        val.def.tags.Contains(BodyPartTagDefOf.BloodFiltrationSource) ||
-                        val.def.tags.Contains(BodyPartTagDefOf.BloodFiltrationLiver) ||
-                        val.def.tags.Contains(BodyPartTagDefOf.BloodFiltrationKidney) ||
-                        val.def.tags.Contains(BodyPartTagDefOf.BloodPumpingSource) ||
-                        val.def.tags.Contains(BodyPartTagDefOf.BreathingSource) ||
-                        val.def.tags.Contains(BodyPartTagDefOf.ConsciousnessSource) ||
-                        val.def.tags.Contains(BodyPartTagDefOf.MetabolismSource)
-                    )) ||
-                    val.def.defName.IndexOf("Stomach", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Heart", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Liver", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Kidney", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Lung", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Brain", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    val.def.defName.IndexOf("Nose", StringComparison.OrdinalIgnoreCase) >= 0
-                ))
-                || (_part != null && (
-                    _part.defName.IndexOf("Organ", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Stomach", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Heart", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Liver", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Kidney", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Lung", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Brain", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    _part.defName.IndexOf("Nose", StringComparison.OrdinalIgnoreCase) >= 0
-                ))
-            );
-
-            bool isEye = _part is DollEye;
+            // No alternative-part lookup on this legacy path, so the rendered part is _part itself.
+            var kind = LimbTierUtility.ClassifyPart(val.def, _part, _part);
+            bool isSpine = kind.IsSpine;
+            bool isBone = kind.IsBone;
+            bool isOrgan = kind.IsOrgan;
+            bool isEye = kind.IsEye;
 
             // Strict Filter Conformance:
             // Spines only show when bones are viewed!
@@ -165,7 +120,13 @@ namespace NiceHealthTab_YAPEM_Patch
                             bool isMissingOrCritical = false;
                             if (GetPartConditionLabelMethod != null)
                             {
-                                object[] args = new object[] { hediffs, pawn, val, null, null };
+                                // Reused buffer: slots 3-4 are out params, reset so a stale value is never read.
+                                object[] args = PartConditionArgs;
+                                args[0] = hediffs;
+                                args[1] = pawn;
+                                args[2] = val;
+                                args[3] = null;
+                                args[4] = null;
                                 GetPartConditionLabelMethod.Invoke(null, args);
                                 string statusStr = args[3]?.ToString() ?? "";
                                 if (statusStr == "Missing" || statusStr == "Critical" || statusStr == "Painful")
@@ -265,11 +226,13 @@ namespace NiceHealthTab_YAPEM_Patch
                 {
                     try
                     {
-                        Type partStatusType = AccessTools.TypeByName("NiceHealthTab.PartStatus");
-                        object okVal = partStatusType != null ? Enum.ToObject(partStatusType, 0) : null;
-                        if (DrawHeadOverlayMethod.GetParameters().Length == 4)
+                        if (HeadOverlayParamCount == 4)
                         {
-                            DrawHeadOverlayMethod.Invoke(null, new object[] { pawn, headOverlayRect, partDef, okVal });
+                            HeadOverlayArgs[0] = pawn;
+                            HeadOverlayArgs[1] = headOverlayRect;
+                            HeadOverlayArgs[2] = partDef;
+                            HeadOverlayArgs[3] = PartStatusOk;
+                            DrawHeadOverlayMethod.Invoke(null, HeadOverlayArgs);
                         }
                     }
                     catch { }

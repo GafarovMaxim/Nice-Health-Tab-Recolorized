@@ -146,7 +146,7 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }
 
-            return CategorizeDefInternal(hediff.def, hediff.Label, out tier, out color);
+            return CategorizeAutoCached(hediff.def, out tier, out color);
         }
 
         public static bool CategorizeHediffDefTier(HediffDef def, out string tier, out Color color)
@@ -172,18 +172,42 @@ namespace NiceHealthTab_YAPEM_Patch
                 }
             }
 
-            return CategorizeDefInternal(def, "", out tier, out color);
+            return CategorizeAutoCached(def, out tier, out color);
         }
 
-        private static bool CategorizeDefInternal(HediffDef def, string customLabel, out string tier, out Color color)
+        // Auto tier depends only on the def and UseDLCColors; colors are resolved live so palette edits need no invalidation.
+        private static readonly Dictionary<HediffDef, string> autoTierCache = new Dictionary<HediffDef, string>();
+        private static bool autoTierCacheUseDLC = true;
+
+        private static bool CategorizeAutoCached(HediffDef def, out string tier, out Color color)
+        {
+            bool useDLC = UseDLCColors;
+            if (useDLC != autoTierCacheUseDLC)
+            {
+                autoTierCache.Clear();
+                autoTierCacheUseDLC = useDLC;
+            }
+            if (!autoTierCache.TryGetValue(def, out tier))
+            {
+                CategorizeDefInternal(def, out tier, out _);
+                autoTierCache[def] = tier;
+            }
+            if (tier == null)
+            {
+                color = Color.white;
+                return false;
+            }
+            return TryGetTierColor(tier, out color);
+        }
+
+        private static bool CategorizeDefInternal(HediffDef def, out string tier, out Color color)
         {
             tier = null;
             color = Color.white;
             if (def == null) return false;
 
             string defName = def.defName ?? "";
-            string defLabel = def.label ?? "";
-            string fullLabel = (defLabel + " " + customLabel).Trim();
+            string fullLabel = def.label ?? "";
             ThingDef spawnThing = def.spawnThingOnRemoved;
             TechLevel tech = spawnThing?.techLevel ?? TechLevel.Undefined;
 
@@ -365,10 +389,10 @@ namespace NiceHealthTab_YAPEM_Patch
 
                 if (isTargetPart)
                 {
-                    string u = part.untranslatedCustomLabel?.ToLowerInvariant() ?? "";
-                    string l = part.Label?.ToLowerInvariant() ?? "";
-                    bool matchSide = isLeft ? (u.Contains("left") || l.Contains("left") || l.Contains("лев"))
-                                            : (u.Contains("right") || l.Contains("right") || l.Contains("прав"));
+                    string u = part.untranslatedCustomLabel ?? "";
+                    string l = part.Label ?? "";
+                    bool matchSide = isLeft ? (ContainsIgnoreCase(u, "left") || ContainsIgnoreCase(l, "left") || ContainsIgnoreCase(l, "лев"))
+                                            : (ContainsIgnoreCase(u, "right") || ContainsIgnoreCase(l, "right") || ContainsIgnoreCase(l, "прав"));
                     if (matchSide)
                     {
                         if (CategorizeHediffTier(h, out string tier, out Color col))
@@ -382,8 +406,30 @@ namespace NiceHealthTab_YAPEM_Patch
             return default;
         }
 
-        public static LimbSlot GetUpperLimb(Pawn pawn, bool isLeft) => GetLimb(pawn, isArm: true, isLeft);
-        public static LimbSlot GetLowerLimb(Pawn pawn, bool isLeft) => GetLimb(pawn, isArm: false, isLeft);
+        private static bool ContainsIgnoreCase(string s, string value) => s.IndexOf(value, StringComparison.OrdinalIgnoreCase) >= 0;
+
+        // Limbs of one pawn, computed once per frame: every doll part asks for them during the same OnGUI pass.
+        // Order: upper left, upper right, lower left, lower right.
+        private static readonly LimbSlot[] cachedLimbs = new LimbSlot[4];
+        private static Pawn cachedLimbsPawn;
+        private static int cachedLimbsFrame = -1;
+
+        private static LimbSlot[] GetLimbs(Pawn pawn)
+        {
+            if (pawn != cachedLimbsPawn || Time.frameCount != cachedLimbsFrame)
+            {
+                cachedLimbs[0] = GetLimb(pawn, isArm: true, isLeft: true);
+                cachedLimbs[1] = GetLimb(pawn, isArm: true, isLeft: false);
+                cachedLimbs[2] = GetLimb(pawn, isArm: false, isLeft: true);
+                cachedLimbs[3] = GetLimb(pawn, isArm: false, isLeft: false);
+                cachedLimbsPawn = pawn;
+                cachedLimbsFrame = Time.frameCount;
+            }
+            return cachedLimbs;
+        }
+
+        public static LimbSlot GetUpperLimb(Pawn pawn, bool isLeft) => GetLimbs(pawn)[isLeft ? 0 : 1];
+        public static LimbSlot GetLowerLimb(Pawn pawn, bool isLeft) => GetLimbs(pawn)[isLeft ? 2 : 3];
 
         public static bool TryGetDominantTierColor(Pawn pawn, out Color dominantColor)
         {
@@ -394,42 +440,114 @@ namespace NiceHealthTab_YAPEM_Patch
             }
 
             int reqCount = YAPEMPatchMod.Settings?.RequiredLimbCount ?? 3;
+            LimbSlot[] limbs = GetLimbs(pawn);
 
-            var limbs = new LimbSlot[]
+            // First tier (in limb order) reaching the threshold wins, same as the old first-seen dictionary order.
+            for (int i = 0; i < limbs.Length; i++)
             {
-                GetUpperLimb(pawn, isLeft: true),
-                GetUpperLimb(pawn, isLeft: false),
-                GetLowerLimb(pawn, isLeft: true),
-                GetLowerLimb(pawn, isLeft: false)
-            };
-
-            var counts = new Dictionary<string, int>();
-            var colors = new Dictionary<string, Color>();
-
-            foreach (var limb in limbs)
-            {
-                if (limb.HasImplant && !string.IsNullOrEmpty(limb.Tier))
+                if (!limbs[i].HasImplant || string.IsNullOrEmpty(limbs[i].Tier)) continue;
+                int count = 0;
+                for (int j = 0; j < limbs.Length; j++)
                 {
-                    if (!counts.ContainsKey(limb.Tier))
-                    {
-                        counts[limb.Tier] = 0;
-                        colors[limb.Tier] = limb.Color;
-                    }
-                    counts[limb.Tier]++;
+                    if (limbs[j].HasImplant && limbs[j].Tier == limbs[i].Tier) count++;
                 }
-            }
-
-            foreach (var kvp in counts)
-            {
-                if (kvp.Value >= reqCount)
+                if (count >= reqCount)
                 {
-                    dominantColor = colors[kvp.Key];
+                    dominantColor = limbs[i].Color;
                     return true;
                 }
             }
 
             return false;
         }
+
+        public struct PartKind
+        {
+            public bool IsSpine, IsNeck, IsBone, IsOrgan, IsEye;
+        }
+
+        // Part kind depends only on defs, so it is computed once per (body part, doll part, rendered part) combination.
+        private static readonly Dictionary<(BodyPartDef, DollBodyPartDef, DollBodyPartDef), PartKind> partKindCache =
+            new Dictionary<(BodyPartDef, DollBodyPartDef, DollBodyPartDef), PartKind>();
+
+        public static PartKind ClassifyPart(BodyPartDef bodyDef, DollBodyPartDef part, DollBodyPartDef effectivePart)
+        {
+            var key = (bodyDef, part, effectivePart);
+            if (!partKindCache.TryGetValue(key, out PartKind kind))
+            {
+                kind = ComputePartKind(bodyDef, part, effectivePart);
+                partKindCache[key] = kind;
+            }
+            return kind;
+        }
+
+        private static PartKind ComputePartKind(BodyPartDef bodyDef, DollBodyPartDef part, DollBodyPartDef effectivePart)
+        {
+            string bodyName = bodyDef?.defName ?? "";
+            string partName = part?.defName ?? "";
+            string effectiveName = effectivePart?.defName ?? "";
+            var tags = bodyDef?.tags;
+
+            bool isSpine = (tags != null && tags.Contains(BodyPartTagDefOf.Spine))
+                || ContainsIgnoreCase(bodyName, "Spine")
+                || ContainsIgnoreCase(partName, "Spine")
+                || ContainsIgnoreCase(effectiveName, "Spine");
+
+            // Neck is part of the body silhouette (like Torso or Head). It is NOT an organ or bone.
+            bool isNeck = bodyDef == BodyPartDefOf.Neck
+                || ContainsIgnoreCase(bodyName, "Neck")
+                || ContainsIgnoreCase(partName, "Neck");
+
+            bool isBone = part is DollBone
+                || effectivePart is DollBone
+                || isSpine
+                || (tags != null && tags.Contains(BodyPartTagDefOf.Pelvis))
+                || ContainsIgnoreCase(bodyName, "Bone")
+                || ContainsIgnoreCase(bodyName, "Clavicle")
+                || ContainsIgnoreCase(bodyName, "Ribcage")
+                || ContainsIgnoreCase(bodyName, "Pelvis")
+                || ContainsIgnoreCase(bodyName, "Sternum")
+                || ContainsIgnoreCase(bodyName, "Skull")
+                || ContainsIgnoreCase(partName, "Bone")
+                || ContainsIgnoreCase(partName, "Ribcage")
+                || ContainsIgnoreCase(partName, "Pelvis");
+
+            // Organs strictly exclude bones and the neck
+            bool isOrgan = !isBone && !isNeck && (
+                part is DollOrgan
+                || effectivePart is DollOrgan
+                || bodyDef == BodyPartDefOf.Heart
+                || bodyDef == BodyPartDefOf.Lung
+                || (tags != null && (
+                    tags.Contains(BodyPartTagDefOf.BloodFiltrationSource) ||
+                    tags.Contains(BodyPartTagDefOf.BloodFiltrationLiver) ||
+                    tags.Contains(BodyPartTagDefOf.BloodFiltrationKidney) ||
+                    tags.Contains(BodyPartTagDefOf.BloodPumpingSource) ||
+                    tags.Contains(BodyPartTagDefOf.BreathingSource) ||
+                    tags.Contains(BodyPartTagDefOf.ConsciousnessSource) ||
+                    tags.Contains(BodyPartTagDefOf.MetabolismSource)))
+                || IsOrganName(bodyName)
+                || ContainsIgnoreCase(partName, "Organ")
+                || IsOrganName(partName));
+
+            return new PartKind
+            {
+                IsSpine = isSpine,
+                IsNeck = isNeck,
+                IsBone = isBone,
+                IsOrgan = isOrgan,
+                IsEye = part is DollEye || effectivePart is DollEye
+            };
+        }
+
+        private static bool IsOrganName(string name) =>
+            ContainsIgnoreCase(name, "Stomach") ||
+            ContainsIgnoreCase(name, "Heart") ||
+            ContainsIgnoreCase(name, "Liver") ||
+            ContainsIgnoreCase(name, "Kidney") ||
+            ContainsIgnoreCase(name, "Lung") ||
+            ContainsIgnoreCase(name, "Brain") ||
+            ContainsIgnoreCase(name, "Nose");
 
         public static bool TryGetDollLimbColor(Pawn pawn, Doll doll, DollBodyPartDef partDef, out Color limbColor)
         {

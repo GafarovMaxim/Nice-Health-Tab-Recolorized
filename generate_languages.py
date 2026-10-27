@@ -30,12 +30,10 @@ language_aliases = {
 }
 
 target_dirs = [
+    # Root Languages only: LoadFolders.xml loads "/" for every version, a 1.7 copy would load each key twice.
     os.path.join(SCRIPT_DIR, "Languages"),
-    os.path.join(SCRIPT_DIR, "1.7", "Languages"),
     r"G:\Modding\RimWorld\NiceHealthTab_Recolorized\Languages",
-    r"G:\Modding\RimWorld\NiceHealthTab_Recolorized\1.7\Languages",
     r"E:\SteamLibrary\steamapps\common\RimWorld\Mods\NiceHealthTab_Recolorized\Languages",
-    r"E:\SteamLibrary\steamapps\common\RimWorld\Mods\NiceHealthTab_Recolorized\1.7\Languages"
 ]
 
 def generate():

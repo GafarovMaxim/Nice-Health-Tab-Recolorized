@@ -29,11 +29,21 @@ namespace NiceHealthTab_YAPEM_Patch
         public static void Postfix(List<Hediff> hediffs, ref string __result, ref Color col)
         {
             if (string.IsNullOrEmpty(__result) || hediffs == null) return;
-            string targetDef = __result;
-            var h = hediffs.FirstOrDefault(x => x.def?.defName == targetDef);
-            if (h != null && LimbTierUtility.CategorizeHediffTier(h, out _, out Color tierColor))
+            ApplyTierColor(hediffs, __result, ref col);
+        }
+
+        // Plain loop instead of FirstOrDefault: avoids a closure allocation on every doll part draw.
+        internal static void ApplyTierColor(List<Hediff> hediffs, string defName, ref Color col)
+        {
+            for (int i = 0; i < hediffs.Count; i++)
             {
-                col = tierColor;
+                Hediff h = hediffs[i];
+                if (h.def?.defName != defName) continue;
+                if (LimbTierUtility.CategorizeHediffTier(h, out _, out Color tierColor))
+                {
+                    col = tierColor;
+                }
+                return;
             }
         }
     }
@@ -45,12 +55,7 @@ namespace NiceHealthTab_YAPEM_Patch
         public static void Postfix(List<Hediff> AllPartHediffs, ref string __result, ref Color col)
         {
             if (string.IsNullOrEmpty(__result) || AllPartHediffs == null) return;
-            string targetDef = __result;
-            var h = AllPartHediffs.FirstOrDefault(x => x.def?.defName == targetDef);
-            if (h != null && LimbTierUtility.CategorizeHediffTier(h, out _, out Color tierColor))
-            {
-                col = tierColor;
-            }
+            Patch_DollRenderContext_FindImplantDefName.ApplyTierColor(AllPartHediffs, __result, ref col);
         }
     }
 }
