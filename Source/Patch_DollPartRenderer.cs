@@ -73,6 +73,8 @@ namespace NiceHealthTab_YAPEM_Patch
 
             // 2. Identify implant / prosthesis alternative
             PartImplantInfo implantInfo = ctx.GetImplantInfo(_part, val);
+            bool implantTierFound = false;
+            Color implantTierColor = default;
             if (implantInfo != null)
             {
                 var partHediffs = ctx.Hediffs.GetHediffs(val);
@@ -80,9 +82,10 @@ namespace NiceHealthTab_YAPEM_Patch
                 {
                     foreach (var h in partHediffs)
                     {
-                        if (LimbTierUtility.CategorizeHediffTier(h, out _, out Color tierColor))
+                        if (LimbTierUtility.CategorizeHediffTier(h, out _, out implantTierColor))
                         {
-                            implantInfo.Color = tierColor;
+                            implantInfo.Color = implantTierColor;
+                            implantTierFound = true;
                             break;
                         }
                     }
@@ -153,27 +156,20 @@ namespace NiceHealthTab_YAPEM_Patch
             if (implantInfo != null && implantInfo.HasAlternative && implantInfo.Part != null)
             {
                 var partHediffs = ctx.Hediffs.GetHediffs(val);
-                if (partHediffs != null)
+                if (implantTierFound)
                 {
-                    foreach (var h in partHediffs)
+                    if (implantInfo.Part is DollPartProsthesis p)
                     {
-                        if (LimbTierUtility.CategorizeHediffTier(h, out _, out Color tierColor))
-                        {
-                            implantInfo.Color = tierColor;
-                            if (implantInfo.Part is DollPartProsthesis p)
-                            {
-                                p.overrideColor = false;
-                            }
-                            PartFrameInfo partFrameInfo = ctx.GetPartFrameInfo(val);
-                            PartVisual partVisual = ctx.GetPartVisual(val, partHediffs, partFrameInfo.Health, partFrameInfo.MaxHealth);
-                            if (partVisual.Status == DollPartStatus.Missing)
-                            {
-                                return false;
-                            }
-                            DrawCustomPart(ctx, implantInfo.Part, doll, val, rectDoll, extraOffset, selectable, DamageAware(partVisual, tierColor));
-                            return false;
-                        }
+                        p.overrideColor = false;
                     }
+                    PartFrameInfo partFrameInfo = ctx.GetPartFrameInfo(val);
+                    PartVisual partVisual = ctx.GetPartVisual(val, partHediffs, partFrameInfo.Health, partFrameInfo.MaxHealth);
+                    if (partVisual.Status == DollPartStatus.Missing)
+                    {
+                        return false;
+                    }
+                    DrawCustomPart(ctx, implantInfo.Part, doll, val, rectDoll, extraOffset, selectable, DamageAware(partVisual, implantTierColor));
+                    return false;
                 }
 
                 // If this is an organ or bone with a prosthesis alternative that didn't match a custom tier:

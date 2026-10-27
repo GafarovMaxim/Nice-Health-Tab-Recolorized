@@ -10,7 +10,7 @@ namespace NiceHealthTab_YAPEM_Patch
     // (yellow x teal = green), so they are redrawn from a grey copy: the fill becomes white and the shading is kept.
     public static class TintTextures
     {
-        private static readonly Dictionary<string, Texture2D> cache = new Dictionary<string, Texture2D>();
+        private static readonly Dictionary<DollBodyPartDef, Texture2D> cache = new Dictionary<DollBodyPartDef, Texture2D>();
 
         public static Texture2D Neutral(DollBodyPartDef partDef, Texture2D original, Rect uv)
         {
@@ -18,10 +18,10 @@ namespace NiceHealthTab_YAPEM_Patch
             ModContentPack mod = YAPEMPatchMod.ContentPack;
             if (mod == null || partDef.modContentPack != mod) return original;
 
-            if (!cache.TryGetValue(partDef.imagePath, out Texture2D grey))
+            if (!cache.TryGetValue(partDef, out Texture2D grey))
             {
                 grey = Build(mod, partDef.imagePath);
-                cache[partDef.imagePath] = grey;
+                cache[partDef] = grey;
             }
             return grey != null && grey.width == original.width && grey.height == original.height ? grey : original;
         }

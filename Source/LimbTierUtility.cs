@@ -197,6 +197,7 @@ namespace NiceHealthTab_YAPEM_Patch
 
         private static readonly Dictionary<HediffDef, AutoTier> autoTierCache = new Dictionary<HediffDef, AutoTier>();
         private static bool autoTierCacheUseDLC = true;
+        private static readonly Dictionary<string, (string hex, Color color)> parsedModColors = new Dictionary<string, (string hex, Color color)>();
 
         public static void ClearCaches() => autoTierCache.Clear();
 
@@ -233,11 +234,19 @@ namespace NiceHealthTab_YAPEM_Patch
             if (auto.ModKey != null && ColorLinkUtil.TryResolve(auto.ModLinkKey, out color)) return true;
             if (auto.ModKey != null
                 && YAPEMPatchMod.Settings?.ModColors != null
-                && YAPEMPatchMod.Settings.ModColors.TryGetValue(auto.ModKey, out string hex)
-                && YAPEMPatchSettings.TryParseHex(hex, out color))
+                && YAPEMPatchMod.Settings.ModColors.TryGetValue(auto.ModKey, out string hex))
             {
+                // Parsed color is reused while the stored hex string is unchanged.
+                if (!parsedModColors.TryGetValue(auto.ModKey, out var parsed) || parsed.hex != hex)
+                {
+                    if (!YAPEMPatchSettings.TryParseHex(hex, out Color c)) goto tierColor;
+                    parsed = (hex, c);
+                    parsedModColors[auto.ModKey] = parsed;
+                }
+                color = parsed.color;
                 return true;
             }
+            tierColor:
             return TryGetTierColor(tier, out color);
         }
 
